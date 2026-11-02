@@ -1,0 +1,345 @@
+---
+title: "Save orders and submit them for approval"
+description: "First order step, summary, approval request, and withdrawal."
+---
+
+# Save orders and submit them for approval
+
+## Start an order and save the first step
+
+1. Open **Orders** in the customer portal. With the create permission, you can start a new order via the plus symbol on the menu item.
+2. Enter the **Order name**. Optionally add **Order no.** and **cost center**. The cost center can be entered or selected from existing entries.
+3. Select the **department**. Anyone who is not allowed to see data without a department assignment must choose a department. The selection may be restricted by the accessible departments and the role planning. A note about multiple departments or cost centers means that different values exist on the roles; the joint selection is then not the correct field to change.
+4. Describe the requirement under **Order details**. For a new order, the description is required; the editor limits the text to 500 characters. For an order originating from a project, the description is not required in the same way.
+5. Select a location under **Add location**. A stored default location may already be preselected. Check it anyway.
+6. Mark the locations for which you want to set dates, and choose the days under **Set date**. Every added location needs at least one day. Open the date list for the location to check it; individual days can be removed there.
+7. Choose **Next** and wait for the switch to **Planning details**. If you are unsure, reopen the order and check whether the name, locations, and days are present.
+
+**Saving is not submitting:** The first step saves the order data, but does not yet submit an order request. Do not rely on automatic saving when closing or refreshing the browser. The first step does try to save when leaving as well; without a confirmed result, no permanent saving can be inferred from that.
+
+If **Next** does not work, first check the name/description, then the dates for each location and the department. Days that have already been assigned cannot simply be deleted from the order. In that case, clarify the existing assignment instead of repeating the same deletion attempt.
+
+## Check the summary and request approval
+
+1. In **Summary**, check the locations, days, roles, quantities, hours, and cost estimate. If data or conditions are missing, clarify the planning or the agency first.
+2. When the order is in **Draft** or **Rejected**, choose the **Submit order** action. This is what your own submission permission is for. The visually locked action is not a general technical rights barrier. If you do not have the permission, contact administration rather than trying other input paths.
+3. Read the confirmation question about submission. **No** sends nothing in this step. **Yes** either takes you to approval selection or directly into the submission path. The confirmation warns about later restricted editing; it does not replace a check of the data or contract conditions.
+4. If **This order must be approved first.** appears, wait for the list. Select the email addresses of the responsible approvers and at least the requested number. Too few selected people trigger a message that may appear in English. The checkmarks initially change only the local selection. **Cancel** or the cross closes the selection without a new request; when reopened, checkmarks may still be set, so check again.
+5. Click **Submit** in the approval dialog. While the request is being sent, this button is disabled. If the response is successful, **Request sent!** appears; the server creates approval entries, sets the order to **Approval pending**, sets the submission date, and initiates the sending of personal links. This is neither everyone’s decision nor a delivery confirmation.
+6. Use **Back** in the result dialog to return to the order list and open the order again. Check the actual status. The cross only closes the result dialog and does not undo anything.
+
+**Without the required approval**, after Yes the interface already shows **Order submitted.**, while the separate save process may still be running. This display is **not a save confirmation**. Before saving, the department and cost center are loaded again; this is not complete protection against other order fields changing at the same time. An error message or a business error in the response can be hidden by a success that is already visible. Before submitting again, always have the actual order state checked.
+
+**If the approval list is missing or a loading error occurs:** Do not interpret the absence of the dialog as proof that no approval is needed. The loading/permission checks run separately; if the list fails, the direct path may become visible. Check the intended approval rule and order status with administration. If an error occurs after submission, individual approval entries and sending attempts may already have been made; there is no automatic complete rollback. A stuck sending indicator does not necessarily mean the request is still running.
+
+**If the approval link is missing:** Have recipients and the spam folder checked and verify the current status. A new request marks earlier still-active approval entries as replaced. Do not send repeatedly on suspicion. If the order remains pending despite responses, give the order name and status to administration without forwarding personal links. The link view and its decision are explained in the section **Decide on an order via the personal approval link**.
+
+## Withdraw the approval request and find further steps
+
+When the order is **Approval pending** or **Rejected**, **Withdraw order** is available in **Summary**. Check the name and confirm only the intended withdrawal. **No** sends nothing; **Yes** starts two separate processes: status saving by the parent view and withdrawal of the approval request. The withdrawal path sets status and type to Draft, removes the submission date, and marks the matching previous approval entries as withdrawn.
+
+**Then check the newly opened order.** The two requests are not a shared atomic save; they can fail separately or respond in a different order. A success message from the withdrawal path does not prove that any other save succeeded. If there is an error or a different status, clarify it first; do not click repeatedly. Messages already sent do not disappear from mailboxes.
+
+**Withdrawing is not canceling a staffed assignment.** It does not cancel a person, does not delete the entire order, and is not a substitute for coordination about staff already assigned. **Back** to planning or closing a dialog is likewise not a withdrawal. After resubmission, the loaded resources and past assignments again determine the next step names; reopen from the list.
+
+## Search, filter, and export orders to Excel
+
+1. Open **Orders** and select **DRAFT ORDERS**, **SUBMITTED ORDERS**, or **PAST ORDERS**. The tab switches between the loaded lists; it does not by itself request a new save. Read the row status: drafts can also contain **Approval pending** or **Rejected**. Past submitted orders with an open follow-up assignment request can still remain in the submitted area. Tab and status are not the same thing.
+2. Enter part of the order name in **Search order here...**. Each keystroke reloads the lists on the server; search is performed in the stored name, not in all visible columns. The displayed translated name can differ from it. To search all names, clear the search field. With rapid input, older responses can replace a newer list; wait and check the name before opening the row.
+3. Select **Departments**, **From**, **To**, and, if applicable, **Submission Date**. For assignment days, **From and To together** must be set; a single boundary is not enough. The submission date is a separate filter. The calendars are not read-only: also check typed values for completeness before applying them.
+4. Click **Filter**. Only then are the calendar/department selections included in the query. The applied values are shown in the browser address; a filter state is also stored locally. Returning via browser navigation does not reliably reload the list: if the display differs, click **Filter** again or reopen the view. The **x** next to Filter clears all three dates and the department selection and applies this; you must also clear the search text.
+5. Use the column headers to sort the currently loaded rows locally by name, start, or status in the drafts tab, and by name, start, or submission date in the other tabs. Clicking again can change the direction. Empty date fields do not automatically mean an invalid or deleted order. The counters show the lengths of the loaded lists, not a legally binding total or necessarily unique orders.
+
+**Check visibility:** If an order is missing, have the order view permission, the additional permission for all ongoing orders, client-buyer assignment, and departments checked. For orders without roles, the order department is used; otherwise role departments may be relevant. Data without a department also requires the corresponding permission. Clearing filters does not expand permissions. Your own self-service projects belong in the separate **Self Service** area. If there are unexpected entries or duplicates, involve administration; this list is not a fully audited confirmation of permissions or completeness.
+
+**Download Excel:** Select the tab, apply filters with **Filter**, and click **EXPORT ORDERS**. The active button starts the download directly, **no export sidebar**. The sheet contains ID, name, start date, end date, and submission date for the selected tab. It uses the search text and the most recently applied date/department values; local sorting is not sent as a separate sort preference. The file language depends on the user language. Compare tabs, names, dates, and possible duplicate rows in the file. A pending entry can appear multiple times in compiled lists; do not use the row count unchecked as the count of distinct orders.
+
+If the download is missing, check the browser downloads; an empty or failed download is not a successful file. The list does not have a reliable error/loading indicator for every new search. An export does not change order status, approvals, or staffing, and does not send an order to any person.
+
+## Select and change roles per location
+
+1. Open **Planning details** and find the correct location. Add a role there. In the role dialog, first select the department and then the appropriate stored customer role. If a department is selected, only the roles assigned to it are offered. Changing the department can clear a previously selected role; then select it again.
+2. Save the dialog. If the required role or a department mandatory for your user is missing, correct the selection. The same role name cannot be created again at the same location.
+3. If the first or only role has a different department than the order, the portal asks whether the order should be adjusted accordingly. **No cancels this save process.** It does not simply save a different role here. With multiple roles, a separate warning about different departments may appear; confirm it only if this split is intended.
+4. Check the created role and its shifts. A stored default template can take over shifts and documents; additional wage/expense data is saved separately. If there are no template shifts, a shift from 08:00 to 16:00 is created first. This default is not yet your confirmed requirement.
+5. Use **Edit** on the role card to change the customer role or department. Existing shifts, documents, and clothing requirements are retained. Recheck the wage range and cost estimate; a different role is not a complete replacement of the existing planning.
+
+**Check department and cost center again:** With consistent role values, the order can take over the shared department or cost center. Before submission, these values are loaded again. Therefore, after role changes, also check the master data. Adjusting the order department and saving the role are separate requests: a closed dialog does not prove that both succeeded.
+
+**Copy roles:** If available, select the target location for a role. For **Copy all roles**, mark the target locations and apply the selection. Nothing is copied without a target location. The functions are tied to the view's premium/archive conditions; all roles together can only be copied if there are at least two roles at the source location and at least one other target location. If there is only one role at the source location, use **Duplicate** on that role card. Then check the roles, times, days, and quantities at the target; a copy is neither approval nor staff assignment.
+
+## Edit shift times, breaks, and staffing requirement
+
+1. Check the start, end, and break on each role card. Enter times in **HH:MM** format and leave the field. When leaving start or end, the break is recalculated based on the stored rules and the shift is updated. A manually entered break from before can be replaced. Therefore, check the break again after every time change.
+2. A manual break is saved when you leave the break field. Break calculation is a configuration function, not a guarantee of labor-law compliance or payroll processing.
+3. Add another shift if needed. After an existing shift, the new row starts with its end time as the start **and end**. Enter the actual end time; do not assume an automatically complete follow-up shift. If there are no shifts yet, the default is 08:00 to 16:00.
+4. Enter the staffing requirement in the cell for the correct day and the correct shift. **The entry itself already triggers a save request.** The total row is only a display. Inactive day cells are not available for input. Use the side arrows to see more days.
+5. Wait for processing and reopen the order to check it again. If there is an error message about the shift or number of employees, the displayed input value is not reliable proof that it was saved.
+
+**Reducing quantities is not a staff cancellation:** Existing assignments can remain as overbooking when you reduce the requirement. If a requirement is reduced completely to zero, still-open invitations can be removed. People who are already assigned are not simply properly deregistered by this. Clarify staffed assignments with the planner.
+
+**Remove shift:** Click the shift's remove icon and confirm only the intended row. Certain already confirmed or automatically accepted invitations prevent deletion. The rest of the deletion affects not only the visible row, but also related requirement and assignment data. If the message says a shift with invitations cannot be deleted, do not try to bypass it by setting the requirement to zero or deleting the role.
+
+**Next** opens the summary; there is no shared save button in this step and no resetting of changes already carried out individually. Likewise, **Back** does not undo saved changes.
+
+## Clothing rules, documents, and multi-select
+
+Open the clothing rules on the correct role card. Wait until the existing selection has loaded, mark the desired rules, and add text for **Other**. Confirm with the dialog's save button. **Cancel** or closing discards the dialog selection not yet submitted, not already saved changes in other areas. Then reopen the dialog and check the text.
+
+**Edit multiple roles:** Activate multi-edit and check the selected roles before changing clothing rules or documents. **Select all roles** refers to the loaded roles in the view, not only the role card directly beside it. For clothing rules, the opened role and additionally the marked selection are saved. These are separate requests; check each affected role. End multi-edit before the next single change so that the selection is cleared.
+
+**Upload document:** Open the upload on the role. The file picker is set to Word, PDF, Excel, PowerPoint, and CSV files. The upload is an immediate request for the existing role, not a creation that is only saved with order submission. When multi-edit is active, the selected role choice is submitted as well. Wait for the file list, open the file to check it, and reload the order if in doubt. An already existing file name can prevent the upload; check the existing file instead of uploading the same name repeatedly.
+
+**Remove document:** Use the remove icon on the file and confirm the prompt. With selected roles, this can affect multiple assignments. What is removed is the document assignment; this does not guarantee that the underlying file was physically destroyed. Closing or **Back** does not restore an assignment that has already been removed.
+
+**Do not confuse expenses with an available order action:** In this native planning view, the entry point for expense editing is not active. Expense data can still come from a role template. For changes, contact the responsible administration; an expense dialog from another project interface is not guidance for this order view.
+
+## View resources and favorite suggestions
+
+**Resources** shows the staffing suggestions provided by the agency for this customer and this order, not the entire staffing pool. The step appears only outside draft, pending approval, and rejected draft, and only when suggestions are loaded. Without suggestions, **Assignment planning** follows directly as step 4; with suggestions, it is step 5. Use the name, not just a saved step number. **Back** takes you to the summary, **Next** to assignment planning; neither is a shared save confirmation.
+
+The fixed table shows image or initials, first name, last name, customer average rating, **Hired previously**, wishlist, exclusion list, and favorite marker. The stars are read-only; the customer's average is rounded up to whole stars. The note about previous employment is based on past, completed requests with the customer and is not a new commitment. The suggestions are sorted by first and last name. An invitation without a matching application or a person who has not been approved does not have to appear here; requirements reduced completely to zero are not listed as normal suggestions.
+
+There are **no separate search/filter fields, application register, column configuration, multi-select, or copy action** here. Wishlist and exclusion list are displays, not editable checkboxes. The separate favorite action has different consequences; note the section **Favorites, permissions, and NOH assignment**. Clicking the person's row opens the Sedcard. A missing image is replaced by initials. An empty or permanently loading table does not prove deletion or a missing staffing pool: reopen the order and have approvals and permissions checked.
+
+## Check assignment planning and request a follow-up assignment
+
+**Assignment planning** is the overview by location, role, and date. Expand the location and role heading and then the day. Locations are arranged alphabetically, days in ascending order; past days start collapsed. Expanding/collapsing and horizontal scrolling only change the view. The timeline and assignment bars move together. They are not a drag-and-drop editor for shift times.
+
+The heading **Assignment/Assignments** counts the displayed assignment rows for that day, including open slots; it is **not the number of personally confirmed employees**. Requirement, overbooking, open row, assignment, and acceptance must not be equated. Rows without a person are not automatically filled by a favorite. The server-side fetch omits requirements with quantity zero; the absence of a row is therefore not reliable proof of deletion or cancellation.
+
+Check date, start, end, and person for each row. Internal people may appear with an image, external people with names shown separately. Status colors distinguish, among other things, free, assigned, confirmed, self booked, and rejected; assignment alone is not yet personal confirmation. For partial shifts, the note on the bar shows the time segments, but does not edit them. Compare the listed times: night times and the limited graphical timeline cannot be used as a working-time or completeness check.
+
+The note about restricted data may be due to department assignments. For customer users, the role list is limited by accessible departments and the right for data without a department. Missing roles are not automatically deleted. This native view offers no application registers, filter bar, column selection, sort order configuration, quantity changes, copy, or **remove/deregister action**. Changes to the requirement belong in **Planning details**; for staffed assignments contact the responsible planner.
+
+For a named internal person, **follow-up assignment** is available, not for external people or an open row. The exact date selection and sending are described below. Reopen after changes: this overview does not update automatically after a follow-up assignment request. A permanently loading display or a department note is not proof of saving.
+
+## Rate, comment, and maintain lists after the assignment
+
+**Rating** appears only when matching past assignments exist. The view can be shown as locked if the order period has not yet expired or if there is no editing option. This display is not a substitute for the administration checking your permissions.
+
+1. Find the person concerned and change the star rating. The selection is saved immediately as the customer's rating for the matching assignments of this person in the order, not only with a final submit button. Resetting the stars sends the value zero or zero stars as **0**. If a save error occurs, the selection can appear empty again; reload and check the current state.
+2. Open the comment field. **Every text change already triggers a save request**, not only leaving the field. Clearing the comment is also submitted. Write only the intended factual feedback. If the connection is interrupted or changes are made quickly, check the comment after reopening; the visible input is not proof of saving.
+3. Set or remove the **Wishlist** if you want to keep the person listed accordingly for this customer. Adding it removes an existing exclusion-list assignment. It is not a new assignment booking.
+4. A change to the **Exclusion list** requires confirmation. **No** leaves the previous state in place. Confirmed addition also removes the wishlist marker. When removing from the exclusion list, the wishlist is not automatically restored.
+
+The wishlist and exclusion list relate to the customer relationship and are not merely local markers of this order row. After a change, check both displays. These actions are neither a cancellation of existing assignments nor a general deletion of the staff profile.
+
+## Decide on an order via the personal approval link
+
+1. Open your personal approval link and wait until the order name has loaded. Check that it is the expected order. Do not share the link or publish it.
+2. Select **Approve** if you agree, then confirm with **Yes**. **No** only closes the follow-up question; it does not send approval.
+3. To reject, select **Reject**. In the dialog, you can enter a **Comment on rejection (optional)**. Only **Confirm** submits the rejection. **Cancel** discards the comment and sends no decision. An empty comment also does not prevent the rejection.
+4. Wait for your decision to appear. A single approval may still leave other required approvals open. Ask the requester to check the actual order status in the list.
+
+A rejection leads to the rejected draft and removes the submission date; sending the notification to the creator is triggered. The order is only submitted once the approval condition has been met. Any subsequent automatic publication and staffing processing is a separate step, not a guaranteed immediate assignment.
+
+**Expired, already decided, or not loaded:** If an approval is loaded as expired or already decided, the page does not offer a new decision. An expired link may show a reason. If the content is empty, keeps loading, or the result is unclear, do not confirm again; instead ask the requester to check the status and, if necessary, request a new approval. For a correction, use the regulated order process instead of an old link. A missing error message and a vanished loading indicator are not confirmation that the decision was saved.
+
+## Delete draft and distinguish cancellation consequences
+
+**Warning: The trash can deletes without an additional delete confirmation.** First open the draft to check it, return to the order list, and only then click **Delete** on the correct entry. The native button sends immediately. It appears only for the **Draft** status, not for pending approval or a rejected draft. The customer path requires the create right and the matching customer reference; the server also checks the draft status. A visible trash can alone does not prove that deletion is allowed.
+
+Existing assignments already allocated to a person prevent deletion. The list reloads after both responses and transport errors; the handler does not visibly evaluate every business error. Therefore check whether the entry really disappeared. If the order remains visible or the error is unclear, contact the agency; do not delete repeatedly or set the staffing requirement to zero as a substitute.
+
+**Deletion is not archiving:** The order and numerous related planning, request, approval, message, and billing references are permanently removed. This includes approval entries and assigned credit records; this is **not** a promise of a quota or cash refund. Linked subprojects remain, but lose their parent assignment. An image is checked separately for further references; there is no assurance that all files or already downloaded copies will be removed. The process is not a proven atomic all-or-nothing deletion. Emails, push notifications, or ongoing processing that have already been triggered are not reliably rolled back.
+
+| Action | Effect and limitation |
+| --- | --- |
+| Cancel dialog | Does not send the dialog action that has not yet been confirmed; earlier individual changes remain. The trash can has no such confirmation dialog here. |
+| Save base data/planning | Changes order/planning data; no approval decision. |
+| Submit order | Approval request or direct submission path; not the same as confirmed staffing. |
+| Withdraw order | Approval status reset to draft, no staffing cancellation. |
+| Delete draft | Permanent removal, no recovery trash can. |
+| Cancel staffed order | Coordinate with the responsible planner, not by withdrawing or setting the requirement to zero. |
+
+A project cancellation by an authorized body is a **different process**: it can detach people from assignments, set the places to free, remove requests, and trigger notification jobs for affected people. The project remains with a cancelled type and a name prefix **C/**. This does not mean that every status field is the same, nor that all people have already been informed. The native order list offers **no general cancel button**. For staffed orders, have the actual cancellation and the notification of affected persons confirmed; neither the send order nor the technical delete/cancel success is a contractual, refund, or legal guarantee.
+
+## Basic data: fields, defaults, and storage limit
+
+The basic data is under **Order details**; for a new order, the view is called **create & edit order**. Name and description start empty, and the new order is a draft. Order number and cost center are optional. The cost center suggestions are narrowed locally as you type; selection and free text first change the form. Leaving this field only closes the suggestion list; it does not save separately.
+
+The department list contains the departments accessible to your user. For an existing role planning, it may be further restricted. If exactly one selectable department is available and none has been set yet, it is preselected. Without permission for data without a department, the department is required on normal **Next** and cannot be left empty. If role departments or cost centers differ, a notice appears instead of the shared input field. Saving the basic data can also pull in role values that were previously empty or belonged to the previous shared value; check the roles afterward.
+
+**Order details** is a text editor with link functionality. The 500-character limit is checked when changes are made. If the text is too long, the last valid content is restored; check pasted text in particular. The editor does not show four separate language fields. Name and description can appear in the display language with fallback to other existing translations.
+
+**Next** checks the name, the required description, at least one location with a date, and the required department. Only a response with a valid order ID leads to planning. The step navigation at the top is different: it changes the view; it is not an additional save confirmation. When leaving the basic data, a separate save is attempted, whose check is weaker than on **Next**. Therefore canceling or switching is not a reliable discard. When logging out, no leave-save is attempted without an existing session. Closing the browser does not guarantee that a started request will still arrive.
+
+If saving fails, do not assume the overall order is unchanged: even if removing an assigned day is rejected, other basic data may already have been saved. Reopen the order, compare the values, and only then continue. A loading indicator or a closed dialog does not replace this check.
+
+## Change locations and individual days safely
+
+Under **Add location**, existing locations and search suggestions are offered. Select the actual entry; typing freely alone does not add a location yet. A customer default location may be prefilled, but no days are automatically selected yet. The same address text is not added twice in the open form. When adding, the new location is selected and the previous ones are deselected.
+
+The checkboxes next to the locations determine which locations the next calendar change applies to. They are not a staffing assignment. The calendar shows the shared selection of the marked locations; for differing dates, you must check the expanded lists per location. Expanding itself does not save anything. The view offers individual multiple dates, not an active from-to range: background range data is not an additional calendar field.
+
+A day can be removed directly from its location list in the **local form**. For an entire location, a yes/no prompt appears; **No** leaves the list unchanged. Even **Yes** initially removes only the form row. This is not a deletion from the central location directory. In particular, a disappeared location row does not mean that a saved location including days has been permanently removed from the order. Reopen after saving and have a recurring entry checked.
+
+**Date and time zone:** The calendar starts at today according to the browser date. The days are stored from local calendar components; the planning time fields do not include a selectable time zone. Do not change the device time zone unnoticed for checking. After reloading, verify the displayed days, especially when working from another time zone. Selecting a date is not a check of all assignment or working-time rules.
+
+## Role dialog, copies, and removal in detail
+
+**Add new role** opens a new selection without the previous role name. The order department serves as the default. In the edit dialog, the role department is used; otherwise the order department. Select a stored customer role, not any arbitrary new role name. If a department is selected, only roles assigned to it are offered. Deleting the department selection is only possible if data without a department is allowed. A role selection remains when the department changes if it still fits; otherwise it is cleared.
+
+**Cancel** or the cross closes the role dialog without its save prompt. After canceled editing, **Add new role** opens a new creation again. **Save** first checks the required department, the role name, and for a new entry duplicate names at the same location. After that, department follow-up questions may appear. Even for the only existing role, **No** in the prompt does not save anything. With multiple roles, **Yes** confirms the different assignment, not a shared order department.
+
+A standard template is loaded in the background when the role is created; there is no separate active role template selection dialog here. If no usable template shifts are loaded, the default shift is used. Therefore, after a missing template or loading error, check times and documents. Role cost centers can come from the customer role, otherwise from the order. Later role editing does not replace existing shifts or documents with the content of a new template.
+
+**Duplicate** on a role can also target the same location; if needed, the copy receives an addition in the name. **Copy all roles** offers other locations and requires at least one target, at least two roles at the source location, premium, and a non-archived order. If there is only one role at the source location, use **Duplicate** on that role card. Selecting in the expanded field is not yet a copy order; only **Apply** starts the individual copies. No complete period and no staffing level is duplicated. The target requirements must be checked and entered; visible zero values after copying are not proof of a fully transferred quantity. With multiple copies, one can already be finished while another is still running or fails.
+
+**Delete** on a role requires a separate confirmation. A contractually bound assignment can prevent deletion. Otherwise, associated shifts, requirements, and assignments may be affected; it is not just removing a name. Do not delete a role to bypass a locked shift or a personnel cancellation. If the result is unclear, reload instead of clicking repeatedly.
+
+## Time validation, quantities, and shared shifts
+
+A shift row belongs to one role at the location. Its start time, end time, and break apply jointly to the day cells in that row; only the quantities are entered per day. For differing times, you need a suitable additional shift. The arrows move the day view, not the data.
+
+The time mask expects two digits for hour and minute. **24:00**, minutes above 59, or incomplete values are cleared, not accepted as valid times. Complete both times fully. When leaving, the calculation path is still triggered; therefore an empty display does not mean the old saved time was definitely kept or already deleted. Check after reloading. Tab can trigger the move to the next field, but it is not a separate save confirmation.
+
+For orders, the automatic break uses the customer configuration belonging to the order, provided a matching customer area exists; otherwise the calculation falls back to agency rules. An end earlier than the start is calculated across midnight for the duration. The same start and end time is not treated as a full day. The manual break is a minute value. Changes to the start or end can overwrite it again. A confirmed shift that has already started can reject a time change without reliably resetting the input. Existing partial shifts are shown as time segments on hover; the notice is not an editor for those segments.
+
+Quantities are requested individually as you type. The displayed number is the requirement without overbooking; internally, more may remain due to already assigned people. There is no shared queue here until **Next**, no guaranteed order of rapid responses, and no overall undo. Even a success message for another action does not prove that the last quantity has arrived. If there are errors or rapid changes, reopen and check the individual day cell.
+
+The **cost estimation** on the role card is not a reliable control total for your requirement. It is visible only under certain role/department conditions and can be missing or show zero despite quantities having been entered. Do not use it as a price commitment, payroll statement, or legal review; clarify pricing separately.
+
+## Multi-select: targets and errors for clothing and files
+
+Multi-select applies to the loaded roles across all locations. Individual checkboxes and **Select all roles** do not save anything yet. When leaving multi-edit, the checkboxes and the target list are cleared. Check the selection before every change, not only the role card that is currently open.
+
+- **Clothing rules:** The dialog loads the existing selection and the specifications belonging to the customer. Normal entries and **Other** are selected with checkboxes; text under **Other** only takes effect when the checkbox is set. This free text is also carried over into the other language values. Saving replaces the consolidated clothing description. An empty selection can clear the previous description. The open role is saved **and additionally** every marked role; if it is marked itself, it may be queried twice. Therefore, a success can occur before all targets are successful.
+- **Upload:** When multi-edit is active, the passed selection is the target; the open role is not automatically included as well. Mark it explicitly if it should receive the same file. Without multi-edit, the open role is the target. Before a multi-upload, select at least one role. The upload field is disabled for archived orders; other displays that merely appear locked are not equivalent to this disabled state.
+- **Remove file:** The removal from the selected role assignments is confirmed; with an empty selection, it is confirmed for the open role. Then check the file lists again, especially if the file was not present on all marked roles. No assurance of physical file destruction.
+
+After an upload error, the display may still appear busy. An answer due to a duplicate file name can also be processed like a success response. Therefore, the decisive factor is the reloaded file list per target role, not just the color or heading of the message. A file that has already been uploaded is not rolled back by closing the clothing dialog or by **Back**. The quantity limit in the upload field is not a promise of an overall limit for all already saved role documents.
+
+## Correctly classify view locks and processing
+
+The display may appear locked after submission, during pending approval, when editing is not possible, or after the last order day. A notice about restricted data means that department assignments can limit the loaded planning. Missing roles are not automatically deleted roles. Have user rights, customer, and order checked instead of creating the data again.
+
+The visual overlay is not a reliable statement that every field and every keyboard action is technically disabled. Do not use a view that appears locked to bypass the intended process. In particular, the order creation right, submission right, and Self Service editing stand for different processes; this does not imply a general editing right for all orders.
+
+Role and shift actions can open a processing indicator. This is neither a shared save receipt nor a cancel button. If loading continues indefinitely, do not start multiple identical creations: reopen the order and check the actual status. Yes/No prompts belong to the respective action; **No** does not request this change. Changes already saved earlier remain unaffected.
+
+## Expenses dialog: no active entry in this planning
+
+The expenses dialog is not among the accessible actions in this native planning. The fact that expense data can be adopted from a standard template does not make the hidden dialog an available editing step. Use coordination with the responsible administration for this.
+
+
+## Sedcard: available fields and display limits
+
+Click the person row. The sedcard is built from the template stored for approval; if no matching template exists, the system uses a default template. It is a **view**, not a profile or template editor. There are no tabs here for switching profile sections and no active previous/next buttons for the next person. Close the card with the cross and select another row. Closing does not change any data.
+
+| Template area | What you can check |
+| --- | --- |
+| Identity and contact | First/last name, picture or initials, gender, age display, city or city/canton, email and phone number, provided that the template contains these fields. Age is a calculated estimate, not a verified date of birth. |
+| Rating and appearance | Read-only stars only; depending on the template, appearance, eye/hair color, height, shoe/shirt size, origin, trouser width/length, and piercing/tattoo. Empty values and “No” displays are not a check of the completeness or accuracy of the personnel profile. In particular, the combined appearance is not reliably filled in. |
+| Languages | Language and proficiency level; the template can filter by language or level. If both selection types are used, entries may appear more than once. Unassignable levels may be shown as unknown. |
+| Education and work experience | Education with type, institution, and period; experience with profession, level/position, company, and period. Ongoing entries leave the end date blank. The template height limits the number of visible rows; a short excerpt does not prove that no further entries exist. |
+| Mobility | Public transport subscriptions, driving licence types, driving skills, car availability, and car-sharing subscriptions. These are profile details, not confirmed assignment availability. |
+| Interests | Product areas and job types according to the selected template variant; no change to role requirements or booking. |
+
+The template determines the layout and portrait/landscape format. It is no guarantee that every requested field is actually delivered. If a card is incomplete or there is a display error, do not conclude from missing fields that qualifications are missing; clarify the details with the agency. The provided information is not automatically reloaded continuously here.
+
+## Favorites, rights, and NOH assignment
+
+1. Check the person and the blocklist display. If a favorite has not yet been set, a displayed block prevents selection. To mark as a favorite, click the gray favorite icon, not just the person row.
+2. The interface requires the editing capability delivered by the server from **create & edit order**. Viewing only is not approval to make changes. If the right is missing, the favorite handler will not send anything. However, a visually blocked area or a visible menu item does not prove a general technical authorization for every other action.
+3. In a normal order, the favorite is requested immediately. After a successful response, it appears as set; the set favorite can be toggled there again. The preference applies to requests for the same person from the same publication, not just one visible day cell. It is neither wishlist maintenance nor a personal assignment commitment.
+4. For an order marked as **NOH**, setting it first opens a confirmation prompt for automatic assignment. Without **Yes**, especially if **No** is chosen, this favorite request is not sent. Confirm only if the assignment effect is intended.
+
+**NOH is not an informal favorites list here:** confirmation can assign available free positions in the order from today onward to suitable accepted or automatically accepted applications from this person. Existing overlaps or a lack of free positions can prevent individual assignments. The prompt is therefore not a promise that every assignment will be covered without exception. The set favorite **cannot be switched back** in this view for NOH. For a correction or cancellation, contact the responsible staffing planner; removing it from a wishlist would not be a substitute.
+
+Then check the staffing plan again. The saved favorite, an assignment, and an explicit confirmation by the person are different states. Individual assignments and notifications may be processed separately; there is no delivery or full-coverage guarantee. During the favorite request, there is no separate reliable send lock or feedback for each error. Do not click repeatedly if no response appears; first reload and have it checked again.
+
+## Open CV and download Sedcard as PDF
+
+**Open CV** is offered only if the agency has shared the CV with the sedcards and a CV is reported for the person. Click it to load the file in a new tab. The file request checks the agency/customer relation of the order, the release of this sedcard, and the existing CV. A visible button does not guarantee that the file can still be retrieved. If the file is denied or missing, the tab opened in advance is closed and an error message is shown. Also check the pop-up settings; a blocked new tab is not proof of missing rights.
+
+The PDF export button, by contrast, downloads the **displayed sedcard** as `sedcard.pdf`; its label may appear in English. It is not the CV download and not a complete personnel file export. The card is fitted as an image onto an A4 page; portrait/landscape orientation follows the template. The profile picture is loaded separately for the export. If that fails, the file may be created without a picture. If there is an export error, a comprehensible message may be missing. Open the saved file and check the content, readability, and image before using it.
+
+Neither download nor PDF export changes favorites, staffing, or the release. Downloaded copies are not automatically removed if the release changes later. Handle these personal documents with appropriate care.
+
+## Export planning to Excel
+
+At the top, select **time recording sheet** when the staffing plan has loaded. The action requests an Excel file for the loaded locations, days, and roles, with date, personnel number, first/last name, role, and start/end. There is **no additional selection or column-configuration dialog** here. Collapsed days or roles are not excluded from the export for that reason. This is not the order list and not a change to the assignment.
+
+Loaded days, locations, and roles, as well as exportable planning data, are required. An empty selection or missing assignment data can prevent creation. The file opens in a new tab after the response. A blank tab or missing error message is not a successful download; check the saved file as well as the date and names. Especially if the device time zone differs, do not trust the exported days without checking them. Free or external positions may contain different or empty personnel data; the export is not a commitment list, payroll statement, or legal working-time check.
+
+## Follow-up assignment: select date, role, and times
+
+1. Click **follow-up assignment** for the correct internal person. The dialog copies the person, original assignment, role, and start/end as initial values. The original shift is not extended or moved by this. Shift data and a duplicate check are loaded first; if loading fails, the dialog may not appear.
+2. Check the date: the suggested day is the day after the selected assignment, but at least **tomorrow according to the browser date**. That is not a general indication of the person’s availability on that day. The date limit is set when the view opens; if the view has been left open overnight, reload it.
+3. Select the desired existing role from the loaded role list. A different role can also be linked to a different location. Changing the role does **not automatically transfer other shift times**. The earlier planned shift selection-list path is not active here.
+4. Check **from** and **to** in the time fields in 24-hour format. First enter the date and times completely. Selecting via calendar/time picker and changing the role trigger a duplicate check again. Simply typing in a calendar field can, however, change the value without triggering this check again. After free-text changes, use the selection function and verify the details before sending. Do not treat empty, implausible, identical, or overnight times as automatically validated from a business perspective.
+5. A notice of an existing invitation or a follow-up assignment request already sent blocks the send button. The check refers to the person, order, role, date, and exactly the same start/end time; it is **not a general collision, availability, or working-time check**. Even a request that was edited earlier can continue to block this combination.
+6. **Cancel** or the cross closes the dialog without a new follow-up assignment request. When opened again, the initial values are reloaded; inputs that have not yet been sent are not a saved draft.
+
+Wait for the check after making changes. With rapid changes, older responses can affect the warning display; while a check is running, the send button is not reliably locked. A delayed response can still arrive even after canceling. If the warning and the fields do not match, do not send on suspicion; reopen the view. A disabled button or a missing hint does not replace checking the actually saved state.
+
+## Send follow-up assignment: confirmation, NOH, and actual effect
+
+**Send request** first checks whether person, role, date, and both times are present, and then opens a separate yes/no confirmation. **No** does not request a follow-up assignment. Only **Yes** sends the request. Check the fields before confirming; an open confirmation prompt is not already a saved order. There is no additional customer decision here about pay, expenses, rates, breaks, dress code, or documents. Their adoption from the previous assignment is not guaranteed by the follow-up assignment dialog; clarify any necessary service conditions with the agency.
+
+| Processing | Meaning |
+| --- | --- |
+| Normal flow | A new request is saved as pending. The message that sending was successful is not a personal commitment and **is not proof of an email being delivered to project management or HR**. Clarify the further processing status with the agency. |
+| Automatic NOH processing | The current customer NOH configuration, or otherwise the agency configuration, can trigger automatic acceptance outside the configured business hours. An existing customer configuration set replaces the agency default, even if it turns NOH off. The buffer shortens the business-hours window considered regular. This does not depend solely on the order’s previously saved NOH flag. The confirmation prompt with a reference to agency confirmation therefore does not guarantee manual review. |
+| Further processed request | A suitable shift is used or newly created for the selected role and time. The need for the day is increased by one or created with one; this also adds a free assignment slot at first. A missing location day is added, and missing demand rows for other shifts at that location can be created with zero. If necessary, an open invitation is created for the person. **An automatically accepted follow-up assignment request is not automatically a confirmed staffing assignment.** |
+
+The invitation uses information from the original publication; it is not a complete copy of all previous assignment conditions. Notification processing and a message about acceptance are triggered in the further-processing path, but their actual delivery is not thereby proven. Past appointments are rejected during this further processing. An identical request entry that already exists prevents a new send attempt; this is not comprehensive protection against any parallel or substantively conflicting change.
+
+On success **and** in the case of a transport error, the dialog can be closed and cleared. The overview does not then reload automatically. A success message is not checked against all substantive response content. Conversely, an error message does not prove that nothing has been saved yet: request creation and subsequent further processing have different limits. Before sending again, have the order and request status checked first. A later **Cancel** does not pull back a request or invitation that has already been sent; there is no undo/remove button for that in this view.
+
+Order access, department assignment, editing rights, and customer/agency configuration are separate prerequisites. Visible navigation, a button that is not disabled, or a successfully accepted request are **not a general security or performance guarantee**. If rights are missing or the status is unclear, involve the responsible administration instead of sending again with different data.
+
+
+## Safely classify steps, loading state, and permissions
+
+Open the correct order via its row in **Orders**. **Order details**, **Planning details**, and **Summary** are the first three steps of an existing order. A new entry starts with the basic data. The step headings switch the view; they are not a shared save, release, or undo button. Individual fields may already have been saved beforehand.
+
+For **Draft**, **Approval pending**, and **Rejected**, resources, staffing planning, and evaluation are not shown. Otherwise, the sequence depends on the loaded data: with personnel suggestions, resources at position 4, staffing planning at position 5, and, if applicable, evaluation at position 6; without suggestions, staffing planning at position 4 and, if applicable, evaluation at position 5. Evaluation requires loaded past assignments. The step number alone is therefore not a stable direct link. After submission, reopen the order and select the **step name**.
+
+An invalid order address can take you back to new creation; an access or loading error can take you to the order list. Check the order name and status there before entering data again. An empty step, a step briefly visible, or a finished loading indicator is not proof of a complete permission or data check. When switching steps, an access check runs, but it does not reliably wait for the result before the view changes. Do not correct stale links and changing numbers while loading by repeatedly clicking: reopen from the list.
+
+View rights, create/edit rights, and submission rights are separate. The responsible client buyer, creator, customer/agency relation, and departments can affect different checks depending on the action; a visible step does not prove the right to make changes. The shared yes/no confirmation stores only the action that is confirmed each time. **No** does not roll back earlier changes.
+
+## Summary: quantities, hours, and cost preview
+
+Open **Summary**, wait for the data, and check the order name. The page is a **read-only preview**, not an editor for times, quantities, or conditions. For changes, **Back** takes you to **Planning details**. If present, **Next** only moves to the next section.
+
+| Display | Check before submitting |
+| --- | --- |
+| Location and period | The location heading shows the first and last stored location day. The role heading preferably uses days with positive demand, otherwise location days. These periods are not necessarily identical. Correct missing or empty days in the basic data; do not treat an incomplete preview as a complete order. |
+| Role and daily breakdown | Open the days at the role arrow. Displayed are date, number of assignments, hours, and, if applicable, a CHF range. The number of assignments sums the planned demand, **not confirmed persons**. Check start/end and the individual breaks in Planning details; the summary shows aggregated hours rather than every shift time. |
+| Role/location total | Hours are calculated from duration minus interruptions and multiplied by demand. Existing partial-shift interruptions replace the usual break deduction; they are not added on top. Night times can include the following day; the same start/end time is not automatically a full day here. The location arrow opens the costs per day. |
+| Overall summary | Identical roles are consolidated across locations. The total CHF range comes from the calculated daily values. Expanding/collapsing does not save anything. |
+
+The cost estimate uses the stored minimum/maximum values of the roles. Missing or zero-value conditions can hide daily costs even though demand exists. A blank or zero display is therefore **not proof of free assignments or missing demand**. The display is not a binding quote, invoice, wage, or legal check. If the order originated from a project, a condition notice appears; clarify prices and service conditions with the agency. An additional notice text may appear in a substitute language if none is stored for the selected language.
+
+For restricted departments, roles and costs may be missing. Clarify the notice before sending. Reopen after changes and compare quantities with the planning. Do not ignore persistent loading, missing values, or an error message by simply submitting anyway. In this view there is **no additional condition or terms-and-conditions consent box**, no separate preview export, and no direct rate editing.
+
+## Separate saving, approval, submission, and publication
+
+| Process | What changes and what is not proven |
+| --- | --- |
+| Save draft | Basic data and individual planning changes are saved. This is neither an approval request nor a staffing publication. |
+| Request approval | Selected approvers receive a dispatch job for personal links; the order becomes pending. Sending a link is not approval. |
+| Approval decision | A person approves or rejects. Rejection can return the order as a rejected draft. Only the required overall decision moves it forward; if the status is contradictory, involve administration. |
+| Submit order | The status changes to submitted. In the direct route, if the project type is missing, role templates can be applied or NOH processing can be triggered. This is not merely a draft save. The approval route has its own further processing and is not identical to the direct route in all details. |
+| Automatic NOH processing | Customer configuration, or agency configuration as a fallback, can provide for automatic processing outside regular times and depending on the assignment start. During this, the project type and responsibility can be set, role templates applied, the order published, and invitations prepared. A job accepted for this processing is not yet proof of its successful completion. |
+| Publication, invitation, assignment, and notification | These are separate steps. A published order or open invitation is not personally confirmed staffing. A notification job does not prove delivery. |
+
+The summary does not have a separate **Publish** or **Assign staff** button. Do not rely on automatic budget approval from the cost preview either. After submitting, check the status in the list and then the actual staffing in Shift Planning. Closing the result dialog or returning to the list does not revoke a process that has already started. For unclear intermediate states, contact the responsible agency instead of submitting again.
+
+## Table rows, booking status, and further actions
+
+Click the row of the correct order to open its basic data. **ADD ORDER** creates a new one if you have the right to create. There is **no** general copy, archive, review/approve, or cancel action in this native list. The approval decision is made via the personal link; the trash bin on the draft is a different action.
+
+Red notices indicate open follow-up assignment requests, not automatically a missing order approval. In the submitted tab, the booking status bar distinguishes confirmed, assigned, free, and external shares. Assignment is not a personal commitment. Overbooking is included in the percentage display; a color or percentage value alone is not a reliable proof of full staffing.
+
+Clicking the notice or bar attempts to open a numbered follow-up step. This number is chosen according to assignment counts, not according to the resources actually loaded; in addition, the row click may be triggered as well. Therefore, if the target is wrong, open the order normally and select **Shift Planning** by name. The past list does not show a corresponding booking bar. Check the status and the specific person assignment in the appropriate detail view, not by inferring it from navigation or a red dot.
+
+## No additional export or email-copy sidebar
+
+In the current order overview, **EXPORT ORDERS** goes directly to the Excel sheet for orders. From there, there is **no reachable additional dialog** for selecting individual orders, employee fields, date/role/location groups, PDF language, file type, or export criteria. Likewise, there is no active way there to copy employee email addresses. Do not transfer such options from other planning views into this list.
+
+For the **time recording sheet**, instead open the specific order and its **Shift Planning**; this separate export is described above. The absence of an export sidebar in the order list is not proof of missing rights and is no reason to send the order export again.

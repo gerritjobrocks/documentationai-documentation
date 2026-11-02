@@ -1,0 +1,67 @@
+---
+title: "Edit locations and use them correctly"
+description: "Customer and agency locations, address search, and effects on existing projects."
+---
+
+# Edit locations and use them correctly
+
+## Find locations and choose the correct area
+
+**As an agency:** Open **Locations** in the main menu for the agency locations. To access the locations of a specific saved customer, open that customer from the **customer list** and select **Locations**. Only from this entry point is the loaded list limited to that customer; the table and edit dialog correspond to location management.
+
+**After creating a customer:** After the first save, select **Back → customer list → reopen saved customer** before working in the locations tab. In the still-open creation form, the list that is already loaded may still contain the agency locations. Switching tabs alone does not reload the location list. Reloading the creation form in the browser does not replace this path. Check the customer name before selecting, editing, or deleting a location.
+
+**In the customer portal:** Open **Locations** in the main menu. The menu item depends on access to orders or Self Service. Customer locations and agency locations are not the same list.
+
+Enter a search term in the search field. You can sort the table by the Name and Address columns; the map icon opens the saved position. The table itself has no **Add** button. For a new job site, start in the [project creation at the location](./03_create_project.mdx), not with a made-up table action.
+
+## Edit name, address, and map position
+
+1. Open the appropriate location section and click the edit icon for the location.
+2. Change **Database name**. The name must not be empty and may contain no more than 255 characters. A name that is already in use may be rejected; in that case, look for the existing entry instead of blindly assigning a second designation.
+3. To use a different address, enter the search text in the **Address** field and select the appropriate suggestion. Simply typing text is not reliable proof that the map position has changed. Check the pin.
+4. For a place without a matching address, you can enter a pair of coordinates and select the offered coordinate match. Alternatively, move the existing pin or click the desired map position. The map is only displayed when coordinates are available.
+5. Wait until address resolution is complete. While it is running, **Save** is disabled. Check name, address, and pin together and select **Save**.
+6. Check the feedback and the updated table entry. With **Cancel**, you discard the unsaved changes in the edit dialog.
+
+**Important for existing projects:** If the location is already used in a project, those projects remain at their previous location state. The changed location is available for new selections; a stored default location for new customer orders follows the change. An address correction in the location list is therefore not an automatic correction of all projects already created. Check affected ongoing projects separately.
+
+**Error help:** If the map service fails, do not save an unchecked old position as the new address. Select it again and check the pin. If saving is rejected, the dialog remains open; if the network response is unclear, reload the location before making further changes. A moved pin in the open dialog alone is not proof of a save.
+
+**Address label and pin are separate:** Freely entered address text can be saved as a label without changing the previous coordinates. Clearing the address field does not automatically remove an existing pin either. For an actual change of location, select a suggestion or move the pin and check both. When moving it, the pin remains exactly at the selected point; if the address search does not find text for it, the field can instead display the coordinates.
+
+## Create a location with a name and map point
+
+The location table has no create button. Start in the location area of **project creation**. For a customer location, as an agency with the required Self Service edit rights, choose the Self Service entry point and the correct customer; in a regular agency project, an agency location is created even if a customer is selected. In the customer portal, a location is created for the logged-in customer. After creation, check in the relevant location list where the entry was saved.
+
+1. Search for the place in the location search field. You can select an existing database hit directly; this does not create a second location.
+2. For a new map result, check the preview and click **Create location**. Alternatively, click a point on the map. A position selected from coordinates can also be used without a matching street address; the entered position remains authoritative.
+3. In the name dialog, fill in **Database name**. If a named map result has been selected, the name may already be prefilled; after a free map click, you must enter it. The field for the map label, if applicable “Google Location Name”, is read-only. It is not a second freely editable address field.
+4. Select **Save** and wait for the response. Only then check the added entry in the location selection as well as the name and map pin. With **Cancel** or the cross before the save action, no location is created.
+5. For the actual project planning, you must still assign dates to the selected location and save the project. **Saving the location is not saving the project** and not publishing. A location that has already been created is not automatically removed by leaving the project later.
+
+If a database name is already in use, look for the existing entry. If the map service fails, do not infer a supposedly successful creation from a closed dialog or a general message. The creation can even show an inappropriate success message for the customer selection; what matters is the saved location entry and its position. If the connection drops, first search by name in the correct area and only then decide whether to try again.
+
+## View the map and add missing coordinates
+
+**In the location list**, the map icon opens the saved position. The view can be moved, zoomed, and switched between map and satellite. The close cross ends only the view. If coordinates are missing, a notice appears instead; an empty map area is not proof that the location is missing.
+
+**In project creation**, the map shows selected locations. Clicking a pin opens or highlights the corresponding location entry. Dimmer available pins can be added as existing locations; no new master data is created for this. Moving and zooming the map loads suitable available pins. A search preview can be closed without creating a location. For archived projects or a pending order, the corresponding map changes are locked.
+
+**Fill in missing coordinates:**
+1. Under **Locations not shown on map**, select the existing location and **Place on map**. The location must already be saved for this.
+2. Check an offered position suggestion. Click the actual position on the map and, if necessary, drag the provisional pin precisely to the correct spot.
+3. Select **Save location** at the pin. Read the confirmation prompt: adding the coordinates can also make the distance warning when clocking in effective for existing projects at this location, which previously had no coordinates.
+4. Confirm only if the position is correct. Reload after the response and check it. **Cancel**, closing the pin tooltip, or **No** in the confirmation prompt does not trigger a coordinate save request.
+
+**Important difference:** This first-time addition of missing coordinates is not the location editing process with protected previous project states. It adds to the existing place directly. If coordinates already exist in the meantime, this addition process is rejected; the closed placement window alone then does not prove any change. To correct an existing pin, use the edit dialog in the location list and note its effect on existing projects.
+
+## Delete locations and verify results
+
+1. Open the appropriate agency or customer location list and search for the **Database name**. The search reloads the list by name; it is not a search across all address components. Name and address can be sorted; for longer lists, check the additional table pages.
+2. Select the trash can at the correct location. The **Yes/No** confirmation refers to deleting it, not removing it from a search result. With **No**, the location remains.
+3. After **Yes**, the deletion is requested immediately. The general customer profile button is not needed for this. Deletion permission is checked separately; a visible trash can does not guarantee authorization.
+4. If the location is used in at least one project through a project day or a role, the deletion is rejected. Do not delete ongoing planning just to bypass this lock. Instead, correct the location via **Edit**, without automatically changing previous project states.
+5. Reload the location list. After deletion, the response shown immediately may contain less address/map data; check the freshly loaded state before treating missing details as data loss. If necessary, also check a stored default location and any used contact/department assignments.
+
+If a change to the customer location does not appear in the list, check the agency/customer context and search text. In the event of a name collision despite an apparently empty customer list, have the administration also check the agency area. A location change or a change in the list is not an automatic correction of all existing projects. If rights are missing or the responses are contradictory, contact support with the area, location name, and feedback, without sharing confidential mission or personnel data publicly.
