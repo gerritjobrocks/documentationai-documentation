@@ -1,0 +1,67 @@
+---
+title: "Inviter des utilisateurs et gérer les rôles des membres"
+description: "Invitations, modifications de rôle, suppression et autorisations liées au rôle dans le profil d’agence."
+---
+
+# Inviter des utilisateurs et gérer les rôles des membres
+
+## Inviter des membres de manière ciblée
+
+Ouvrez **Profil d’agence → Gestion des utilisateurs**. La section requiert le droit d’afficher les paramètres et de gérer les utilisateurs. Le tableau affiche le rôle, l’e-mail, la date et l’heure de l’invitation, le client et le statut. Il comporte une sélection de page ; vérifiez les pages supplémentaires avant de recréer une invitation apparemment manquante.
+
+Choisissez **Ajouter nouveau** pour ouvrir **inviter un membre**. Renseignez l’e-mail, le rôle, la langue et le contenu de l’e-mail d’invitation. La langue peut être choisie séparément : anglais, allemand, français ou italien. Une nouvelle invitation démarre sans rôle ni langue présélectionnés.
+
+Les rôles d’agence disponibles sont **Admin**, **Project Manager**, **Project Supervisor**, **Recruiting Manager**, **HR Manager**, **Finance** et **Collaborateur**. S’y ajoutent **client admin**, **client buyer**, **client validator** et **client work validator**. Pour un rôle client, un **client** doit être sélectionné. Sans rôle client, cette sélection est verrouillée ; lors du retour à un rôle d’agence, l’affectation au client est effacée.
+
+**Inviter** déclenche un envoi réel ; ce n’est pas un aperçu. **Annuler** ou fermer rejette la boîte de dialogue. L’absence d’informations obligatoires ou d’un client empêche l’envoi. Après l’envoi, une fenêtre fermée ne constitue pas une preuve : vérifiez le message de réussite et la ligne du tableau. En cas d’erreur peu claire, rechargez d’abord le tableau au lieu de renvoyer immédiatement.
+
+## Comptes existants, renvoi et suppression
+
+Lorsqu’un e-mail correspond à un utilisateur existant qui n’est pas géré comme compte de collaborateur, une invitation à rejoindre est envoyée au lieu d’une nouvelle inscription. Une adhésion active identique ou une invitation déjà ouverte peuvent être rejetées. La même adresse avec un autre rôle ne constitue pas automatiquement la même relation d’adhésion. Une adresse d’un compte de collaborateur existant peut être refusée dans le procédure d’adhésion.
+
+**Renvoyer l’invitation** effectue un autre envoi réel de courriel. En cas de plusieurs invitations pour la même adresse avec différents rôles, vérifiez d’abord l’affectation concernée ; le processus d’envoi recherche l’adresse et l’agence et ne constitue pas un mécanisme de sélection fiable par rôle. Un affichage de réussite ne garantit pas la distribution.
+
+**Supprimer** ouvre une confirmation. Il ne s’agit pas seulement de masquer une ligne du tableau : une invitation ouverte, pas encore acceptée, est révoquée. Pour un membre existant, l’affectation correspondante à l’agence/client/rôle peut être supprimée. Si le compte a d’autres adhésions, elles restent en place ; pour la dernière adhésion, le compte utilisateur peut aussi être supprimé. Vérifiez donc la personne, le rôle et l’affectation au client avant de cliquer sur **Oui**. Contrôlez ensuite le tableau mis à jour. **Non** annule.
+
+Une réinvitation proposée d’un utilisateur supprimé est une opération distincte. Ne la confondez pas avec un nouveau profil de collaborateur ni avec la restauration de l’ensemble des anciens droits.
+
+## Modifier le rôle d’un utilisateur
+
+Les administrateurs peuvent ouvrir la modification des rôles dans la gestion des utilisateurs. Dans la boîte de dialogue de modification, l’e-mail, la langue et le message restent verrouillés ; seuls le rôle et, le cas échéant, le client peuvent être modifiés. Pour un rôle client, la sélection du client est requise. **Avant d’enregistrer :** si vous passez à un rôle client et que le client attribué change, l’affectation à **tous les départements du client cible** est déclenchée. En passant d’un rôle client à un rôle d’agence, les **affectations au client et aux départements sont supprimées**. Vérifiez donc au préalable si cette portée d’accès est souhaitée.
+
+**Enregistrer** applique le rôle et le client et recharge le tableau des invitations ; **Annuler** rejette la modification de la boîte de dialogue. L’affectation aux départements s’exécute en arrière-plan et peut encore être en attente après la fermeture de la boîte de dialogue. Après l’enregistrement, contrôlez **le client et les départements** ; si le traitement est encore en cours, rechargez plus tard au lieu de conclure à une affectation terminée à partir du masque fermé.
+
+Une modification directe du menu déroulant du rôle dans le tableau dispose de sa propre voie d’enregistrement immédiate. Pour le passage à un rôle client avec affectation concrète à un client, utilisez la boîte de dialogue complète de modification. Vérifiez ensuite les valeurs du tableau. Le rôle ne décrit pas à lui seul l’étendue réelle : les autorisations fonctionnelles et, pour les utilisateurs clients, le contexte client et département restent pertinents.
+
+## Rôles des membres et droits fonctionnels
+
+Sous **gérer les rôles des membres**, vous voyez les fonctions en lignes et **Admin**, **Chef de projet**, **Superviseur de projet**, **Recruiting Manager**, **HR Manager**, **Finance** et **Collaborateur** en colonnes. L’accès requiert l’autorisation portant le même nom. La sélection s’applique au rôle dans l’agence, pas seulement à un utilisateur individuel.
+
+Cochez ou retirez une case activable dans la colonne souhaitée. La modification est enregistrée immédiatement ; il n’existe pas de bouton supplémentaire **enregistrer les privilèges**. Toutes les combinaisons ne sont pas activables : l’interface limite les cellules modifiables selon le rôle. **Admin × gérer les rôles des membres** ne peut pas être désactivé. Les droits de portail spécifiques au client et la ligne IBAN masquée ne se configurent pas via cette matrice d’agence.
+
+Si **Superviseur sur site** est retiré et que le rôle est déjà utilisé dans des projets en tant que chef d’équipe, une confirmation apparaît. **Non** rétablit la coche ; **Oui** enregistre le retrait. Vérifiez les responsabilités concernées avant de confirmer.
+
+La matrice d’agence est séparée des droits dans le profil client. Les utilisateurs clients ont besoin, en plus des autorisations fonctionnelles, du bon contexte client et département. Le libre-service et les fonctions de commande ne sont pas accordés simplement parce qu’une colonne d’agence correspondante existe. Après une modification, vérifiez le message de réussite et la matrice rechargée ; les boutons visibles ne constituent pas un engagement complet pour l’ensemble des autorisations serveur.
+
+## Quelles cellules de la matrice d’agence sont activables
+
+Une case grisée indique une combinaison non activable ; cela ne signifie pas automatiquement « droit désactivé ». L’aperçu suivant décrit la **modifiabilité**, et non l’autorisation présélectionnée ou effective d’une agence. La marque actuelle doit être vérifiée séparément. Toutes les fonctions mentionnées doivent en outre être chargées en tant que ligne.
+
+Pour **Admin, Chef de projet, Superviseur de projet, Recruiting Manager, HR Manager et Finance**, les groupes de fonctions communs suivants sont activables :
+
+- Projets : créer, voir les siens/tous, modifier les siens/tous, supprimer et annuler.
+- Collaborateurs : voir/modifier tous les profils, gérer les listes, afficher/modifier le statut et réinitialiser le mot de passe.
+- Validation du travail : afficher et modifier ; créer un export de paie et importer un fichier de paie.
+- Clients : voir et gérer ; modifier les modèles.
+- Paramètres : modifier les données de l’entreprise, gérer les crédits, gérer les utilisateurs, modifier la visibilité publique ; options, champs, notifications e-mail, expéditeur e-mail et Twilio avec les lignes de lecture/modification proposées ; accès lecture NOH et modification des paramètres du portail client.
+- Responsable de la saisie des temps (Superviseur sur site) : tenir compte de la confirmation de conflit distincte lors du retrait.
+
+S’y ajoutent des différences :
+
+| Colonne de rôle | Activable ou verrouillée en plus |
+| --- | --- |
+| Chef de projet, Superviseur de projet, Recruiting Manager, HR Manager, Finance | **afficher les paramètres** et **gérer les rôles des membres** sont également activables. Leurs cellules de modification proposées sont identiques entre elles. Les lignes du propre profil de collaborateur, l’image de profil de l’employeur et les quatre lignes de projet libre-service côté agence ne sont pas librement modifiables ici. |
+| Admin | Voir/modifier en plus son propre profil de collaborateur, mettre en favori les suggestions de collaborateurs, évaluer les collaborateurs, accès en lecture aux données de l’entreprise/crédits, modifier l’image de profil de l’employeur et créer, voir tous, modifier tous, supprimer/annuler les projets libre-service. **gérer les rôles des membres** et **afficher les paramètres** ne sont pas librement basculables dans cette colonne. |
+| Collaborateur | Seuls **voir son propre profil de collaborateur** et **modifier son propre profil de collaborateur** sont activables ; les autres cellules fonctionnelles visibles sont verrouillées. |
+
+Les rôles clients ainsi que les droits de commande client, les droits de paie/frais du client et les lignes de libre-service propres au client sont gérés dans la [matrice client](06e_agency_client_portal.mdx#rôles-clients--colonnes-distinctes-et-confirmation-de-conflit). La ligne IBAN est masquée dans la matrice d’agence. Ne déduisez pas d’anciennes infobulles qu’une option supplémentaire est proposée. La matrice ne remplace pas la vérification qu’un accès donné est autorisé côté serveur ; notamment, ne confondez pas l’accès en lecture et la modification.

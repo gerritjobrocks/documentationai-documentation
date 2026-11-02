@@ -1,0 +1,127 @@
+---
+title: "Configurer le portail client depuis l’agence"
+description: "Gérer les heures de bureau, les valeurs par défaut et les spécifications vestimentaires dans le profil de l’agence."
+---
+
+# Configurer le portail client depuis l’agence
+
+## Indicateurs et prérequis
+
+Ouvrez **Profil de l’agence → Paramètres du portail client**. Les zones de modification nécessitent le droit relatif aux paramètres du portail client. Cette page correspond à la configuration de l’agence, et non au tableau de bord d’un client connecté.
+
+**Équivalent temps plein (ETP)** contient les heures d’une personne à temps plein par mois. **Journée de travail à temps plein** contient le temps de travail d’une personne par jour. Les deux champs se sauvegardent chacun en quittant le champ. **Enter** n’est ici pas une étape d’enregistrement distincte. Contrôlez le message de succès et rouvrez la page. Saisissez des grandeurs de référence opérationnelles ; cette saisie n’est ni une paie ni une validation relevant du droit du travail.
+
+Via **Règles vestimentaires** vous ouvrez l’éditeur séparé pour les options vestimentaires proposées. Ces définitions sont à distinguer des [modèles de projet et de rôle enregistrés](06_templates_and_reuse.mdx).
+
+## Heures de bureau et consultant virtuel
+
+Sous **Consultant virtuel en dehors des heures de bureau**, vous trouvez le commutateur **ACTIVER/DÉSACTIVER les heures de bureau**. **Avant l’activation**, les informations suivantes doivent déjà être enregistrées :
+
+- **Heures de bureau** : remplissez le tableau hebdomadaire et enregistrez avec **Enregistrer** sous le tableau.
+- **Type de projet par défaut** et **chef de projet par défaut** : sélectionnez-les dans leur section et confirmez avec **Enregistrer**.
+- **Modèle de publication** : sélectionnez-le et quittez le champ afin que la sélection soit enregistrée.
+- **Modèles standards des rôles clients concernés** : le système vérifie les rôles chez les clients de votre agence qui ont un utilisateur avec le rôle **client admin**. Il s’agit des rôles clients avec leurs modèles, et non des rôles d’utilisateur de la matrice des autorisations.
+
+Lors de l’activation ou de la désactivation, une requête est déclenchée immédiatement. Si les prérequis sont refusés, l’interface affiche les messages et remet le commutateur sur désactivé. Si le système signale un modèle standard manquant pour un rôle chez un client, ouvrez précisément ce client, complétez et enregistrez le modèle standard pour le rôle client nommé. Complétez également les autres informations manquantes signalées dans leurs sections respectives, puis réactivez seulement ensuite. Une position visuellement activée ne confirme pas à elle seule une automatisation opérationnelle.
+
+Dans **Fixer les heures et les jours d'ouverture du bureau**, vous saisissez pour chaque jour du lundi au dimanche l’heure de début, l’heure de fin et la case du jour ouvrable. Les heures sont saisies au format heures:minutes. Un jour ouvrable doit être marqué séparément des deux heures. Cliquez ensuite sur le bouton **Enregistrer** directement sous ce tableau ; les champs horaires individuels ne se sauvegardent pas en quittant le champ. Attendez le message de succès et contrôlez l’aperçu hebdomadaire rechargé.
+
+La configuration de ces valeurs n’est pas une simulation sans engagement : elle peut influencer les processus en aval en dehors des heures de bureau. Définissez les horaires et les responsabilités avant d’activer. Les options masquées ou non proposées pour l’acceptation automatique ne constituent pas des commutateurs supplémentaires utilisables sur cette page.
+
+## Valeurs par défaut et modèle de publication
+
+Sous **Définir les valeurs par défaut : type de projet et chef de projet**, vous choisissez un type de projet existant et une personne de contact proposée. Après une modification de la sélection ou l’effacement d’une sélection, cliquez sur **Enregistrer** dans la même ligne. Une sélection laissée ouverte sans changement ne déclenche pas d’enregistrement. Les types ou personnes manquants doivent d’abord exister dans les données de base correspondantes ; un nom libre ne remplace pas une entrée de liste.
+
+Sous **Définir un modèle pour la publication**, vous choisissez un modèle de notification existant. Après la sélection ou l’effacement, quittez le champ : ce n’est qu’à cette étape que la sélection modifiée est enregistrée. Il n’existe pas de bouton Enregistrer supplémentaire actif pour cela. La modification du contenu du modèle se fait séparément dans la gestion des modèles.
+
+**Définir la période tampon** attend des minutes et se sauvegarde en quittant le champ. Le gestionnaire d’enregistrement ignore les valeurs vides ou falsy ; pour supprimer, ne vous fiez pas à une saisie vide, mais vérifiez la valeur rechargée. Toutes ces voies de sauvegarde sont distinctes. Une sauvegarde réussie des heures de bureau ne confirme pas non plus le type de projet, la personne de contact, le modèle ni le tampon.
+
+## Créer, traduire et supprimer les spécifications vestimentaires
+
+Via le lien dans les paramètres du portail client, vous ouvrez **Configurer les options relatives aux spécifications vestimentaires**. Les quatre catégories sont **Haut**, **Bas**, **Chaussures** et **Accessoires**. Dans la catégorie appropriée, choisissez la fonction d’ajout. Dans la boîte de dialogue, saisissez un titre dans au moins un registre linguistique : English, Deutsch, Français ou Italiano.
+
+La fonction de traduction utilise un texte d’une autre langue déjà rempli et écrit d’abord le résultat dans le registre cible. Vérifiez-le et cliquez sur **Enregistrer** ; contrairement à la description publique de l’agence, la traduction vestimentaire n’est pas enregistrée définitivement de manière autonome. Sans au moins un titre non vide, la boîte de dialogue reste ouverte avec un message de champ.
+
+Via **Modifier** sur une option, vous ouvrez les titres existants, les modifiez et enregistrez. **Annuler** réinitialise la boîte de dialogue. **Supprimer** exige une confirmation et supprime l’option de la catégorie après une réponse réussie. Vérifiez ensuite à nouveau la liste et la langue. Cela modifie les options proposées, mais pas automatiquement les textes vestimentaires déjà saisis dans chaque projet.
+
+L’administration de l’agence et une gestion vestimentaire intégrée spécifique à un client peuvent utiliser la même interface, mais enregistrent dans un contexte différent. Vérifiez donc si vous êtes venu depuis le profil de l’agence ou depuis un profil client précis.
+
+## Ouvrir les paramètres d’un client spécifique
+
+En tant qu’utilisateur de l’agence, ouvrez le **profil client → paramètres** souhaité. Vérifiez d’abord le nom du client. Ici, on gère les paramètres pour ce client, et non les valeurs par défaut de tous les clients dans le profil de l’agence. Les sections options, notifications par e-mail, compte e-mail sortant et Twilio disposent d’autorisations de modification séparées ; l’autorisation d’agence **Gérer les clients** permet cette modification. Une section visible seule ne signifie pas que vous avez le droit de la modifier.
+
+Le formulaire de paramètres intégré enregistre de lui-même : les commutateurs et les listes de destinataires immédiatement, les autres valeurs en quittant le champ ou via le bouton correspondant. L’indication générale en bas du profil client, qui invite à enregistrer les modifications avec le grand bouton **Enregistrer**, **ne remplace pas** ces modes d’enregistrement. Les modifications déjà enregistrées automatiquement ne sont pas annulées en quittant le profil. Après chaque modification, attendez la réponse et rouvrez la section client concernée.
+
+Les **Paramètres du portail client** spécifiques au client avec ETP, jour de travail, heures de bureau et modèles standards ne sont affichés que pour les utilisateurs de l’agence disposant de la gestion des clients. **Gérer les rôles des membres** dispose d’un accès propre. La configuration d’un client n’est pas équivalente à une invitation ou à une approbation de commande terminée.
+
+## Options client : lieu standard, matrice et pauses minimales
+
+Sous **Options → lieu de commande standard**, vous pouvez choisir un site client proposé ou rechercher un lieu. Un lieu de base de données existant est enregistré directement lors de la sélection. Un résultat de recherche hors base de données ouvre d’abord la boîte de dialogue du lieu ; **Enter** dans le champ de recherche ouvre la saisie d’un lieu personnalisé. Ce n’est qu’après avoir terminé cette boîte de dialogue que le lieu est créé puis enregistré comme standard. Ce sont deux étapes, pas une transaction commune. Avec l’icône d’effacement, le lieu standard est supprimé immédiatement. Après le message de succès, rouvrez et vérifiez le lieu sélectionné ; un terme de recherche saisi n’est pas encore une sélection enregistrée.
+
+Les **paramètres du temps de travail** utilisent la même [commande de matrice et les mêmes règles](06b_agency_rules_fields.mdx#modifier-et-réinitialiser-la-matrice-du-temps-de-travail) que dans le profil de l’agence : cliquez sur la cellule, saisissez le nombre, enregistrez avec Enter ou en quittant le champ ; Escape annule la saisie en cours. Pour peak/rest, saisissez les deux valeurs. Les valeurs de type de projet propres au client peuvent être supprimées via la flèche de réinitialisation. Ici figurent les types de projet de ce client. Pour un type de projet propre au client, la règle est la suivante : valeur propre au type de projet, sinon standard du client, sinon standard de l’agence. Pour les types de projet propres à l’agence, la matrice de l’agence continue de s’appliquer. Une valeur standard du client vide ne signifie donc pas automatiquement qu’aucune règle ne s’applique.
+
+Sous **Pause minimale**, **Ajouter nouveau** ajoute une ligne avec **de (min)**, **à (min)** et **durée (min)**. La première commence à 0, les suivantes au terme précédent plus 1. Une nouvelle ligne ne peut être ajoutée que lorsque la dernière a une limite supérieure. Le début et la durée doivent être définis avant qu’un départ du champ n’enregistre la ligne ; la fin peut rester ouverte. Les modifications du début peuvent aussi enregistrer la fin de la ligne précédente. Corrigez les chevauchements ou l’absence de durée à l’aide du message d’erreur et rechargez le tableau. L’icône de suppression exige une confirmation ; les lignes non enregistrées sont uniquement supprimées localement.
+
+Un tableau client vide n’affiche aucune ligne agence copiée. Pour les projets et commandes en Self Service, on privilégie une ligne de pause client correspondant à la durée de travail : la durée de travail doit être supérieure à « de » et inférieure ou égale à « à » ; un « à » vide laisse l’intervalle ouvert vers le haut. S’il n’existe pas de ligne client appropriée, on revient aux pauses de l’agence – même si d’autres lignes client existent. Les autres projets utilisent les pauses de l’agence. Un tableau vide n’est donc pas une preuve de « aucune pause ». La validité métier des valeurs doit être vérifiée indépendamment de l’utilisation de la fenêtre.
+
+## Alerte de lieu et rappels par client
+
+L’**alerte de lieu** est un curseur de 0 à 200 mètres par pas de dix. L’enregistrement a lieu au relâchement. **0 / OFF** supprime ici la distance propre au client ; pour les projets et commandes Self Service, la valeur de l’agence est alors utilisée. Cela ne constitue ni une désactivation garantie ni un contrôle strict à zéro mètre. Les autres projets continuent d’utiliser la valeur de l’agence. Vérifiez la valeur client rechargée et, en cas d’héritage, également la valeur de l’agence.
+
+Le commutateur pour les collaborateurs qui n’ont pas encore accepté leur affectation s’enregistre immédiatement pour ce client. Le processus de rappel lit cette valeur client, et ne reprend pas le commutateur de l’agence à la place. Le réglage concerne les rappels ultérieurs pour des affectations encore ouvertes ; il n’envoie pas de test lors du basculement. Attendez le message de succès et contrôlez l’état après avoir rouvert. Ne contournez pas un message d’erreur en actionnant à répétition le commutateur.
+
+## Destinataires d’événements pour un client
+
+Dans la section client **Notifications par e-mail**, il existe cinq listes : nouveau collaborateur dans le **pool client**, candidature à une mission, réservation autonome, acceptation et refus d’une mission. La première liste n’est pas la liste de l’agence pour les collaborateurs nouvellement enregistrés.
+
+Saisissez l’adresse et validez avec **Enter** pour l’ajouter comme entrée ; pour la supprimer, utilisez la fonction de suppression de l’entrée. Chaque modification enregistre immédiatement **les cinq listes actuellement affichées de ce client ensemble**. Un texte saisi mais pas encore confirmé n’est pas un destinataire. Après une erreur, rouvrez et vérifiez toutes les listes avant de poursuivre la modification.
+
+Pour la candidature, la réservation autonome, l’acceptation et le refus, on privilégie une liste client remplie ; si elle est vide, la liste d’agence correspondante peut être utilisée. Vider la liste n’est donc pas un moyen fiable de désactiver complètement l’événement. La liste du pool client est en revanche propre au client : sans destinataire, aucun e-mail de pool de ce type n’est déclenché. La configuration et la livraison ultérieure sont séparés ; il n’y a ici aucun envoi test.
+
+## Comptes de fournisseur sortants pour un client
+
+Sous **Compte e-mail pour les messages sortants**, vous gérez **e-mail, mot de passe, hôte, port et chiffrement**. Le port et le chiffrement sont des saisies textuelles, pas une liste d’options garanties du fournisseur. L’icône en forme d’œil modifie uniquement l’affichage du mot de passe. Cliquez sur **Enregistrer** dans cette section précise ; quitter les champs n’enregistre pas ces données de compte.
+
+Sous **Intégration Twilio → Compte SMS**, **Twilio Account, Twilio Token et Twilio Phone** doivent être sauvegardés ensemble via leur propre bouton **Enregistrer**. Même un token lisible à l’écran reste secret. Ne reprenez jamais de vraies valeurs de fournisseur dans des textes de support ou des captures d’écran.
+
+La configuration client ne remplace pas globalement le compte de l’agence : les voies d’envoi manuel vérifiées privilégient un compte client entièrement configuré lorsqu’un utilisateur envoie dans le contexte client, et utilisent sinon la voie de l’agence. Un enregistrement effectué par un utilisateur de l’agence ne signifie pas que tout envoi ultérieur de l’agence utilisera cet expéditeur. Des données fournisseur partiellement renseignées ne constituent pas un test de secours fiable. Vérifiez le message de succès et rouvrez les paramètres pour confirmer ; l’enregistrement ne confirme ni la connexion au fournisseur ni la livraison. Ces sections ne disposent d’aucun bouton de test. Un véritable envoi de courriel ou de SMS doit être convenu séparément et peut engendrer des coûts.
+
+## Activer l’approbation des commandes et confirmer le nombre
+
+Sous **Approbation des commandes**, configurez d’abord les comptes nécessaires avec le rôle client **client validator (Client Approver)**. Une telle appartenance supplémentaire d’un compte actuellement connecté autrement est également prise en compte dans le nombre. Un droit de fonction défini n’est pas la même chose qu’un compte approbateur existant. Activez **Approbation requise**, saisissez **1 ou 2** approbateurs requis et cliquez sur **Enregistrer** à côté du champ numérique. Le simple fait d’activer le commutateur n’envoie pas encore de demande d’activation ; ici, le nombre ne déclenche pas d’enregistrement automatique à la sortie du champ.
+
+S’il existe moins de comptes approbateurs que demandé, l’enregistrement est refusé et le paramètre précédemment chargé est restauré. Vérifiez le message et les affectations de comptes ; ne saisissez pas un nombre supérieur pour compenser des comptes manquants. Lors du rechargement, l’affichage tient compte des approbateurs existants et peut donc être inférieur à la demande précédemment enregistrée.
+
+**Désactiver** enregistre immédiatement la valeur **0** et désactive le champ numérique. Il n’existe pas de boîte de dialogue de confirmation supplémentaire pour cela. Pour désactiver, utilisez ce commutateur, et n’enregistrez pas 0 comme nombre d’approbations prétendument actif : la zone numérique peut alors afficher un message d’erreur alors que 0 a déjà été enregistré. Après chaque modification, rouvrez et contrôlez le commutateur ainsi que le nombre. La configuration elle-même n’approuve aucune commande individuelle et n’envoie aucune invitation d’approbation.
+
+## Valeurs de portail propres au client et limites de l’héritage
+
+**ETP** et **Journée de travail à temps plein** peuvent être saisis comme grandeurs de référence propres au client. Les placeholders affichent les valeurs de l’agence, et non des valeurs client déjà enregistrées. Une modification réelle se sauvegarde en quittant le champ ; Enter n’est pas un autre mode d’enregistrement. Une valeur enregistrée vide laisse s’appliquer la valeur de l’agence. Utilisez des valeurs entières en heures et vérifiez-les après avoir rouvert.
+
+Pour le consultant virtuel, une autre limite s’applique : tant qu’aucune configuration propre au client n’a été enregistrée, la configuration de l’agence peut s’appliquer. Dès qu’une configuration propre existe, elle est utilisée comme **ensemble complet** ; les valeurs individuelles vides ne sont pas automatiquement complétées à partir de l’agence. L’enregistrement d’une modification d’ETP transmet aussi l’ensemble actuel des paramètres du consultant. Avant le premier enregistrement, vérifiez donc ensemble les heures de bureau, l’activation, le type de projet, le chef de projet, le modèle de publication et le tampon. Les heures de bureau affichées initialement peuvent provenir de l’agence sans être déjà enregistrées comme valeurs client.
+
+| Saisie | Utilisation et limite d’enregistrement |
+| --- | --- |
+| Consultant virtuel en dehors des heures de bureau | Le commutateur s’enregistre immédiatement ; aucun aperçu sans engagement. |
+| Heures de bureau du lundi au dimanche | Début et fin en heures:minutes ainsi que marquer le jour ouvrable, puis **Enregistrer** sous le tableau hebdomadaire. Ce bouton seul reprend le tableau modifié dans la configuration du client. |
+| Type de projet et chef de projet | Sélectionner des entrées de liste existantes, puis **Enregistrer** à côté. Aucun nom libre en remplacement. |
+| Modèle de publication | Sélectionner un modèle de notification ou vider la sélection, puis quitter la sélection. Le contenu est modifié séparément dans l’éditeur de modèles. |
+| Période tampon | Saisir des minutes et quitter le champ. |
+
+Ces actions transmettent à chaque fois ensemble les valeurs de portail actuelles. Ne travaillez pas simultanément dans plusieurs fenêtres ouvertes du même client. Le simple fait de redonner le focus ne génère pas de succès d’enregistrement supplémentaire. L’éditeur ne propose pas de bouton propre « Supprimer la configuration client et revenir entièrement à celle de l’agence ». Le fait de vider des champs individuels ne rétablit pas cet héritage complet. Après succès, rouvrez et vérifiez toutes les valeurs ; un commutateur d’activation enregistré ne signifie pas encore qu’un processus automatique a réussi.
+
+**Règles vestimentaires** ouvre une boîte de dialogue propre à ce client. Là, choisissez Haut, Bas, Chaussures ou Accessoires, ajoutez/modifiez des options, saisissez au moins un titre en English, Deutsch, Français ou Italiano et enregistrez ; vérifiez la traduction avant d’enregistrer. La suppression exige une confirmation. La fermeture de la grande boîte de dialogue n’est pas une étape supplémentaire d’enregistrement et n’annule pas les modifications déjà enregistrées. Rouvrez ensuite et contrôlez les options du client. L’[éditeur général des vêtements](06e_agency_client_portal.mdx#créer-traduire-et-supprimer-les-spécifications-vestimentaires) décrit les différentes actions.
+
+## Rôles clients : colonnes distinctes et confirmation de conflit
+
+La matrice propre au client **gérer les rôles des membres** comporte cinq colonnes : **client admin, client buyer, client validator, client work validator et client supervisor**. Les traductions affichées peuvent différer. Choisissez le rôle et la ligne de fonction concrète ; c’est le rôle pour ce client qui est modifié, et non pour tous les clients de l’agence.
+
+Les lignes sont réparties entre **commandes**, **self service** et **Autre** :
+
+- Commandes : créer/modifier, afficher, afficher tout le travail en cours, transmettre, approuver et afficher la page du personnel du client.
+- Self service : créer des projets, afficher tous/les siens, modifier tous/les siens, supprimer/annuler ; afficher l’évaluation de l’agence, les autres documents, les salaires et frais, modifier les salaires et frais, afficher le groupe de tarifs, réinitialiser le mot de passe du collaborateur et gérer les listes de collaborateurs.
+- Autre : validation du travail, superviseur sur site, paramètres du client, gestion des utilisateurs du client, définir le processus d’approbation des commandes ; modifier les options, les destinataires des notifications, le compte e-mail sortant et Twilio, ainsi que gérer les rôles des membres.
+
+Afficher et modifier sont des lignes distinctes. Un droit d’affichage n’est pas une autorisation de modification. Les lignes effectivement chargées dépendent du catalogue de fonctions existant ; une liste vide ne prouve pas un accès illimité. **client admin × gérer les rôles des membres** reste activé et verrouillé. Ne contournez pas d’autres cellules verrouillées via une autre interface.
+
+Chaque basculement enregistre toute la matrice client affichée. Si, pour un même rôle, des droits des commandes sont activés alors que des droits self service sont actifs, ou l’inverse, une confirmation apparaît. **Oui** supprime tous les droits en conflit de l’autre section dans ce rôle et enregistre ; **Non** annule la case cochée qui vient d’être définie. Avant de cliquer sur Oui, vérifiez donc toute la section concernée, pas seulement la ligne cliquée. Les autres colonnes de rôle ne sont pas basculées de manière ciblée par cette résolution de conflit. Après la réponse, rouvrez la matrice ; une case cochée localement après une erreur ne prouve pas la persistance. Les textes d’info-bulle servent de repère, pas de vérification complète de tous les accès en aval.

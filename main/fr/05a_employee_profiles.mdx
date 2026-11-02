@@ -1,0 +1,197 @@
+---
+title: "Profils de collaborateurs"
+---
+
+# Modifier les profils des collaborateurs
+
+## Ouvrir le profil et reconnaître le type d’accès
+
+Ouvrez **Employés**, cherchez la personne et ouvrez son profil. Depuis l’affectation du personnel, l’icône de profil mène également à la personne. Un nom visible dans une liste de candidats ne signifie pas automatiquement un accès à toutes les données du profil.
+
+- **Pool d’agence :** le droit de lecture **View All Employee Profiles** et la relation avec le pool d’agence accessible déterminent l’accès au profil. Lire n’est pas modifier : les changements nécessitent **Edit All Employee Profiles** ; les changements de statut **Change Employee Status**. Une personne lisible dans le pool d’agence connecté n’est pas automatiquement modifiable dans sa propre agence.
+- **Candidature hors du pool :** en cas de candidature ou d’affectation à un projet du groupe d’agences, un profil restreint en lecture seule peut apparaître. Une simple invitation ou un simple refus ne justifie pas cet accès. L’indication d’un profil en lecture seule doit être prise au sérieux.
+- **Portail client/Self Service :** un profil du propre pool client peut être ouvert en mode lecture seule, pour autant que l’accès Self Service soit disponible. L’évaluation de l’agence et les documents supplémentaires disposent d’autres droits de visibilité. La vue client n’est pas une gestion d’agence.
+- **Collaborateurs :** ils modifient leur propre profil dans le cadre des champs autorisés. Les zones de statut, d’évaluation et de listes propres à l’agence ne constituent pas la même interface que leur propre profil.
+
+En cas de **pas d’accès**, ne passez pas à une autre adresse de profil. Faites vérifier l’appartenance au pool et le droit d’accès au profil.
+
+## Enregistrer et contrôler les modifications
+
+Avec **Tout ouvrir** et **Tout fermer**, vous dépliez ou repliez ensemble les sections. Beaucoup de champs simples se sauvegardent automatiquement après une modification ou en quittant le champ. La formation, les langues, les documents et les absences utilisent leurs propres actions d’enregistrement. Il n’existe donc pas d’étape finale unique d’enregistrement pour l’ensemble du profil.
+
+Attendez le traitement après les modifications et tenez compte des messages d’erreur. Si **L’employé ne peut pas être enregistré**, la saisie ne doit pas être considérée comme enregistrée avec succès. Vérifiez la section concernée après l’avoir rouverte. Le prénom, le nom et l’e-mail ne doivent pas être vides. Un numéro AVS utilisé deux fois peut être rejeté.
+
+Les champs obligatoires et les modifications marquées pour contrôle dépendent de la configuration de l’agence. Des indications obligatoires manquantes peuvent donner le statut **incomplet** ; des modifications sur un profil actif peuvent déclencher le statut **modifié**. Les marquages orange ne signifient donc pas simplement un nouvel employé actif. Vérifiez-les avant de rétablir le statut.
+
+## Détails de la personne et évaluation interne
+
+**Détails de la personne** contient le statut pouvant être utilisé séparément (dans la mesure où il est visible), le prénom, le nom, le surnom, le sexe, les enfants, l’indication tabagique, la date de naissance avec jour/mois/année ainsi que la courte présentation personnelle. L’âge est affiché à partir de la date de naissance. Ne traite les données sensibles que pour le processus de personnel prévu et avec l’accès approprié.
+
+**Modifier le statut séparément :** ouvrez **Détails de la personne** et choisissez l’option souhaitée pour le statut, par exemple **actif** ou **inactif**. La consultation du statut et sa modification sont des droits distincts ; pour modifier, vous avez besoin de **Change Employee Status** et d’une relation modifiable avec votre propre agence. Le choix lance immédiatement son propre processus d’enregistrement, sans bouton d’enregistrement global. En cas d’erreur, l’interface remet la sélection au statut chargé précédemment. Attendez le traitement, tenez compte des messages d’erreur et rouvrez le profil pour contrôler le statut effectivement enregistré.
+
+- **Activer** peut déclencher un e-mail d’activation à la personne. N’activez pas à titre d’essai ; des données manquantes pour une gestion du personnel reliée peuvent empêcher l’activation.
+- **Mettre inactif** fixe la date d’inactivation et supprime les demandes de votre propre agence pour aujourd’hui et les jours futurs dans les états ouvert, accepté ou automatiquement accepté. Ce n’est **pas une suppression du pool de l’agence**. Les affectations existantes ne sont ainsi ni sécurisées de manière fiable ni annulées ; vérifiez séparément le plan des missions et clarifiez les modifications nécessaires dans le processus d’affectation.
+
+**Évaluations** affiche l’évaluation de l’agence avec le nombre de créneaux sous-jacents. Dans la vue de l’agence, vous pouvez sélectionner un client et consulter son évaluation. Les étoiles affichées ici sont en lecture seule ; ce n’est pas un champ de saisie pour une nouvelle évaluation. Dans le portail client, l’évaluation du client lui-même est affichée, l’évaluation de l’agence uniquement avec le droit supplémentaire **View Agency Rating**.
+
+**Remarques internes** est, dans le profil actuel, une vue d’agence, pas une boîte de dialogue de note client. Le niveau d’avertissement propose **aucun problème**, **carton jaune** et **carton rouge** ; s’y ajoute le champ de remarque avec 1 000 caractères maximum. Le texte est préparé pour l’enregistrement lorsque vous quittez le champ.
+
+**Carton rouge :** la sélection fixe le niveau d’avertissement et déclenche d’abord son enregistrement. Si la personne n’est pas encore inactive, une question séparée suit pour savoir si elle doit aussi être mise inactive. **Oui** lance en plus le changement de statut décrit ci-dessus avec ses conséquences pour les demandes. **Non** n’annule pas le carton rouge. Contrôlez séparément le niveau d’avertissement et le statut après une nouvelle ouverture ; la question de suivi n’est pas une confirmation commune enregistrer/annuler pour les deux modifications.
+
+**Ne pas prendre en compte :** cette action propre ouvre une boîte de dialogue de message et de confirmation. Vérifiez le destinataire, l’objet et le message ; l’objet et le message sont obligatoires. Seuls **Envoyer** et la confirmation supplémentaire déclenchent l’opération. En cas de missions de votre propre agence attribuées ou confirmées pour aujourd’hui ou plus tard, la suppression du pool est bloquée. Après exécution réussie, la personne est retirée du pool de l’agence et une notification est déclenchée ; contrôlez ensuite le pool. Ce n’est ni le carton rouge ni le choix **inactif**. Le blocage de mission de cette boîte de dialogue ne constitue pas une protection garantie du changement de statut. Si le retour d’envoi n’est pas clair, ne renvoyez pas aveuglément ; vérifiez d’abord l’état du pool et le retour.
+
+## Listes et pool de clients
+
+**Listes d’agence :** ouvrez **Listes d’employés** dans la vue d’agence. Les trois sélections multiples **Liste**, liste additionnelle (éventuellement affichée sous **additional list**) et **liste noire** (liste d’exclusion) sont des appartenances séparées, pas de simples filtres d’affichage. Pour modifier, vous avez besoin de l’accès au profil approprié et de **Edit All Employee Profiles**. Une zone d’agence masquée dans le portail client n’est pas une erreur à contourner avec un autre lien.
+
+1. Ouvrez le type de liste souhaité, recherchez une liste existante et sélectionnez-la pour ajouter la personne. Vous pouvez sélectionner plusieurs listes.
+2. Désélectionnez une entrée déjà marquée, ou retirez sa pastille de sélection, pour retirer la personne de cette seule liste. Cela ne supprime ni la liste ni le profil de l’employé.
+3. Uniquement pour **Liste** et **liste additionnelle**, vous pouvez saisir un nouveau nom de liste et appuyer sur **Enter** : cela crée une nouvelle liste de ce type et y affecte immédiatement la personne. Pour la **liste d’exclusion** et les sélecteurs de clients en bas, aucune création nouvelle par Enter n’est prévue ici. La gestion séparée des listes est expliquée dans le [Guide des listes et filtres](/main/fr/05b_employee_lists_filters).
+
+Chaque modification de sélection enregistre immédiatement les appartenances ; il n’existe ni bouton d’enregistrement global ni confirmation finale groupée. Enter est aussi une action d’écriture, pas seulement une recherche.
+
+**Pool de clients :** ouvre la section du même nom. Dans la vue d’agence, sa visibilité nécessite un accès Self Service. Les modifications du pool de clients et des listes clients exigent en plus le droit d’édition Self Service **Edit All Self Service Projects** ; une simple lecture ou un sélecteur visible ne suffit pas.
+
+- **Dans le portail client**, sous **listes d’employés du client**, vous sélectionnez ou désélectionnez les listes existantes de votre propre client. La personne doit déjà se trouver dans votre propre pool de clients. Ce sélecteur modifie les appartenances de vos propres listes, pas les listes d’agence ni les pools d’autres clients.
+- **Dans la vue d’agence**, il existe deux sélections multiples distinctes : sous **Pool de clients**, vous sélectionnez un client pour ajouter la personne à son pool, ou vous le désélectionnez pour supprimer cette relation de pool. Sous **listes d’employés du client**, vous sélectionnez ou désélectionnez les listes existantes des clients du pool ; les entrées se distinguent comme **client – liste**. Vérifiez donc toujours aussi le nom du client.
+
+Ces sélecteurs enregistrent aussi chaque modification de sélection immédiatement, sans enregistrement global. **L’ajout à un pool de clients peut déclencher une notification au client cible. La suppression d’un client supprime en même temps toutes les appartenances de cette personne aux listes chez ce client**, pas seulement la pastille de pool visible. La sélection de listes inter-clients est ensuite rechargée. La suppression d’une seule liste client n’est en revanche pas une suppression du pool de clients.
+
+**Contrôle de suivi :** attendez le traitement après chaque modification et tenez compte du succès ou de l’erreur, dans la mesure où ils sont affichés. Rouvrez le profil et la section concernée et contrôlez les listes sélectionnées, respectivement les clients. Après la suppression d’un client, contrôlez aussi les listes clients. Une pastille visible seule ne prouve pas un enregistrement réussi ; en cas de rejet, clarifiez les droits et le contexte du pool, sans déclencher d’éventuelles notifications par des ajouts répétés.
+
+## Apparence, images et compétences
+
+**Apparence :** couleur des yeux, couleur des cheveux, taille, pointure, taille de T-shirt, largeur de pantalon et longueur de pantalon. Des aides de taille proposent des tableaux de comparaison ; elles ne modifient pas les données du profil. Pour les tatouages et piercings visibles, il existe des indications oui/non et les descriptions correspondantes. Utilise ces données uniquement dans le processus de profil prévu à cet effet et avec accès restreint.
+
+**Images :** téléversez un portrait et une image en pied dans les champs prévus à cet effet. L’image existante peut être agrandie ; la suppression est une action distincte. Ne confondez pas une image avec le document CV.
+
+**Compétences :**
+
+| Domaine | Saisie et procédure |
+| --- | --- |
+| CV | Ouvrir le document existant ; en cas de droit d’édition, téléverser un fichier ou utiliser la prise de vue. La suppression se fait via l’action de retrait. |
+| Formation | **Ajouter**, saisir le type, l’institut, De et À. **Formation actuelle** désactive le champ À. Ce n’est qu’après la création de l’entrée que le certificat peut être attribué. |
+| Expérience professionnelle | **Ajouter**, choisir la profession dans le menu des métiers imbriqué, le niveau d’expérience, l’entreprise, De et À. **Emploi actuel** désactive le champ À. |
+| Langues | **Ajouter**, choisir la langue et le niveau de connaissance ; un certificat de langue peut être attribué à l’entrée. L’agence peut exiger une langue maternelle. |
+
+L’action de retrait sur une formation ou une expérience professionnelle concerne l’entrée respective. Ce n’est pas la même chose que le retrait de son certificat. Contrôlez donc la boîte de dialogue de confirmation.
+
+## Téléverser, remplacer et supprimer des fichiers
+
+Ouvrez le profil et la section appropriée. Cliquez sur la zone de téléversement ou glissez-y un fichier. Les images utilisent des fichiers image ; les zones de document pour le CV, les pièces d’identité et les certificats proposent des images, PDF, DOC et DOCX. Attendez le traitement puis ouvrez ensuite le fichier pour vérification. Un nouveau téléversement du même type de fichier remplace en principe le fichier existant ; il ne crée pas de dépôt de documents avec un nom librement choisi.
+
+| Fichier | Mode d’utilisation et limite |
+| --- | --- |
+| Portrait | Téléverser dans l’en-tête du profil ou sous **Images**. Les deux emplacements concernent le même portrait. L’agrandissement ouvre l’affichage ; la suppression retire le portrait après confirmation. |
+| Image en pied et quatre autres images | Sous **Images**, utiliser pour chacune sa propre zone de téléversement. L’agrandissement et la suppression ne concernent que l’image choisie. |
+| Vidéo portrait | Sous **Détails de la personne**, utiliser la zone vidéo. La sélection de fichier est prévue pour la vidéo et 50 Mo ; les vidéos de plus de 30 secondes sont rejetées. L’icône de suppression sur la vidéo supprime celle-ci, pas le portrait. |
+| CV | Sous **Compétences**, ouvrir le fichier, le téléverser ou utiliser la prise de vue photo proposée. L’icône de suppression et la confirmation concernent le fichier CV, pas les entrées de formation et d’expérience professionnelle. |
+| Certificats de formation et de langue | Crée d’abord l’entrée associée avec ses champs obligatoires. Ensuite, téléverse le fichier exactement sur cette ligne ; un autre téléversement remplace son certificat. La suppression sur le certificat supprime uniquement la référence au fichier ; la suppression de la ligne retire toute l’entrée de compétence. Pour les certificats de langue, utiliser le téléversement de fichier plutôt que la caméra. |
+| Carte d’assurance sociale | Sous **Informations sur le travail**, téléverser, ouvrir ou retirer après confirmation dans le champ de carte correspondant. Le numéro AVS est un champ de texte séparé. |
+| Passeport/carte d’identité | Le recto et le verso sont des fichiers séparés avec leurs propres actions d’ouverture, de téléversement, de prise de vue et de suppression. |
+| Permis de travail | Le recto et le verso apparaissent pour un permis sélectionné, sauf pour **aucun permis** ou **Procédure d'annonce UE/AELE**. La date d’échéance est en outre proposée sauf pour le permis C. Pour la nationalité suisse, cette zone n’est pas disponible à la saisie. |
+| Permis de conduire | Sous **Informations de transport**, téléverser séparément le recto et le verso, les ouvrir ou les retirer. Les catégories de permis de conduire et l’expérience de conduite ne sont pas complétées automatiquement par cela. |
+| Convention de base | Dans le contexte de l’agence, téléverser ou prendre une photo sous **Informations sur le travail** ; ouvrir les conventions existantes. L’action de suppression concerne l’entrée de convention sélectionnée et demande une confirmation. Les collaborateurs peuvent lire les conventions existantes ; la zone du profil client ne les affiche pas. Vérifiez le remplacement en rouvrant le fichier avant de vous y fier. |
+
+**Prise de photo :** autorisez la caméra, choisissez **Prendre**, vérifiez l’aperçu, au besoin **Reprendre**, puis **Enregistrer**. Pour des documents supplémentaires, cela ne constitue d’abord que la sélection du fichier ; terminez ensuite en appuyant encore sur **Ajouter** ou **Enregistrer** dans la boîte de dialogue du document. Si une caméra manque ou est bloquée, utilisez le téléversement de fichier. Pour le certificat de langue, ce chemin de téléversement alternatif est préférable.
+
+**Documents supplémentaires :** le type de document et un fichier sélectionné sont obligatoires lors de l’ajout. Même dans la boîte de dialogue d’édition, l’état testé exige un nouveau fichier sélectionné ; il ne suffit pas de changer uniquement le type et de laisser l’ancien affichage de fichier. Le bouton de retrait sur un fichier de téléversement encore sélectionné annule la sélection. Pour supprimer réellement un document enregistré, utilisez la corbeille dans sa ligne de tableau et confirmez la boîte de dialogue. Ensuite, rouvrez la liste et vérifiez. Le type de fichier ne détermine pas automatiquement le droit de transmission.
+
+## Adresses et contact
+
+Dans la section **Adresse/informations de contact**, il y a une adresse principale et une deuxième adresse ainsi que l’identification de l’adresse légale. Utilisez la recherche d’adresse ou vérifiez séparément la rue, le numéro, le code postal, la localité, le pays et, le cas échéant, le canton. Une adresse trouvée doit être contrôlée quant à son exhaustivité avant l’enregistrement.
+
+Les indications de validité de l’adresse principale et de la deuxième adresse appartiennent respectivement à l’adresse concernée. Vérifiez les deux séparément ; l’identification comme adresse légale et une date de validité ne sont pas la même chose. Un complément d’adresse complète les données postales, mais ne remplace ni la rue ni la localité.
+
+Les champs de contact comprennent le téléphone fixe, le numéro mobile avec l’indicatif du pays, l’e-mail, l’e-mail de récupération, le contact d’urgence et le téléphone d’urgence, ainsi que les profils sociaux/l’adresse web. Pour un changement d’e-mail, une boîte de dialogue de mot de passe propre peut apparaître ; un message dans la boîte de dialogue de communication ne modifie pas l’adresse de contact.
+
+Lorsque des indications de domicile / d’impôt à la source sont configurées en conséquence, des indications apparaissent concernant l’adresse principale ou l’adresse légale. Ces indications décrivent une dépendance de saisie de la plateforme ; elles ne remplacent pas l’appréciation professionnelle de votre situation personnelle.
+
+## Disponibilité et absences
+
+Ouvrez **Disponibilité**. Le tableau affiche les périodes d’absence saisies. Via **Ajouter** ou l’action de modification, vous ouvrez la boîte de dialogue de période :
+
+1. Choisissez le type d’absence et la date de début/de fin.
+2. Saisissez une justification si le type choisi l’exige.
+3. Pour un type non planifiable à l’avance, l’interface n’autorise pas de dates futures. Après un changement de type, des dates inadaptées peuvent être réinitialisées.
+4. La fin ne doit pas être antérieure au début. Contrôlez la période, enregistrez et vérifiez l’entrée dans le tableau.
+
+**Accepter**, **Rejeter** et **Supprimer** demandent une confirmation séparée. Accepter définit le statut d’absence sur approuvé ; rejeter sur refusé. Supprimer retire la période. Une demande d’absence approuvée n’annule pas automatiquement des créneaux déjà attribués.
+
+En dessous se trouve la grille horaire hebdomadaire : faire glisser/marquer des champs horaires individuels ou sélectionner toute une journée, une ligne d’heures ou tous les champs. **Seulement le soir** et **Seulement le week-end** sont des aides de sélection pour la grille. La disponibilité régulière et une période d’absence concrète sont deux indications différentes ; pour une affectation, vérifiez les deux avec les conflits de créneaux.
+
+## Informations sur le travail et données de base restreintes
+
+**Informations sur le travail** regroupe le numéro AVS et la carte, l’état civil, la nationalité, le recto/verso de la pièce d’identité, le permis de travail avec date d’échéance ainsi que les dates d’inscription, de candidature, d’entretien, d’activation et d’inactivation. S’y ajoutent le premier jour de travail, la dernière connexion mobile, le numéro de collaborateur, la succursale/le superviseur ainsi que, selon la configuration, les indications concernant le poste fixe et le personnel interne d’agence. Les conventions de base ont leur propre zone de documents.
+
+Lorsque la nationalité suisse est sélectionnée, les indications et fichiers concernant le permis de travail sont réinitialisés. Ne modifiez donc pas la nationalité à titre d’essai. Pour les calculs de jours/heures de travail, sélectionnez la période proposée ; cet affichage n’est pas une affectation de créneau.
+
+La section **Impôt à la source** dépendante de la configuration contient des indications sur le concubinage, le parent isolé, la rente, l’impôt ecclésiastique/religion, le partenaire, les enfants, la situation de frontalier/de domicile, une activité supplémentaire et un revenu de remplacement. Suivez les questions dépendantes affichées et saisissez uniquement les données nécessaires à votre processus de personnel autorisé. Cette instruction ne fixe pas de classification fiscale et ne constitue pas un conseil juridique.
+
+**Informations bancaires** contient l’IBAN, le type/numéro de compte, le BIC/SWIFT, le nom de la banque, la localité de la banque et le numéro de clearing. Pour l’IBAN, un droit de modification séparé est vérifié à l’ouverture. Avec plusieurs relations d’agence, une modification peut donc être bloquée alors que d’autres données du profil sont modifiables. Ne contournez pas un contrôle IBAN échoué en utilisant des valeurs inventées.
+
+## Traiter les indications dépendantes de l’impôt à la source
+
+Cette instruction explique uniquement le masque de saisie, pas la classification fiscale. Ouvrez **Informations sur le travail**, vérifiez la nationalité, l’autorisation, l’état civil avec **Depuis quand ?** et l’adresse légale. Ces indications et la configuration de l’agence déterminent si **Impôt à la source** apparaît. Si la condition de saisie disparaît plus tard, des réponses déjà enregistrées peuvent rester visibles en gris et en lecture seule pour l’agence ; dans votre propre profil de collaborateur, la section peut être masquée. Ne modifiez pas les données de base uniquement pour déverrouiller le masque.
+
+| Groupe de champs | Saisie et dépendance |
+| --- | --- |
+| Questions générales | Répondre par oui ou non pour le ménage commun, le fait d’être parent isolé, la perception d’une rente et l’impôt ecclésiastique. En cas d’impôt ecclésiastique **Oui**, la sélection de la religion apparaît : évangélique réformée, catholique romaine, catholique-chrétienne, communauté juive ou aucune/autre. **Non** réinitialise cette sélection de religion. |
+| Partenaire | En cas de mariage ou de partenariat enregistré, le prénom, le nom, la date de naissance (jour/mois/année), le numéro d’assurance sociale, la nationalité et la sélection de l’autorisation proposée apparaissent. Un changement vers un autre état civil réinitialise les données dépendantes du partenaire. |
+| Adresse du partenaire | **Même adresse ? – Non** affiche le complément d’adresse, la rue, le numéro, le code postal, le lieu et le pays ; pour la Suisse, le canton s’ajoute en plus. Après un changement, vérifiez à nouveau l’adresse et ne vous fiez pas aux valeurs conservées automatiquement. |
+| Activité du partenaire | Répondre séparément à la perception d’une rente et à l’activité professionnelle. En cas d’activité professionnelle **Oui**, le travail principal/secondaire ainsi que le début et la fin suivent. **Non** réinitialise ces détails d’activité. |
+| Parent isolé | En cas de **Oui**, six questions séparées par oui/non suivent : ménage commun avec des enfants ouvrant droit à déduction, ménage avec partenaire, ménage avec enfants et partenaire, autorité parentale exclusive, autorité parentale conjointe avec revenu brut plus élevé ainsi que ménage avec enfant majeur et revenu brut plus élevé. **Non** à la question initiale réinitialise les réponses suivantes. Les intitulés sont des questions du masque, et non une confirmation d’un droit à la déduction. |
+| Enfants | Si des enfants sont indiqués sous les données personnelles, renseignez pour chaque enfant affiché le prénom, le nom, la date de naissance, le sexe, la nationalité, le numéro d’assurance sociale ainsi que le début et la fin de la période appelée déduction pour enfant. Vérifiez les lignes des enfants après une modification du nombre d’enfants. |
+| Travailleur frontalier | En cas de **Oui**, le retour quotidien ou hebdomadaire est demandé. En cas de retour hebdomadaire, **Aller aux adresses** apparaît pour l’adresse de domicile suisse. Le bouton ouvre la section d’adresse ; il n’y a pas ici de bloc de formulaire d’adresse actif supplémentaire ni de justificatif automatique de domicile. Le passage au retour quotidien réinitialise les indications de l’adresse de domicile interne dépendantes. |
+| Autre activité | En cas de **Oui**, le taux d’occupation en pourcentage, le salaire mensuel brut ainsi que les champs indiqués comme facultatifs activité et nom/adresse de l’employeur suivent. **Le taux d’occupation ne peut pas être déterminé** vide et verrouille le champ en pourcentage. **Non** pour l’autre activité réinitialise les indications suivantes. |
+| Revenu de remplacement | En cas de **Oui**, saisir le montant mensuel. **Non** vide le montant. |
+
+Quittez les champs de texte modifiés, attendez l’enregistrement et rouvrez la section pour contrôle. Les marquages obligatoires dépendent de la configuration. Si une réponse métier n’est pas claire, clarifiez-la avec votre service du personnel compétent au lieu de choisir une réponse qui ne fait que supprimer le marquage obligatoire.
+
+## Emploi fixe, affichage du salaire et accès aux champs
+
+Sous **informations sur le travail**, l’agence autorisée peut définir **Employé fixe** et **Personnel interne d’agence**. Cela ne crée à lui seul ni un créneau ni un nouveau contrat de salaire. La **première journée de travail** n’est proposée comme saisie en cas d’emploi fixe que si elle était encore vide au chargement ; sinon, il s’agit d’un affichage. La date d’inscription, de candidature, d’activation, de désactivation et la dernière connexion mobile sont à distinguer des données modifiables manuellement comme la date d’entretien. La succursale et le superviseur peuvent être imposés ou verrouillés par une gestion du personnel connectée.
+
+**Créer le salaire :** Si l’action est visible avec votre droit de modification, choisissez le mois/l’année. La sélection lance la création ; ouvrez ensuite seulement le lien **Voir le salaire** qui s’affiche. Il ne s’agit ni d’un versement ni d’une confirmation que toutes les données de décompte ont été contrôlées sur le plan métier. Pour afficher les jours/heures travaillés, choisissez une période et vérifiez les champs de résultat ; ce ne sont pas des champs de saisie permettant de modifier les missions.
+
+La gestion des groupes de collaborateurs fixes et des corrections de gestion du temps n’est pas accessible via un tableau actif dans cet état de profil. Il n’existe donc ici aucun chemin de clic fiable pour « ajouter groupe/taux/période » ni pour des corrections manuelles d’heures/de montants. La coche Employé fixe ne déverrouille pas ces tableaux. Faites clarifier les corrections de groupe ou de temps nécessaires par l’administration compétente plutôt que d’ouvrir une boîte de dialogue cachée.
+
+**Limites par champ :** Dans le profil client, les informations sur le travail, l’impôt à la source et les informations bancaires sont absentes. Les documents supplémentaires exigent un droit de lecture séparé ; les évaluations d’agence également. Les listes et remarques internes à l’agence ne sont pas à confondre avec les listes clients. En plus de la modification du profil, les informations bancaires ont le verrou IBAN séparé ; il concerne l’utilisation de toute la zone bancaire. Le BIC/SWIFT est affiché lorsque l’IBAN existant ne commence pas par le préfixe CH. La zone de l’impôt à la source peut aussi être non modifiable en raison d’autres verrous de profil/IBAN ou de son état archivé. Ni un document ouvert ni un champ visible n’autorisent automatiquement le téléversement, la suppression ou l’export.
+
+## Modifier l’adresse e-mail
+
+Ouvrez **Adresse/informations de contact → E-mail**. Si le champ est modifiable, saisissez la nouvelle adresse et quittez le champ. Si l’adresse diffère du profil chargé, la boîte de dialogue de mot de passe apparaît. Saisissez-y le mot de passe de votre compte actuellement connecté et choisissez **Mettre à jour l’e-mail** ; ne demandez pas le mot de passe de la personne concernée. L’icône en forme d’œil ne fait que basculer l’affichage du mot de passe.
+
+Un mot de passe incorrect ou une adresse déjà utilisée par un autre compte entraîne le message d’erreur. Seul un retour positif et le profil rouvert confirment la modification. L’action modifie l’e-mail du compte et du collaborateur, pas seulement l’adresse de récupération. **E-mail de récupération** est un champ de profil séparé. En cas de champ en lecture seule ou de modification refusée, faites intervenir l’administrateur compétent, sans contourner le verrou d’accès.
+
+## Mobilité et intérêts professionnels
+
+**Informations de transport** distingue :
+
+- Abonnements TP : aucun, demi-tarif, AG ou réseau régional avec nom du réseau ;
+- Catégories de permis de conduire ou absence de permis de conduire, avec recto/verso du document ;
+- Expérience de conduite en automatique/boîte manuelle et autres types de véhicules proposés ;
+- Disponibilité de voiture : voiture personnelle, voiture dans le ménage ou pas de voiture ; le cas échéant, carrosserie/taille ;
+- Abonnements de autopartage à partir de la sélection proposée.
+
+Pour les groupes marqués comme obligatoires, au moins une option pertinente doit être sélectionnée. **Pas de permis de conduire** ou **pas de voiture** est une réponse de fond, et non la même chose qu’un champ obligatoire vide. Sous **Intérêts professionnels**, vous sélectionnez les produits et types de postes proposés ; cela n’affecte encore la personne à aucun projet.
+
+## Documents supplémentaires et calendrier
+
+Sous **Documents supplémentaires**, ouvrez **Ajouter nouveau**, choisissez un type de document et un fichier, puis confirmez avec **Ajouter**. Les deux indications sont requises. Les types de documents déjà utilisés ne sont plus proposés lors de l’ajout. Pour remplacer, utilisez **modifier** sur le document existant, vérifiez le fichier actuel et choisissez un nouveau fichier ; la boîte de dialogue de modification actuelle exige cette sélection. Dans le portail client, cette zone requiert **View Further Documents** ; un lien de fichier visible ne signifie pas que le profil est modifiable.
+
+**Votre calendrier de mission** et **Historique des missions importé** sont des zones distinctes. L’historique importé est un récapitulatif repris, pas une preuve d’un créneau actuellement affecté ou confirmé. Pour les affectations actuelles, rendez-vous à [l’affectation du personnel à l’étape 4](/main/fr/04b_staff_allocation).
+
+## Lire le calendrier des missions
+
+Ouvrez **Votre calendrier de mission**. Passez entre **Liste**, **Semaine** et **Mois**. En semaine/mois, naviguez avec les flèches ou choisissez la période souhaitée dans le champ de sélection. Dans la liste, le défilement charge les entrées précédentes ou suivantes.
+
+La légende distingue les missions passées, les missions à venir et l’indisponibilité. Dans la vue hebdomadaire, la trame régulière de disponibilité est en plus affichée. Survolez une mission avec la souris pour voir ses détails : selon les données autorisées, le projet, l’employeur/client, le rôle, le lieu, le statut et les horaires prévus ; pour les missions passées aussi l’évaluation et l’heure effective de début/fin. L’absence d’heures réelles ne prouve pas que le travail a été effectué.
+
+Un clic sur une mission dont l’accès est autorisé ouvre pour l’administration l’étape 4 du projet dans un nouvel onglet et met l’accent sur l’affectation concernée. Les missions PPC mènent à l’affichage PPC séparé. Les collaborateurs ne reçoivent pas ce lien de projet. Les missions dont l’accès n’est pas autorisé peuvent apparaître dans le contexte client uniquement comme indisponibilité sans nom ni détails du projet. Un tel bloc n’est pas automatiquement une demande d’absence saisie par la personne. Le calendrier ne modifie aucune affectation ; vous traitez les absences dans la section **disponibilité**, où l’année et le statut limitent le tableau.
+
+## Mot de passe et messages
+
+**Réinitialiser le mot de passe du collaborateur** nécessite le droit correspondant. La boîte de dialogue exige un mot de passe temporaire d’au moins huit caractères, avec lettres majuscules/minuscules et un chiffre. Contrôlez d’abord la personne ; un changement de mot de passe n’est pas une invitation à une mission. Ne partagez pas les mots de passe via les listes générales de collaborateurs.
+
+**Envoyer notification** s’adresse à cette seule personne. Consultez les [différences entre les dialogues de communication](/main/fr/05d_employee_communication), en particulier la limitation du dialogue de profil individuel pour l’e-mail et les SMS.

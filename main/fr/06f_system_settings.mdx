@@ -1,0 +1,24 @@
+---
+title: "Paramètres système et Sécurité"
+description: "Distinguer le tableau de bord de paramètres séparé du profil d’agence et de la gestion des utilisateurs."
+---
+
+# Paramètres système et Sécurité
+
+## Tableau de bord séparé et registre des invitations
+
+Le tableau de bord séparé **paramètres** contient les onglets **Inviter des membres**, **Inviter des clients** et, pour les comptes qui ne sont pas des comptes de collaborateurs, **Sécurité**. Ce n’est pas la page du profil d’agence avec les données de l’entreprise. Selon l’autorisation, les deux points d’entrée peuvent être visibles différemment.
+
+Les onglets d’invitation affichent **Message**, **e-mail** et **Inviter**. Lors du passage à un autre onglet, le message et l’adresse sont effacés ; cliquer à nouveau sur l’onglet actif replie son contenu. Un message ou une adresse vides entraînent un message d’erreur.
+
+**Restriction importante :** pour ces deux anciens formulaires d’invitation, aucun envoi fonctionnel n’est prévu dans le gestionnaire serveur associé. Un message d’interface éventuel ne constitue donc pas une preuve fiable d’invitation. Pour des rôles d’agence ou de client réels, utilisez la [gestion des utilisateurs dans le profil d’agence](06c_agency_users.mdx#inviter-des-membres-de-manière-ciblée), avec rôle, langue et affectation client requise. Là, **Inviter** peut effectivement déclencher un e-mail. N’essayez pas de forcer un envoi en cliquant à répétition sur l’ancien formulaire.
+
+## Reconnaître l’onglet Sécurité
+
+Sous **Sécurité → Passkeys**, la liste affiche le nom de l’appareil, la date d’ajout et, le cas échéant, la dernière utilisation. **Ajouter une nouvelle clé d'accès** est verrouillé dans les navigateurs non pris en charge. La fonction de suppression n’est proposée que lorsque les conditions de sécurité autorisent la suppression ; sinon, un avis indique qu’au moins une passkey est nécessaire.
+
+Lorsque la protection supplémentaire est activée, la section **Codes de récupération** apparaît. Deux codes restants ou moins sont affichés comme avertissement. Les nouveaux codes doivent être enregistrés dans la boîte de dialogue ouverte à cet effet : **Copier les codes** ou **Télécharger le fichier**, puis confirmer la sauvegarde et choisir **Terminé**. Pendant cette boîte de dialogue, le changement d’onglet est bloqué. N’envoyez jamais de mots de passe, de passkeys ou de codes de récupération au support.
+
+Avant de **Supprimer** une passkey ou de **Générer de nouveaux codes**, **Confirmez votre mot de passe** s’ouvre. Saisissez votre propre mot de passe uniquement dans cette boîte de dialogue et choisissez **Confirmer** ou appuyez sur **Enter**. Une saisie vide ne peut pas être confirmée via le bouton. Il s’agit d’une véritable modification du compte, pas d’un aperçu. En cas d’erreur, la boîte de dialogue du mot de passe se ferme et la liste est rechargée ; vérifiez le message et l’état actuel au lieu de répéter l’action à l’aveugle.
+
+Il s’agit d’une orientation dans le tableau de bord des paramètres, pas d’une instruction pour contourner un accès verrouillé. La configuration, le changement d’appareil et la récupération constituent un flux de sécurité distinct. En cas de demande ambiguë d’appareil ou de mot de passe, ne poursuivez pas en supprimant ou en générant à répétition.

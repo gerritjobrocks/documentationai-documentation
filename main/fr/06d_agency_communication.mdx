@@ -1,0 +1,46 @@
+---
+title: "Notifications, compte e-mail et crédits"
+description: "Configurer en toute sécurité les listes de destinataires, les valeurs du fournisseur sortant et les avertissements de crédits."
+---
+
+# Notifications, compte e-mail et crédits
+
+## Définir les destinataires e-mail par événement
+
+Ouvrez **Profil d’agence → Notifications e-mail**. L’affichage des paramètres et le droit de modifier l’e-mail sont nécessaires. Il existe cinq listes de destinataires séparées :
+
+| Événement | Quelle liste est modifiée ? |
+| --- | --- |
+| Nouveaux collaborateurs | E-mail pour la notification de nouveaux collaborateurs |
+| Candidature à une mission | E-mail lors d’une candidature à une mission |
+| Réservation autonome d’une mission | E-mail lors de la réservation autonome d’une mission |
+| Acceptation d’une mission | E-mail lors de l’acceptation d’une mission |
+| Annulation d’une mission | E-mail lors d’une mission annulée |
+
+Saisissez une adresse et confirmez avec **Enter** afin qu’une entrée distincte soit créée. Plusieurs adresses sont possibles. Supprimez une entrée via sa fonction de suppression. Chaque changement de sélection enregistre immédiatement la liste concernée ; aucun bouton commun n’est nécessaire. Les autres listes d’événements ne sont pas remplacées par cela.
+
+Vérifiez le message de réussite et les entrées conservées après une nouvelle ouverture. Seul le texte dans le champ de saisie encore non confirmé n’est pas un destinataire enregistré. Cette configuration peut déclencher ultérieurement de vrais e-mails à tous les destinataires inscrits. Il ne s’agit ni d’un e-mail de test ni de l’envoi d’un message manuel ; pour cela, veuillez suivre le [guide de communication](05d_employee_communication.mdx).
+
+## Enregistrer le compte e-mail sortant
+
+Sous **Compte e-mail pour les messages sortants**, cinq valeurs sont gérées ensemble : **E-Mail**, **mot de passe**, **hôte**, **port** et **chiffrement**. Le droit de modifier le compte e-mail sortant est distinct de celui des destinataires des notifications.
+
+Reprenez les valeurs approuvées par votre fournisseur de messagerie. Le port et le chiffrement sont des saisies de texte, et non une liste prédéfinie avec une sélection forcément adaptée. Le mot de passe est une valeur de configuration secrète ; ne le transmettez pas dans des messages de support, des captures d’écran ou des exemples publics. L’icône en forme d’œil ne fait que basculer l’affichage du champ du mot de passe.
+
+Cliquez sur **Enregistrer** dans cette section. Ici, les champs ne disposent pas d’un enregistrement automatique à la sortie. Le message de réussite confirme l’enregistrement, non une connexion réussie auprès du fournisseur de messagerie ni la distribution d’un message. Il n’existe pas de bouton de test distinct dans cette section. N’effectuez un envoi réel qu’avec le destinataire convenu ; en cas de problème, faites vérifier de manière sûre l’hôte, le port, le chiffrement et l’autorisation du fournisseur, sans copier de secrets.
+
+## Configurer l’intégration Twilio
+
+Sous **Intégration Twilio → Compte SMS**, la modification nécessite une autorisation Twilio distincte. Les champs sont **Twilio Account**, **Twilio Token** et **Twilio Phone**. Saisissez les valeurs du fournisseur prévues pour l’agence et cliquez ici sur **Enregistrer**. Ce n’est qu’en cliquant sur le bouton que les trois valeurs sont transmises ensemble.
+
+Le token est secret, même si l’interface l’affiche comme du texte. Ne partagez pas de captures d’écran de cette section. L’enregistrement n’est ni un test SMS ni une garantie de délivrabilité ou de crédit disponible chez le fournisseur. La fonction SMS proprement dite est un processus d’envoi distinct pouvant avoir des effets externes et des coûts. En cas d’erreur, faites vérifier en toute sécurité la configuration enregistrée, sans renvoyer de messages à répétition.
+
+## Afficher les crédits et configurer l’alerte
+
+Dans **Profil d’agence → Crédits**, vous voyez le solde et ouvrez l’aperçu avec **Tous les crédits**. Celui-ci affiche la valeur du crédit, le nom du projet ainsi que la date et l’heure. Les colonnes sont triables. La liste n’est pas un dialogue d’achat et ne contient aucun engagement concernant les prix ou tarifs actuels. Un nom de projet manquant peut apparaître pour une entrée non liée à un projet.
+
+Pour afficher la section, l’affichage des paramètres est pertinent ; la consultation détaillée peut en outre échouer en raison de l’autorisation de modifier ses propres projets. Un simple lien visible ne garantit donc pas l’accès. En cas d’aperçu vide ou refusé, faites vérifier le rôle et le contexte d’agence.
+
+Avec le droit de gérer les crédits, vous pouvez activer ou désactiver la notification en cas de solde faible. Lors du basculement, l’enregistrement est effectué. Si l’alerte est activée, le **seuil** apparaît ; modifiez-le puis quittez le champ. Une valeur entière à partir de 1 est autorisée. La valeur initialement prévue dans le formulaire, 200, n’est ni une indication de prix ni un seuil garanti pour les agences existantes : leur valeur enregistrée est chargée.
+
+La sélection multiple distincte **E-mail pour les notifications de solde de crédits faible** se gère par saisie, **Enter** et suppression des adresses ; les modifications sont enregistrées immédiatement. Après une modification, vérifiez le message de succès et les valeurs rechargées. Ni l’interrupteur d’avertissement ni la liste des destinataires n’achètent des crédits. Un avertissement ne remplace pas le contrôle du solde réel.

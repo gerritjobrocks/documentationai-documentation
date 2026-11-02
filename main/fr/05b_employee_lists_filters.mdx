@@ -1,0 +1,133 @@
+---
+title: "Listes et filtres"
+---
+
+# Listes et filtres de collaborateurs
+
+## Self-Service : gérer ses propres listes clients
+
+Dans le portail client, ouvrez **Collaborateurs** et, pour les listes enregistrées, **Mes listes**. L’aperçu affiche les personnes actives de votre pool client ; ce n’est pas le tableau de bord de l’agence avec ses onglets d’état. Les boutons **Enregistrer comme nouvelle liste** et **Mes listes** nécessitent le droit d’interface **Manage Employee Lists**. Pour la modification effective, le droit de modification Self-Service est également vérifié. Si vous pouvez lire la liste mais pas l’enregistrer, faites vérifier les deux autorisations ; un bouton visible n’est pas une autorisation d’écriture.
+
+1. Limitez les personnes avec **filtre** et la recherche. Vérifiez le nombre sélectionné et les cases cochées individuelles, y compris sur plusieurs pages. Attention : la case d’en-tête ne peut désélectionner que les lignes actuellement chargées ; les autres pages restent sélectionnées. Utilisez une sélection de filtre/liste étroite au lieu de supposer que toutes les personnes ont été désélectionnées.
+2. Choisissez **Enregistrer comme nouvelle liste**, saisissez un nom non vide et confirmez avec **Enregistrer**. Un nom déjà utilisé peut être rejeté. Sont enregistrées les personnes correspondant au moment de l’action, moins celles que vous avez désélectionnées, et non une règle de recherche continuellement mise à jour automatiquement.
+3. Ouvrez **Mes listes**, cherchez la liste dans la sélection supérieure et choisissez-la. Sans liste sélectionnée, vous voyez le pool. Le x dans la sélection de liste supprime uniquement la restriction d’affichage.
+4. Avec le crayon à côté de la liste choisie, vous modifiez le nom. **Enregistrer** valide, **Annuler** abandonne la boîte de dialogue.
+5. Pour ajouter, cherchez une personne à droite par nom ou e-mail et cliquez sur le résultat souhaité. Sont proposés les membres du pool qui n’appartiennent pas encore à la liste. Vérifiez ensuite le tableau des membres mis à jour.
+6. **Attention : l’action de suppression d’une ligne de tableau ne fonctionne pas dans l’état vérifié.** Même avec la liste sélectionnée, ce clic ne déclenche aucune demande de suppression ; la personne reste membre. Utilisez à la place le [chemin de profil séparé sous Pool clients](/main/fr/07c_self_service#profil-de-la-personne--listes-de-clients-et-actions-de-sauvegarde-automatiques) : la personne doit déjà appartenir à votre pool client, et vous avez besoin de **Edit All Self Service Projects**, pas seulement de Edit Own. Retirez-y la liste souhaitée de la sélection multiple. Toute modification enregistre immédiatement l’ensemble de la sélection de listes, sans demande supplémentaire ni bouton d’enregistrement ultérieur. En cas d’erreur, la sélection locale n’est pas réinitialisée ; un retour complet de toutes les modifications n’est pas garanti. Rechargez le profil et contrôlez l’appartenance à la liste. Ce chemin modifie les appartenances aux listes clients, pas l’appartenance au pool ni le profil du collaborateur. Ne supprimez pas toute la liste comme remplacement de la suppression d’une personne.
+7. La corbeille à côté du nom de la liste supprime, après confirmation, la liste et ses appartenances, pas les profils de collaborateurs. Vérifiez la sélection de liste restante après l’action.
+
+Les listes clients ont ici un type de liste ; les trois types d’agence liste normale, liste complémentaire et liste noire ne sont pas des onglets supplémentaires de cette gestion. Vous pouvez copier la liste avec **Enregistrer comme nouvelle liste** à partir de la vue des membres sélectionnés. Les modifications apportées à la copie ne modifient pas automatiquement la liste d’origine.
+
+## Self-Service : export et messages
+
+**Export :** Dans **Collaborateurs** ou **Mes listes**, ouvrez d’abord la sélection de filtre/liste souhaitée, puis **Export**. Choisissez les colonnes nécessaires : ID du collaborateur, adresse, e-mail, numéro de mobile, âge, langue, taille de chaussures et de t-shirt, permis de conduire, dernière mission, nombre de missions, rôles, listes de collaborateurs, numéro de collaborateur et dernière connexion. Confirmez l’export XLSX et ouvrez le fichier généré. Ne choisissez que des données que vous avez réellement le droit de transmettre.
+
+**Important pour la sélection :** La recherche libre par nom n’est pas transmise comme critère de recherche propre dans cet export. Un écran réduit à un nom ne garantit donc pas un fichier d’export de même taille. Limitez la sélection via des filtres ou une liste enregistrée vérifiée et contrôlez le fichier avant toute transmission. Les désélections individuelles sont prises en compte. Le pool client reste limité côté serveur ; cela ne garantit donc pas que chaque export dispose des mêmes droits de colonnes que le profil.
+
+**Message :** Ouvrez **Envoyer message** à partir de la sélection contrôlée. Choisissez **Notification** ou **E-mail**, renseignez l’objet et le message, puis confirmez avec **Envoyer**. Il n’existe ici ni interrupteur SMS actif, ni chargeur de modèle, ni bouton de sélection de fichier. Contrairement à l’export, la recherche par nom est transmise au chemin de message. Contrôlez donc le nombre sélectionné, la liste, la recherche et les désélections juste avant l’envoi. Le nombre de destinataires signalé n’est pas une preuve de distribution ou de lecture. En cas d’erreur peu claire, ne renvoyez pas aveuglément ; voir [Communication](/main/fr/05d_employee_communication).
+
+## Exporter et contacter les listes d’agence
+
+Dans **Listes de collaborateurs**, vérifiez d’abord le type de liste (liste normale, liste complémentaire ou liste noire), la liste concrète et la sélection de personnes souhaitée. **Export** ouvre la sélection des colonnes : adresse, e-mail, numéro de mobile, âge, statut, langue, taille de chaussures/de t-shirt, permis de conduire, dernière mission, nombre de missions et rôles. **Exporter XLSX** génère le fichier. Dans le tableau de bord des collaborateurs, l’ID, les listes de collaborateurs, le numéro de collaborateur et la dernière connexion s’ajoutent selon la boîte de dialogue d’export. La recherche par nom n’est pas transmise comme critère d’export distinct ; limitez la sélection via la sélection de liste/de filtre et vérifiez le fichier.
+
+**Envoyer message** utilise les filtres, la recherchez par nom et les désélections. Choisissez Notification, E-mail ou SMS, renseignez l’objet et le message, contrôlez les destinataires, puis envoyez seulement ensuite. Pour Notification/SMS, la boîte de dialogue des listes d’agence limite l’objet à 24 caractères. Des pièces jointes e-mail peuvent être ajoutées puis supprimées avant l’envoi. Les modèles enregistrent l’objet et le message, pas les destinataires ni les pièces jointes ; dans le chargeur de modèles, cherchez par nom et cliquez sur l’entrée souhaitée. **Copier les e-mails** n’envoie rien. Consultez les [indications sur la distribution et les erreurs](/main/fr/05d_employee_communication).
+
+## Filtrer, sélectionner et reprendre
+
+Ouvrez **Collaborateurs → filtre**. Dépliez les zones nécessaires. Les modifications recalculent les résultats ; attendez que l’indicateur de chargement disparaisse. En haut, le nombre **sélectionné / correspondant** est affiché. Un clic dessus ouvre la liste des personnes avec **tout sélectionner**, **tout désélectionner** et des cases de sélection individuelles.
+
+La recherche par nom dans cette liste latérale recherche les prénoms ou noms des personnes déjà trouvées. Elle ne remplace pas les critères de filtre. **Tout sélectionner** s’applique à l’ensemble des résultats, et non seulement aux personnes visibles via la recherche par nom. Contrôlez le nombre sélectionné avant d’enregistrer ou de contacter.
+
+Avec **Appliquer les filtres sélectionnés**, vous reprenez la sélection dans la vue appelante. **effacer les filtres** réinitialise les critères aux valeurs initiales ; cela ne signifie pas automatiquement « tous les statuts et toutes les organisations ». Dans le contexte client, le pool client reste conservé. Fermer via le x n’est pas l’étape d’application.
+
+## E-mail directement depuis la liste de résultats du filtre
+
+L’enveloppe à côté de la liste de résultats dépliée ouvre un dialogue e-mail séparé avec **objet** et **description**. Vérifiez les personnes sélectionnées dans la liste de résultats, saisissez les deux textes et choisissez **Envoyer e-mail**. Ce chemin utilise les résultats sélectionnés, et non automatiquement seulement les noms visibles via la recherche latérale par nom. Il n’offre ni SMS, ni pièces jointes, ni le chargeur normal de modèles de message.
+
+La fermeture de la boîte de dialogue après l’envoi ne constitue pas une preuve de succès. En cas de retour peu clair, ne renvoyez pas le message ; pour un cercle de destinataires et un canal mieux maîtrisables, utilisez le [dialogue de message du tableau de bord](/main/fr/05d_employee_communication). Un nombre de résultats n’est pas une confirmation de distribution.
+
+## Données personnelles, évaluations et remarques
+
+| Zone | Sélection et signification |
+|---|---|
+| Données personnelles | Dans le tableau de bord, les statuts **incomplet**, **Postulé**, **actif**, **modifié**, **expiré**, **inactif** ; en outre, sexe masculin/féminin/autre, fumeur oui/non, auto-portrait vidéo présent oui/non, âge de/à et nombre d’enfants de/à. Sans statut de collaborateur sélectionné, il n’y a aucun résultat. |
+| Évaluations | Bornes minimale et maximale distinctes du nombre d’étoiles pour **évaluation du collaborateur par l'agence** et **évaluation des collaborateurs par les clients**. À ne pas comprendre comme une preuve de qualification. |
+| Remarques internes | **Aucun incident**, **avertissement (carton jaune)**, **Exclusion (carton rouge)** ainsi que **Remarque interne existante** oui/non. La sélection recherche la présence, et non un texte de remarque saisi librement. |
+
+Utilisez des caractéristiques personnelles ou sensibles uniquement dans le contexte de travail autorisé prévu à cet effet. Les instructions de filtrage ne disent rien sur le fait de savoir quelle sélection est autorisée pour une décision RH donnée.
+
+## Combiner des listes et des pools de clients
+
+**Listes de collaborateurs** et **listes complémentaires** incluent des membres. Au sein d'un type de liste, l'appartenance à une liste choisie suffit normalement. Activez **afficher uniquement les collaborateurs qui sont sur toutes les listes** lorsque la personne doit appartenir à chacune des listes sélectionnées. Pour les listes complémentaires, il existe un commutateur correspondant séparé. Si des listes normales et des listes complémentaires sont restreintes en même temps, une personne doit remplir les conditions des deux groupes.
+
+Une **liste noire** choisie exclut ses membres. **inclure les collaborateurs sur la liste d'exclusion** lève cette exclusion pour la recherche ; cela ne supprime ni la liste ni une appartenance. Une exception de filtre n'est pas une autorisation pour une réservation.
+
+La zone **pool de clients** distingue le contexte de travail :
+
+- Dans la vue agence avec accès Self Service : sélectionnez les clients dont le pool doit contenir la personne ; exigez en option l'appartenance à **tous** les pools de clients sélectionnés.
+- Dans la vue client : sélectionnez vos propres listes de collaborateurs du client, avec en option l'exigence de toutes les listes. Il ne s'agit pas des listes de collaborateurs de l'agence. La vue des collaborateurs du client est limitée à votre propre pool.
+- Un pool de clients n'est pas la même chose qu'une offre publique de collaborateurs. Le commutateur de place de marché n'est pas affiché dans le filtre Self Service.
+
+## Missions, apparence et images
+
+| Domaine | Champs |
+|---|---|
+| Emplois futurs | Date de début/fin pour les missions futures existantes. Il ne s'agit pas d'une période de disponibilité. |
+| Historique des emplois | Date de début/fin pour les missions passées. |
+| Historique des jobs importé | Période séparée de début/fin pour les historiques importés ; masquée dans la vue de filtre client. |
+| Apparence | Sélection multiple de la couleur des yeux et des cheveux ; taille, pointure, taille du haut, largeur du pantalon et longueur du pantalon avec pour chacune des bornes minimale et maximale ; tatouages visibles et piercings visibles oui/non. |
+| Images | Pour le portrait et les autres images, présence séparée oui/non ; masqué dans la vue de filtre client. |
+
+## Sélectionner les compétences avec précision
+
+- **CV téléversé :** L'interface propose oui/non. Dans l'état vérifié, le contrôle sous-jacent ne correspond pas clairement à l'intitulé : il tient compte des entrées d'études, d'expérience professionnelle ou de langues existantes au lieu de vérifier de manière fiable le téléversement du fichier CV. N'utilisez donc pas ce filtre comme preuve de l'existence d'un document CV ; contrôlez le fichier dans le profil.
+- **Formation :** créez une entrée via **Ajouter un critère** ; définissez le type, commencé après/avant, terminé après/avant, formation en cours et certificat téléversé. « Formation en cours » remplace la vérification d'une date de fin. En cas de plusieurs entrées, le commutateur **toutes les formations souhaitées** détermine si toutes les conditions de formation ou au moins une doivent être remplies. L'icône de suppression ne retire que le critère de recherche.
+- **Expérience professionnelle :** profession via la sélection hiérarchique, intitulé du poste, limites de dates de début et de fin ainsi que **position actuelle**. Plusieurs lignes peuvent être liées avec « toutes les expériences professionnelles définies ».
+- **Langues :** langue et niveau **Débutant**, **Intermédiaire**, **Avancé** ou **langue maternelle** ; sélection du certificat, si affichée. Le niveau est un niveau précis, et non automatiquement un niveau minimum. Pour la langue maternelle, la sélection du certificat est masquée. Avec le commutateur « toutes les langues souhaitées », toutes les langues sélectionnées doivent correspondre.
+
+Pour les vérifications oui/non concernant les certificats présents, une seule réponse choisie limite la recherche. Les deux ensemble ne constituent pas une exigence de certificat simultanément présent et absent.
+
+## Adresse et disponibilité
+
+Dans la zone **Adresse**, vous choisissez le lieu, dans la mesure où l'écran appelant le permet. Les deux curseurs de distance se rapportent séparément à l'adresse principale et à la deuxième adresse. Si les deux sont définis, les résultats peuvent correspondre via l'une ou l'autre adresse. Il ne s'agit pas d'un engagement sur le temps de trajet réel. En outre, il existe des limites de début/fin pour **adresse principale – valide à partir de** et **deuxième adresse – valide à partir de**.
+
+**Disponibilité générale** a deux formes selon l'appel :
+
+- Sans référence à un rôle : critères répétables de jour de la semaine / heure de début / heure de fin et périodes de dates supplémentaires. Les périodes de dates recherchent des personnes sans indisponibilité enregistrée qui se chevauche ; elles n'inscrivent aucune nouvelle disponibilité dans le profil.
+- Dans le filtre de rôle : commutateurs pour l'indisponibilité enregistrée et la vérification plus stricte de la disponibilité ou des conflits. La variante stricte exclut les personnes pour lesquelles des conflits ont été détectés. Un résultat de filtre ne remplace toutefois pas la vérification des conflits lors de l'affectation. Tenez également compte des indications de conflit sur les personnes individuelles.
+
+## Informations sur le travail et coordonnées bancaires
+
+Ces deux zones de filtre ne sont pas affichées dans la vue de filtre client.
+
+**Informations sur le travail** contient : numéro AVS indiqué, attestation AVS téléversée, état civil et sa période de validité, nationalité, passeport/carte d'identité présent, permis de travail et téléversement associé, date d'expiration du permis, bornes minimale et maximale du numéro de collaborateur, succursale, conseiller, personnel permanent/interne de l'agence et document de contrat-cadre présent. Les listes et conseillers sélectionnables dépendent du contexte de l'agence.
+
+Des filtres de date existent en outre pour **enregistrement**, **candidature**, **entretien**, **activation**, **premier jour de travail**, **désactivation** et **dernière connexion mobile**. Ils concernent des événements différents : « enregistrement » n'est pas « premier jour de travail ».
+
+**Coordonnées bancaires** vérifie la présence de l'IBAN, le type de compte, la présence du numéro de compte, le nom de la banque, le lieu de la banque et le numéro de clearing. Ces filtres ne modifient pas les données bancaires et ne confirment pas leur exactitude.
+
+## Mobilité, intérêts professionnels et autres documents
+
+**Informations sur la mobilité** comprennent les abonnements TP (aucun, demi-tarif, AG, réseau de transport régional), les catégories de permis de conduire, le document de permis de conduire présent, les compétences de conduite (automatique, boîte manuelle, petit utilitaire, hayon), voiture personnelle/voiture du ménage/aucune voiture, marque, forme de carrosserie et taille de la voiture. Le carsharing peut être sélectionné séparément pour Mobility, GoMore, 2EM et d'autres abonnements. Vérifiez la catégorie concrète ; un simple téléversement de document ne prouve pas chaque compétence de conduite.
+
+**Intérêts professionnels** distingue les produits (automobile, télécommunications, IT, sport, beauté/soins du corps, produits financiers, produits pharmaceutiques, animaux, denrées alimentaires, non-food, tabac, boissons alcoolisées) et les types de missions (promotion, merchandising, mystery shopping, logistique, accueil, service, bar, cuisine, sécurité, soins, nettoyage). La zone est masquée dans la vue de filtre client. Les intérêts ne constituent pas une formation achevée.
+
+**Autres documents** affiche les types de documents existants avec une sélection oui/non pour chacun. La recherche porte sur une entrée de document de ce type non supprimée ; cela ne permet pas de conclure à un contrôle du contenu du document. Dans la vue client, cette zone dépend en outre du droit d'afficher d'autres documents. L'évaluation de l'agence y dispose également de son propre droit de visibilité.
+
+## Enregistrer un modèle de filtre ou une liste de personnes
+
+Un **modèle de filtre** enregistre les critères. Choisissez **Enregistrer comme modèle**, saisissez un nom et enregistrez. En cas de même nom, une demande de confirmation pour écraser apparaît. Via **charger à partir du modèle**, vous recherchez et sélectionnez un modèle enregistré. Dans le filtre de rôle, les statuts non actifs provenant d'un modèle du tableau de bord peuvent être ignorés ; l'interface l'indique explicitement.
+
+Une **liste de personnes** enregistre en revanche les membres sélectionnés. Avec le droit de gestion des listes, choisissez **Enregistrer comme liste** ou l'action pour une liste noire, saisissez un nom d'au moins deux caractères et enregistrez. Dans le tableau de bord, une liste normale, une liste complémentaire et une liste noire sont également disponibles comme actions groupées. Une liste de membres enregistrée une fois ne s'allonge pas simplement parce que d'autres profils satisfont plus tard aux critères de recherche de l'époque.
+
+## Modifier des listes existantes
+
+1. Ouvrez **Collaborateurs → Modifier les listes**.
+2. Choisissez **Listes de collaborateurs**, **listes complémentaires de collaborateurs** ou **Listes noires de collaborateurs** et recherchez la liste souhaitée.
+3. Pour ajouter, recherchez dans le champ séparé par nom ou e-mail et sélectionnez la personne. Ce champ propose des personnes qui ne sont pas encore membres.
+4. Pour retirer, utilisez l'action **Retirer le collaborateur de la liste** sur la ligne concernée et tenez compte de la demande de confirmation. Cela retire l'appartenance, pas le profil du collaborateur.
+5. Avec le crayon, vous modifiez le nom de la liste. Après confirmation, la corbeille supprime la liste sélectionnée avec ses appartenances, et non les personnes qu'elle contient.
+
+La gestion des listes exige un droit spécifique de gestion des listes. L'attribution de listes directement dans le profil du collaborateur dépend en revanche du droit de modification du profil. **Export** et **Envoyer message** se rapportent à la sélection actuelle ; il faut donc contrôler à nouveau le changement de liste ou d'onglet avant une action groupée.
+
+Pour votre propre pool de clients, il existe une vue distincte **Mes listes**. Ne confondez pas les listes clients avec une liste d'agence portant le même nom. Suite : [Envoyer des messages](/main/fr/05d_employee_communication), [Profils](/main/fr/05a_employee_profiles), [Étape 4](/main/fr/04b_staff_allocation).

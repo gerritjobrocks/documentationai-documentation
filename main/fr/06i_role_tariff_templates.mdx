@@ -1,0 +1,98 @@
+---
+title: "Modifier les modèles de rôles et de groupes tarifaires"
+description: "Sous-dialogues, lien client et différentes limites d’enregistrement pour les modèles de rôle."
+---
+
+# Modifier les modèles de rôles et de groupes tarifaires
+
+## Modifier le modèle de rôle et le filtre
+
+Ouvrez **Profil d’agence → Modifier les modèles → Modèles de rôle → Modifier**. La création à partir d’un rôle existant et l’application ultérieure sont décrites dans [Modèles et réutilisation](06_templates_and_reuse.mdx). Dans la boîte de dialogue principale, vous renseignez le nom du modèle ainsi que le nom du rôle et la description dans les onglets linguistiques anglais, allemand, français et italien. La description peut être mise en forme. La fonction de traduction reprend un texte existant dans une autre langue vers la langue cible choisie ; vérifiez-le avant l’enregistrement.
+
+**Enregistrer** dans la boîte de dialogue principale met à jour le modèle de rôle. Si le nom du rôle manque dans toutes les langues, l’enregistrement est refusé. **Annuler** ferme la boîte de dialogue principale sans cet appel, mais ne révoque pas les modifications déjà enregistrées dans les sous-dialogues.
+
+Via **Filtre**, vous ouvrez le filtre commun des collaborateurs. Le modèle est chargé avec son état de filtre enregistré, y compris la sélection spécifique à la personne. Un ancien modèle sans sélection de pool client démarre là avec une liste vide. Vérifiez les [règles de filtre et de sélection](05b_employee_lists_filters.mdx) avant l’application ; un modèle ne garantit pas que les personnes trouvées auparavant soient encore disponibles aujourd’hui. La confirmation de l’éditeur de filtre déclenche la mise à jour du modèle.
+
+Les **modèles de filtre → Modifier** autonomes utilisent également cet éditeur de filtre et s’enregistrent via sa confirmation. La création et l’utilisation des modèles de filtre sont décrites dans [Listes et filtres](05b_employee_lists_filters.mdx). Après une modification du modèle, rouvrez-le et vérifiez les filtres enregistrés.
+
+## Lignes de salaire et de frais dans un rôle
+
+Dans le sous-dialogue **Salaire**, le salaire de base, les suppléments et les allocations sont séparés. **Ajouter nouveau** ajoute une ligne dans le groupe concerné ; **Charger depuis un modèle** reprend un modèle de salaire, de supplément ou d’allocation correspondant déjà existant. Choisissez le bon type et contrôlez les valeurs reprises plutôt que seulement le nom.
+
+La ligne de salaire de base contient le titre, le montant, un montant maximal facultatif via **+**, la devise EUR/USD/CHF, la fréquence h/d/par mission et la classe salariale. Les suppléments en pourcentage contiennent le titre, le pourcentage, la classe salariale et le critère ; les suppléments fixes contiennent à la place du pourcentage un montant, un montant maximal facultatif, la devise et la fréquence h/d/par mission. Les allocations offrent en plus **par unité**. Ces fréquences ne doivent pas être assimilées à la liste de sélection plus courte du modèle de salaire autonome.
+
+Dans le sous-dialogue **Détails des frais**, chaque ligne comprend le titre, le montant, un montant maximal facultatif, EUR/USD/CHF, heure/jour/kilomètre/par mission/par unité, transport/repas/hébergement/autre, mode de paiement effectif/forfaitaire, classe salariale et critère. Pour kilomètre ou par unité, le chemin d’enregistrement règle le mode de paiement sur effectif. L’ajout de nouvelles lignes et le chargement d’un modèle de frais sont des actions distinctes.
+
+Le symbole de suppression d’une ligne demande une confirmation. **Enregistrer** dans le sous-dialogue du salaire ou des frais met à jour le modèle de rôle et ramène à l’édition principale. **Annuler** ferme sans cet appel d’enregistrement, mais les modifications locales encore présentes dans la boîte de dialogue principale ne sont alors pas réinitialisées de manière vérifiable. Si vous voulez annuler avec certitude, quittez l’édition et rechargez le modèle enregistré. Après chaque enregistrement, vérifiez à nouveau les valeurs, les unités et les affectations.
+
+## Vêtements, documents et clients d’un modèle de rôle
+
+**Vêtements** ouvre l’objet et la description pour chaque onglet linguistique ainsi que les images. Ce n’est pas l’éditeur des quatre catégories générales de vêtements dans le portail client. Dans le modèle de rôle, vous pouvez charger un modèle de vêtements. La zone de téléversement n’est proposée que tant que moins de deux images figurent dans la liste ; via le symbole de suppression, vous retirez une image de la liste. Après la traduction et l’édition du texte, choisissez **Enregistrer** dans la boîte de dialogue des vêtements et vérifiez à nouveau le modèle. Le téléversement et l’enregistrement du modèle sont des étapes différentes ; fermer ne garantit pas qu’une image déjà téléversée a été annulée.
+
+Les **modèles de vêtements → Modifier** autonomes affichent également les textes linguistiques et les images. Les champs proposés sont l’objet et la description, et non le choix de catégorie haut/bas/chaussures/accessoires. **Enregistrer** met à jour le modèle choisi. L’application dans un rôle est une étape supplémentaire.
+
+Sous **Documents**, des fichiers sont téléversés et listés sous forme de liens. Les réponses de téléversement contenant des erreurs doivent être corrigées ; un nom de fichier sélectionné seul n’est pas un téléversement réussi. **Supprimer** demande une confirmation, puis envoie la liste de fichiers restante. La boîte de dialogue des documents ne possède pas de bouton commun d’enregistrement ultérieur : le téléversement et la suppression confirmée sont des actions distinctes.
+
+Sous **Clients**, les clients non attribués et attribués sont affichés face à face. Déplacez à chaque fois un client du bon côté. Chaque déplacement déclenche immédiatement la modification de l’attribution ; il n’attend pas **Enregistrer** dans la boîte de dialogue principale. La fermeture de ce sous-dialogue met en outre à jour le modèle de rôle. En cas d’erreur, rechargez et vérifiez l’attribution ; **Annuler** dans la boîte de dialogue principale n’annule pas ces modifications côté serveur.
+
+## Groupe tarifaire dans le modèle de rôle
+
+Sous **Groupe tarifaire** d’un modèle de rôle, il existe le nom du groupe tarifaire ainsi que les coûts minimaux et maximaux par heure. Saisissez les valeurs prévues par l’entreprise. Un nom vide signifie qu’il n’y a pas de groupe tarifaire ; les valeurs minimales ou maximales vides sont enregistrées comme non définies. Le placeholder 0.00 n’est ni un prix promis ni une validation métier automatique.
+
+**Enregistrer** ferme le sous-dialogue. Le fait de le fermer d’une autre manière déclenche également la mise à jour du modèle de rôle via la clôture de la boîte de dialogue. Ce n’est pas une étape sûre d’abandon. Rouvrez le modèle après la réponse et contrôlez le nom ainsi que les deux limites. Ces trois champs du rôle ne sont pas identiques à un modèle de groupe tarifaire autonome avec affectations de clients et de départements.
+
+## Modèle autonome de groupe tarifaire avec clients et départements
+
+La famille **Groupes tarifaires** est visible dans la gestion autonome des modèles de l’agence, pas dans la vue client intégrée. **Créer un groupe tarifaire** ouvre un formulaire d’abord vide : nom, coûts minimaux par heure, coûts maximaux par heure et une sélection multiple pour les départements. Le nom et les deux champs de coûts sont marqués comme obligatoires.
+
+1. Ouvrez **Clients** dans la boîte de dialogue de création et déplacez à chaque fois un client approprié dans la liste attribuée. Tant que le modèle n’existe pas encore, ces clients ne sont mémorisés que localement.
+2. Revenez au formulaire. Les départements proposés sont ceux des clients choisis. Si un client est retiré, les marquages de département qui ne conviennent plus sont supprimés. Une liste de départements vide peut donc être due à l’absence de sélection de clients.
+3. Saisissez le nom et les limites, sélectionnez les départements nécessaires et choisissez **Enregistrer**. Le modèle est d’abord créé ; les affectations de clients suivent sous forme de requêtes séparées. Évitez les noms de modèle en double et vérifiez ensuite à la fois l’entrée et les clients. Il ne s’agit pas d’un enregistrement atomique de toutes les affectations.
+4. Pour un modèle existant, **Modifier** ouvre les mêmes champs de base. **Enregistrer** reprend le nom, les limites et les départements. Dans le sous-dialogue Clients, les affectations sont en revanche déjà enregistrées lors du déplacement. Fermer la boîte de dialogue de modification n’annule pas une affectation client déjà enregistrée.
+5. **Supprimer** sur l’entrée de la liste demande une confirmation. Vérifiez ensuite la liste rechargée.
+
+Une modification de ce modèle n’est pas équivalente à l’édition de chaque groupe tarifaire déjà créé à partir de celui-ci dans un rôle. Lors du chargement ultérieur, vérifiez les valeurs de rôle effectivement reprises. Ni les coûts minimaux ni les coûts maximaux ne constituent un engagement de prix actuel de bejoo.
+
+## Critères de salaire avec grille horaire ou seuil horaire
+
+Sous **Modifier les modèles → Critères de salaire → Modifier**, vous ouvrez le critère choisi. Il existe un nom de modèle et un nom multilingue. Utilisez les onglets anglais, allemand, français et italien ; vérifiez les traductions automatiques avant l’enregistrement.
+
+Les trois types de critères s’excluent mutuellement : **critère temporel**, **critère horaire** ou **aucun critère**. Lors du changement, les saisies du type précédent sont réinitialisées. Choisissez donc le bon type avant de remplir.
+
+- **Critère temporel :** Marquez les heures dans la grille hebdomadaire. Une cellule correspond à une heure. En maintenant le bouton de la souris, il est possible de définir ou de supprimer plusieurs cellules. Un en-tête de jour définit ou supprime toute la journée, un libellé d’heure l’heure pour tous les jours ; **Tout sélectionner/désélectionner** agit sur l’ensemble de la grille. **Seulement le soir** marque de 18:00 à 24:00, **Seulement le week-end** le samedi et le dimanche. Les deux ensemble donnent les heures du soir du week-end, pas la somme des deux zones. Une nouvelle sélection de preset réinitialise la grille ; vérifiez les marquages manuels au préalable. Le preset nuit non proposé n’est pas une sélection visible supplémentaire. Au moins une heure doit être marquée.
+- **Critère horaire :** Choisissez **jusqu’à** ou **après** un nombre d’heures et saisissez les heures et les minutes dans le champ de temps. Lors du passage à ce type, la sélection commence sur **jusqu’à**, sans valeur renseignée. Tant que l’autre seuil est renseigné, le changement est verrouillé : videz d’abord cette valeur. Marquez les jours de la semaine concernés du lundi au dimanche. Sans seuil renseigné, l’enregistrement est refusé.
+- **Aucun critère :** Aucune des deux conditions temporelles n’est configurée. Cela n’est pas équivalent à une grille temporelle précédente inchangée.
+
+**Enregistrer** ouvre, pour un critère existant, le choix entre **Enregistrer le critère existant** et **Créer un nouveau critère**. L’avertissement concerne tous les endroits qui utilisent le critère existant. Pour une nouvelle variante, choisissez **Créer un nouveau critère**, saisissez dans la boîte de dialogue suivante un nom de modèle propre et enregistrez. Un nom déjà attribué peut être refusé. Lors de la première création, le processus exige la confirmation des paramètres.
+
+**Annuler** ferme l’éditeur et réinitialise son état local. Après une opération d’enregistrement, rouvrez-le et contrôlez le nom, le type, la grille ou le seuil. Si la liste ne se met pas à jour malgré le message de succès, rechargez-la et vérifiez les valeurs enregistrées au lieu d’ajouter plusieurs nouveaux critères. Pour supprimer, choisissez **Supprimer** dans la liste et confirmez ; la ligne peut déjà disparaître localement avant la réponse du serveur, donc rechargez à nouveau.
+
+Les critères dans le profil client intégré peuvent être spécifiques au client. Vérifiez le contexte agence ou client ; un lien de modification visible n’est pas une garantie pour chaque autorisation serveur.
+
+## Gérer les classes salariales et les clés
+
+Sous **Modifier les modèles → Classes salariales → Modifier**, vous gérez le nom par langue et la **clé** commune. Les onglets linguistiques proposés sont anglais, allemand, français et italien. Une traduction modifie d’abord le nom de la langue cible ; vérifiez-la avant **Enregistrer**. Le nom et la clé sont obligatoires. Un nom uniquement dans une autre langue ne suffit pas de manière fiable au validateur de nom actif : vérifiez en particulier le nom dans la langue actuelle de votre interface.
+
+**Enregistrer** ouvre une confirmation. Pour une classe salariale existante, elle avertit des répercussions aux endroits qui utilisent déjà cette classe. Ne confirmez que la modification commune voulue. Lors d’une création, la confirmation indique que la modification ultérieure s’effectue dans les paramètres de l’agence. **Annuler** ferme l’éditeur sans cet appel d’enregistrement. Si la modification est verrouillée dans le contexte concerné, l’enregistrement est aussi désactivé.
+
+Après réussite, rouvrez la classe salariale et vérifiez le nom ainsi que la clé. Une clé est une valeur technique de données de base et ne garantit pas une transmission réussie vers Payroll ou EasyTemp. Sélectionnez ensuite la classe enregistrée dans le champ salaire/frais correspondant ; modifier un texte placeholder dans le profil d’agence ne crée pas de classe salariale.
+
+**Supprimer** sur l’élément de liste nécessite une confirmation. L’interface supprime déjà la ligne localement pendant que la requête est en cours. Après une erreur ou un résultat incertain, rechargez et ne vous fiez pas uniquement à la ligne disparue.
+
+## Charger des modèles dans un rôle
+
+Ouvrez un **modèle de rôle → Modifier** et la section souhaitée. Les actions de chargement restent séparées les unes des autres :
+
+| Section | Sélection et résultat |
+| --- | --- |
+| Salaire de base | **Charger depuis un modèle** affiche les modèles de salaire sans les anciennes entrées d’indemnités supplémentaires. Le rôle ne peut contenir qu’un seul salaire de base ; s’il y a déjà un salaire de base, aucun second transfert de salaire de base n’est disponible. |
+| Indemnités supplémentaires | Liste propre des modèles d’indemnités supplémentaires ; la sélection ajoute une autre ligne de salaire. |
+| Suppléments de salaire | Dialogue distinct avec des suppléments **en pourcentage** et **fixes**. Chaque page dispose de sa propre recherche ; saisissez une partie du nom du modèle. La recherche ne tient pas compte de la casse. Une zone de résultats vide n’est pas un nouveau modèle. |
+| Frais | Liste propre des modèles de frais ; la sélection ajoute une autre ligne de frais. |
+| Prescriptions vestimentaires | Liste propre des modèles de vêtements ; la sélection remplace le bloc de vêtements actuel, y compris ses images et ses textes de langue. Vérifiez d’abord les modifications existantes. |
+
+Les listes de salaire de base, d’indemnités supplémentaires, de frais et de vêtements disposent elles aussi d’une recherche par partie du nom du modèle, indépendamment de la casse. Les filtres client et département ne sont pas proposés dans ces listes de sous-modèles de rôle.
+
+Cliquez sur l’élément de liste souhaité pour le reprendre localement dans le rôle en cours de modification ; la boîte de dialogue de sélection se ferme. Fermer sans sélection ne charge rien. Pour salaire/supplément, entre autres, le montant ou le pourcentage, le plafond, la devise, la fréquence, les critères et le type de salaire sont repris ; les champs de paiement et de type ne sont pas garantis comme étant copiés intégralement. Pour les frais, les valeurs de paiement/type existantes sont également reprises. Contrôlez toutes les valeurs visibles après le chargement. Les valeurs numériques nulles peuvent apparaître comme des valeurs vides lors du transfert ; corrigez-les explicitement si nécessaire.
+
+**Le chargement n’enregistre pas encore le modèle de rôle.** Enregistrez ensuite dans la boîte de dialogue de modification du rôle puis rouvrez le rôle. Le modèle d’origine de salaire, de supplément, de frais ou de vêtements n’est pas modifié par le transfert local. Une modification ultérieure de l’origine ne garantit pas que les rôles déjà repris seront automatiquement mis à jour en conséquence. Cette manipulation de l’interface ne constitue pas une appréciation de droit du travail ou de droit fiscal des valeurs sélectionnées.

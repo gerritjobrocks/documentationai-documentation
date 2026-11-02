@@ -1,0 +1,66 @@
+---
+title: "Profil de l’agence et données de l’entreprise"
+description: "Trouver les paramètres, gérer les données de l’entreprise et les contacts, gérer la visibilité publique."
+---
+
+# Profil de l’agence et données de la société
+
+## Ouvrir la bonne page de paramètres
+
+Ouvrez **paramètres** dans la barre latérale. La page du profil de l’agence se reconnaît au nom et au logo de l’agence, ainsi qu’à **données de la société**, **modifier les modèles** et **crédits**. Avant toute modification, vérifiez le nom actif de l’agence dans la barre latérale.
+
+Il existe un deuxième point d’accès distinct portant le même libellé **paramètres** : le [tableau de bord des paramètres système](06f_system_settings.mdx), avec **inviter des membres**, **inviter des clients** et **Sécurité**. L’absence d’une entrée à cet endroit ne signifie pas que le profil de l’agence manque aussi. Les deux entrées de navigation sont autorisées séparément.
+
+La plupart des sections du profil nécessitent **afficher les paramètres** et, en plus, l’autorisation de modification correspondante, par exemple pour les données de la société, les modèles, l’e-mail ou le portail client. **gérer les rôles des membres** dispose d’un accès propre. Une zone grisée n’est pas la preuve que la même autorisation s’applique à toutes les autres zones. En cas de refus d’accès, demander à l’administrateur de vérifier la fonction concernée ; ne pas basculer sur une autre agence.
+
+Il n’existe pas de sauvegarde commune pour toute la page. Les champs de texte peuvent déjà se sauvegarder en quittant le champ, les interrupteurs directement lors du basculement, et d’autres zones seulement via **Enregistrer**. Le bouton des personnes de contact n’enregistre pas en même temps le compte e-mail ou les heures de bureau.
+
+Le logo et le lien d’inscription en haut appartiennent au profil de l’agence, et non à un nouveau rôle d’utilisateur. Les [instructions d’inscription](05_employees_dashboard.mdx#inviter-des-collaborateurs-à-sinscrire) décrivent ce point d’entrée.
+
+## Données de la société et adresse
+
+Sous **données de la société**, vous modifiez :
+
+| Groupe de champs | Saisie et enregistrement |
+| --- | --- |
+| Nom de l’agence | Nom d’affichage de l’agence. Certains caractères spéciaux sont supprimés lors de la saisie et donnent lieu à un message d’erreur. Vérifier le nom nettoyé. |
+| Nom légal de l’agence | Saisir le nom légal de l’entreprise indépendamment du nom d’affichage. |
+| Site web de l’agence | Saisir le site web dans le champ URL. |
+| Adresse | Saisir séparément la rue, le numéro, une ligne d’adresse supplémentaire, le code postal et la localité. |
+| Pays | Choisir une entrée dans la sélection des pays ; il ne s’agit pas d’un champ de texte libre. |
+
+Les champs de texte se sauvegardent **en quittant le champ**, le pays **lors d’un changement de sélection**. Pour cela, le bouton sous les personnes de contact n’est pas responsable. Rouvrez la page une fois la modification terminée et contrôlez les valeurs : une saisie toujours visible ne confirme pas à elle seule l’enregistrement. Ni un pays par défaut général ni un nom de société ne sont prédéfinis pour toutes les agences.
+
+N’utilisez pas des champs internes de tenant ou d’intégration comme remplacement de ces données de base. Les autorisations techniques d’interface ne constituent pas une confirmation fiscale ou en matière de droit des salaires.
+
+## Ajouter et enregistrer des personnes de contact
+
+Dans la même section, **personne de contact** affiche pour chaque personne le prénom, le nom, l’e-mail, l’e-mail de récupération, le téléphone fixe, le téléphone mobile et le mobile de récupération. **Ajouter une nouvelle personne de contact** ajoute d’abord une ligne vide. Saisissez les coordonnées nécessaires et cliquez sur **Enregistrer** sous la liste. Seule cette étape envoie la liste des contacts ; quitter simplement un champ de contact ne le fait pas.
+
+L’icône de suppression à côté d’une personne ouvre une confirmation. **Oui** supprime cette personne de contact, **Non** la conserve. Après l’enregistrement, contrôlez le message de succès puis, après une nouvelle ouverture, la liste. Lors d’une suppression, la ligne disparaît déjà localement ; en cas d’erreur, il faut donc recharger et ne pas se fier uniquement à la ligne disparue.
+
+Une personne de contact n’est pas automatiquement un compte utilisateur. Pour l’accès et le rôle, utilisez la [gestion des utilisateurs](06c_agency_users.mdx).
+
+## Visibilité publique et description
+
+Sous **Visibilité publique**, vous avez besoin de l’autorisation de modifier la visibilité publique. L’interrupteur principal enregistre immédiatement l’activation. Lors de la désactivation, une confirmation apparaît : l’agence ne doit plus apparaître dans l’annuaire public ; le pool de collaborateurs existant est conservé. **Non** remet l’interrupteur dans son état initial, **Oui** enregistre la désactivation.
+
+La description possède les onglets de langue **English**, **Deutsch**, **Français** et **Italiano**. Modifiez l’onglet souhaité ; une description effectivement modifiée est enregistrée en quittant l’éditeur. L’interface limite le texte de description à 2000 caractères et prend en charge les liens. L’ouverture seule d’un onglet n’est pas une modification.
+
+Le bouton Traduire apparaît lorsqu’une autre langue contient du contenu et que la visibilité publique est activée. Il utilise le premier texte d’une autre langue rempli dans l’ordre anglais, allemand, français, italien. Le résultat remplace le texte de la langue cible choisie et est enregistré directement. Vérifiez donc le texte source et la cible avant de traduire ; il n’existe pas d’étape d’approbation supplémentaire après la traduction.
+
+Si l’interrupteur principal est désactivé, la description et les zones de sélection restent visibles, mais sont verrouillées. Après un message d’erreur, l’état visible n’est pas un état enregistré fiable. Rouvrez la page et contrôlez l’interrupteur, les textes des langues et la sélection.
+
+## Sélectionner les secteurs et les types de mission
+
+Sous la description publique, vous pouvez cocher plusieurs **secteurs** et **types de mission**. Chaque ajout ou retrait est enregistré immédiatement ; cette sélection n’est ni une liste de filtre des collaborateurs ni un modèle de type de projet.
+
+**Secteurs :** production et industrie ; commerce de détail et commerce ; santé ; restauration, tourisme et événements ; logistique et transport ; facility management et services de nettoyage ; placement de personnel et recrutement ; sécurité ; marketing, médias et communication ; secteur public et éducation ; agriculture ; immobilier et construction ; services financiers et professionnels.
+
+**Types de mission :** promotion, merchandising, mystery shopping, logistique, accueil, service, bar, cuisine, sécurité, soins et nettoyage. Les appellations peuvent différer selon la traduction affichée ; choisissez les entrées correspondant au domaine. Lorsque la visibilité publique est désactivée, les cases à cocher ne peuvent pas être modifiées. Après une nouvelle ouverture, vérifiez quelles entrées sont restées cochées.
+
+## Logo et lien d’inscription dans l’en-tête du profil
+
+Dans l’en-tête du profil figurent le nom de l’agence, le logo et le lien d’inscription. Avec l’autorisation de modifier l’image du profil de l’agence, vous pouvez remplacer le logo via la zone de téléversement ; le téléversement suit son propre chemin d’enregistrement et ne fait pas partie de **Enregistrer les données de la société**. Attendez la fin du téléversement et contrôlez l’image après une nouvelle ouverture. En cas de message d’erreur, ne concluez pas à un logo enregistré à partir du fichier choisi localement.
+
+L’action de copie sur le lien d’inscription copie le lien existant ; elle ne crée pas une nouvelle invitation et n’envoie pas de message. Vérifiez le nom de l’agence et le cercle de destinataires prévu avant de le partager. Le panneau des données de la société s’ouvre via **données de la société**, la gestion des modèles via **modifier les modèles**. Les deux sont séparés des informations générales dans l’en-tête du profil.

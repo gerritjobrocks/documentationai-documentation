@@ -1,0 +1,104 @@
+---
+title: "Options, règles de temps de travail et champs du profil"
+description: "Distinguer les chemins d’enregistrement, les pauses minimales, la matrice du temps de travail et les champs obligatoires ou de contrôle."
+---
+
+# Options, règles de temps de travail et champs du profil
+
+## Options et placeholders de salaire
+
+Ouvrez **paramètres → profil de l’agence → options**. La zone du fichier des conditions générales est liée à l’autorisation de modification des options ; toutes les lignes suivantes n’utilisent pas la même zone de verrouillage visible. Il n’est donc pas possible d’en déduire une autorisation générale pour chaque réglage.
+
+Téléversez le fichier des conditions générales via la zone de téléversement. Les formats DOCX, DOC et PDF sont acceptés. Après un téléversement réussi, un lien de fichier apparaît ; pour le supprimer, utiliser l’icône de suppression et confirmer. Le lien peut aussi s’appeler **file.pdf** même avec un fichier Word téléversé : contrôlez le fichier réel, pas seulement le texte du lien. Pour ce téléversement, il n’existe pas d’étape supplémentaire de sauvegarde globale.
+
+Sous **données salariales**, il existe trois textes à distinguer : un placeholder lorsqu’aucun salaire n’est saisi ; un nom de placeholder lorsqu’aucune classe salariale n’est sélectionnée pour le salaire de base ; et la clé de placeholder correspondante. Chaque sortie de ces champs texte enregistre les valeurs de placeholder transmises ensemble. Ces textes ne définissent pas de montant de salaire et ne créent pas de classe salariale. Après un message de succès, rouvrez et vérifiez les trois valeurs.
+
+## Gérer les pauses minimales sous forme de plages horaires
+
+Dans **Options → pause minimale**, le tableau contient **de (min)**, **à (min)** et **durée (min)**. **Ajouter nouveau** crée d’abord une ligne locale. La première commence à 0 ; les suivantes commencent à l’ancienne borne supérieure plus 1. Sans borne supérieure pour la dernière ligne, aucune autre ligne ne peut être ajoutée : il faut d’abord compléter la borne existante.
+
+Saisissez les bornes de plage et la durée de pause en minutes. L’enregistrement a lieu en quittant une cellule du tableau, pour autant que le début et la durée soient renseignés. La borne supérieure peut rester vide. Une durée manquante est signalée ; des plages qui se chevauchent peuvent être refusées par le serveur. Après une erreur, vérifiez à nouveau tout le tableau. Le couplage des bornes de plage peut aussi mettre à jour la ligne précédente ; les modifications ne constituent pas une transaction commune de tous les réglages.
+
+Pour supprimer, sélectionnez l’icône de suppression de la ligne et confirmez. Pour les lignes de placeholder pas encore enregistrées, les lignes non enregistrées sont supprimées localement. Après la suppression réussie d’une définition enregistrée, la liste est rechargée. Le choix de pauses admissibles sur le plan métier reste de la responsabilité de l’instance compétente.
+
+## Modifier et réinitialiser la matrice du temps de travail
+
+Sous **paramètres du temps de travail**, la règle se trouve à gauche, puis **par défaut** et une colonne par type de projet existant. Un type de projet reprend la valeur par défaut tant qu’aucune valeur propre n’est définie. Un tiret signifie qu’aucune valeur numérique n’y est définie ; ce n’est pas la même chose que 0. Sans valeurs d’agence enregistrées, la matrice fournit des valeurs par défaut vides, et non des limites approuvées par la loi.
+
+1. Cliquez sur la cellule souhaitée et saisissez un nombre dans l’unité affichée. La virgule décimale est possible.
+2. Pour une seule valeur numérique, **Enter** ou le fait de quitter le champ enregistre. **Escape** annule la saisie en cours.
+3. Pour **Heures hebdomadaires max. exceptionnelles**, il existe **peak** et **rest** : la valeur pour la semaine de pointe et pour les autres semaines. **Enter** ou le fait de quitter le deuxième champ enregistre les deux valeurs. Vérifiez les deux champs avant de confirmer.
+4. Une règle propre à un type de projet est mise en évidence. Avec la flèche de réinitialisation qui apparaît au survol, vous reprenez de nouveau la valeur par défaut ; cela est enregistré immédiatement. Même vider complètement un override rétablit l’héritage ; cela ne désactive pas la règle indépendamment de la valeur par défaut.
+5. Attendre le message de succès et, après une nouvelle ouverture, contrôler la cellule. En cas d’erreur, la valeur locale peut déjà sembler modifiée.
+
+Les règles actives et les types de projet sont chargés. **Aucune règle métier configurée** n’est pas une affirmation concernant l’absence d’obligations légales. Lors de l’enregistrement, l’interface transmet l’état de la matrice ; éviter les modifications concurrentes. Cet enregistrement est séparé des pauses minimales, des champs du profil et des heures de bureau.
+
+## Quelles règles et unités existent
+
+Le catalogue de règles enregistré comprend les groupes de champs suivants :
+
+| Règle | Saisie |
+| --- | --- |
+| Pause min. entre les missions | Minutes |
+| Nombre max. de jours de travail consécutifs | Jours |
+| Heures de travail max. par semaine | Heures |
+| Heures hebdomadaires max. exceptionnelles | Deux valeurs horaires : peak et rest |
+| Durée minimale de repos hebdomadaire ininterrompu | Heures |
+| Heures de travail max. par mois | Heures |
+| Nombre max. de dimanches par mois | Nombre |
+| Gestion d’un pointage d’entrée tardif | Minutes |
+| Gestion d’un pointage de sortie anticipé | Minutes |
+| Gestion d’un pointage de sortie tardif | Minutes |
+| Justification pour un pointage d’entrée tardif | Minutes |
+| Justification pour un pointage de sortie anticipé | Minutes |
+| Justification pour un pointage de sortie tardif | Minutes |
+
+Pour chaque ligne s’appliquent la valeur par défaut et l’écart par type de projet, ainsi que les règles d’enregistrement décrites ci-dessus. Un texte d’aide peut décrire le traitement prévu, mais il ne prouve pas que chaque fonction de planification, d’application ou de validation applique déjà la même règle. En particulier, une **tolérance de justification** enregistrée n’implique pas l’acceptation ou le rejet automatique d’une justification. La matrice ne remplace pas une validation des horaires par le service compétent.
+
+## Expiration des permis, alarme de lieu et rappels
+
+**Autorisation de travail :** dans le champ de fin d’autorisation de travail, le délai configuré est enregistré lors de la sortie du champ. Le texte d’aide décrit pendant combien de temps les collaborateurs doivent rester actifs après l’échéance. Il ne s’agit pas d’une prolongation légale d’une autorisation. Dans la sélection multiple des e-mails associée, des destinataires sont ajoutés ou retirés puis enregistrés en quittant le champ. Vérifiez séparément les valeurs enregistrées et le statut concret du collaborateur.
+
+**Alarme de lieu :** le curseur affiche de 0 à 200 mètres par pas de 10. L’enregistrement se fait au relâchement. Attention : le texte d’aide décrit 0 comme un contrôle strict, mais l’enregistrement traite 0 comme une valeur désactivée ; l’affichage montre alors **OFF**. Ne vous appuyez donc pas sur 0 comme sur un contrôle de localisation strict. Choisissez une valeur positive adaptée au métier et vérifiez-la après une nouvelle ouverture. Un écart GPS ne constitue pas à lui seul une indication fiable du temps de travail effectué.
+
+**Notifications pour les affectations non acceptées :** l’interrupteur de l’agence se sauvegarde au basculement. Il n’est pas identique aux destinataires e-mail pour les candidatures ou les acceptations. Le contrôle des rappels peut aussi être effectué côté client ; à partir du seul interrupteur de l’agence, on ne peut pas déduire un rappel effectif pour chaque mission client. Ce réglage peut influencer les notifications réelles ultérieures.
+
+## Champs obligatoires dans les profils collaborateurs
+
+Sous **Définition des champs → Champs obligatoires dans les profils collaborateurs**, vous ajoutez ou retirez la coche pour chaque champ. Vous avez besoin de l’autorisation de modification des champs. Chaque modification est enregistrée immédiatement ; il n’existe pas de bouton final pour toute la sélection. La sélection est chargée à partir des définitions de l’agence enregistrées. Les nouvelles agences ne reçoivent aucun champ obligatoire par l’initialisation par défaut ; cela ne signifie pas qu’une agence existante a une sélection vide.
+
+Les éléments sélectionnables sont :
+
+- **Personne et images :** sexe, photo portrait, photo en pied, CV, langue maternelle.
+- **Domicile :** rue, numéro, NPA, localité, pays et canton.
+- **Contact d’urgence :** prénom, nom, numéro de téléphone et e-mail.
+- **Identité et assurance sociale :** no AVS, téléverser la carte AVS, état civil, nationalité, téléverser le passeport/la carte d’identité.
+- **Autorisation et paiement :** autorisation de travail, téléversement de l’autorisation de travail, date d’expiration de l’autorisation de travail, données de l’impôt à la source, IBAN.
+- **Mobilité :** informations sur les abonnements aux transports publics, type de permis de conduire, compétences de conduite, disponibilité d’une voiture.
+
+Cette sélection modifie la définition, et non les données de profil existantes. Le prénom, le nom, la date de naissance, le téléphone mobile et l’e-mail ne figurent pas ici comme options de champ obligatoire librement activables. Vérifiez les coches en rouvrant la page puis l’indication d’exhaustivité du [profil collaborateur](05a_employee_profiles.mdx) concerné. Une indication d’exhaustivité ne remplace pas le contrôle de l’exactitude ou de la validité d’un document.
+
+## Marquer les modifications pour la vérification du profil
+
+La deuxième sélection sous **Définitions de champs** s’appelle **Champs dont la modification déclenche le statut « modifié » dans le profil du collaborateur.** Ce n’est ni une deuxième liste de champs obligatoires ni une autorisation générale d’écriture pour les collaborateurs.
+
+Les choix disponibles sont :
+
+- Nom, prénom, sexe, nombre d’enfants, date de naissance.
+- Photo portrait, photo en pied et CV.
+- Adresse principale : ligne d’adresse supplémentaire, rue, numéro, NPA, localité, pays et canton ; deuxième adresse : rue, numéro, NPA, localité et pays.
+- Téléphone fixe, téléphone mobile et e-mail.
+- No AVS, carte AVS, état civil, nationalité, passeport/carte d’identité.
+- Permis de travail, page de titre du permis de travail, document du permis de conduire, date d’expiration du permis de travail, IBAN et autres documents.
+
+L’activation et la désactivation enregistrent chaque définition séparément. Les coches affichées proviennent de la configuration de l’agence ; les valeurs initiales d’un modèle de formulaire vide ne constituent pas des valeurs par défaut d’agence obligatoires. Rechargez la page après une modification. La vérification en aval des modifications de profil et une éventuelle synchronisation EasyTemp restent des processus séparés ; une coche ne confirme ni une vérification terminée ni un export réussi.
+
+## Définitions de champs : portée de la sélection et initialisation
+
+Les deux listes de champs sont des sélections fixes, et non un éditeur pour de nouveaux champs de profil librement nommés. Utilisez **Champs obligatoires** pour l’exigence de complétude et la deuxième liste pour le statut **modifié** lors d’une modification. Un champ obligatoire n’est pas automatiquement un champ de révision ; les listes doivent être gérées séparément.
+
+La liste des champs obligatoires comprend les champs personnels/images, de résidence, d’urgence, d’identité, d’autorisation, de versement et de mobilité mentionnés ci-dessus. Les éléments prénom, nom, date de naissance, téléphone mobile et e-mail ne peuvent pas y être activés ou désactivés. En revanche, dans la liste de révision, ces informations, le nombre d’enfants, les adresses principale et secondaire ainsi que les champs de documents sont disponibles à la sélection, mais il n’existe pas de sélection distincte pour la langue maternelle, le contact d’urgence ou la mobilité. Les remarques internes et les listes de collaborateurs n’y sont pas des options de révision actives.
+
+La sélection initiale des champs obligatoires pour les nouvelles agences est vide. Pour les définitions de révision, l’initialisation peut compléter les champs personnels et les champs de documents lorsqu’aucune définition n’existe encore. C’est pourquoi « retirer toutes les coches » n’est pas un état durable garanti à travers chaque nouvelle initialisation. Après des modifications, vérifiez à nouveau les coches effectivement chargées. Une coche de vérification d’un document ne confirme ni le contenu du fichier ni une transmission réussie à un système de paie.
+
+Un champ de texte administratif visible séparément et intitulé **Employee Fields** n’est pas cette définition de champs et n’est pas un éditeur client proposé. Les modifications des impôts, du salaire ou des autorisations ne sont pas validées ici sur le fond ; seule l’utilisation de la sélection est documentée.

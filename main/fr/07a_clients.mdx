@@ -1,0 +1,162 @@
+---
+title: "Gérer les clients, les contacts et les départements"
+description: "Trouver des clients, enregistrer les données de base et distinguer les contacts des utilisateurs du portail."
+---
+
+# Gérer les clients, les contacts et les départements
+
+## Trouver des clients et ouvrir le profil
+
+1. Ouvrez **Clients** dans le menu de l’agence. Si l’entrée de menu manque, faites vérifier l’accès par votre administration.
+2. Saisissez une partie du nom du client dans le champ **recherche de clients**. La recherche ne tient pas compte de la casse ; elle parcourt le nom du client, et non le numéro client externe ni l’e-mail du contact.
+3. Ouvrez le client souhaité via son nom dans le tableau. Pour un nouveau client, choisissez **Ajouter**. La création nécessite l’autorisation de gestion des clients.
+4. Si la liste de résultats est vide, supprimez d’abord le texte de recherche. Vérifiez ensuite que vous travaillez dans la bonne agence. Des résultats de recherche vides ne prouvent pas qu’un client a été supprimé.
+
+Le tableau affiche l’ID, le nom et la raison sociale. **Supprimer** est une action distincte avec confirmation ; ce n’est pas un archivage. Ne l’utilisez pas pour masquer simplement un résultat de recherche. Sans droit de gestion des clients, l’action peut être refusée, même si une icône de suppression est visible.
+
+**Vérifier la suppression d’un client :** ne sélectionnez la corbeille qu’après avoir vérifié qu’il s’agit du bon client, confirmez avec **Oui** ou interrompez avec **Non**. Après la confirmation, la suppression est immédiatement demandée ; après la réponse, l’entrée est retirée de la liste affichée. En cas de réponse incertaine, rechargez la liste. Il ne s’agit pas d’une annulation des commandes associées et aucune garantie n’est donnée que toutes les données liées aient été définitivement supprimées. Il n’y a pas de bouton de restauration ici. En cas de suppression accidentelle, n’ajoutez pas précipitamment un client de remplacement portant le même nom ; contactez plutôt le support.
+
+## Créer des clients et enregistrer les données de base
+
+Ouvrez **Clients → Ajouter** ou un client existant. Commencez dans le premier onglet avec les informations générales (selon le niveau de traduction « General Information »). Après la première sauvegarde, choisissez **Retour → liste des clients → rouvrir le client enregistré**, avant de travailler dans l’onglet des sites. Un simple changement d’onglet ne recharge pas la liste des sites. Un rechargement du formulaire de création dans le navigateur ne remplace pas cette méthode. Lors d’une nouvelle création, la Suisse est présélectionnée comme pays. Les onglets font partie du même formulaire de profil : un champ obligatoire manquant dans un autre onglet peut empêcher l’enregistrement.
+
+| Champ | Saisie et effet |
+|---|---|
+| Nom du client | Champ obligatoire, au moins deux caractères. Lors d’une nouvelle création, le nom ne doit pas déjà exister dans l’agence. |
+| Raison sociale | Facultatif ; si renseigné, au moins deux caractères. Lors d’une nouvelle création, ce nom est également vérifié par rapport aux clients existants de la même agence. |
+| Site web de l’entreprise | Texte facultatif pour le site web. |
+| Numéro client externe | Texte facultatif pour votre attribution externe ; ce n’est pas le champ de recherche du tableau de bord client. |
+| Rue, n°, ligne d’adresse 2 | Éléments facultatifs de l’adresse de l’entreprise. |
+| NPA, localité, pays | Informations d’adresse facultatives ; choisissez le pays dans la sélection. |
+| Canton | Proposé lorsque le pays est la Suisse ; les éléments de la sélection sont des abréviations de cantons. |
+| Résumé - info supplémentaire | Jusqu’à 200 caractères par onglet de langue. L’indication apparaît dans le résumé d’une commande. Remplissez la langue souhaitée ; si elle manque, une autre version linguistique disponible est utilisée. |
+
+Choisissez **Enregistrer** en bas du profil. Attendez la réponse et vérifiez les valeurs rechargées. Une modification dans le champ de texte n’est pas encore enregistrée à elle seule. L’enregistrement reprend aussi les contacts et les départements du formulaire de profil ; il n’envoie pas d’invitation à un contact.
+
+**Si l’enregistrement échoue :** vérifiez tous les onglets pour les champs obligatoires et, lors d’une nouvelle création, vérifiez en plus le nom du client et la raison sociale pour détecter d’éventuelles entrées existantes. Un message d’erreur de droits ne se corrige pas en cliquant à nouveau. Après une réponse incertaine, rouvrez d’abord le profil et vérifiez les valeurs, au lieu de créer un second client.
+
+**Traduire Résumé - info supplémentaire :** choisissez English, Deutsch, Français ou Italiano. Le bouton de traduction apparaît lorsqu’une autre langue contient du texte. Il reprend la première autre langue renseignée dans l’ordre anglais, allemand, français, italien et remplace le texte de la langue cible choisie. Vérifiez la traduction et sa longueur avant **Enregistrer** ; le bouton seul n’enregistre pas le profil.
+
+**À ne pas confondre avec les champs de saisie disponibles :** dans ce profil client, il n’existe actuellement aucun champ utilisable pour une deuxième adresse ou un budget de commande. Une zone de remarques propre n’est pas non plus accessible via les onglets disponibles. L’adresse de l’entreprise n’est pas non plus un lieu de mission avec une épingle sur la carte. Pour les lieux de mission, utilisez **sites** ; pour des données de base supplémentaires nécessaires, clarifiez le mode de maintenance prévu avec le support, au lieu de chercher un onglet inexistant.
+
+## Gérer les contacts sans inviter d’utilisateur
+
+1. Ouvrez **Clients → client souhaité → Contacts**.
+2. Choisissez **Ajouter un nouveau contact**. Renseignez le prénom, le nom et l’e-mail. Le prénom et le nom doivent comporter au moins deux caractères ; le prénom est limité à 24 caractères. L’e-mail doit avoir un format valide.
+3. Complétez au besoin **e-mail de récupération**, **Numéro mobile**, **no mobile de récupération**, site, département et **titre d'emploi**. Les deux numéros mobiles sont facultatifs ; s’ils sont saisis, ils doivent comporter 6 à 16 caractères. Le titre d’emploi doit comporter de 6 à 50 caractères s’il est saisi. L’e-mail de récupération est également contrôlé au niveau du format.
+4. Le site et le département proviennent des entrées existantes chez le client. Une attribution de contact ne remplace pas les droits d’accès d’un utilisateur du portail.
+5. Choisissez **Enregistrer** en bas du profil et contrôlez le contact après le rechargement.
+
+**Contact et utilisateur sont deux choses différentes :** cette procédure enregistre une personne de contact. Elle ne crée pas d’invitation au portail et n’attribue aucun rôle d’utilisateur. Les accès utilisateurs sont gérés séparément.
+
+Pour supprimer un contact, cliquez sur sa corbeille et confirmez la demande. Si le contact est déjà enregistré, la suppression est immédiatement demandée ; quitter ensuite le formulaire de profil ne l’annule pas. Une ligne de contact pas encore enregistrée est seulement retirée du formulaire ouvert.
+
+## Distinguer les départements des accès utilisateur
+
+**Créer un département :** ouvrez **départements** dans le profil client, choisissez **Ajouter** et saisissez un nom. Le nom est obligatoire. En option, choisissez un site et complétez l’indication de créneau dans le champ de texte ; jusqu’à 500 caractères sont prévus à cet effet. Enregistrez ensuite le profil.
+
+Un nouveau département peut être attribué automatiquement à des utilisateurs clients existants. Vérifiez donc les attributions d’utilisateurs après la création, au lieu de supposer que seul le nom du département a été ajouté. Un département utilisé ne peut pas être supprimé : les rôles de projet, projets ou groupes tarifaires attribués doivent d’abord être examinés sur le fond. Ne supprimez pas des planifications en cours uniquement pour contourner ce message.
+
+**Modifier l’attribution des utilisateurs :**
+1. Ouvrez **utilisateurs** dans le profil client. Le tableau affiche les utilisateurs du client et leurs rôles ; une personne peut avoir plusieurs rôles client.
+2. Choisissez **gérer les départements** pour la personne. Le prénom, le nom, l’e-mail et le rôle sont seulement affichés ici, pas modifiables.
+3. Sélectionnez les départements autorisés dans la sélection multiple. Faites aussi attention à l’interrupteur pour les données sans attribution de département : un département sélectionné et l’autorisation pour les données sans département sont des réglages distincts.
+4. Enregistrez dans la boîte de dialogue. La sélection remplace les attributions de départements précédentes de l’utilisateur ; les départements désélectionnés ne sont pas simplement conservés en plus. Rouvrez la boîte de dialogue et contrôlez la sélection.
+
+Le département d’un **contact** n’est pas une autorisation d’utilisateur. Une entrée dans **rôles** pour la commande n’est pas non plus un rôle d’utilisateur. Pour les modifications du rôle utilisateur proprement dit et leurs conséquences sur les attributions client/département, utilisez le [guide de gestion des utilisateurs](./06c_agency_users.mdx). Pour les fonctions autorisées par rôle client, voir [Rôles client et confirmation des conflits](./06e_agency_client_portal.mdx#rôles-clients--colonnes-distinctes-et-confirmation-de-conflit).
+
+L’attribution automatique d’un nouveau département concerne surtout les utilisateurs déjà attribués à tous les départements existants ; pour le premier département également les utilisateurs sans attribution préalable. Après l’enregistrement, contrôlez donc les droits utilisateur effectivement chargés. Sur la corbeille d’un département enregistré, **Oui** lance immédiatement une tentative de suppression ; l’enregistrement ultérieur du profil n’est pas nécessaire pour cela. **Non** le conserve. Une ligne de département non enregistrée est seulement supprimée localement. Si vous fermez la boîte de dialogue utilisateur-département sans enregistrer, aucune attribution n’a été transférée ; rouvrez l’onglet afin qu’une sélection encore visible localement ne soit pas prise pour un état enregistré.
+
+## Modifier les paramètres et les modèles au bon endroit
+
+Dans le profil client, **paramètres** mène aux réglages propres au client. Utilisez la procédure existante à cet effet, afin de ne pas confondre les paramètres par défaut et les écarts client :
+
+- [Options client : site standard, matrice et pauses minimales](./06e_agency_client_portal.mdx#options-client--lieu-standard-matrice-et-pauses-minimales)
+- [Activer la validation de commande et confirmer le nombre d’approbateurs](./06e_agency_client_portal.mdx#activer-lapprobation-des-commandes-et-confirmer-le-nombre)
+- [Valeurs de portail propres au client et limites d’héritage](./06e_agency_client_portal.mdx#valeurs-de-portail-propres-au-client-et-limites-de-lhéritage)
+- [Destinataires d’événements pour un client](./06e_agency_client_portal.mdx#destinataires-dévénements-pour-un-client)
+
+L’onglet **modifier les modèles** s’affiche lorsque Self Service est disponible. Il ouvre l’éditeur de modèles pour ce client. Sélectionner ou charger un modèle n’est pas la même chose qu’enregistrer durablement un modèle modifié. Voir [Modifier des modèles enregistrés](./06g_agency_templates.mdx).
+
+L’onglet **sites** est expliqué dans [Modifier et utiliser correctement les sites](./07b_locations.mdx). Après la création du client, choisissez après un enregistrement réussi **Retour → liste des clients → rouvrir le client enregistré** avant de travailler dans l’onglet des sites. Pour le **pool de collaborateurs**, utilisez le [guide du pool](./07c_self_service.mdx#modifier-le-pool-de-collaborateurs-dun-client) ; pour le processus client natif, le [guide de commande](./07d_orders.mdx).
+
+L’indication d’enregistrement du formulaire de profil ne constitue pas une promesse que chaque sous-fonction attendra ce clic : les sites, les départements des utilisateurs et le pool de collaborateurs ont leurs propres actions d’enregistrement. Vérifiez à chaque fois la description de l’action concernée.
+
+## Téléverser, afficher et supprimer le logo
+
+1. Ouvrez le client souhaité et contrôlez le nom en haut. Pour les modifications, vous avez besoin de la gestion des clients. S’il n’y a pas encore de logo, sélectionnez un fichier image dans la zone du logo. La sélection de téléversement est prévue pour un seul fichier et 50 MB maximum ; utilisez une image appropriée, pas un fichier PDF.
+2. Attendez que l’image apparaisse. **Pour un client enregistré rouvert depuis la liste des clients, le téléversement est enregistré directement**, sans attendre le grand bouton de profil. Dans le formulaire de création encore ouvert, un téléversement ultérieur reste provisoire même après la première sauvegarde : après ce téléversement, choisissez à nouveau Enregistrer en bas du profil client pour que le logo soit attribué durablement. Le moyen le plus sûr est le suivant : après la première sauvegarde, **Retour → liste des clients → rouvrir le client enregistré**, puis seulement téléverser le logo. Pour une nouvelle création pas encore enregistrée, l’image est en revanche provisoire : enregistrez le client afin qu’elle lui soit attribuée durablement. Un simple téléversement ne crée pas de client.
+3. L’icône de loupe ouvre l’affichage agrandi. Un clic en dehors de l’image le ferme ; rien n’est modifié.
+4. Pour supprimer, choisissez la corbeille et confirmez la demande de suppression du logo avec **Oui**. **Non** annule. Pour un client existant, la suppression est immédiatement demandée. Pour remplacer le logo, supprimez l’ancien puis téléversez la nouvelle image.
+
+**Contrôle après suppression :** l’image disparaît déjà au moment du déclenchement de la requête. Rouvrez le profil client enregistré et vérifiez qu’elle a bien été supprimée. En cas de réponse incertaine, ne vous fiez pas uniquement à l’aperçu vide. Enregistrez un nouveau client avant d’utiliser la fonction de suppression.
+
+Un logo déjà repris dans un projet peut y rester. La suppression chez le client ne garantit pas que tous les documents de projet ou exports existants recevront ultérieurement un autre logo.
+
+## Saisir des centres de coûts et enregistrer réellement les modifications
+
+1. Ouvrez **centre de coûts** pour le client déjà enregistré. L’en-tête s’appelle **Gestion des centres de coûts**. Le tableau affiche le centre de coûts et les actions ; si la liste est vide, aucune valeur n’a encore été chargée ou créée.
+2. Choisissez **Ajouter**, saisissez un centre de coûts et confirmez **Enregistrer** dans la boîte de dialogue. Le champ ne peut pas être vide ; utilisez au maximum 255 caractères. Les espaces au début et à la fin sont supprimés. Les valeurs déjà présentes dans la liste ouverte sont détectées comme doublons sans distinction de casse. Le titre de la boîte de dialogue peut être « Add Cost Center ».
+3. Pour modifier, choisissez le crayon, corrigez la valeur et enregistrez la boîte de dialogue. La fermeture avec la croix n’applique pas cette saisie de dialogue.
+4. Pour supprimer, choisissez la corbeille et confirmez la demande relative au centre de coûts. **Non** annule. **Oui** retire d’abord la ligne de la liste ouverte.
+5. **Ce n’est qu’en enregistrant en bas du profil client que les centres de coûts ajoutés, modifiés et supprimés sont transmis.** Le bouton de dialogue seul ne suffit pas ici. Ouvrez ensuite à nouveau les centres de coûts et contrôlez chaque ligne modifiée.
+
+Le basculement entre texte libre et valeurs prédéfinies n’est pas utilisable dans ce profil. De même, il n’existe dans le formulaire de département aucun bouton actif de sélection des centres de coûts. Une liste de centres de coûts tenue à jour ne signifie donc ni un mode de saisie modifié ni un centre de coûts automatiquement attribué dans les projets existants. Pour un changement de mode nécessaire, faites clarifier la procédure de maintenance prévue.
+
+**Si les centres de coûts n’ont pas été enregistrés :** vérifiez la longueur, les valeurs vides, les noms en double et le droit de gestion des clients. Créez si possible plusieurs nouvelles lignes l’une après l’autre et contrôlez-les avant l’enregistrement définitif. Après une tentative de suppression peu claire sur plusieurs lignes encore non enregistrées, vérifiez les valeurs restantes. En cas de retours contradictoires, la procédure suivante concernant l’ordre d’enregistrement fait foi.
+
+## Ordre d’enregistrement et détection des erreurs partielles
+
+Le gros bouton **Enregistrer** vérifie d’abord les champs obligatoires de l’ensemble du formulaire de profil, y compris dans les onglets actuellement masqués. Ensuite, les données de base du client, les sites, départements et contacts transmis sont traités successivement. Les prescriptions de rôle client manquantes sont complétées à partir des prescriptions d’agence ; les droits client existants ne sont pas réinitialisés de manière générale. Pour leur maintenance, voir la [procédure des rôles clients](./06e_agency_client_portal.mdx#rôles-clients--colonnes-distinctes-et-confirmation-de-conflit).
+
+Ce n’est qu’après une réponse de profil réussie que suivent les requêtes individuelles relatives aux centres de coûts pour supprimer, modifier et créer. Elles sont lancées ensemble, et non traitées comme une suite garantie de suppressions, modifications et créations terminées. **Ce déroulement n’est pas un enregistrement commun du tout ou rien.** En cas d’erreur, les données de base et certains centres de coûts peuvent déjà être enregistrés tandis que d’autres modifications manquent. L’écran peut néanmoins afficher un message général de succès et se recharger après un message d’erreur concernant un centre de coûts. Un message de succès ultérieur n’annule pas l’erreur précédente.
+
+**Voici comment procéder en cas d’erreur partielle :**
+1. Notez le libellé exact du retour et les lignes concernées, sans communiquer de données personnelles confidentielles.
+2. Rouvrez le même client ; ne créez pas un second client par précaution.
+3. Comparez les données de base, les contacts et les départements, ainsi que chaque centre de coûts ajouté, modifié ou supprimé, avec l’état attendu.
+4. Ne recommencez que les modifications dont l’absence est démontrée. En cas de résultats toujours contradictoires, contactez le support avec le client, l’onglet concerné et l’heure.
+
+Les dialogues de site, les modèles de rôles et de tarifs, les suppressions confirmées de logo/contact/département, les départements d’utilisateurs et le pool de collaborateurs disposent de leurs propres actions d’enregistrement. Le bouton de profil n’est ni leur confirmation supplémentaire ni un bouton d’annulation. Enregistrez les modifications de profil ouvertes avant d’utiliser des sous-fonctions séparées, et rechargez le profil après des modifications de sites avant d’y attribuer des contacts ou des départements. Vous ne travaillez ainsi pas avec une liste de sélection obsolète.
+
+## Gérer les rôles de commande et les groupes tarifaires
+
+Ces **rôles** sont des prestations commandables du client, et non les rôles d’accès des utilisateurs du portail.
+
+1. Enregistrez d’abord le client et, le cas échéant, de nouveaux départements. Ouvrez **rôles → Ajouter**. Le tableau affiche le nom, les coûts minimaux/maximaux, le modèle de rôle et les actions.
+2. Saisissez la **Désignation** et choisissez le **modèle de rôle**. Lors de la création, ces deux informations sont obligatoires. La sélection démarre sans modèle défini ; si rien n’est proposé, vérifiez d’abord les [modèles de rôle](./06i_role_tariff_templates.mdx).
+3. Le groupe tarifaire est facultatif. Laissez **nom du groupe tarifaire**, **taux horaire minimal** et **taux horaire maximal** tous les trois vides, ou remplissez-les tous les trois. Le substitut 0.00 n’est pas un prix par défaut. Utilisez des limites vérifiées par le métier ; un enregistrement réussi ne vérifie pas automatiquement si le calcul est pertinent. En cas de taux nul voulu, vérifiez particulièrement attentivement après l’enregistrement, car il peut arriver vide lors du transfert.
+4. Si nécessaire, sélectionnez sous **département** plusieurs départements enregistrés du client. Il s’agit de l’attribution de département du rôle de commande, et non de l’autorisation d’accès d’un utilisateur. La sélection remplace les attributions précédentes lors de l’enregistrement. Vérifiez en plus les départements des utilisateurs si quelqu’un ne trouve pas un rôle.
+5. Choisissez **Enregistrer dans le dialogue du rôle** et contrôlez l’entrée du tableau rechargée. Cet enregistrement est immédiat ; le grand bouton de profil n’est pas nécessaire. La croix ferme sans cette opération d’enregistrement du rôle.
+
+**Modifier :** sélectionner le crayon, vérifier le nom, le modèle de rôle, le groupe tarifaire et les départements, enregistrer dans le dialogue et rouvrir. Pour retirer le groupe tarifaire du rôle client, videz les trois indications tarifaires. Ne confondez pas cela avec la suppression d’un modèle tarifaire.
+
+**Effet sur les brouillons existants :** la modification du rôle peut mettre à jour les taux horaires et le modèle standard des rôles déjà repris de ce rôle client dans des brouillons de commande qui ne sont pas encore supprimés. Contrôlez ensuite séparément les brouillons concernés. Cela n’entraîne ni une modification générale de tous les projets ni la suppression certaine de tous les liens tarifaires repris auparavant.
+
+**Supprimer :** cliquer sur la corbeille du rôle et confirmer la demande. La tentative de suppression commence immédiatement. Il ne s’agit pas d’une annulation d’une commande existante ou d’une affectation de personnel. Rechargez ensuite la liste des rôles. En cas de message d’erreur concernant le min/max, vérifiez aussi les autres indications du rôle et le modèle ; le message ne désigne pas nécessairement l’unique cause de l’erreur.
+
+## Charger un modèle tarifaire ou l’enregistrer séparément
+
+Dans le dialogue de création et de modification d’un rôle client, il existe **charger à partir du modèle** et **Enregistrer comme modèle** pour le groupe tarifaire.
+
+**Charger :** ouvrez la liste des modèles. **Afficher uniquement les groupes tarifaires du client sélectionné** est activé au départ. Si nécessaire, désactivez-le pour voir les modèles tarifaires d’agence proposés. Cherchez une partie du nom et cliquez sur la ligne souhaitée. Le nom du groupe tarifaire ainsi que le taux horaire minimal et maximal sont repris. La sélection des départements de votre rôle **n’est pas** remplacée par les départements enregistrés dans le modèle. Vérifiez toutes les valeurs puis enregistrez le rôle. Fermer la liste sans sélection ne reprend aucun modèle. Un résultat vide peut être dû au filtre du nom ou du client ; un chargement échoué ne prouve pas que la liste des modèles est vide.
+
+**Enregistrer comme modèle :** remplissez d’abord le nom du groupe tarifaire et les deux taux horaires. Choisissez le bouton d’enregistrement du modèle et confirmez la demande. Si un modèle tarifaire du même nom existe déjà, une autre confirmation pour l’écrasement suit. En cas de doute, choisissez **Non** et vérifiez l’entrée existante.
+
+Cette opération enregistre le **modèle séparément et immédiatement**, et non le rôle client ouvert. Le client actuel est lié au modèle tarifaire. En cas d’écrasement, les départements transmis sont ajoutés à l’affectation de modèle existante, et non traités comme un remplacement complet. Les valeurs tarifaires du modèle sont modifiées ; cela ne met pas automatiquement à jour tous les rôles créés auparavant à partir de celui-ci. Fermer ensuite le dialogue du rôle n’annule pas un modèle déjà enregistré.
+
+Pour cette opération, des droits de modification de modèles ou de Self Service peuvent être nécessaires en plus. Vérifiez à nouveau le modèle enregistré, surtout en présence de noms identiques dans différents contextes client. Pour la gestion complète des modèles, voir [modèles de groupes tarifaires autonomes](./06i_role_tariff_templates.mdx#modèle-autonome-de-groupe-tarifaire-avec-clients-et-départements).
+
+## Onglets, vues et actions séparées
+
+Après le premier enregistrement, d’autres onglets deviennent utilisables. Lors d’une nouvelle création, choisissez toutefois d’abord **Retour → liste des clients → rouvrir le client enregistré**, avant de travailler dans l’onglet des sites. Un simple changement d’onglet ne recharge pas la liste des sites. Dans le client enregistré rouvert, les onglets pour les informations générales, les **sites**, le **centre de coûts**, les **départements**, les **contacts**, les **rôles**, les **utilisateurs**, la **Liste de souhaits et liste d’exclusion** ainsi que les **paramètres** sont disponibles. Le **pool de collaborateurs** et **modifier les modèles** dépendent en plus du Self Service disponible. Un simple changement d’onglet n’enregistre pas les modifications de profil ouvertes. **Retour** en haut mène à la liste des clients, et non à une confirmation d’enregistrement.
+
+**Liste de souhaits et liste d’exclusion :** ouvrez l’onglet pour voir les deux listes de noms séparées avec photo ou initiales. Avec le droit de gestion des clients, un lien de personne ouvre le profil du collaborateur dans un nouvel onglet. Dans ces deux tableaux, il n’existe pas de bouton propre pour débloquer ou ajouter. Une liste vide ne dit rien sur le pool de collaborateurs du client. Les modifications dans le profil du collaborateur suivent la [procédure de profil propre](./05a_employee_profiles.mdx) ; un blocage, un souhait et une appartenance au pool ne sont pas la même chose.
+
+**Utilisateurs :** triez le tableau si nécessaire par prénom, nom, e-mail ou rôle. Pour **gérer les départements**, l’enregistrement séparé dans le dialogue, décrit ci-dessus, s’applique. Aucun utilisateur n’est invité dans cet onglet.
+
+**modifier les modèles :** l’onglet intégré charge les modèles pour le client sélectionné. Dépliez la famille souhaitée et choisissez le crayon sur l’entrée enregistrée. Pour les noms et les demandes de suppression, voir [ouvrir la gestion des modèles](./06g_agency_templates.mdx#ouvrir-la-gestion-des-modèles-et-vérifier-le-contexte), pour les montants, la devise, la fréquence et les critères [salaire et allocation](./06g_agency_templates.mdx#modifier-salaire-allocation-et-supplément), pour le type de frais et le type de paiement [modèles de frais](./06g_agency_templates.mdx#modèles-de-frais-et-mode-de-paiement). Les [modèles de notification](./06g_agency_templates.mdx#deux-modèles-de-notification-distincts) enregistrent des textes, mais n’envoient pas automatiquement de message. Les [critères de salaire](./06i_role_tariff_templates.mdx#critères-de-salaire-avec-grille-horaire-ou-seuil-horaire) disposent d’un choix distinct entre critère existant et nouvelle variante.
+
+Pour les **modèles de rôle**, il existe des sous-dialogues séparés pour salaire/frais, créneaux/pauses, groupe tarifaire, vêtements/documents, clients et filtres de collaborateurs. Suivez les [sous-dialogues précis du rôle](./06i_role_tariff_templates.mdx#modifier-le-modèle-de-rôle-et-le-filtre), en particulier les actions d’enregistrement décrites lors de la fermeture. Un filtre confirmé met à jour le modèle ; ce n’est pas une publication de projet. Dans l’onglet intégré, les listes autonomes pour classes de salaire, groupes tarifaires, sedcards et suppléments ne sont pas disponibles comme point d’entrée. Les lignes de supplément à l’intérieur d’un modèle de rôle restent utilisables séparément. Les modèles PDF d’information ne sont visibles que dans certaines configurations d’agence. Ne cherchez donc pas un bouton d’agence manquant dans le profil client. Ne pas confondre avec l’export salarial séparé. Aucune modification de modèle déjà enregistrée n’est annulée par l’annulation dans le profil client.
+
+**paramètres** et **pool de collaborateurs** restent des sous-fonctions séparées avec les [règles d’enregistrement spécifiques au client](./06e_agency_client_portal.mdx#ouvrir-les-paramètres-dun-client-spécifique) et la [procédure du pool](./07c_self_service.mdx#modifier-le-pool-de-collaborateurs-dun-client). Si un onglet manque ou n’est pas utilisable, vérifiez d’abord le client enregistré et les droits de fonction, sans créer un second client.

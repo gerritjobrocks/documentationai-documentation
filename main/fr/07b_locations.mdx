@@ -1,0 +1,67 @@
+---
+title: "Modifier les sites et les utiliser correctement"
+description: "Sites client et d’agence, recherche d’adresse et effets sur les projets existants."
+---
+
+# Modifier les sites et les utiliser correctement
+
+## Trouver les sites et choisir la bonne zone
+
+**En tant qu’agence :** ouvrez **sites** dans le menu principal pour les sites de l’agence. Pour les sites d’un client enregistré donné, ouvrez-le depuis la **liste des clients** et choisissez **sites**. Ce n’est qu’avec cet accès que la liste chargée est limitée à ce client ; le tableau et le dialogue de modification correspondent à la gestion des sites.
+
+**Après la création d’un client :** après le premier enregistrement, choisissez **Retour → liste des clients → rouvrir le client enregistré**, avant de travailler dans l’onglet des sites. Dans le formulaire de création encore ouvert, la liste déjà chargée peut encore contenir les sites de l’agence. Un simple changement d’onglet ne recharge pas la liste des sites. Un rechargement du navigateur du formulaire de création ne remplace pas cette procédure. Vérifiez le nom du client avant de choisir, modifier ou supprimer un site.
+
+**Dans le portail client :** ouvrez **sites** dans le menu principal. Le point de menu dépend de l’accès aux commandes ou au Self Service. Les sites client et les sites d’agence ne constituent pas la même liste.
+
+Saisissez un terme de recherche dans le champ de recherche. Vous pouvez trier le tableau par les colonnes Nom et Adresse ; l’icône de carte ouvre la position enregistrée. Le tableau lui-même n’a pas de bouton **Ajouter**. Pour un nouveau lieu de mission, commencez dans la [création de projet au niveau du site](./03_create_project.mdx), et non avec une action de tableau inventée.
+
+## Modifier le nom, l’adresse et la position sur la carte
+
+1. Ouvrez la zone de site appropriée et cliquez sur l’icône de modification du site.
+2. Modifiez le **nom de la base de données**. Le nom ne doit pas être vide et ne peut contenir que 255 caractères au maximum. Un nom déjà utilisé peut être refusé ; cherchez alors l’entrée existante au lieu d’attribuer aveuglément une seconde désignation.
+3. Pour une autre adresse, saisissez le texte de recherche dans le champ **Adresse** et choisissez la suggestion appropriée. Le simple fait de taper du texte n’est pas une preuve fiable que la position sur la carte a été modifiée. Contrôlez l’épingle.
+4. Pour un lieu sans adresse correspondante, vous pouvez saisir une paire de coordonnées et sélectionner le résultat de coordonnées proposé. Sinon, déplacez l’épingle existante ou cliquez sur la position souhaitée sur la carte. La carte n’apparaît que lorsque des coordonnées sont présentes.
+5. Attendez que la résolution d’adresse soit terminée. Tant qu’elle est en cours, **Enregistrer** est verrouillé. Contrôlez ensemble le nom, l’adresse et l’épingle, puis choisissez **Enregistrer**.
+6. Vérifiez le retour et l’entrée de tableau mise à jour. Avec **Annuler**, vous abandonnez les modifications ouvertes du dialogue de modification.
+
+**Important pour les projets existants :** si le site est déjà utilisé dans un projet, ces projets restent à l’ancien état du site. Le site modifié est disponible pour de nouvelles sélections ; un site standard défini pour de nouvelles commandes client suit la modification. Une correction d’adresse dans la liste des sites n’est donc pas une correction automatique de tous les projets déjà créés. Vérifiez séparément les projets en cours concernés.
+
+**Aide en cas d’erreur :** en cas d’erreur du service cartographique, n’enregistrez pas une ancienne position non vérifiée comme nouvelle adresse. Sélectionnez à nouveau et contrôlez l’épingle. Si l’enregistrement est refusé, le dialogue reste ouvert ; en cas de réponse réseau peu claire, rechargez le site avant d’effectuer d’autres modifications. Une épingle déplacée dans le dialogue ouvert ne prouve pas à elle seule qu’un enregistrement a eu lieu.
+
+**Le libellé d’adresse et l’épingle sont séparés :** le texte d’adresse saisi librement peut être enregistré comme libellé sans modifier les coordonnées existantes. Effacer le champ d’adresse ne supprime pas automatiquement une épingle existante. Pour un véritable changement de lieu, sélectionnez une suggestion ou déplacez l’épingle et contrôlez les deux. Lors du déplacezment, l’épingle reste exactement au point choisi ; si la recherche d’adresse ne trouve aucun texte correspondant, le champ peut à la place afficher les coordonnées.
+
+## Créer un site avec un nom et un point sur la carte
+
+Le tableau des sites n’a pas de bouton de création. Commencez dans la zone des sites de la **création de projet**. Pour un site client, en tant qu’agence avec les droits de modification Self Service requis, choisissez l’accès Self Service et le bon client ; dans un projet d’agence ordinaire, un site d’agence est créé, même si un client est sélectionné. Dans le portail client, un site est créé pour le client connecté. Après la création, vérifiez dans la liste des sites correspondante où l’entrée a été enregistrée.
+
+1. Recherchez le lieu dans le champ de recherche des sites. Vous pouvez sélectionner directement un résultat existant de la base de données ; cela ne crée pas un second site.
+2. Pour un nouveau résultat sur la carte, contrôlez l’aperçu et cliquez sur **Créer un emplacement**. Vous pouvez aussi cliquezr sur un point de la carte. Une position choisie à partir de coordonnées peut aussi être utilisée sans adresse de rue correspondante ; la position saisie reste déterminante.
+3. Dans le dialogue du nom, remplissez **nom de la base de données**. Pour un résultat nommé sélectionné sur la carte, le nom peut déjà être prérempli ; après un clic libre sur la carte, vous devez le définir. Le champ pour l’intitulé de la carte, éventuellement « Google Location Name », est en lecture seule. Ce n’est pas un second champ d’adresse librement modifiable.
+4. Choisissez **Enregistrer** et attendez la réponse. Ce n’est qu’ensuite que vous vérifiez l’entrée ajoutée dans la sélection des sites ainsi que le nom et l’épingle de la carte. Avec **Annuler** ou la croix avant l’ordre d’enregistrement, aucun site n’est créé.
+5. Pour la planification de projet proprement dite, vous devez encore attribuer des dates au site choisi et enregistrer le projet. **Enregistrer le site n’est pas enregistrer le projet** et ne signifie pas publier. Un site déjà créé n’est pas supprimé automatiquement si vous quittez le projet plus tard.
+
+Si le nom de base de données est déjà utilisé, cherchez l’entrée existante. En cas d’erreur du service cartographique, ne déduisez pas une création réussie du dialogue fermé ou d’un message général. La création peut même afficher un message de succès inadapté concernant la sélection du client ; ce qui compte, c’est l’entrée de site enregistrée et sa position. Si la connexion est interrompue, commencez par recherchezr le nom dans la bonne zone, puis décidez seulement ensuite d’une nouvelle tentative.
+
+## Voir la carte et compléter les coordonnées manquantes
+
+**Dans la liste des sites**, l’icône de carte ouvre la position enregistrée. La vue peut être déplacée, zoomée et basculée entre carte et satellite. La croix de fermeture ne fait que quitter la vue. Si des coordonnées manquent, un message apparaît à la place ; une zone de carte vide ne prouve pas que le site manque.
+
+**Dans la création du projet** la carte affiche les emplacements sélectionnés. Un clic sur leur repère ouvre ou marque l’entrée d’emplacement correspondante. Les repères disponibles affichés plus faiblement peuvent être ajoutés comme emplacements existants ; aucune nouvelle donnée de base n’est créée pour cela. Le déplacement et le zoom de la carte chargent de nouveaux repères disponibles appropriés. Un aperçu de recherche peut être fermé sans créer d’emplacement. Pour les projets archivés ou une commande en attente, les modifications correspondantes de la carte sont bloquées.
+
+**Saisir les coordonnées manquantes :**
+1. Sous **Sites non affichés sur la carte**, sélectionnez l’emplacement existant et **Placer sur la carte**. Pour cela, l’emplacement doit déjà être enregistré.
+2. Contrôlez une proposition de position offerte. Cliquez sur la position réelle sur la carte et, au besoin, faites glisser le repère provisoire exactement à l’endroit correct.
+3. Sélectionnez **Enregistrer le lieu** au niveau du repère. Lisez la question de confirmation : l’ajout des coordonnées peut rendre effective l’alerte de distance lors du pointage, même pour les projets existants de cet emplacement jusque-là sans coordonnées.
+4. Confirmez uniquement si la position est correcte. Rechargez après la réponse et contrôlez-la. **Annuler**, la fermeture de la bulle du repère ou **Non** dans la question de confirmation ne déclenche aucun ordre d’enregistrement des coordonnées.
+
+**Différence importante :** cet ajout initial de coordonnées manquantes n’est pas la modification de l’emplacement avec protection des états de projet précédents. Il complète l’emplacement existant directement. Si des coordonnées sont désormais présentes, cette procédure d’ajout est refusée ; la fenêtre de placement fermée à elle seule ne prouve alors aucun changement. Pour corriger un repère existant, utilisez la boîte de dialogue de modification de la liste des emplacements et tenez compte de son effet sur les projets existants.
+
+## Supprimer des emplacements et vérifier les résultats
+
+1. Ouvrez la liste d’emplacements de l’agence ou du client appropriée et recherchez le **nom de base de données**. La recherche recharge la liste selon le nom ; ce n’est pas une recherche dans tous les éléments de l’adresse. Le nom et l’adresse peuvent être triés ; pour les longues listes, vérifiez les autres pages du tableau.
+2. Sélectionnez la corbeille au bon emplacement. La confirmation **Oui/Non** concerne sa suppression, et non son retrait d’un résultat de recherche. Avec **Non**, l’emplacement demeure.
+3. Après **Oui**, la suppression est demandée immédiatement. Le bouton général du profil client n’est pas nécessaire pour cela. Le droit de suppression est vérifié séparément ; une corbeille visible ne garantit pas l’autorisation.
+4. Si l’emplacement est utilisé dans au moins un projet via un jour de projet ou un rôle, la suppression est refusée. Ne supprimez pas une planification en cours uniquement pour contourner ce blocage. Une correction d’emplacement s’effectue à la place via **Modifier**, sans modifier automatiquement les états de projet existants.
+5. Rechargez la liste des emplacements. Après la suppression, la réponse affichée immédiatement peut contenir moins de données d’adresse/carte ; vérifiez l’état fraîchement chargé avant d’interpréter des informations manquantes comme une perte de données. Contrôlez aussi, le cas échéant, un emplacement standard enregistré et les affectations de contact/service utilisées.
+
+Si une modification de l’emplacement client n’apparaît pas dans la liste, contrôlez le contexte agence/client et le texte de recherche. En cas de collision de noms malgré une liste des sites du client apparemment vide, demandez à l’administration de vérifier aussi la zone agence. Un changement d’emplacement ou une modification dans la liste n’est pas une correction automatique de tous les projets existants. Pour des droits manquants ou des réponses contradictoires, contactez le support avec la zone, le nom de l’emplacement et le retour, sans partager publiquement de données sensibles de mission ou de personnes.

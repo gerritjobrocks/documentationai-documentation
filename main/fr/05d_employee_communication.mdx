@@ -1,0 +1,56 @@
+---
+title: "Contacter les collaboratrices et collaborateurs"
+---
+
+# Contacter les collaboratrices et collaborateurs
+
+## Choisir le bon cercle de destinataires
+
+| Entrée | Destinataires et effet |
+| --- | --- |
+| **Collaborateurs → Envoyer un message** | Les collaboratrices et collaborateurs correspondant au filtre actuel et au nom recherché, moins les personnes désélectionnées. La sélection peut dépasser la page de tableau visible. |
+| **Profil du collaborateur → Envoyer une notification** | Une seule personne. Tenez compte de la restriction décrite ci-dessous pour l’e-mail / SMS de cette boîte de dialogue. |
+| **Projet → Étape 4 → Candidatures → Envoyer un message** | Les personnes sélectionnées par cases à cocher dans le panneau des candidates et candidats. En plus, les collaborateurs non actifs sont ignorés côté serveur. |
+| **Publier le projet/Invitations** | Une invitation à la mission du projet avec les règles de candidature associées, pas un message libre. Voir [Publication](/main/fr/04a_publication_and_allocation). |
+
+Un message libre ne modifie ni la candidature ni l’affectation. Vérifiez les destinataires avant l’envoi ; un nom de modèle n’est pas une liste de destinataires. Dans le contexte client, la sélection du tableau de bord est en outre limitée à votre propre pool de clients.
+
+## Message depuis le tableau de bord des collaborateurs
+
+1. Ouvrez **Collaborateurs**, appliquez [Recherche et filtres](/main/fr/05b_employee_lists_filters) et contrôlez le nombre sélectionné. Désélectionnez les personnes non souhaitées. Même sur plusieurs pages, vérifiez que le total souhaité est bien sélectionné.
+2. Ouvrez **Envoyer un message**. La boîte de dialogue commence avec des champs objet / message vides et sans pièce jointe.
+3. Choisissez **Notification**, **E-Mail** ou **SMS**. Les canaux e-mail / SMS non configurés sont désactivés ou peuvent être rejetés côté serveur. L’absence de configuration ne signifie pas qu’un nouveau clic réparera l’envoi.
+4. Renseignez **Objet** et **Message**. Les espaces réservés `[first-name]` et `[last-name]` sont appliqués pour chaque personne. N’écrivez pas de vraies données personnelles dans un modèle réutilisable.
+5. Pour les e-mails, vous pouvez ajouter des fichiers dans la zone de pièces jointes proposée et supprimer à nouveau des pièces jointes individuelles. Un nom de fichier visible n’est pas encore une preuve d’envoi.
+6. Vérifiez encore le texte, le canal, les pièces jointes et le cercle de destinataires. **Envoyer** lance l’ordre d’envoi ; dans le tableau de bord, il n’y a pas la même boîte de dialogue de confirmation supplémentaire que dans l’étape 4.
+
+Si l’objet ou le message manque, une demande vous invite à remplir tous les champs. Si la sélection ne fournit aucun collaborateur, **Aucun collaborateur sélectionné** s’affiche. Un message de succès avec un nombre décrit les personnes prises en charge par l’ordre, pas une livraison garantie ni une confirmation de lecture pour chaque personne.
+
+## Enregistrer et charger des modèles
+
+Avec **Enregistrer comme modèle**, vous saisissez un nom et enregistrez l’objet et le message. Avec **Charger à partir d’un modèle**, vous choisissez une entrée ; son texte remplace les champs de texte actuels. Après le chargement, vérifiez à nouveau le contenu complet et le canal.
+
+Le tableau de bord et l’étape 4 utilisent la même catégorie pour les modèles de messages aux collaborateurs. Le modèle n’enregistre pas automatiquement les destinataires, les pièces jointes ni le canal d’envoi. Enregistrer un modèle n’envoie rien. **Annuler** ou la fermeture de la boîte de dialogue du modèle ne rappelle pas un message déjà envoyé.
+
+## Message depuis l’étape 4
+
+Passez dans le panneau des candidates et candidats à **Candidatures** et activez la sélection des messages. Marquez les personnes souhaitées. Les aides de sélection pour toutes les personnes, celles déjà affectées et celles confirmées sont différentes ; contrôlez les coches au lieu de vous fier uniquement au nombre dans l’onglet.
+
+Ouvrez ensuite la boîte de dialogue de message. Choisissez le canal et remplissez l’objet et le texte, ou chargez un modèle. Pour Notification / SMS, l’interface affiche au maximum **50 caractères d’objet** et **256 caractères de message** ; pour l’e-mail, ces deux limites d’interface ne s’appliquent pas. Les espaces réservés prénom / nom sont remplacés pour chaque personne.
+
+Après **Envoyer**, une question demande si les collaborateurs sélectionnés doivent être contactés. **Oui** valide cet ordre d’envoi, **Non** ne l’exécute pas. L’envoi ne tient compte que des personnes cochées et ignore les collaboratrices et collaborateurs non actifs. C’est pourquoi un nombre dans le panneau des candidates et candidats n’est pas automatiquement le nombre de personnes réellement contactées.
+
+## Profil individuel et restriction connue
+
+Dans le profil individuel, **Envoyer une notification** ouvre une boîte de dialogue similaire. Remplissez toujours l’objet et le message. Une notification s’adresse à la personne dont le profil est ouvert, et non au filtre défini en dernier dans le tableau de bord.
+
+**L’e-mail et le SMS depuis le profil individuel ne sont, dans l’état vérifié, pas confirmés de manière fiable comme canal d’envoi fonctionnel.** Utilisez pour cela la boîte de dialogue du tableau de bord avec une sélection soigneusement limitée à cette personne. Après une tentative d’envoi peu claire, ne renvoyez pas immédiatement : faites d’abord vérifier si un ordre a déjà été traité. La similarité des boîtes de dialogue ne signifie pas que leurs canaux d’envoi fonctionnent de manière identique.
+
+## Distinguer succès, erreur et livraison
+
+- **E-Mail** requiert une configuration d’envoi complète. Un message d’erreur concernant les paramètres ou l’envoi n’est pas une preuve de livraison.
+- **SMS** est transmis comme ordre d’envoi. L’expéditeur SMS peut provenir, dans le contexte client, de sa configuration complète, sinon de la configuration de l’agence.
+- **Notification** est transmise pour traitement. L’acceptation de l’ordre ne prouve pas qu’un appareil a reçu le message ou que la personne l’a lu.
+- Avec un message groupé, certains destinataires peuvent déjà avoir été traités avant qu’une erreur ne survienne. Un nouvel envoi peut générer des messages en double.
+
+La copie d’adresses e-mail et le chargement / l’enregistrement d’un modèle n’envoient rien. **Désactiver avec un message** est en revanche une action d’état distincte, pas simplement un autre canal de communication. Pour cela, vérifiez la boîte de dialogue et les missions existantes dans le [tableau de bord des collaborateurs](/main/fr/05_employees_dashboard).

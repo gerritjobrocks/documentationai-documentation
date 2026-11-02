@@ -1,0 +1,79 @@
+---
+title: "Modifier des modèles enregistrés"
+description: "Gestion des modèles, champs de salaire et de frais, ainsi que modèles de notification séparés."
+---
+
+# Modifier des modèles enregistrés
+
+## Ouvrir la gestion des modèles et vérifier le contexte
+
+Ouvrez **Profil d’agence → Modifier les modèles → Modifier les modèles**. Pour cela, l’affichage des paramètres et le droit de modification des modèles sont pertinents. Dépliez la famille de modèles souhaitée et choisissez **modifier** sur l’entrée enregistrée. **Aucun modèle n’a encore été créé** signifie que cette liste ne fournit aucune entrée enregistrée ; ce n’est pas une invitation à créer un projet vide.
+
+Les sous-dialogues pour [rôles, groupes de tarifs, critères de salaire et classes salariales](06i_role_tariff_templates.mdx) ont leurs propres processus d’enregistrement et de confirmation.
+
+La gestion peut aussi être intégrée dans un profil client. Dans ce cas, des modèles liés au client sont chargés. Vérifiez le point d’entrée et le contexte client avant de modifier un modèle. Un modèle portant le même nom dans l’agence n’est pas automatiquement le même modèle client.
+
+Pour créer et appliquer des modèles de projet et de rôle, utilisez la [notice sur les modèles et la réutilisation](06_templates_and_reuse.mdx). Le lien de modification d’un modèle de projet complet n’est pas actif dans cet aperçu de gestion. Les types de projet, en revanche, disposent d’une modification du nom : **modifier**, changer le nom, puis quitter le champ ou cliquer sur **Enregistrer**. Vérifiez ensuite le nom rechargé.
+
+Pour supprimer, choisissez **Supprimer** sur la bonne entrée et vérifiez la demande de confirmation. **Non** annule. Après **Oui**, rechargez la liste et contrôlez-la. Ne déduisez pas de la suppression d’un modèle que les projets, rôles ou missions déjà créés à partir de celui-ci ont également été supprimés.
+
+## Modifier salaire, allocation et supplément
+
+Ouvrez la famille concernée et cliquez sur **modifier** sur l’entrée. Les dialogues diffèrent :
+
+| Famille | Champs et valeurs sélectionnables |
+| --- | --- |
+| Salaire | Titre multilingue, montant, plafond par mission affiché via **+**, devise EUR/USD/CHF, fréquence h/d et classe salariale existante. |
+| Allocation | Titre, montant, plafond optionnel, EUR/USD/CHF, h/d/par mission/par unité, classe salariale et critère. |
+| Supplément en pourcentage | Titre, pourcentage, classe salariale et critère. |
+| Supplément basé sur un montant | Titre, montant, plafond optionnel, EUR/USD/CHF, h/d, classe salariale et critère. |
+
+Cliquez sur le titre pour ouvrir sa boîte de dialogue linguistique. Renseignez les langues proposées, confirmez la boîte de dialogue du titre puis enregistrez ensuite la boîte de dialogue du modèle elle-même. Une traduction doit être vérifiée avant l’enregistrement final. La classe salariale et le critère sont sélectionnés parmi des entrées existantes ; l’absence d’entrées disponibles ne peut pas être compensée par un nom saisi librement.
+
+**Enregistrer** dans la boîte de dialogue du modèle transmet les modifications ; les champs numériques ne s’enregistrent pas automatiquement en quittant le champ. **Annuler** ferme sans cet appel d’enregistrement. La liste est mise à jour après une réponse réussie. Rouvrez l’entrée et vérifiez le montant, l’unité, la devise et les affectations. Les champs sont des valeurs techniques de modèle, pas une évaluation fiscale ou salariale contraignante et pas des engagements tarifaires actuels.
+
+## Modèles de frais et mode de paiement
+
+Sous **Frais → modifier**, vous renseignez le titre, le montant, le plafond optionnel par mission, la devise EUR/USD/CHF, la fréquence, le type de frais, le mode de paiement, la classe salariale et le critère.
+
+Les fréquences proposées sont heure, jour, kilomètre, par mission et par unité. Le type de frais est transport, repas, hébergement ou autre. Le mode de paiement distingue effectif et forfaitaire. **Important :** pour kilomètre et par unité, le processus d’enregistrement règle le mode de paiement sur **effectif**, même si forfaitaire avait été choisi auparavant. Après l’enregistrement, contrôlez donc à nouveau non seulement le montant, mais aussi le mode de paiement.
+
+Le plafond devient visible via **+**. **Enregistrer** dans le dialogue transmet le modèle ; **Annuler** termine la modification sans cet appel. Les valeurs modifiées ne remplacent pas la vérification des justificatifs de frais ou des règles de décompte. Pour une utilisation ultérieure, chargez le modèle approprié dans la configuration des frais du rôle et contrôlez-y les valeurs reprises ; voir [Modèles et réutilisation](06_templates_and_reuse.mdx).
+
+## Deux modèles de notification distincts
+
+La gestion distingue les modèles de notification destinés à la publication de ceux destinés aux messages du tableau de bord des collaborateurs. Choisissez la famille appropriée et **modifier**.
+
+Pour le modèle de publication, il existe **Nom du modèle** ainsi que les onglets de langue anglais, allemand, français et italien. Pour chaque langue, un objet avec au maximum 50 caractères et un message avec au maximum 256 caractères sont prévus. Le nombre de caractères restants est affiché. La fonction de traduction suppose un contenu existant dans une langue étrangère ; vérifiez le résultat dans l’onglet cible. Cliquez ensuite sur **Enregistrer**. Les textes par langue sont enregistrés ensemble ; l’objet général et le texte du message sont choisis selon l’objet disponible dans l’ordre allemand, anglais, français, italien.
+
+Le modèle du tableau de bord des collaborateurs comporte en revanche **Nom du modèle**, **Subject** et **Message**, sans ces quatre onglets de langue. Ici aussi, la limite est de 50 caractères pour l’objet et de 256 pour le message. Avec **Enregistrer**, les valeurs du modèle sont modifiées, sans envoi immédiat d’un message. **Annuler** ferme le dialogue sans cet appel d’enregistrement.
+
+Les deux fonctions d’enregistrement peuvent déjà fermer le dialogue avant la réponse du serveur. Vérifiez donc la liste rechargée et rouvrez le modèle ; une fenêtre fermée seule ne prouve pas l’enregistrement. L’[envoi aux collaborateurs](05d_employee_communication.mdx) effectif et la [sélection du modèle de publication](06e_agency_client_portal.mdx#valeurs-par-défaut-et-modèle-de-publication) sont des étapes distinctes avec d’autres effets.
+
+## Modifier le modèle PDF d’information
+
+La section **Pdf info** n’est visible que dans une configuration d’agence activée séparément et ne constitue pas un point de menu général. Lorsqu’elle est proposée, ouvrez l’entrée existante via **modifier**. Le dialogue contient le contact d’urgence, le point de rendez-vous, le contact sur place, les exigences et le trajet. Les exigences et le trajet sont des champs de texte formatables ; les autres indications sont des saisies séparées.
+
+Modifiez les indications souhaitées et cliquez sur **Enregistrer** dans le dialogue. **Annuler** ou fermer n’est pas cet appel d’enregistrement. Rouvrez ensuite le modèle et vérifiez les textes. La modification du modèle n’envoie pas de PDF aux collaborateurs. Lors d’une utilisation ultérieure dans le projet, vérifiez les informations de contact et de lieu propres au projet qui ont été reprises.
+
+## Sous-dialogue des créneaux d’un modèle de rôle
+
+Dans la modification d’un modèle de rôle, **Créneaux** ouvre les définitions de créneaux existantes. **Ajouter un nouveau créneau** ajoute une ligne. Pour chaque ligne, il existe une heure de début et de fin au format heures:minutes, une durée de pause en minutes, un nom de créneau multilingue, la boîte de dialogue de créneau fractionné et **Supprimer**.
+
+Le nom est d’abord repris localement dans la boîte de dialogue linguistique. Pour les créneaux fractionnés, jusqu’à quatre plages peuvent être ajoutées ou supprimées avec début et fin. Chaque plage nécessite les deux heures, doit se situer à l’intérieur du créneau total et avoir une fin après le début. Les chevauchements sont signalés. Le contrôleur tient compte des créneaux au-delà de minuit. **Enregistrer** dans le dialogue de créneau fractionné confirme d’abord uniquement la structure locale du créneau.
+
+**Attention à la fermeture :** le dialogue de créneau externe enregistre le modèle de rôle lorsqu’il est masqué et revient à la modification principale. Sa fermeture n’équivaut donc pas à un abandon sûr de toutes les modifications. Vérifiez le modèle de rôle rechargé, en particulier les heures, les pauses et les noms traduits. Un message de succès dans le dialogue interne de créneau fractionné ne prouve pas encore qu’un modèle durablement enregistré existe.
+
+## Liste des projets et limites des anciens éditeurs
+
+Dans la section **Projet**, les modèles de projet enregistrés sont affichés. **Supprimer** ouvre une confirmation ; vérifiez le bon modèle, confirmez uniquement si la suppression est voulue, puis contrôlez la liste mise à jour. Il ne s’agit pas de supprimer un projet déjà créé.
+
+Dans cette liste, aucun bouton actif n’est proposé pour modifier l’ensemble du contenu du modèle de projet. Ne déduisez pas un renommage fiable du projet à partir du champ de nom affiché : il partage son état de modification avec la liste des types de projet. Pour la création et l’utilisation de modèles de projet, voir la [notice séparée sur les modèles](06_templates_and_reuse.mdx). **Type de projet** dispose en revanche de sa propre action de modification active avec enregistrement ensuite ; ne confondez pas type de projet et modèle de projet.
+
+Dans le profil d’agence, les anciens dialogues pour les groupes de collaborateurs/heures hebdomadaires, les catégories d’absence et le calendrier des jours fériés ne sont pas proposés via des actions actives dans les listes. N’y cherchez donc pas d’alternative supplémentaire à la matrice actuelle du temps de travail. De même, il n’y a pas là un deuxième masque de paramètres général à côté des sections de profil documentées. L’absence d’un ancien éditeur ne se résout pas en choisissant un autre mandant.
+
+## Workreport est un affichage de rapport, pas un éditeur de modèles
+
+L’affichage séparé **Workreport** montre, pour le projet sélectionné, le nom du collaborateur, la date du créneau, le début et la fin prévus ainsi que la durée totale en minutes. En dessous figurent les segments de temps existants avec heure de début/fin, type de début/fin et durée de travail. Un temps non encore terminé apparaît comme **active** ; sa durée en cours est prolongée dans l’affichage.
+
+L’affichage tente de recharger le rapport environ toutes les dix secondes. Pour cet ancien point d’entrée de rapport, l’appel associé n’est pas démontré dans l’état de serveur vérifié ; un affichage effectivement disponible n’est donc pas garanti. S’il reste vide ou si le chargement échoue, clarifiez avec le support l’accès concret au rapport. Une horloge continue ne prouve pas un temps de travail définitivement confirmé. La page ne propose ni sélection de champ, ni modèle de mise en page, ni action d’enregistrement, de test ou d’envoi. Ce n’est pas l’endroit pour configurer un modèle Workreport et cela ne doit pas être confondu avec la validation du travail. Pour un autre modèle de rapport souhaité, il faut clarifier le rapport ou l’export concret ; la désignation Workreport ne permet de déduire aucune voie de paramétrage supplémentaire. Aucun chemin de menu non démontré vers l’éditeur de modèles n’est volontairement indiqué ici.

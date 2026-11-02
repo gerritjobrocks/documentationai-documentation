@@ -1,0 +1,55 @@
+---
+title: "Modèles et réutilisation"
+---
+
+Les modèles permettent d’éviter les saisies répétées, mais ne remplacent pas la vérification de la nouvelle commande. En tant que responsable de planification, vous avez besoin du droit de modification pour le projet cible et de l’accès à la fonction de modèle correspondante. **Les modèles de projet, de rôle, de filtre et de notification sont des choses différentes.**
+
+## Choisir la famille de modèles appropriée
+
+| Modèle | Où l’utiliser ? | Ce qu’il faut vérifier ensuite |
+| --- | --- | --- |
+| **Modèle de projet** | Via **Projets → Charger un modèle**, ou dans le tableau de bord des projets. Enregistrer à l’étape 2 via **Enregistrer comme modèle de projet**. | Informations de base, client / contacts, interrupteurs d’automatisation et de visibilité, sites et structure de rôles reprise. Réaffecter les jours de mission. |
+| **Modèle de rôle** | À l’étape 2, sous le site souhaité, via **Charger un modèle**. Enregistrer via l’action **Enregistrer le rôle comme modèle** sur le rôle. | Nom du rôle / traductions, créneaux, filtres et documents ; contrôler en plus le salaire, les frais et les vêtements. Reconfigurer le centre de coûts et le département. |
+| **Modèle de filtre** | Dans le filtre des rôles via **Charger un modèle** ou **Enregistrer comme modèle**. | Tous les critères et la sélection manuelle, pas seulement le nom d’une liste de collaborateurs. Ensuite **Appliquer les filtres sélectionnés**. |
+| **Modèle de notification** | À l’étape 3 via **Charger un modèle** ou **Enregistrer comme modèle**. | Objet, message et versions linguistiques. Vérifier séparément les options d’envoi ; charger n’est pas publier. |
+| **Modèle de groupe tarifaire** | Dans la boîte de dialogue des groupes tarifaires de la planification, si disponible pour votre compte utilisateur. | Désignation et taux horaire minimum / maximum dans le bon contexte client / département. Pas un modèle de projet ni de filtre. |
+
+## Enregistrer un projet comme modèle et le réutiliser
+
+1. Ouvrez un projet vérifié à l’étape **2 – Planification du projet**.
+2. Cliquez en haut sur **Enregistrer comme modèle de projet**.
+3. Saisissez **Nom du modèle** et cliquez sur **Enregistrer**. Si le nom existe déjà, une demande de mise à jour peut apparaître. Ne confirmez que si vous voulez vraiment remplacer ce modèle existant.
+4. Vérifiez le message de succès, puis le modèle dans la sélection de chargement.
+5. Pour la nouvelle commande, ouvrez **Projets → Charger un modèle** et choisissez le modèle de projet approprié.
+6. Contrôlez les informations de base remplies et les interrupteurs. **Les jours de mission sont supprimés lors du chargement du modèle de projet** ; réaffectez les nouveaux jours à chaque site. Les anciens modèles peuvent aussi exister sans liste de sites.
+7. Après vérification, cliquez sur **Suivant** et contrôlez à l’étape 2 la structure de rôles / créneaux reprise. Définissez et vérifiez le besoin en personnel par date et par créneau. Publiez seulement après ce contrôlez.
+
+**Reconnaître le succès :** Le nouveau projet contient le contexte client prévu et les nouveaux sites / jours corrects. Un modèle enregistré ou un nom de rôle repris n’est pas encore une commande entièrement planifiée.
+
+## Utiliser un modèle de rôle de manière ciblée
+
+1. Ouvrez l’étape **2** du projet cible et le bon site.
+2. Cliquez là sur **Charger un modèle** et choisissez le modèle de rôle nécessaire.
+3. Vérifiez le nouveau rôle sous ce site : nom et traductions, créneaux, pauses, documents et filtre de rôle.
+4. Définissez explicitement **Centre de coûts** et **Département** pour cette commande. Un modèle de rôle autonome ne reprend pas ces deux informations, pas même automatiquement depuis le projet cible. C’est ce qui le distingue du flux du modèle de projet.
+5. Vérifiez séparément le groupe tarifaire, les données salariales, les frais et les règles vestimentaires. Ne partez pas du principe qu’un nom de modèle couvre toutes les informations du client cible.
+6. Saisissez le besoin normal et, le cas échéant, les surbookings par créneau et par jour. Ouvrez le filtre de rôle et contrôlez l’intégralité du filtre enregistré avant de l’appliquer.
+
+Pour **enregistrer un modèle de rôle**, ouvrez sur le rôle vérifié **Enregistrer le rôle comme modèle**, attribuez un nom et cliquez sur **Enregistrer**. Lisez la confirmation : le centre de coûts et le département ne font pas partie de ce modèle. Si le nom existe déjà, vous pouvez confirmer une mise à jour ; vérifiez auparavant si d’autres planifications doivent réutiliser ce modèle.
+
+## Réutiliser séparément les notifications et les filtres
+
+Un modèle de notification contient des textes et des traductions. Chargez-le à l’étape 3 et adaptez le message à la commande. Vérifiez ensuite **Envoyer des notifications push**, **Renvoyer les notifications push**, la date limite et, le cas échéant, le programmation horaire. Seule l’action de publication délibérée déclenche le [processus de publication](/main/fr/04a_publication_and_allocation).
+
+Un modèle de filtre décrit des critères de sélection, pas une équipe garantie. Vérifiez les listes, les exclusions, la disponibilité et, le cas échéant, les désélections manuelles dans le filtre de rôle. **Enregistrer comme liste** est une autre action que **Enregistrer comme modèle** ; une liste et un filtre complet ne sont pas interchangeables.
+
+## Self Service et modèles manquants
+
+Dans Self Service, les modèles de projet, de rôle et de notification sont liés au contexte client. Les filtres de rôle restent limités au pool de clients. Ne vous attendez donc pas à la même sélection de modèles ou de personnes que dans un projet d’agence normal.
+
+Si un modèle manque, vérifiez d’abord la famille de modèles et le contexte client. Attendez que la sélection ait fini de se charger. Si **Charger un modèle** n’est pas utilisable, clarifiez l’accès et la disponibilité avec votre administrateur ou le support. On ne peut en déduire aucune attribution générale de prix ou de forfait. En cas de résultat incertain, ne rechargez pas plusieurs fois le même rôle ; vérifiez d’abord s’il a déjà été créé.
+
+
+## Gérer les modèles et les paramètres d’agence
+
+La [gestion des modèles](06g_agency_templates.mdx) décrit la modification des modèles de salaire, de frais et de notification enregistrés. Pour la mise en page de vos propres présentations de personnel, utilisez [Modèles de fiches de présentation](06h_agency_sedcard.mdx). Les [paramètres du portail client](06e_agency_client_portal.mdx) et les [règles vestimentaires](06e_agency_client_portal.mdx#créer-traduire-et-supprimer-les-spécifications-vestimentaires) sont configurés séparément.
