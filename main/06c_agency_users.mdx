@@ -1,0 +1,67 @@
+---
+title: "Benutzer einladen und Mitgliederrollen verwalten"
+description: "Einladungen, Rollenänderungen, Entfernung und rollenbezogene Freigaben im Agenturprofil."
+---
+
+# Benutzer einladen und Mitgliederrollen verwalten
+
+## Mitglieder gezielt einladen
+
+Öffne **Agenturprofil → Benutzerverwaltung**. Der Abschnitt benötigt das Recht zum Anzeigen der Einstellungen und zur Benutzerverwaltung. Die Tabelle zeigt Rolle, E-Mail, Datum und Uhrzeit der Einladung, Kunde und Status. Sie hat eine Seitenauswahl; prüfe weitere Seiten, bevor du eine vermeintlich fehlende Einladung erneut anlegst.
+
+Wähle **Neu hinzufügen**, um **Mitglied einladen** zu öffnen. Fülle E-Mail, Rolle, Sprache und Einladungs-E-Mail-Inhalt aus. Die Sprache ist separat wählbar: Englisch, Deutsch, Französisch oder Italienisch. Eine neue Einladung startet ohne vorgewählte Rolle oder Sprache.
+
+Als Agenturrollen stehen **Admin**, **Project Manager**, **Project Supervisor**, **Recruiting Manager**, **HR Manager**, **Finance** und **Mitarbeiter** zur Wahl. Zusätzlich gibt es **client admin**, **client buyer**, **client validator** und **client work validator**. Bei einer Kundenrolle muss ein **Kunde** ausgewählt werden. Ohne Kundenrolle ist diese Auswahl gesperrt; beim Wechsel zurück zur Agenturrolle wird die Kundenzuordnung geleert.
+
+**Einladen** löst einen echten Versand aus; es ist keine Vorschau. **Abbrechen** oder Schliessen verwirft den Dialog. Fehlende Pflichtangaben oder ein fehlender Kunde verhindern das Absenden. Nach dem Absenden reicht ein geschlossenes Fenster nicht als Nachweis: Prüfe Erfolgsmeldung und Tabellenzeile. Bei einem unklaren Fehler zunächst die Tabelle neu laden, statt sofort nochmals zu senden.
+
+## Bestehende Konten, erneuter Versand und Entfernen
+
+Bei einer E-Mail mit bestehendem, nicht als Mitarbeiterkonto geführtem Benutzer wird eine Einladung zum Beitritt gesendet statt einer neuen Registrierung. Eine identische aktive Mitgliedschaft oder bereits offene Einladung kann zurückgewiesen werden. Dieselbe Adresse mit einer anderen Rolle ist nicht automatisch dasselbe Mitgliedschaftsverhältnis. Eine Adresse eines bestehenden Mitarbeiterkontos kann beim Beitrittsweg abgelehnt werden.
+
+**Einladung erneut senden** ist ein weiterer echter Mailversand. Bei mehreren Einladungen derselben Adresse mit verschiedenen Rollen die betroffene Zuordnung zuerst prüfen; der Versandweg sucht nach Adresse und Agentur und ist kein sicherer rollenweiser Auswahlmechanismus. Eine Erfolgsanzeige ist keine Zustellgarantie.
+
+**Löschen** öffnet eine Bestätigung. Das ist nicht nur das Ausblenden einer Tabellenzeile: Eine offene, noch nicht angenommene Einladung wird zurückgezogen. Bei einem bestehenden Mitglied kann die betreffende Agentur-/Kunden-/Rollenzuordnung entfernt werden. Hat das Konto weitere Mitgliedschaften, bleiben diese bestehen; bei der letzten Mitgliedschaft kann auch das Benutzerkonto entfernt werden. Prüfe daher vor **Ja** die Person, Rolle und Kundenzuordnung. Nachher die aktualisierte Tabelle kontrollieren. **Nein** bricht ab.
+
+Eine angebotene erneute Einladung eines entfernten Benutzers ist ein eigener Vorgang. Nicht mit einem neuen Mitarbeiterprofil oder der Wiederherstellung sämtlicher früherer Rechte gleichsetzen.
+
+## Rolle eines Benutzers ändern
+
+Administratoren können in der Benutzerverwaltung die Rollenbearbeitung öffnen. Im Bearbeitungsdialog bleiben E-Mail, Sprache und Nachricht gesperrt; geändert werden Rolle und gegebenenfalls Kunde. Für eine Kundenrolle ist die Kundenauswahl erforderlich. **Vor dem Speichern:** Wechselst du in eine Kundenrolle und ändert sich dabei der zugeordnete Kunde, wird die Zuordnung zu **allen Abteilungen des Zielkunden** angestossen. Beim Wechsel von einer Kundenrolle zu einer Agenturrolle werden die **Kunden- und Abteilungszuordnungen entfernt**. Prüfe deshalb vorab, ob dieser Zugriffsumfang beabsichtigt ist.
+
+**Speichern** übernimmt Rolle und Kunde und lädt die Einladungstabelle neu; **Abbrechen** verwirft die Dialogänderung. Die Abteilungszuordnung läuft im Hintergrund und kann nach dem Schliessen des Dialogs noch ausstehen. Kontrolliere nach dem Speichern **Kunde und Abteilungen**; lade bei noch laufender Verarbeitung später erneut, statt aus der geschlossenen Maske auf eine abgeschlossene Zuordnung zu schliessen.
+
+Eine direkte Rollen-Dropdownänderung in der Tabelle hat einen eigenen unmittelbaren Speicherweg. Für den Wechsel zu einer Kundenrolle mit konkreter Kundenzuordnung den vollständigen Bearbeitungsdialog verwenden. Kontrolliere danach die Tabellenwerte. Die Rolle beschreibt nicht allein den tatsächlichen Umfang: Funktionsfreigaben und bei Kundenbenutzern der Kunden- und Abteilungskontext bleiben relevant.
+
+## Mitgliederrollen und Funktionsrechte
+
+Unter **Mitgliederrollen verwalten** siehst du Funktionen als Zeilen und **Admin**, **Projektleiter**, **Projekt-Supervisor**, **Recruiting Manager**, **HR Manager**, **Finance** und **Mitarbeiter** als Spalten. Der Zugang erfordert die gleichnamige Freigabe. Die Auswahl gilt für die Rolle in der Agentur, nicht nur für einen einzelnen Benutzer.
+
+Setze oder entferne ein aktiv bedienbares Kästchen in der gewünschten Spalte. Die Änderung wird unmittelbar gespeichert; es gibt keine zusätzliche Schaltfläche **Berechtigungen speichern**. Nicht jede Kombination ist bedienbar: Die Oberfläche begrenzt die änderbaren Zellen je Rolle. **Admin × Mitgliederrollen verwalten** lässt sich nicht abschalten. Kundenspezifische Portalrechte und die ausgeblendete IBAN-Zeile sind nicht über diese Agenturmatrix zu konfigurieren.
+
+Wird **Supervisor vor Ort** entzogen und die Rolle ist bereits bei Projekten als Teammanager eingesetzt, erscheint eine Bestätigung. **Nein** setzt das Häkchen zurück; **Ja** speichert den Entzug. Prüfe vor der Bestätigung die betroffenen Zuständigkeiten.
+
+Die Agenturmatrix ist von den Rechten im Kundenprofil getrennt. Kundenbenutzer benötigen neben Funktionsfreigaben den richtigen Kunden- und Abteilungskontext. Selbstservice und Bestellfunktionen werden nicht dadurch gewährt, dass man eine entsprechende Agenturspalte sucht. Nach einer Änderung Erfolgsmeldung und erneut geladene Matrix prüfen; sichtbare Buttons sind keine vollständige Zusage für sämtliche Serverberechtigungen.
+
+## Welche Zellen der Agenturmatrix bedienbar sind
+
+Ein ausgegrautes Kästchen zeigt eine nicht bedienbare Kombination; es bedeutet nicht automatisch „Recht aus“. Die folgende Übersicht beschreibt **Änderbarkeit**, nicht die vorgewählte oder wirksame Berechtigung einer Agentur. Die aktuelle Markierung muss separat geprüft werden. Alle genannten Funktionen müssen ausserdem als Zeile geladen sein.
+
+Für **Admin, Projektleiter, Projekt-Supervisor, Recruiting Manager, HR Manager und Finance** sind diese gemeinsamen Funktionsgruppen bedienbar:
+
+- Projekte: erstellen, eigene/alle ansehen, eigene/alle bearbeiten, löschen und annullieren.
+- Mitarbeitende: alle Profile ansehen/bearbeiten, Listen verwalten, Status anzeigen/ändern und Passwort zurücksetzen.
+- Arbeitsvalidierung: anzeigen und bearbeiten; Payroll-Export erstellen und Payroll-Datei importieren.
+- Kunden: ansehen und verwalten; Vorlagen bearbeiten.
+- Einstellungen: Unternehmensdaten bearbeiten, Credits verwalten, Benutzerverwaltung, öffentliche Sichtbarkeit bearbeiten; Optionen, Felder, E-Mail-Benachrichtigungen, E-Mail-Absender und Twilio jeweils mit den angebotenen Lese-/Bearbeitungszeilen; NOH-Lesezugriff und Kundenportal-Einstellungen bearbeiten.
+- Verantwortlicher Zeiterfassung (Supervisor vor Ort): die gesonderte Konfliktbestätigung beim Entzug beachten.
+
+Dazu kommen Unterschiede:
+
+| Rollenspalte | Zusätzlich bedienbar bzw. gesperrt |
+| --- | --- |
+| Projektleiter, Projekt-Supervisor, Recruiting Manager, HR Manager, Finance | **Einstellungen anzeigen** und **Mitgliederrollen verwalten** sind zusätzlich bedienbar. Ihre angebotenen Änderungszellen sind untereinander gleich. Eigene Mitarbeiterprofil-Zeilen, Arbeitgeber-Profilbild und die vier agenturseitigen Self-Service-Projektzeilen sind hier nicht frei umschaltbar. |
+| Admin | Zusätzlich eigenes Mitarbeiterprofil ansehen/bearbeiten, Mitarbeitervorschläge favorisieren, Mitarbeitende bewerten, Unternehmensdaten-/Credits-Lesezugriff, Arbeitgeber-Profilbild bearbeiten und Self-Service-Projekte erstellen, alle ansehen, alle bearbeiten, löschen/stornieren. **Mitgliederrollen verwalten** und **Einstellungen anzeigen** sind in dieser Spalte nicht frei umschaltbar. |
+| Mitarbeiter | Nur **Eigenes Mitarbeiterprofil ansehen** und **Eigenes Mitarbeiterprofil bearbeiten** sind bedienbar; die übrigen sichtbaren Funktionszellen sind gesperrt. |
+
+Kundenrollen sowie Kunden-Bestellrechte, Kunden-Lohn-/Spesenrechte und die kundeneigenen Self-Service-Zeilen werden in der [Kundenmatrix](06e_agency_client_portal.mdx#kundenrollen-getrennte-spalten-und-konfliktbestätigung) gepflegt. Die IBAN-Zeile ist in der Agenturmatrix ausgeblendet. Nicht aus alten Tooltiptexten auf eine zusätzlich angebotene Option schliessen. Die Matrix ersetzt keine Prüfung, ob ein bestimmter Zugriff serverseitig zulässig ist; insbesondere Lesezugriff und Bearbeitung nicht gleichsetzen.

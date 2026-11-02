@@ -1,0 +1,104 @@
+---
+title: "Optionen, Arbeitszeitregeln und Profilfelder"
+description: "Speicherwege, Mindestpausen, Arbeitszeitmatrix und Pflicht- bzw. Reviewfelder unterscheiden."
+---
+
+# Optionen, Arbeitszeitregeln und Profilfelder
+
+## Optionen und Lohnplatzhalter
+
+Öffne **Einstellungen → Agenturprofil → Optionen**. Der Bereich für die AGB-Datei ist mit dem Bearbeitungsrecht für Optionen verbunden; nicht alle folgenden Zeilen verwenden denselben sichtbaren Sperrbereich. Daraus lässt sich keine allgemeine Berechtigung für jede Einstellung ableiten.
+
+Lade die Datei mit den allgemeinen Geschäftsbedingungen über die Uploadfläche hoch. Akzeptiert werden DOCX, DOC und PDF. Nach erfolgreichem Upload erscheint ein Dateilink; zum Entfernen das Löschen-Symbol verwenden und bestätigen. Der Link kann auch bei einer hochgeladenen Word-Datei **file.pdf** heissen: Kontrolliere die tatsächliche Datei, nicht nur den Linktext. Es gibt für diesen Upload keinen zusätzlichen globalen Speichern-Schritt.
+
+Unter **Gehaltsangaben** gibt es drei voneinander zu unterscheidende Texte: Platzhalter, wenn kein Lohn eingetragen ist; Platzhaltername, wenn keine Lohnklasse für den Basislohn ausgewählt ist; und den zugehörigen Platzhalterschlüssel. Jedes Verlassen dieser Textfelder speichert die gemeinsam übermittelten Platzhalterwerte. Diese Texte setzen keinen Lohnbetrag und schaffen keine Lohnklasse. Nach einer Erfolgsmeldung erneut öffnen und alle drei Werte prüfen.
+
+## Mindestpausen als Zeitbereiche pflegen
+
+In **Optionen → Mindestpause** enthält die Tabelle **von (min)**, **bis (min)** und **Dauer (min)**. **Neu hinzufügen** legt zunächst eine lokale Zeile an. Die erste beginnt bei 0; weitere beginnen mit dem bisherigen oberen Ende plus 1. Ohne obere Grenze der letzten Zeile kann keine weitere Zeile angelegt werden: zuerst die vorhandene Grenze ergänzen.
+
+Gib die Bereichsgrenzen und Pausendauer in Minuten ein. Beim Verlassen einer Tabellenzelle wird gespeichert, sofern Start und Dauer ausgefüllt sind. Die obere Grenze kann leer bleiben. Eine fehlende Dauer wird beanstandet; überlappende Bereiche können vom Server zurückgewiesen werden. Prüfe nach einem Fehler die ganze Tabelle erneut. Die Kopplung der Bereichsgrenzen kann auch die vorherige Zeile aktualisieren; Änderungen sind keine gemeinsame Transaktion aller Einstellungen.
+
+Zum Entfernen das Löschen-Symbol der Zeile wählen und bestätigen. Bei noch ungespeicherten Platzhalterzeilen werden die ungespeicherten Zeilen lokal entfernt. Nach erfolgreichem Löschen einer gespeicherten Definition wird die Liste neu geladen. Die Auswahl fachlich zulässiger Pausen bleibt Aufgabe der verantwortlichen Stelle.
+
+## Arbeitszeitmatrix bearbeiten und zurücksetzen
+
+Unter **Arbeitszeiteinstellungen** steht links die Regel, daneben **Standard** und je eine Spalte pro vorhandenem Projekttyp. Ein Projekttyp übernimmt den Standard, solange kein eigener Wert gesetzt ist. Ein Strich bedeutet, dass dort kein Zahlenwert gesetzt ist; er ist nicht dasselbe wie 0. Ohne gespeicherte Agenturwerte liefert die Matrix leere Standards, keine gesetzlich freigegebenen Grenzwerte.
+
+1. Klicke die gewünschte Zelle an und gib eine Zahl in der angezeigten Einheit ein. Dezimalkomma ist möglich.
+2. Bei einer einzelnen Zahl speichert **Enter** oder das Verlassen des Feldes. **Escape** verwirft die laufende Eingabe.
+3. Bei **Ausnahmsweise max. Wochenstunden** gibt es **peak** und **rest**: den Wert für die Spitzenwoche und für die übrigen Wochen. **Enter** oder das Verlassen des zweiten Feldes speichert beide Werte. Beide Felder vor dem Bestätigen kontrollieren.
+4. Eine eigene Projekttypregel wird hervorgehoben. Mit dem beim Darüberfahren erscheinenden Zurücksetzen-Pfeil übernimmst du wieder den Standard; dies speichert unmittelbar. Auch das vollständige Leeren eines Overrides stellt die Vererbung wieder her, es schaltet nicht unabhängig vom Standard ab.
+5. Erfolgsmeldung abwarten und nach erneutem Öffnen die Zelle kontrollieren. Bei einem Fehler kann der lokale Wert bereits verändert aussehen.
+
+Es werden die aktiven Regeln und Projekttypen geladen. **Keine Geschäftsregeln konfiguriert** ist keine Aussage über fehlende gesetzliche Pflichten. Die Oberfläche übermittelt beim Speichern den Matrixzustand; konkurrierende Bearbeitungen vermeiden. Diese Speicherung ist von Mindestpausen, Profilfeldern und Bürozeiten getrennt.
+
+## Welche Regeln und Einheiten gibt es
+
+Der hinterlegte Regelkatalog umfasst folgende Feldgruppen:
+
+| Regel | Eingabe |
+| --- | --- |
+| Min. Pause zwischen Einsätzen | Minuten |
+| Max. aufeinanderfolgende Arbeitstage | Tage |
+| Max. Arbeitsstunden pro Woche | Stunden |
+| Ausnahmsweise max. Wochenstunden | Zwei Stundenwerte: peak und rest |
+| Min. ununterbrochene wöchentliche Ruhezeit | Stunden |
+| Max. Arbeitsstunden pro Monat | Stunden |
+| Max. Sonntage pro Monat | Anzahl |
+| Umgang mit verspätetem Einstempeln | Minuten |
+| Umgang mit frühem Ausstempeln | Minuten |
+| Umgang mit verspätetem Ausstempeln | Minuten |
+| Begründung für verspätetes Einstempeln | Minuten |
+| Begründung für frühes Ausstempeln | Minuten |
+| Begründung für verspätetes Ausstempeln | Minuten |
+
+Für jede Zeile gelten Standard und Projekttypabweichung sowie die eben beschriebenen Speicherregeln. Ein Hilfetext kann die beabsichtigte Behandlung beschreiben, beweist aber nicht, dass jede Planungs-, App- oder Validierungsfunktion dieselbe Regel bereits durchsetzt. Insbesondere ist aus einer gespeicherten **Begründungs-Toleranz** keine automatische Anerkennung oder Zurückweisung einer Begründung abzuleiten. Eine fachliche Freigabe der Arbeitszeiten ersetzt die Matrix nicht.
+
+## Bewilligungsablauf, Standortalarm und Erinnerungen
+
+**Arbeitsbewilligung:** Im Feld zum Ablauf der Arbeitsbewilligung wird die konfigurierte Verzögerung beim Verlassen gespeichert. Der Hilfetext beschreibt, wie lange Mitarbeitende nach Ablauf aktiv bleiben sollen. Das ist keine rechtliche Verlängerung einer Bewilligung. In der zugehörigen E-Mail-Mehrfachauswahl werden Empfänger ergänzt oder entfernt und beim Verlassen gespeichert. Prüfe die gespeicherten Werte und den konkreten Mitarbeiterstatus gesondert.
+
+**Standortalarm:** Der Schieberegler zeigt 0 bis 200 Meter in Zehnerschritten. Speichern erfolgt beim Loslassen. Achtung: Der Hilfetext beschreibt 0 als strenge Prüfung, die Speicherung behandelt 0 jedoch als deaktivierten Wert; die Anzeige zeigt dazu **OFF**. Verlasse dich deshalb nicht auf 0 als strenge Standortkontrolle. Wähle einen fachlich passenden positiven Wert und prüfe ihn nach erneutem Öffnen. Eine GPS-Abweichung allein ist keine belastbare Aussage über geleistete Arbeitszeit.
+
+**Benachrichtigungen für nicht angenommene Zuteilungen:** Der Agenturschalter speichert beim Umschalten. Er ist nicht mit den E-Mail-Empfängern für Bewerbungen oder Annahmen identisch. Die Erinnerungssteuerung kann zusätzlich kundenspezifisch erfolgen; aus dem Agenturschalter allein keine wirksame Erinnerung für jede Kundenmission ableiten. Diese Einstellung kann spätere echte Benachrichtigungen beeinflussen.
+
+## Pflichtfelder in Mitarbeiterprofilen
+
+Unter **Felder Definitionen → Pflichtfelder in Mitarbeiterprofilen** setzt oder entfernst du die Markierung je Feld. Du benötigst das Bearbeitungsrecht für Felder. Jede Änderung wird unmittelbar gespeichert; es gibt keine abschliessende Schaltfläche für die gesamte Auswahl. Die Auswahl wird aus den gespeicherten Agenturdefinitionen geladen. Neue Agenturen erhalten durch die Standardinitialisierung keine Pflichtfelder; daraus folgt nicht, dass eine bestehende Agentur eine leere Auswahl hat.
+
+Wählbar sind:
+
+- **Person und Bilder:** Geschlecht, Porträt Foto, Ganzkörper Foto, Lebenslauf, Muttersprache.
+- **Wohnsitz:** Strasse, Hausnummer, PLZ, Ort, Land und Kanton.
+- **Notfallkontakt:** Vorname, Nachname, Telefonnummer und E-Mail.
+- **Identität und Sozialversicherung:** AHV-Nr., AHV-Ausweis hochladen, Zivilstand, Nationalität, Reisepass/ID hochladen.
+- **Bewilligung und Auszahlung:** Arbeitsbewilligung, Upload Arbeitsbewilligung, Ablaufdatum Arbeitsbewilligung, Quellensteuerangaben, IBAN.
+- **Mobilität:** Angaben zu ÖV-Abonnementen, Führerscheintyp, Fahrkompetenzen, Verfügbarkeit PKW.
+
+Diese Auswahl ändert die Definition, nicht die vorhandenen Profildaten. Vorname, Nachname, Geburtsdatum, Mobiltelefon und E-Mail sind hier nicht als frei schaltbare Pflichtfeldoptionen aufgeführt. Prüfe die Markierungen durch erneutes Öffnen und anschliessend die Vollständigkeitsanzeige eines betroffenen [Mitarbeiterprofils](05a_employee_profiles.mdx). Eine Vollständigkeitsanzeige ersetzt keine Prüfung der Richtigkeit oder Gültigkeit eines Dokuments.
+
+## Änderungen zur Profilprüfung markieren
+
+Die zweite Auswahl unter **Felder Definitionen** heisst **Felder, bei deren Änderung der Status „bearbeitet“ im Mitarbeiterprofil ausgelöst wird.** Sie ist keine zweite Pflichtfeldliste und auch keine allgemeine Schreibberechtigung für Mitarbeitende.
+
+Zur Auswahl stehen:
+
+- Nachname, Vorname, Geschlecht, Anzahl Kinder, Geburtsdatum.
+- Porträt Foto, Ganzkörper Foto und Lebenslauf.
+- Hauptadresse: zusätzliche Adresszeile, Strasse, Hausnummer, PLZ, Ort, Land und Kanton; Zweitadresse: Strasse, Hausnummer, PLZ, Ort und Land.
+- Festnetz, Mobiltelefon und E-Mail.
+- AHV-Nr., AHV-Ausweis, Zivilstand, Nationalität, Reisepass/ID.
+- Arbeitsbewilligung, Arbeitserlaubnis-Titelseite, Führerschein-Dokument, Ablaufdatum der Arbeitsbewilligung, IBAN und weitere Dokumente.
+
+Ein- und Ausschalten speichert jede Definition einzeln. Die angezeigten Häkchen stammen aus der Agenturkonfiguration; die anfänglichen Werte eines leeren Formularmodells sind keine verbindlichen Agenturdefaults. Lade die Seite nach einer Änderung erneut. Die nachgelagerte Prüfung von Profiländerungen und eine allfällige EasyTemp-Synchronisierung bleiben separate Abläufe; ein Häkchen bestätigt weder eine abgeschlossene Prüfung noch einen erfolgreichen Export.
+
+## Felddefinitionen: Auswahlumfang und Initialisierung
+
+Die beiden Feldlisten sind feste Auswahlen, kein Editor für neue frei benannte Profilfelder. Nutze **Pflichtfelder** für die Vollständigkeitsanforderung und die zweite Liste für den Status **bearbeitet** bei einer Änderung. Ein Pflichtfeld ist nicht automatisch ein Reviewfeld; die Listen sind getrennt zu pflegen.
+
+Die Pflichtfeldliste umfasst die oben aufgeführten Personen-/Bild-, Wohnsitz-, Notfall-, Identitäts-, Bewilligungs-, Auszahlungs- und Mobilitätsfelder. Nicht schaltbar sind dort Vorname, Nachname, Geburtsdatum, Mobiltelefon und E-Mail. In der Reviewliste stehen dagegen diese Angaben, Kinderzahl, Haupt- und Zweitadresse sowie Dokumentfelder zur Auswahl, aber keine gesonderte Muttersprache-, Notfallkontakt- oder Mobilitätsauswahl. Interne Bemerkungen und Mitarbeiterlisten sind dort keine aktiven Review-Optionen.
+
+Die anfängliche Pflichtfeldauswahl neuer Agenturen ist leer. Bei Reviewdefinitionen kann die Initialisierung persönliche Felder und Dokumentfelder ergänzen, wenn noch keine Definition existiert. Deshalb ist „alle Häkchen entfernen“ kein zugesicherter dauerhafter Zustand über jede Neuinitialisierung hinweg. Nach Änderungen die tatsächlich geladenen Häkchen erneut kontrollieren. Ein Häkchen zur Dokumentprüfung bestätigt weder den Dateiinhalt noch eine erfolgreiche Weitergabe an ein Lohnsystem.
+
+Ein separat sichtbares administratives Textfeld mit der Bezeichnung **Employee Fields** ist nicht diese Felddefinition und kein angebotener Kundeneditor. Änderungen von Steuern, Lohn oder Bewilligungen werden hier nicht fachlich freigegeben; dokumentiert wird nur die Bedienung der Auswahl.

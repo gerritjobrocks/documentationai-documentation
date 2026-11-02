@@ -1,0 +1,52 @@
+# Mitarbeitende kontaktieren
+
+## Den richtigen Empfängerkreis wählen
+
+| Einstieg | Empfänger und Wirkung |
+| --- | --- |
+| **Mitarbeiter → Nachricht senden** | Die zum aktuellen Filter und Suchnamen passenden Mitarbeitenden, abzüglich abgewählter Personen. Die Auswahl kann über die sichtbare Tabellenseite hinausgehen. |
+| **Mitarbeiterprofil → Benachrichtigung senden** | Eine einzelne Person. Beachte die unten beschriebene Einschränkung für E-Mail/SMS dieses Dialogs. |
+| **Projekt → Schritt 4 → Beworben → Nachricht senden** | Die mit Checkboxen ausgewählten Personen im Kandidatenpanel. Zusätzlich werden serverseitig nicht aktive Mitarbeitende übersprungen. |
+| **Projekt veröffentlichen/Einladungen** | Eine Projekteinsatzeinladung mit den zugehörigen Bewerbungsregeln, nicht eine freie Nachricht. Siehe [Veröffentlichen](/main/04a_publication_and_allocation). |
+
+Eine freie Nachricht ändert weder Bewerbung noch Zuteilung. Prüfe die Empfänger vor dem Senden; ein Vorlagenname ist keine Empfängerliste. Im Kundenkontext wird die Dashboard-Auswahl zusätzlich auf den eigenen Kundenpool begrenzt.
+
+## Nachricht aus dem Mitarbeiterdashboard
+
+1. Öffne **Mitarbeiter**, setze [Suche und Filter](/main/05b_employee_lists_filters) und kontrolliere die ausgewählte Anzahl. Wähle nicht gewünschte Personen ab. Prüfe auch bei mehreren Seiten, ob tatsächlich die gewünschte Gesamtmenge ausgewählt ist.
+2. Öffne **Nachricht senden**. Der Dialog beginnt mit leeren Betreff-/Nachrichtenfeldern und ohne Anhänge.
+3. Wähle **Benachrichtigung**, **E-Mail** oder **SMS**. Nicht eingerichtete E-Mail-/SMS-Kanäle sind deaktiviert beziehungsweise können serverseitig zurückgewiesen werden. Fehlende Einrichtung ist kein Hinweis, dass ein erneuter Klick den Versand repariert.
+4. Fülle **Betreff** und **Nachricht** aus. Die Platzhalter `[first-name]` und `[last-name]` werden für jede Person eingesetzt. Schreibe keine echten Personendaten in eine wiederverwendbare Vorlage.
+5. Für E-Mails kannst du im angebotenen Anhangsbereich Dateien hinzufügen und einzelne Anhänge wieder entfernen. Ein sichtbarer Dateiname ist noch kein Versandbeleg.
+6. Kontrolliere den Text, Kanal, Anhänge und Empfängerkreis nochmals. **Senden** startet den Versandauftrag; im Dashboard gibt es nicht denselben zusätzlichen Bestätigungsdialog wie in Schritt 4.
+
+Fehlen Betreff oder Nachricht, erscheint die Aufforderung, alle Felder auszufüllen. Liefert die Auswahl keine Mitarbeitenden, erscheint **Keine Mitarbeiter ausgewählt**. Eine Erfolgsmeldung mit einer Anzahl beschreibt die vom Auftrag erfassten Personen, keine garantierte Zustellung oder Lesebestätigung bei jeder Person.
+
+## Vorlagen speichern und laden
+
+Über **Als Vorlage speichern** gibst du einen Namen ein und speicherst Betreff und Nachricht. Über **Aus Vorlage laden** wählst du einen Eintrag; dessen Text ersetzt die aktuellen Textfelder. Prüfe nach dem Laden den vollständigen Inhalt und den Kanal erneut.
+
+Dashboard und Schritt 4 verwenden dieselbe Kategorie für Mitarbeiter-Nachrichtenvorlagen. Die Vorlage speichert nicht automatisch Empfänger, Anhänge oder den Versandkanal. Das Speichern einer Vorlage versendet nichts. **Abbrechen** beziehungsweise das Schliessen des Vorlagendialogs ist nicht das Zurückrufen einer bereits gesendeten Nachricht.
+
+## Nachricht aus Schritt 4
+
+Im Kandidatenpanel auf **Beworben** wechseln und die Nachrichtenauswahl aktivieren. Markiere die gewünschten Personen. Die Auswahlhilfen für alle, zugeteilte und bestätigte Personen sind verschieden; kontrolliere die Häkchen, statt allein auf die Anzahl im Tab zu vertrauen.
+
+Öffne anschliessend den Nachrichtendialog. Wähle den Kanal und fülle Betreff und Text aus oder lade eine Vorlage. Für Benachrichtigung/SMS zeigt die Oberfläche maximal **50 Zeichen Betreff** und **256 Zeichen Nachricht**; für E-Mail gelten diese beiden Oberflächenlimits nicht. Die Vor-/Nachnamen-Platzhalter werden pro Person ersetzt.
+
+Nach **Senden** folgt die Frage, ob die ausgewählten Mitarbeiter kontaktiert werden sollen. **Ja** gibt diesen Versandauftrag frei, **Nein** führt ihn nicht aus. Der Versand berücksichtigt nur angehakte Personen und überspringt nicht aktive Mitarbeitende. Deshalb ist eine Anzahl im Kandidatenpanel nicht automatisch die Zahl der tatsächlich kontaktierten Personen.
+
+## Einzelprofil und bekannte Einschränkung
+
+Im Einzelprofil öffnet **Benachrichtigung senden** einen ähnlichen Dialog. Fülle immer Betreff und Nachricht aus. Eine Benachrichtigung richtet sich an die geöffnete Person, nicht an den zuletzt im Dashboard gesetzten Filter.
+
+**E-Mail und SMS aus dem Einzelprofil sind im geprüften Stand nicht verlässlich als funktionierender Versandweg bestätigt.** Verwende dafür den Dashboard-Dialog mit sorgfältig auf diese Person begrenzter Auswahl. Nach einem unklaren Versandversuch nicht sofort nochmals senden: zuerst prüfen lassen, ob ein Auftrag bereits verarbeitet wurde. Die Ähnlichkeit der Dialoge bedeutet nicht, dass ihre Versandwege identisch funktionieren.
+
+## Erfolg, Fehler und Zustellung unterscheiden
+
+- **E-Mail** verlangt eine vollständige Versandkonfiguration. Eine Fehlermeldung zu Einstellungen oder Versand ist kein Zustellbeleg.
+- **SMS** wird als Versandauftrag übergeben. Der SMS-Absender kann im Kundenkontext aus dessen vollständiger Konfiguration stammen, sonst aus der Agenturkonfiguration.
+- **Benachrichtigung** wird zur Verarbeitung übergeben. Die Annahme des Auftrags beweist nicht, dass ein Gerät die Nachricht empfangen oder die Person sie gelesen hat.
+- Bei einer Sammelnachricht können bereits einzelne Empfänger verarbeitet worden sein, bevor ein Fehler auftritt. Erneutes Senden kann doppelte Nachrichten erzeugen.
+
+Das Kopieren von E-Mail-Adressen und das Laden/Speichern einer Vorlage senden nichts. **Deaktivieren mit Nachricht** ist dagegen eine eigene Statusaktion, nicht bloss ein weiterer Kommunikationskanal. Prüfe hierfür den Dialog und vorhandene Einsätze im [Mitarbeiterdashboard](/main/05_employees_dashboard).

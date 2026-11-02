@@ -1,0 +1,79 @@
+# Mitarbeiter und Einsatzhistorien importieren
+
+## Zugang und Vorbereitung
+
+Im **Mitarbeiter-Dashboard** gibt es die Buttons **import employees** und **import job history** für Superadministratoren. Die Beschriftung und Teile des Assistenten können auch bei deutscher Portalsprache Englisch bleiben. Ein normaler Agenturadministrator sieht diese Buttons nicht automatisch. Fehlen sie, kläre den berechtigten Zugang mit deiner Administration; der Registrierungslink ist kein Importwerkzeug.
+
+Importiere nur die freigegebenen Daten in die ausdrücklich gewählten Agenturen. Der Assistent kann bestehende Profile verändern und Personen mehreren Agenturpools hinzufügen. Prüfe deshalb vor dem Start die Identifikation, Statuswerte und Zielagentur. Die Vorschau ist **keine vollständige Freigabe oder Rückgängig-Funktion**.
+
+## Datei für Mitarbeiter vorbereiten
+
+Der Assistent nimmt **CSV, XLSX, XLS und JSON** an. Bei Excel wird das erste Tabellenblatt gelesen; die erste Zeile enthält Spaltenüberschriften, darunter steht jeweils ein Datensatz pro Person. Verwende eindeutige, lückenlose Überschriften. JSON muss eine Liste gleichartig aufgebauter Objekte enthalten. Bereite CSV möglichst in UTF-8 vor und kontrolliere Trennzeichen und Umlaute in der Vorschau. Die Uploadprüfung begrenzt die Dateigrösse auf 50 MB.
+
+Die fünf Pflichtzuordnungen sind:
+
+| Information | Ziel im Zuordnungsdialog |
+|---|---|
+| Vorname | `first_name` |
+| Nachname | `last_name` |
+| E-Mail | `email` |
+| Mobilnummer | `mobile` |
+| Geburtsdatum | `date_of_birth` |
+
+Diese Werte müssen auch je Datensatz vorhanden sein. Verwende für Datumswerte ein eindeutiges Format wie `YYYY-MM-DD` oder `TT.MM.JJJJ`, nicht bloss ein Jahr. Mobilnummern mit korrekter Ländervorwahl vorbereiten und nicht als gerundete Excel-Zahlen speichern. E-Mail und Mobilnummer sind auch Identifikationsmerkmale; eine falsche Zuordnung kann das falsche bestehende Profil treffen.
+
+## Fünf Schritte bis zum Import
+
+1. Öffne **import employees** und den neuen Import. Ziehe die Datei auf die Uploadfläche oder wähle sie aus. Entferne eine falsche Auswahl über das x am Dateinamen. **Next** lädt die Datei hoch und liest die Überschriften.
+2. Unter **Detected column / Maps to** prüfst du jede erkannte Spalte. Die vorgeschlagenen Zuordnungen sind nur Vorschläge. Ordne Pflichtfelder zu; lasse nicht benötigte Spalten unzugeordnet. Weise ein Standardzielfeld nicht mehrfach zu. Bei **Additional Document** ist zusätzlich **Select document type** erforderlich.
+3. Prüfe die **Vorschau**: Namen, Kontakte, Geburtsdatum, Spaltenversatz und Zeichenkodierung. Sie zeigt nur die ersten acht Datenzeilen. Die aktuelle Vorschautabelle zeigt keine separate Fehler-Spalte; eine unauffällige Tabelle beweist deshalb nicht, dass alle Daten gültig sind. Mit **Back** korrigierst du die Zuordnung; für eine fehlerhafte Ausgangsdatei den Vorgang vor dem Start schliessen und die korrigierte Datei neu wählen.
+4. Wähle unter **Choose agencies** mindestens eine Zielagentur. Mehrfachauswahl bedeutet, dass die Personen diesen mehreren Agenturen zugeordnet werden sollen – nicht, dass das System selbst die richtige Agentur errät.
+5. Kontrolliere **File**, **Agencies** und **Minimal mapping OK**. Erst **Start import** beauftragt die Verarbeitung. Warte auf den Verarbeitungsfortschritt und prüfe danach den Eintrag in der Importübersicht.
+
+**Processing** und eine Fortschrittszahl bedeuten, dass Zeilen bearbeitet werden. Das Schliessen des bereits gestarteten Assistenten ist kein Abbruch des Hintergrundauftrags. Bei **Upload failed**, **Preview failed** oder **Failed to start import** zunächst Datei, Zuordnung und den vorhandenen Importstatus kontrollieren; nicht mehrfach starten, solange der Zustand unklar ist.
+
+## Optionale Daten und Dokumente
+
+Der Zuordnungsdialog enthält neben den Pflichtfeldern folgende Gruppen. Ordne nur Daten zu, die du tatsächlich übernehmen willst; eine leere optionale Spalte ist nicht generell ein sicherer Befehl zum Löschen bestehender Daten.
+
+- **Personalien:** Rufname, Geschlecht, Anrede, Kinder, Bewertung, bisherige Einsatzzahl und Raucherangabe.
+- **Qualifikation:** Sprachkenntnisse sowie Berufsbezeichnung, Unternehmen, Beginn, Ende und Beschreibung der Berufserfahrung.
+- **Aussehen:** Augen-/Haarfarbe, Körperhöhe, Schuh-/Oberteil-/Hosengrössen, Tattoos und Piercings mit Beschreibung sowie weitere angebotene persönliche Merkmale.
+- **Adressen:** Haupt- und Zweitadresse, Strasse, Hausnummer, Zusatz, Postleitzahl, Ort, Kanton, Land, Koordinaten und Gültig-ab; Auswahl der rechtlichen Zweitadresse.
+- **Kontakt:** Telefon, Mobilnummer, Website und soziale Profile, Wiederherstellungskontakt, Notfallkontakt mit Name, Telefon und E-Mail.
+- **Arbeitsinformation:** AHV, Zivilstand, Nationalität, Arbeitsbewilligung und Ablauf, Mitarbeiterstatus, Personalnummer, Filiale, Berater, interne Bemerkungen, Verwarnungen, Dauer-/internes Personal, Pensum und die angebotenen Bewerbungs-, Interview-, Aktivierungs-, Inaktivierungs- und Erster-Arbeitstag-Daten.
+- **Bankverbindung:** Kontoart, Bankname, IBAN, Kontonummer, Bankort, Clearing und BIC/SWIFT.
+- **Mobilität und Interessen:** ÖV-Abos, Fahrkompetenzen und Führerscheinkategorien, Fahrzeugangaben, Carsharing sowie die angebotenen Produkt- und Einsatzinteressen.
+- **Weitere persönliche Angaben:** angebotene Partner-/Zivilstandsangaben und letzter Login. Diese Zuordnungen sind keine fachliche Prüfung der Angaben.
+- **Dateien:** Portrait, Ganzkörper-/weitere Bilder, Video, Lebenslauf, AHV-Dokument, Pass/ID und Arbeitsbewilligung jeweils gegebenenfalls Vorder-/Rückseite, Führerschein Vorder-/Rückseite, Rahmenvertragsdokument sowie **Additional Document** mit Dokumenttyp.
+
+Dateispalten enthalten einen erreichbaren Datei-Link oder eine entsprechende Dokumentbeschreibung mit `url` beziehungsweise `public_url`; ein Dateiname auf deinem Computer reicht nicht. Dokumentübernahme kann unabhängig von den Stammdaten scheitern. Prüfe die Dateien anschliessend im Profil. Bei bereits vorhandenem weiteren Dokument desselben Typs wird dieses durch den Import nicht einfach ersetzt. Stelle sensible Dateien nicht eigens frei ins Internet, um einen Import zu ermöglichen; kläre einen geeigneten freigegebenen Übernahmeweg.
+
+## Was beim Mitarbeiterimport verändert wird
+
+Bestehende Personen werden zuerst über E-Mail, dann Mobilnummer, dann die Kombination aus Vorname, Nachname und Geburtsdatum gesucht. Ein Treffer wird aktualisiert; sonst wird eine neue Person angelegt. Bei **geändert/bearbeitet** in einer der gewählten Agenturen wird die Person übersprungen, damit manuelle Änderungen nicht überschrieben werden.
+
+**Status bewusst vorbereiten:** Ohne vorhandenen Status kann eine neue Agenturzuordnung **aktiv** entstehen. Der Import ist somit kein reiner Entwurf. Verlasse dich nicht darauf, dass ein leerer oder unbekannter Status „inaktiv“ bedeutet. Einen gewünschten inaktiven Import ausdrücklich mit dem vorgesehenen Status vorbereiten und im Ergebnis kontrollieren. Aktivierung und projektbezogene Folgeprozesse bleiben getrennte Vorgänge; kein Importergebnis ist eine bestätigte Schichtzuteilung.
+
+Die einzelnen Zeilen können unterschiedliche Ergebnisse haben. Ein Fehler später in der Verarbeitung bedeutet nicht sicher, dass davor keinerlei Stammdaten geschrieben wurden. Wiederhole deshalb nicht die gesamte Datei ohne Prüfung.
+
+## Ergebnis und Fehlerbericht prüfen
+
+Die Übersicht zeigt eigene frühere Importe mit Datei, Status, Zielagenturen, Gesamtzahl und bearbeiteter Zeilenzahl. Öffne den **Report** des betreffenden Laufs. Der Excelbericht enthält **Import Results** mit Zeilenindex, Status, Meldung und Mitarbeiterreferenz sowie, soweit verfügbar, **Original Data**.
+
+- **created:** Person neu angelegt.
+- **updated:** bestehende Person aktualisiert.
+- **skipped:** übersprungen; beim Mitarbeiterimport insbesondere wegen bereits bearbeitetem Status.
+- **failed:** Zeile fehlgeschlagen; die Meldung nennt den Grund, etwa fehlende Pflichtfelder.
+
+Der Laufstatus **done** bedeutet, dass die Verarbeitung abgeschlossen ist, nicht dass jede Zeile erfolgreich war. Vergleiche Bericht und Stichproben der betroffenen Profile, einschliesslich Agenturzuordnung, Status und Dokumenten. Korrigiere gezielt die fehlerhaften Zeilen. Importberichte enthalten Personendaten und gehören nur an berechtigte Personen.
+
+## Einsatzhistorien getrennt importieren
+
+**import job history** übernimmt historische Angaben zu **bereits bestehenden** Personen. Der Ablauf ist ebenfalls Datei → Zuordnung → Vorschau → Agenturen → Start. Als sichere Identifikation verwende eine **job.rocks id**, E-Mail oder **personal_number**; Name und Mobilnummer allein reichen für diesen Verarbeitungsweg nicht. Eine nicht gefundene Person wird hier nicht automatisch neu angelegt.
+
+Pflicht ist ausser der Identifikation **project_name**. Optionale Zuordnungen sind **location**, **client**, **role**, **from**, **to** und **rating**. Die angebotenen zusätzlichen Namens-/Mobilspalten ersetzen die notwendige Identifikation nicht. Kontrolliere Datum und Zeitraum vor dem Start.
+
+Der Import legt Einträge in der **importierten Jobhistorie** an. Er erzeugt daraus keine echten Projekte, Schichten, Zeiterfassungen oder Zahlungen. Bereits vorhandene Historien mit derselben Person, Agentur, Projektbezeichnung, Standort, Kunde, Rolle und Von-/Bis-Daten werden übersprungen. Eine erneute Datei ist deshalb kein allgemeiner Bearbeitungsweg für bestehende Historien. Prüfe auch hier den Bericht und den entsprechenden Profilabschnitt.
+
+Weiter: [Mitarbeiterprofile](/main/05a_employee_profiles), [Registrierung statt Import](/main/05_employees_dashboard#mitarbeitende-zur-registrierung-einladen).

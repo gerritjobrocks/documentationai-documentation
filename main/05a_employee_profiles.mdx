@@ -1,0 +1,193 @@
+# Mitarbeiterprofile bearbeiten
+
+## Profil öffnen und Zugriffsart erkennen
+
+Öffne **Mitarbeiter**, suche die Person und öffne ihr Profil. Aus der Personalzuteilung führt das Profilsymbol ebenfalls zur Person. Ein sichtbarer Name in einer Kandidatenliste bedeutet nicht automatisch Zugriff auf sämtliche Profildaten.
+
+- **Agenturpool:** Das Leserecht **View All Employee Profiles** und die Beziehung zum zugänglichen Agenturpool bestimmen den Profilzugriff. Lesen ist nicht Bearbeiten: Änderungen benötigen **Edit All Employee Profiles**; Statusänderungen **Change Employee Status**. Eine im verbundenen Agenturpool lesbare Person ist nicht automatisch in der eigenen Agentur bearbeitbar.
+- **Bewerbung ausserhalb des Pools:** Bei einer Bewerbung oder Zuteilung zu einem Projekt der Agenturgruppe kann ein eingeschränktes, schreibgeschütztes Profil erscheinen. Eine blosse Einladung oder Ablehnung begründet diesen Zugang nicht. Der Hinweis zum schreibgeschützten Profil ist ernst zu nehmen.
+- **Kundenportal/Self-Service:** Ein Profil aus dem eigenen Kundenpool kann im schreibgeschützten Modus geöffnet werden, sofern der Self-Service-Zugang vorhanden ist. Die Agenturbewertung und zusätzliche Dokumente haben weitere Sichtbarkeitsrechte. Die Kundenansicht ist keine Agenturverwaltung.
+- **Mitarbeitende:** Sie bearbeiten ihr eigenes Profil im Rahmen der freigegebenen Felder. Agenturinterne Status-, Bewertungs- und Listenbereiche sind nicht dieselbe Oberfläche wie das eigene Profil.
+
+Bei **kein Zugriff** nicht auf eine andere Profiladresse ausweichen. Lass Poolzugehörigkeit und Profilrecht prüfen.
+
+## Änderungen speichern und kontrollieren
+
+Mit **Alle Tabs öffnen** beziehungsweise **Alle Tabs schliessen** klappst du die Abschnitte gemeinsam auf oder zu. Viele einfache Felder speichern nach einer Änderung beziehungsweise beim Verlassen des Felds automatisch. Ausbildung, Sprachen, Dokumente und Absenzen verwenden eigene Speicheraktionen. Deshalb gibt es keinen einzigen abschliessenden Speichern-Schritt für das gesamte Profil.
+
+Warte nach Änderungen auf die Verarbeitung und beachte Fehlermeldungen. Bei **Mitarbeiter kann nicht gespeichert werden** ist die Eingabe nicht als erfolgreich gespeichert zu behandeln. Prüfe den betreffenden Abschnitt nach erneutem Öffnen. Vorname, Nachname und E-Mail dürfen nicht leer sein. Eine doppelt verwendete Sozialversicherungsnummer kann zurückgewiesen werden.
+
+Pflichtfelder und zur Prüfung markierte Änderungen hängen von der Agenturkonfiguration ab. Fehlende Pflichtangaben können den Status **unvollständig** ergeben; Änderungen an einem aktiven Profil können den Status **geändert** auslösen. Orange Markierungen sind daher nicht einfach ein neuer aktiver Mitarbeiter. Prüfe sie, bevor du den Status wieder freigibst.
+
+## Personalien und interne Beurteilung
+
+**Personalien** enthält den separat bedienbaren Status (soweit sichtbar), Vorname, Nachname, Spitzname, Geschlecht, Kinder, Raucherangabe, Geburtsdatum mit Tag/Monat/Jahr sowie die kurze Selbstvorstellung. Das Alter wird aus dem Geburtsdatum angezeigt. Sensible Angaben nur für den vorgesehenen Personalprozess und mit passendem Zugriff bearbeiten.
+
+**Status einzeln ändern:** Öffne **Personalien** und wähle beim Status die gewünschte Option, etwa **aktiv** oder **inaktiv**. Das Ansehen des Status und das Ändern sind getrennte Rechte; zum Ändern benötigst du **Change Employee Status** und eine bearbeitbare Beziehung zur eigenen Agentur. Die Auswahl startet sofort einen eigenen Speichervorgang, ohne globalen Speichernknopf. Bei einem Fehler setzt die Oberfläche die Auswahl auf den zuvor geladenen Status zurück. Warte die Verarbeitung ab, beachte Fehlermeldungen und öffne das Profil erneut, um den tatsächlich gespeicherten Status zu kontrollieren.
+
+- **Aktivieren** kann eine Aktivierungs-E-Mail an die Person auslösen. Nicht probeweise aktivieren; fehlende Angaben für eine angebundene Personalverwaltung können die Aktivierung verhindern.
+- **Inaktiv setzen** setzt das Inaktivierungsdatum und entfernt Anfragen der eigenen Agentur für heute und zukünftige Tage in den Zuständen offen, angenommen oder automatisch angenommen. Das ist **keine Entfernung aus dem Agenturpool**. Bestehende Zuteilungen werden dadurch nicht verlässlich abgesichert oder aufgehoben; prüfe den Einsatzplan separat und kläre erforderliche Änderungen im Zuteilungsprozess.
+
+**Bewertungen** zeigt die Agenturbewertung mit der Anzahl zugrunde liegender Schichten. In der Agenturansicht kannst du einen Kunden auswählen und dessen Bewertung ansehen. Die angezeigten Sterne sind hier schreibgeschützt; sie sind kein Eingabefeld für eine neue Bewertung. Im Kundenportal wird die eigene Kundenbewertung gezeigt, die Agenturbewertung nur mit dem zusätzlichen Recht **View Agency Rating**.
+
+**Interne Bemerkungen** ist im aktuellen Profil eine Agenturansicht, nicht ein Kunden-Notizdialog. Die Warnstufe bietet **keine Probleme**, **gelbe Karte** und **rote Karte**; dazu kommt das Bemerkungsfeld mit maximal 1.000 Zeichen. Der Text wird beim Verlassen des Feldes zur Speicherung vorgemerkt.
+
+**Rote Karte:** Die Auswahl setzt die Warnstufe und stösst zuerst deren Speicherung an. Ist die Person noch nicht inaktiv, folgt eine separate Frage, ob sie auch inaktiv gesetzt werden soll. **Ja** startet zusätzlich die oben beschriebene Statusänderung mit ihren Folgen für Anfragen. **Nein** nimmt die rote Karte nicht zurück. Kontrolliere Warnstufe und Status nach erneutem Öffnen getrennt; die Folgefrage ist keine gemeinsame Speichern-/Abbrechen-Bestätigung für beide Änderungen.
+
+**Nicht berücksichtigen:** Diese eigene Aktion öffnet einen Nachrichten- und Bestätigungsdialog. Prüfe Empfänger, Betreff und Nachricht; Betreff und Nachricht sind erforderlich. Erst **Senden** und die zusätzliche Bestätigung lösen den Vorgang aus. Bei zugeteilten oder bestätigten Einsätzen der Agentur für heute oder später ist die Poolentfernung gesperrt. Nach erfolgreicher Ausführung wird die Person aus dem Agenturpool entfernt und eine Benachrichtigung angestossen; kontrolliere anschliessend den Pool. Das ist weder die rote Karte noch die Auswahl **inaktiv**. Die Missionssperre dieses Dialogs ist keine zugesicherte Schutzwirkung der Statusänderung. Bei unklarer Versandrückmeldung nicht blind erneut senden; Poolzustand und Rückmeldung zuerst prüfen.
+
+## Listen und Kunden-Pool
+
+**Agenturlisten:** Öffne in der Agenturansicht **Mitarbeiterlisten**. Die drei Mehrfachauswahlen **Liste**, Zusatzliste (gegebenenfalls als **additional list** angezeigt) und **schwarze Liste** (Ausschlussliste) sind getrennte Mitgliedschaften, keine blossen Anzeigefilter. Zum Bearbeiten benötigst du den passenden Profilzugriff und **Edit All Employee Profiles**. Ein ausgeblendeter Agenturbereich im Kundenportal ist kein Fehler, den man mit einem anderen Link umgehen sollte.
+
+1. Öffne die gewünschte Listenart, suche eine vorhandene Liste und wähle sie aus, um die Person hinzuzufügen. Du kannst mehrere Listen auswählen.
+2. Wähle einen bereits markierten Eintrag ab beziehungsweise entferne seinen Auswahlchip, um die Person aus genau dieser Liste zu nehmen. Dadurch löschst du weder die Liste noch das Mitarbeiterprofil.
+3. Nur bei **Liste** und **Zusatzliste** kannst du einen neuen Listennamen eingeben und **Enter** drücken: Das legt eine neue Liste dieser Art an und ordnet die Person gleich zu. Für die **Ausschlussliste** und die Kundenpicker unten ist hier keine Enter-Neuanlage vorgesehen. Die separate Listenverwaltung erklärt der [Listen- und Filterleitfaden](/main/05b_employee_lists_filters).
+
+Jede Auswahländerung schreibt sofort die Mitgliedschaften; es gibt dafür keinen globalen Speichernknopf und kein abschliessendes Sammelbestätigen. Auch Enter ist eine schreibende Aktion, nicht bloss eine Suche.
+
+**Kunden-Pool:** Öffne den gleichnamigen Abschnitt. In der Agenturansicht setzt seine Sichtbarkeit einen Self-Service-Zugang voraus. Änderungen an Kundenpool und Kundenlisten benötigen zusätzlich das Self-Service-Bearbeitungsrecht **Edit All Self Service Projects**; blosses Lesen oder ein sichtbarer Picker genügt nicht.
+
+- **Im Kundenportal** wählst du unter **Mitarbeiter-Listen des Kunden** vorhandene Listen des eigenen Kunden aus oder wählst sie ab. Die Person muss bereits im eigenen Kundenpool sein. Dieser Picker bearbeitet die eigenen Listenmitgliedschaften, nicht Agenturlisten oder die Pools anderer Kunden.
+- **In der Agenturansicht** gibt es zwei getrennte Mehrfachauswahlen: Unter **Kunden-Pool** wählst du einen Kunden aus, um die Person in dessen Pool aufzunehmen, oder wählst ihn ab, um diese Poolbeziehung zu entfernen. Unter **Mitarbeiter-Listen des Kunden** wählst du vorhandene Listen der Poolkunden aus oder ab; die Einträge sind als **Kunde – Liste** unterscheidbar. Prüfe daher immer auch den Kundennamen.
+
+Auch diese Picker speichern jede Auswahländerung sofort, ohne globales Speichern. **Das Hinzufügen zu einem Kundenpool kann eine Benachrichtigung an den Zielkunden auslösen. Das Entfernen eines Kunden entfernt zugleich alle Listenmitgliedschaften dieser Person bei diesem Kunden**, nicht bloss den sichtbaren Poolchip. Die kundenübergreifende Listenauswahl wird danach neu geladen. Das Entfernen einer einzelnen Kundenliste ist dagegen keine Entfernung aus dem Kundenpool.
+
+**Folgekontrolle:** Warte nach jeder Änderung auf die Verarbeitung und beachte Erfolg oder Fehler, soweit angezeigt. Öffne das Profil und den betreffenden Abschnitt erneut und kontrolliere die ausgewählten Listen beziehungsweise Kunden. Nach einer Kundenentfernung auch die Kundenlisten prüfen. Ein sichtbarer Chip allein beweist keine erfolgreiche Speicherung; bei einer Ablehnung Rechte und Poolkontext klären, nicht durch wiederholtes Hinzufügen mögliche Benachrichtigungen auslösen.
+
+## Aussehen, Bilder und Kompetenzen
+
+**Aussehen:** Augenfarbe, Haarfarbe, Körpergrösse, Schuhgrösse, Shirtgrösse, Hosenweite und Hosenlänge. Grössenhilfen bieten Vergleichstabellen; sie ändern keine Profildaten. Bei sichtbaren Tätowierungen und Piercings gibt es Ja/Nein-Angaben und zugehörige Beschreibungen. Verwende diese Angaben nur im dafür vorgesehenen, zugriffsbeschränkten Profilprozess.
+
+**Bilder:** Portrait und Ganzkörperbild in den dafür bezeichneten Feldern hochladen. Über das vorhandene Bild kann die Vergrösserung geöffnet werden; das Löschen ist eine eigene Aktion. Ein Bild nicht mit dem CV-Dokument verwechseln.
+
+**Kompetenzen:**
+
+| Bereich | Eingaben und Vorgehen |
+| --- | --- |
+| CV | Vorhandenes Dokument öffnen; bei Bearbeitungsrecht Datei hochladen beziehungsweise Aufnahme verwenden. Löschen erfolgt über die Entfernen-Aktion. |
+| Ausbildung | **Neu hinzufügen**, Typ, Institut, Von und Bis eintragen. **Aktuelle Ausbildung** deaktiviert das Bis-Feld. Erst nach Anlage des Eintrags lässt sich das Zertifikat zuordnen. |
+| Berufserfahrung | **Neu hinzufügen**, Beruf aus dem verschachtelten Berufsmenü, Erfahrungsniveau, Firma, Von und Bis wählen. **Aktueller Job** deaktiviert das Bis-Feld. |
+| Sprachen | **Neu hinzufügen**, Sprache und Kenntnisstand wählen; ein Sprachzertifikat lässt sich dem Eintrag zuordnen. Die Agentur kann eine Muttersprache verlangen. |
+
+Die Entfernen-Aktion bei Ausbildung oder Berufserfahrung betrifft den jeweiligen Eintrag. Sie ist nicht dasselbe wie das Entfernen seines Zertifikats. Kontrolliere deshalb den Bestätigungsdialog.
+
+## Dateien hochladen, ersetzen und entfernen
+
+Öffne das Profil und den passenden Abschnitt. Klicke die Uploadfläche oder ziehe eine Datei darauf. Bilder verwenden Bilddateien; die Dokumentflächen für CV, Ausweise und Zertifikate bieten Bilder, PDF, DOC und DOCX an. Warte auf die Verarbeitung und öffne die Datei anschliessend zur Kontrolle. Ein neuer Upload desselben Dateityps ersetzt grundsätzlich die bisherige Datei; er legt keine frei benennbare Dokumentenablage an.
+
+| Datei | Bedienweg und Grenze |
+| --- | --- |
+| Portrait | Im Profilkopf oder unter **Bilder** hochladen. Beide Stellen betreffen dasselbe Portrait. Vergrössern öffnet die Ansicht; Löschen entfernt das Portrait nach Bestätigung. |
+| Ganzkörperbild und vier weitere Bilder | Unter **Bilder** die jeweilige eigene Uploadfläche verwenden. Vergrössern und Löschen betreffen nur das gewählte Bild. |
+| Videoselbstportrait | Unter **Personalien** die Videofläche verwenden. Die Dateiauswahl ist auf Video und 50 MB ausgelegt; Videos über 30 Sekunden werden zurückgewiesen. Das Entfernen-Symbol am Video löscht dieses, nicht das Portrait. |
+| CV | Unter **Kompetenzen** Datei öffnen, hochladen oder die angebotene Fotoaufnahme verwenden. Das Entfernen-Symbol und die Bestätigung betreffen die CV-Datei, nicht die Ausbildungs- und Berufseinträge. |
+| Ausbildungs- und Sprachzertifikate | Zuerst den zugehörigen Eintrag mit seinen Pflichtangaben anlegen. Danach Datei an genau dieser Zeile hochladen; ein weiterer Upload ersetzt ihr Zertifikat. Das Entfernen am Zertifikat löscht nur den Dateiverweis; das Löschen der Zeile entfernt den ganzen Kompetenz-Eintrag. Für Sprachzertifikate den Datei-Upload statt der Kamera verwenden. |
+| Sozialversicherungskarte | Unter **Arbeitsinformation** im eigenen Kartenfeld hochladen, öffnen oder nach Bestätigung entfernen. Die Sozialversicherungsnummer ist ein separates Textfeld. |
+| Pass/Identitätskarte | Vorder- und Rückseite sind getrennte Dateien mit eigenen Öffnen-, Upload-, Aufnahme- und Entfernen-Aktionen. |
+| Arbeitsbewilligung | Vorder- und Rückseite erscheinen bei einer ausgewählten Bewilligung, ausser bei **keine Bewilligung** oder **Meldeverfahren**. Ablaufdatum wird zusätzlich ausser bei Bewilligung C angeboten. Bei Schweizer Nationalität steht dieser Bereich nicht zur Eingabe bereit. |
+| Führerschein | Unter **Transportinformation** Vorder- und Rückseite getrennt hochladen, öffnen oder entfernen. Führerscheinkategorien und Fahrpraxis werden dadurch nicht automatisch ausgefüllt. |
+| Basisvereinbarung | Im Agenturkontext unter **Arbeitsinformation** hochladen oder aufnehmen; bestehende Vereinbarungen öffnen. Die Löschaktion bezieht sich auf den ausgewählten Vereinbarungseintrag und fragt nach Bestätigung. Mitarbeitende können vorhandene Vereinbarungen lesen; der Kundenprofilbereich zeigt sie nicht. Prüfe einen Ersatz durch erneutes Öffnen, bevor du dich auf die Datei verlässt. |
+
+**Fotoaufnahme:** Kamera freigeben, **Aufnehmen** wählen, Vorschau prüfen, gegebenenfalls **Erneut aufnehmen**, dann **Speichern**. Bei zusätzlichen Dokumenten ist das zunächst nur die Dateiauswahl; abschliessend noch **Hinzufügen** beziehungsweise **Speichern** im Dokumentdialog drücken. Wenn eine Kamera fehlt oder gesperrt ist, den Datei-Upload verwenden. Beim Sprachzertifikat ist dieser alternative Uploadweg vorzuziehen.
+
+**Zusätzliche Dokumente:** Der Dokumenttyp und eine ausgewählte Datei sind beim Hinzufügen erforderlich. Auch im Bearbeitendialog wird im geprüften Stand eine neu ausgewählte Datei verlangt; nur den Typ ändern und die alte Dateianzeige stehen lassen genügt nicht. Der Entfernen-Knopf an einer noch ausgewählten Uploaddatei verwirft die Auswahl. Zum tatsächlichen Löschen eines gespeicherten Dokuments verwende den Papierkorb in dessen Tabellenzeile und bestätige den Dialog. Danach die Liste neu öffnen und prüfen. Der Dateityp bestimmt nicht automatisch die Berechtigung zur Weitergabe.
+
+## Adressen und Kontakt
+
+Im Abschnitt **Adresse/Kontaktinformation** gibt es Hauptadresse und zweite Adresse sowie die Kennzeichnung der rechtlichen Adresse. Nutze die Adresssuche oder prüfe Strasse, Hausnummer, Postleitzahl, Ort, Land und gegebenenfalls Kanton einzeln. Eine gefundene Adresse sollte vor dem Speichern auf Vollständigkeit kontrolliert werden.
+
+Die Gültigkeitsangaben von Haupt- und Zweitadresse gehören jeweils zur betreffenden Adresse. Prüfe beide getrennt; die Kennzeichnung als rechtliche Adresse und ein Gültigkeitsdatum sind nicht dasselbe. Ein Adresszusatz ergänzt die postalischen Angaben, ersetzt aber weder Strasse noch Ort.
+
+Die Kontaktfelder umfassen Festnetz, Mobilnummer mit Ländervorwahl, E-Mail, Wiederherstellungs-E-Mail, Notfallkontakt und Notfalltelefon sowie soziale Profile/Webadresse. Für eine E-Mail-Änderung kann ein eigener Passwortdialog erscheinen; eine Nachricht im Kommunikationsdialog ändert die Kontaktadresse nicht.
+
+Bei entsprechend konfigurierten Wohnsitz-/Quellensteuerangaben erscheinen Hinweise zur Haupt- oder rechtlichen Adresse. Diese Hinweise beschreiben eine Eingabeabhängigkeit der Plattform; sie ersetzen keine fachliche Beurteilung deiner persönlichen Situation.
+
+## Verfügbarkeit und Absenzen
+
+Öffne **Verfügbarkeit**. Die Tabelle zeigt die erfassten Abwesenheitszeiträume. Über **Hinzufügen** beziehungsweise die Bearbeiten-Aktion öffnest du den Zeitraumdialog:
+
+1. Wähle die Abwesenheitsart und das Anfangs-/Enddatum.
+2. Trage eine Begründung ein, wenn die gewählte Art sie verlangt.
+3. Bei einer nicht vorausplanbaren Art lässt die Oberfläche keine zukünftigen Daten zu. Nach einem Wechsel der Art können unpassende Daten zurückgesetzt werden.
+4. Das Ende darf nicht vor dem Beginn liegen. Kontrolliere den Zeitraum, speichere und prüfe den Eintrag in der Tabelle.
+
+**Annehmen**, **Ablehnen** und **Löschen** fragen separat nach Bestätigung. Annehmen setzt den Abwesenheitsstatus auf genehmigt; Ablehnen auf abgelehnt. Löschen entfernt den Zeitraum. Ein genehmigter Abwesenheitsantrag ist keine automatische Aufhebung bereits zugeteilter Schichten.
+
+Darunter steht das wöchentliche Stundenraster: einzelne Zeitfelder ziehen/markieren oder einen ganzen Tag, eine Stundenzeile beziehungsweise alle Felder auswählen. **Nur abends** und **Nur am Wochenende** sind Auswahlhilfen für das Raster. Regelmässige Verfügbarkeit und ein konkreter Abwesenheitszeitraum sind zwei unterschiedliche Angaben; prüfe für eine Zuteilung beide zusammen mit den Schichtkonflikten.
+
+## Arbeitsinformation und eingeschränkte Stammdaten
+
+**Arbeitsinformation** bündelt Sozialversicherungsnummer und Karte, Zivilstand, Nationalität, Ausweis-Vorder-/Rückseite, Arbeitsbewilligung mit Ablaufdatum sowie Registrierungs-, Bewerbungs-, Interview-, Aktivierungs- und Inaktivierungsdaten. Hinzu kommen erster Arbeitstag, letzter mobiler Login, Mitarbeiternummer, Niederlassung/Betreuer sowie konfigurationsabhängige Angaben zur Festanstellung und zu internem Agenturpersonal. Basisvereinbarungen haben einen eigenen Dokumentenbereich.
+
+Bei Auswahl der Schweizer Nationalität werden die Angaben und Dateien zur Arbeitsbewilligung zurückgesetzt. Ändere die Nationalität daher nicht probeweise. Für Berechnungen von Arbeitstagen/-stunden wählst du den angebotenen Zeitraum; diese Anzeige ist keine Schichtzuteilung.
+
+Der konfigurationsabhängige Abschnitt **Quellensteuer** enthält Angaben zur Lebensgemeinschaft, Alleinerziehung, Rente, Kirchensteuer/Religion, Partner, Kindern, Grenzgänger-/Wohnsitzsituation, weiterem Erwerb und Ersatzeinkommen. Folge den eingeblendeten abhängigen Fragen und erfasse nur die für deinen berechtigten Personalprozess benötigten Angaben. Diese Anleitung legt keine steuerliche Einstufung fest und gibt keine Rechtsberatung.
+
+**Bankinformation** enthält IBAN, Kontotyp/-nummer, BIC/SWIFT, Bankname, Bankort und Clearingnummer. Für die IBAN wird beim Öffnen ein separates Änderungsrecht geprüft. Bei mehreren Agenturbeziehungen kann eine Bearbeitung deshalb gesperrt sein, obwohl andere Profildaten editierbar sind. Eine fehlgeschlagene IBAN-Prüfung nicht mit erfundenen Werten umgehen.
+
+## Abhängige Angaben zur Quellensteuer bedienen
+
+Diese Anleitung erklärt nur die Eingabemaske, keine steuerliche Einstufung. Öffne **Arbeitsinformation**, prüfe Nationalität, Bewilligung, Zivilstand mit **Seit wann?** und die rechtliche Adresse. Diese Angaben und die Agenturkonfiguration bestimmen, ob **Quellensteuer** erscheint. Wenn die Eingabevoraussetzung später entfällt, können bereits gespeicherte Antworten für die Agentur grau und schreibgeschützt sichtbar bleiben; im eigenen Mitarbeiterprofil kann der Abschnitt ausgeblendet sein. Ändere keine Stammdaten nur, um die Maske freizuschalten.
+
+| Feldgruppe | Eingabe und Abhängigkeit |
+| --- | --- |
+| Allgemeine Fragen | Lebensgemeinschaft, alleinerziehend, Rentenbezug und Kirchensteuer jeweils mit Ja oder Nein beantworten. Bei Kirchensteuer **Ja** erscheint die Religionsauswahl: evangelisch-reformiert, römisch-katholisch, christkatholisch, jüdische Gemeinde oder keine/andere. **Nein** setzt diese Religionsauswahl zurück. |
+| Partner | Bei verheiratet oder eingetragener Partnerschaft erscheinen Vorname, Nachname, Geburtsdatum (Tag/Monat/Jahr), Sozialversicherungsnummer, Nationalität und die angebotene Bewilligungsauswahl. Ein Wechsel zu einem anderen Zivilstand setzt abhängige Partnerangaben zurück. |
+| Partneradresse | **Gleiche Adresse? – Nein** blendet Adresszusatz, Strasse, Nummer, Postleitzahl, Ort und Land ein; bei Schweiz zusätzlich Kanton. Prüfe nach einem Wechsel die Adresse erneut und verlasse dich nicht auf automatisch erhaltene Werte. |
+| Erwerb des Partners | Rentenbezug und Erwerbstätigkeit getrennt beantworten. Bei Erwerbstätigkeit **Ja** folgen Haupt-/Nebenerwerb sowie Beginn und Ende. **Nein** setzt diese Erwerbsdetails zurück. |
+| Alleinerziehend | Bei **Ja** folgen sechs separate Ja-/Nein-Fragen: gemeinsamer Haushalt mit abzugsberechtigten Kindern, Haushalt mit Partner, Haushalt mit Kindern und Partner, alleinige Sorge, gemeinsame Sorge mit höherem Bruttoeinkommen sowie Haushalt mit volljährigem Kind und höherem Bruttoeinkommen. **Nein** bei der Ausgangsfrage setzt die Folgeantworten zurück. Die Bezeichnungen sind Fragen der Maske, keine Bestätigung eines Abzugsanspruchs. |
+| Kinder | Wenn unter Personalien Kinder angegeben sind, fülle je eingeblendetem Kind Vorname, Nachname, Geburtsdatum, Geschlecht, Nationalität, Sozialversicherungsnummer sowie Beginn und Ende des als Kinderabzug bezeichneten Zeitraums aus. Prüfe die Kinderzeilen nach Änderung der Kinderanzahl. |
+| Grenzgänger | Bei **Ja** wird tägliche oder wöchentliche Rückkehr abgefragt. Bei wöchentlicher Rückkehr erscheint **Zu den Adressen springen** für die Schweizer Wohnadresse. Der Knopf öffnet den Adressabschnitt; hier gibt es keinen zusätzlichen aktiven Adressformularblock und keinen automatischen Wohnsitznachweis. Der Wechsel zur täglichen Rückkehr setzt abhängige interne Wohnadressangaben zurück. |
+| Weiterer Erwerb | Bei **Ja** folgen Beschäftigungsgrad in Prozent, Bruttomonatslohn sowie die als optional bezeichneten Felder Tätigkeit und Arbeitgebername/-adresse. **Beschäftigungsgrad kann nicht bestimmt werden** leert und sperrt das Prozentfeld. **Nein** beim weiteren Erwerb setzt die Folgeangaben zurück. |
+| Ersatzeinkommen | Bei **Ja** den Monatsbetrag erfassen. **Nein** leert den Betrag. |
+
+Verlasse bearbeitete Textfelder, warte auf die Speicherung und öffne den Abschnitt zur Kontrolle erneut. Pflichtmarkierungen hängen von der Konfiguration ab. Wenn eine fachliche Antwort unklar ist, kläre sie mit deiner zuständigen Personalstelle statt eine Antwort zu wählen, die lediglich die Pflichtmarkierung entfernt.
+
+## Festanstellung, Lohnanzeige und Feldzugriff
+
+Unter **Arbeitsinformation** kann die berechtigte Agentur **Festangestellt** und **Internes Agenturpersonal** setzen. Das erzeugt allein weder eine Schicht noch einen neuen Lohnvertrag. Der **erste Arbeitstag** ist bei Festanstellung nur dann als Eingabe angeboten, wenn er beim Laden noch leer war; sonst ist er eine Anzeige. Registrierungs-, Bewerbungs-, Aktivierungs-, Inaktivierungsdatum und letzter mobiler Login sind von manuell bearbeitbaren Angaben wie Interviewdatum zu unterscheiden. Niederlassung und Betreuer können durch eine angebundene Personalverwaltung vorgegeben beziehungsweise gesperrt sein.
+
+**Lohn erzeugen:** Wenn die Aktion bei deinem Bearbeitungszugriff sichtbar ist, Monat/Jahr wählen. Die Auswahl startet die Erstellung; erst den danach erscheinenden Link **Lohn ansehen** öffnen. Dies ist keine Auszahlung und keine Bestätigung, dass sämtliche Abrechnungsdaten fachlich geprüft wurden. Zur Anzeige der Arbeitstage/-stunden einen Zeitraum wählen und die Ergebnisfelder prüfen; sie sind keine Eingabefelder zum Ändern der Einsätze.
+
+Die Verwaltung von Festangestellten-Gruppen und Zeitmanagement-Korrekturen ist in diesem Profilstand nicht über eine aktive Tabelle erreichbar. Deshalb gibt es hier keinen verlässlich nutzbaren Klickweg für „Gruppe/Pensum/Zeitraum hinzufügen“ oder manuelle Stunden-/Betragskorrekturen. Das Festangestellt-Häkchen schaltet diese Tabellen nicht frei. Lass benötigte Gruppen- oder Zeitkorrekturen über die zuständige Administration klären, statt einen verborgenen Dialog aufzurufen.
+
+**Feldbezogene Grenzen:** Im Kundenprofil fehlen Arbeitsinformation, Quellensteuer und Bankinformation. Zusätzliche Dokumente verlangen ein eigenes Leserecht; Agenturbewertungen ebenfalls. Agenturinterne Listen und Bemerkungen sind nicht mit Kundenlisten gleichzusetzen. Bankinformation hat zusätzlich zur Profilbearbeitung die separate IBAN-Sperre; sie betrifft die Bedienbarkeit des ganzen Bankbereichs. BIC/SWIFT wird bei vorhandener IBAN ohne Präfix CH eingeblendet. Auch der Quellensteuerbereich kann durch zusätzliche Profil-/IBAN-Sperren oder seinen Archivzustand nicht bearbeitbar sein. Weder ein geöffnetes Dokument noch ein sichtbares Feld berechtigt automatisch zu Upload, Löschen oder Export.
+
+## E-Mail-Adresse ändern
+
+Öffne **Adresse/Kontaktinformation → E-Mail**. Wenn das Feld bearbeitbar ist, neue Adresse eingeben und das Feld verlassen. Bei einer gegenüber dem geladenen Profil geänderten Adresse erscheint der Passwortdialog. Gib dort das Passwort deines aktuell angemeldeten Kontos ein und wähle **E-Mail aktualisieren**; nicht das Passwort der betroffenen Person anfordern. Das Augensymbol schaltet nur die Passwortanzeige um.
+
+Ein falsches Passwort oder eine bereits von einem anderen Konto verwendete Adresse führt zur Fehlermeldung. Erst eine erfolgreiche Rückmeldung und das erneut geöffnete Profil bestätigen die Änderung. Die Aktion ändert die Konto- und Mitarbeiter-E-Mail, nicht nur die Wiederherstellungsadresse. **Wiederherstellungs-E-Mail** ist ein separates Profilfeld. Bei schreibgeschütztem Feld oder verweigerter Änderung den zuständigen Administrator hinzuziehen, nicht die Zugriffssperre umgehen.
+
+## Mobilität und Jobinteressen
+
+**Transportinformation** unterscheidet:
+
+- ÖV-Abonnemente: keine, Halbtax, GA oder regionales Netz mit Netzname;
+- Führerscheinkategorien beziehungsweise kein Führerschein, dazu Vorder-/Rückseite des Dokuments;
+- Fahrpraxis für Automatik/Handschaltung und weitere angebotene Fahrzeugarten;
+- Autoverfügbarkeit: eigenes Auto, Auto im Haushalt oder kein Auto; gegebenenfalls Karosserie/Grösse;
+- Carsharing-Abonnemente aus der angebotenen Auswahl.
+
+Bei den als verpflichtend markierten Gruppen muss mindestens eine passende Option gewählt sein. **Kein Führerschein** oder **kein Auto** ist eine inhaltliche Antwort, nicht dasselbe wie ein leeres Pflichtfeld. Unter **Jobinteressen** wählst du angebotene Produkte und Jobarten; das teilt die Person noch keinem Projekt zu.
+
+## Zusätzliche Dokumente und Kalender
+
+Unter **Zusätzliche Dokumente** öffnest du **Neu hinzufügen**, wählst einen Dokumenttyp und eine Datei und bestätigst **Hinzufügen**. Beide Angaben werden verlangt. Bereits verwendete Dokumenttypen stehen beim Hinzufügen nicht nochmals zur Auswahl. Zum Austauschen nutze **Bearbeiten** am bestehenden Dokument, prüfe die aktuelle Datei und wähle eine neue Datei aus; der aktuelle Bearbeitendialog verlangt diese Auswahl. Im Kundenportal benötigt dieser Bereich **View Further Documents**; ein sichtbarer Dateilink bedeutet nicht, dass das Profil bearbeitbar ist.
+
+**Dein Einsatzkalender** und **Importierte Einsatzhistorie** sind unterschiedliche Bereiche. Importierte Historie ist ein übernommener Rückblick, kein Beleg für eine aktuell zugeteilte oder bestätigte Schicht. Für aktuelle Zuteilungen gehe zur [Personalzuteilung in Schritt 4](/main/04b_staff_allocation).
+
+## Einsatzkalender lesen
+
+Öffne **Dein Einsatzkalender**. Wechsle zwischen **Liste**, **Woche** und **Monat**. In Woche/Monat blätterst du mit den Pfeilen oder wählst den gewünschten Zeitraum im Auswahlfeld. In der Liste lädt das Scrollen frühere beziehungsweise spätere Einträge nach.
+
+Die Legende unterscheidet vergangene Einsätze, zukünftige Einsätze und Nichtverfügbarkeit. In der Wochenansicht wird zusätzlich das regelmäßige Verfügbarkeitsraster hinterlegt. Zeige mit der Maus auf einen Einsatz, um seine Details zu sehen: je nach freigegebenen Daten Projekt, Arbeitgeber/Kunde, Rolle, Ort, Status und geplante Zeiten; bei vergangenen Einsätzen auch Bewertung und effektive Start-/Endzeit. Fehlende Ist-Zeiten sind kein Beleg für geleistete Arbeit.
+
+Ein Klick auf einen freigegebenen Einsatz öffnet für die Administration Schritt 4 des Projekts in einem neuen Tab und fokussiert die betreffende Zuteilung. PPC-Einsätze führen zur separaten PPC-Ansicht. Mitarbeitende erhalten diesen Projektlink nicht. Nicht freigegebene Einsätze können im Kundenkontext nur als Nichtverfügbarkeit ohne Namen oder Projektdetails erscheinen. Ein solcher Block ist nicht automatisch ein von der Person eingetragener Abwesenheitsantrag. Der Kalender ändert keine Zuteilung; Absenzen bearbeitest du im Abschnitt **Verfügbarkeit**, wo Jahr und Status die Tabelle einschränken.
+
+## Passwort und Nachrichten
+
+**Mitarbeiterpasswort zurücksetzen** benötigt das entsprechende Recht. Der Dialog verlangt ein temporäres Passwort mit mindestens acht Zeichen, Gross-/Kleinbuchstaben und einer Zahl. Kontrolliere zuerst die Person; ein Passwortwechsel ist keine Einladung zu einem Einsatz. Teile Passwörter nicht über allgemeine Mitarbeiterlisten.
+
+**Benachrichtigung senden** richtet sich an diese einzelne Person. Beachte die [Unterschiede der Kommunikationsdialoge](/main/05d_employee_communication), insbesondere die Einschränkung des Einzelprofil-Dialogs für E-Mail und SMS.
