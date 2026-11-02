@@ -1,0 +1,67 @@
+---
+title: "Standorte bearbeiten und richtig verwenden"
+description: "Kunden- und Agenturstandorte, Adresssuche und Auswirkungen auf bestehende Projekte."
+---
+
+# Standorte bearbeiten und richtig verwenden
+
+## Standorte finden und den richtigen Bereich wählen
+
+**Als Agentur:** Öffne **Standorte** im Hauptmenü für die Agenturstandorte. Für die Standorte eines bestimmten gespeicherten Kunden öffne ihn aus der **Kundenliste** und wähle **Standorte**. Nur bei diesem Einstieg ist die geladene Liste auf diesen Kunden begrenzt; Tabelle und Bearbeitungsdialog entsprechen der Standortverwaltung.
+
+**Nach einer Kundenanlage:** Nach dem ersten Speichern wähle **Zurück → Kundenliste → gespeicherten Kunden erneut öffnen**, bevor du im Standortregister arbeitest. Im noch offenen Anlageformular kann die bereits geladene Liste noch die Agenturstandorte enthalten. Ein Registerwechsel allein lädt die Standortliste nicht neu. Ein Browser-Neuladen des Anlageformulars ersetzt diesen Weg nicht. Prüfe den Kundennamen, bevor du einen Standort auswählst, bearbeitest oder löschst.
+
+**Im Kundenportal:** Öffne **Standorte** im Hauptmenü. Der Menüpunkt hängt vom Zugang zu Bestellungen oder Self Service ab. Kundenstandorte und Agenturstandorte sind nicht dieselbe Liste.
+
+Gib einen Suchbegriff in das Suchfeld ein. Über die Spalten Name und Adresse kannst du die Tabelle ordnen; über das Kartensymbol öffnest du die gespeicherte Position. Die Tabelle selbst hat keinen **Hinzufügen**-Knopf. Für einen neuen Einsatzort beginne in der [Projektanlage beim Standort](./03_create_project.mdx), nicht mit einer erfundenen Tabellenaktion.
+
+## Name, Adresse und Kartenposition bearbeiten
+
+1. Öffne den passenden Standortbereich und klicke am Standort auf das Bearbeitungssymbol.
+2. Ändere **Datenbank name**. Der Name darf nicht leer sein und höchstens 255 Zeichen enthalten. Ein bereits belegter Name kann abgewiesen werden; suche dann den vorhandenen Eintrag, statt blind eine zweite Bezeichnung zu vergeben.
+3. Für eine andere Adresse gib den Suchtext im Feld **Adresse** ein und wähle den passenden Vorschlag. Nur Text einzutippen ist kein verlässlicher Nachweis, dass die Kartenposition geändert wurde. Kontrolliere den Pin.
+4. Für einen Ort ohne passende Adresse kannst du ein Koordinatenpaar eingeben und den angebotenen Koordinatentreffer auswählen. Alternativ verschiebst du den vorhandenen Pin oder klickst auf die gewünschte Kartenposition. Die Karte wird erst angezeigt, wenn Koordinaten vorhanden sind.
+5. Warte, bis die Adressauflösung abgeschlossen ist. Solange sie läuft, ist **Speichern** gesperrt. Kontrolliere Name, Adresse und Pin zusammen und wähle **Speichern**.
+6. Prüfe die Rückmeldung und den aktualisierten Tabelleneintrag. Mit **Abbrechen** verwirfst du die offenen Änderungen des Bearbeitungsdialogs.
+
+**Wichtig für bestehende Projekte:** Wird der Standort bereits in einem Projekt verwendet, bleiben diese Projekte auf dem bisherigen Standortstand. Der geänderte Standort steht für neue Auswahlen bereit; ein hinterlegter Standardstandort für neue Kundenbestellungen folgt der Änderung. Eine Adresskorrektur in der Standortliste ist deshalb keine automatische Korrektur aller bereits angelegten Projekte. Prüfe betroffene laufende Projekte separat.
+
+**Fehlerhilfe:** Bei einem Kartendienstfehler keine ungeprüfte alte Position als neue Adresse speichern. Erneut auswählen und den Pin kontrollieren. Bei einer abgewiesenen Speicherung bleibt der Dialog offen; bei unklarer Netzwerkantwort den Standort neu laden, bevor du weitere Änderungen vornimmst. Ein verschobener Pin im offenen Dialog allein belegt noch keine Speicherung.
+
+**Adressbezeichnung und Pin sind getrennt:** Frei eingegebener Adresstext kann als Bezeichnung gespeichert werden, ohne die bisherigen Koordinaten zu ändern. Auch das Leeren des Adressfelds entfernt nicht automatisch einen vorhandenen Pin. Für einen tatsächlichen Ortswechsel einen Vorschlag auswählen oder den Pin versetzen und beides kontrollieren. Beim Verschieben bleibt der Pin genau am gewählten Punkt; findet die Adresssuche dazu keinen Text, kann das Feld stattdessen die Koordinaten anzeigen.
+
+## Einen Standort mit Namen und Kartenpunkt anlegen
+
+Die Standorttabelle hat keinen Anlegeknopf. Beginne im Standortbereich der **Projektanlage**. Für einen Kundenstandort wähle als Agentur mit den erforderlichen Self-Service-Bearbeitungsrechten den Self-Service-Einstieg und den richtigen Kunden; beim gewöhnlichen Agenturprojekt entsteht ein Agenturstandort, auch wenn ein Kunde ausgewählt ist. Im Kundenportal entsteht ein Standort für den angemeldeten Kunden. Prüfe nach der Anlage in der entsprechenden Standortliste, wo der Eintrag gespeichert wurde.
+
+1. Suche den Ort im Standort-Suchfeld. Einen vorhandenen Datenbanktreffer kannst du direkt auswählen; dadurch legst du keinen zweiten Standort an.
+2. Bei einem neuen Kartentreffer kontrolliere die Vorschau und klicke **Ort erstellen**. Alternativ klicke auf einen Punkt der Karte. Eine aus Koordinaten gewählte Position kann auch ohne passende Strassenadresse verwendet werden; die eingegebene Position bleibt massgeblich.
+3. Im Namensdialog fülle **Datenbank name** aus. Bei einem ausgewählten benannten Kartentreffer kann der Name bereits vorbelegt sein; nach einem freien Kartenklick musst du ihn vergeben. Das Feld für die Kartenbezeichnung, gegebenenfalls «Google Location Name», ist nur lesbar. Es ist kein zweites frei bearbeitbares Adressfeld.
+4. Wähle **Speichern** und warte auf die Antwort. Erst danach prüfe den hinzugefügten Eintrag in der Standortauswahl sowie Name und Kartenpin. Mit **Abbrechen** oder dem Kreuz vor dem Speicherauftrag wird kein Standort angelegt.
+5. Für die eigentliche Projektplanung musst du dem gewählten Standort noch Termine zuordnen und das Projekt speichern. **Standort speichern ist nicht Projekt speichern** und nicht Veröffentlichen. Ein bereits angelegter Standort wird durch späteres Verlassen des Projekts nicht automatisch entfernt.
+
+Bei einem bereits belegten Datenbanknamen suche den vorhandenen Eintrag. Bei einem Kartendienstfehler keine vermeintlich erfolgreiche Anlage aus dem geschlossenen Dialog oder einer allgemeinen Meldung ableiten. Die Anlage kann sogar eine unpassende Erfolgsmeldung zur Kundenauswahl zeigen; entscheidend sind der gespeicherte Standorteintrag und seine Position. Wenn die Verbindung abbricht, zuerst nach dem Namen im richtigen Bereich suchen und erst dann über einen erneuten Versuch entscheiden.
+
+## Karte ansehen und fehlende Koordinaten ergänzen
+
+**In der Standortliste** öffnet das Kartensymbol die gespeicherte Position. Die Ansicht lässt sich verschieben, zoomen und zwischen Karte und Satellit umschalten. Das Schliesskreuz beendet nur die Ansicht. Fehlen Koordinaten, erscheint stattdessen ein Hinweis; ein leerer Kartenbereich ist kein Nachweis, dass der Standort fehlt.
+
+**In der Projektanlage** zeigt die Karte ausgewählte Standorte. Ein Klick auf ihren Pin öffnet beziehungsweise markiert den zugehörigen Standorteintrag. Schwächer dargestellte verfügbare Pins lassen sich als vorhandene Standorte hinzufügen; dafür werden keine neuen Stammdaten angelegt. Verschieben und Zoomen der Karte lädt passende verfügbare Pins nach. Eine Suchvorschau kann geschlossen werden, ohne einen Standort anzulegen. Bei archivierten Projekten oder ausstehender Bestellung sind die entsprechenden Kartenänderungen gesperrt.
+
+**Fehlende Koordinaten nachtragen:**
+1. Wähle unter **Standorte nicht auf der Karte angezeigt** den vorhandenen Standort und **Auf Karte platzieren**. Dafür muss der Standort bereits gespeichert sein.
+2. Kontrolliere einen angebotenen Positionsvorschlag. Klicke die tatsächliche Position auf der Karte und ziehe den vorläufigen Pin bei Bedarf genau an die richtige Stelle.
+3. Wähle **Ort speichern** am Pin. Lies die Rückfrage: Das Ergänzen der Koordinaten kann die Distanzwarnung beim Einstempeln auch für bestehende Projekte dieses bisher koordinatenlosen Standorts wirksam machen.
+4. Bestätige nur bei korrekter Position. Lade nach der Antwort neu und kontrolliere sie. **Abbrechen**, Schliessen der Pin-Sprechblase oder **Nein** in der Rückfrage löst keinen Koordinaten-Speicherauftrag aus.
+
+**Wichtiger Unterschied:** Dieses erstmalige Ergänzen fehlender Koordinaten ist nicht die Standortbearbeitung mit geschützten bisherigen Projektständen. Es ergänzt den bestehenden Ort direkt. Sind inzwischen Koordinaten vorhanden, wird dieser Ergänzungsvorgang abgewiesen; das geschlossene Platzierungsfenster allein beweist dann keine Änderung. Für die Korrektur eines vorhandenen Pins nutze den Bearbeitungsdialog der Standortliste und beachte dessen Wirkung auf bestehende Projekte.
+
+## Standorte löschen und Ergebnisse nachprüfen
+
+1. Öffne die passende Agentur- oder Kunden-Standortliste und suche den **Datenbanknamen**. Die Suche lädt die Liste nach dem Namen neu; sie ist keine Suche in allen Adressbestandteilen. Name und Adresse können sortiert werden; bei längeren Listen die weiteren Tabellenseiten prüfen.
+2. Wähle den Papierkorb am richtigen Standort. Die Rückfrage **Ja/Nein** betrifft dessen Löschung, nicht das Entfernen aus einem Suchergebnis. Mit **Nein** bleibt der Standort bestehen.
+3. Nach **Ja** wird die Löschung sofort angefordert. Der allgemeine Kundenprofilknopf ist dafür nicht nötig. Das Löschrecht wird separat geprüft; ein sichtbarer Papierkorb garantiert keine Berechtigung.
+4. Ist der Standort in mindestens einem Projekt über einen Projekttag oder eine Rolle verwendet, wird die Löschung abgewiesen. Lösche keine laufende Planung, nur um diese Sperre zu umgehen. Eine Standortkorrektur erfolgt stattdessen über **Bearbeiten**, ohne bisherige Projektstände automatisch zu ändern.
+5. Lade die Standortliste neu. Nach dem Löschen kann die unmittelbar angezeigte Antwort weniger Adress-/Kartendaten enthalten; prüfe den frisch geladenen Stand, bevor du fehlende Angaben als Datenverlust bewertest. Kontrolliere gegebenenfalls auch einen hinterlegten Standardort und verwendete Kontakt-/Abteilungszuordnungen.
+
+Wenn eine Änderung am Kundenstandort nicht in der Liste erscheint, kontrolliere Agentur-/Kundenkontext und Suchtext. Bei einer Namenskollision trotz scheinbar leerer Kundenliste lass die Administration auch den Agenturbereich prüfen. Ein Standortwechsel oder eine Änderung in der Liste ist keine automatische Korrektur aller bestehenden Projekte. Für fehlende Rechte oder widersprüchliche Antworten den Support mit Bereich, Standortname und Rückmeldung kontaktieren, ohne vertrauliche Einsatz- oder Personendaten öffentlich zu teilen.

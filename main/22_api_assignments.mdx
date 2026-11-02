@@ -1,0 +1,79 @@
+---
+title: Zuweisungen & Mitarbeitende
+description: Besetzung und Personen-Referenzen abrufen
+---
+
+# Zuweisungen & Mitarbeitende
+
+Ein **Assignment** beschreibt den aktuellen Besetzungsstatus einer konkreten Schicht. Die API liefert die für Ihr System freigegebenen Status- und Referenzdaten.
+
+## Zuweisungen auflisten
+
+```http
+GET /staffing-orders/{order_id}/assignments
+```
+
+**Response (200):**
+
+```json
+{
+  "items": [
+    {
+      "assignment_id": "jr_assignment_456",
+      "external_shift_id": "PARTNER-SHIFT-987",
+      "worker_reference": "jr_wref_789",
+      "display_name": "Max M.",
+      "status": "confirmed",
+      "role": "Service",
+      "date": "2026-07-10",
+      "start_time": "17:00",
+      "end_time": "23:00"
+    }
+  ]
+}
+```
+
+### Assignment-Status
+
+| Status | Beschreibung |
+|--------|-------------|
+| `confirmed` | Bestätigt |
+| `cancelled` | Zuweisung wurde aufgehoben |
+| `completed` | Einsatz abgeschlossen |
+| `no_show` | Nicht erschienen |
+
+## Datenschutz: Personen-Referenzen
+
+Die API verwendet bewusst **pseudonyme Referenzen** anstelle vollständiger Personenprofile.
+
+### Standard-Verhalten
+
+- `worker_reference`: Pseudonyme, partner-spezifische Referenz auf die Person
+- `display_name`: Reduzierter Name (`Max M.`)
+
+### Erweiterte Personendaten
+
+Vollständige Kontaktdaten (Name, Telefon, E-Mail) werden **nur auf explizite Vereinbarung** freigegeben. Die Freigabe hängt ab von:
+
+- Dem definierten Integration-Scope
+- Der Rechtsgrundlage (DPA, DSGVO/FADP)
+- Dem konkreten Use-Case
+
+Sprechen Sie mit uns, welche Felder für Ihren Anwendungsfall erforderlich sind.
+
+## Assignment-Objekt
+
+| Feld | Beschreibung |
+|------|-------------|
+| `assignment_id` | bejoo Referenz für diese Zuweisung |
+| `external_shift_id` | Ihre Schicht-ID (Referenz) |
+| `worker_reference` | Pseudonyme Referenz auf die Person |
+| `display_name` | Reduzierter Anzeigename |
+| `status` | Zuweisungsstatus (siehe oben) |
+| `role` | Rolle/Funktion |
+| `date` | Einsatzdatum |
+| `start_time` / `end_time` | Geplante Zeiten |
+
+## Hinweis: Read-only in v0.1
+
+In der aktuellen Version sind Zuweisungen **read-only**. Schreiboperationen werden erst nach Klärung des führenden Systems hinzugefügt.

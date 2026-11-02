@@ -1,0 +1,127 @@
+---
+title: "Kundenportal aus der Agentur konfigurieren"
+description: "Bürozeiten, Standardwerte und Kleiderbestimmungen im Agenturprofil verwalten."
+---
+
+# Kundenportal aus der Agentur konfigurieren
+
+## Kennzahlen und Voraussetzungen
+
+Öffne **Agenturprofil → Kundenportal-Einstellungen**. Die Bearbeitungsbereiche benötigen das Recht für Kundenportal-Einstellungen. Diese Seite ist die Agenturkonfiguration, nicht das Dashboard eines angemeldeten Kunden.
+
+**Vollzeitäquivalent (FTE)** enthält die Stunden einer Vollzeitperson pro Monat. **Vollzeit-Arbeitstag** enthält die Arbeitszeit einer Person pro Tag. Beide Felder speichern jeweils beim Verlassen. **Enter** ist hier kein separater Speichern-Schritt. Kontrolliere die Erfolgsmeldung und öffne die Seite erneut. Trage betriebliche Bezugsgrössen ein; diese Eingabe ist weder eine Lohnabrechnung noch eine arbeitsrechtliche Freigabe.
+
+Über **Kleiderbestimmungen** öffnest du den gesonderten Editor für die angebotenen Kleidungsoptionen. Diese Definitionen sind von [gespeicherten Projekt- und Rollenvorlagen](06_templates_and_reuse.mdx) zu unterscheiden.
+
+## Bürozeiten und virtueller Consultant
+
+Unter **Virtueller Consultant ausserhalb der Bürozeiten** gibt es den Schalter **AKTIVIEREN/DEAKTIVIEREN Bürozeiten**. **Vor der Aktivierung** müssen folgende Angaben bereits gespeichert sein:
+
+- **Bürozeiten**: die Wochentabelle ausfüllen und mit **Speichern** unter der Tabelle sichern.
+- **Standard-Projekttyp** und **Standard-Projektleiter**: in ihrem Abschnitt auswählen und mit **Speichern** bestätigen.
+- **Veröffentlichungsvorlage**: auswählen und das Feld verlassen, damit die Auswahl gespeichert wird.
+- **Standardvorlagen der betroffenen Kundenrollen**: geprüft werden die Rollen bei Kunden deiner Agentur, die einen Benutzer mit der Benutzerrolle **client admin** haben. Gemeint sind die Kundenrollen mit ihren Vorlagen, nicht die Benutzerrollen der Berechtigungsmatrix.
+
+Beim Umschalten wird unmittelbar eine Anfrage ausgelöst. Werden Voraussetzungen zurückgewiesen, zeigt die Oberfläche die Meldungen und setzt den Schalter auf aus. Meldet das System eine fehlende Standardvorlage für eine Rolle bei einem Kunden, öffne genau diesen Kunden, ergänze und speichere die Standardvorlage bei der benannten Kundenrolle. Ergänze auch die übrigen gemeldeten fehlenden Angaben in ihren jeweiligen Abschnitten und aktiviere erst danach erneut. Eine optisch eingeschaltete Stellung allein bestätigt keine arbeitsfähige Automatik.
+
+In **Bürotage und -zeiten festlegen** pflegst du je Montag bis Sonntag Startzeit, Endzeit und das Kästchen für den Arbeitstag. Die Zeiten werden im Format Stunden:Minuten erfasst. Ein Arbeitstag ist getrennt von den beiden Uhrzeiten zu markieren. Klicke danach die **Speichern**-Schaltfläche direkt unter dieser Tabelle; die einzelnen Zeitfelder speichern nicht beim Verlassen. Warte auf die Erfolgsmeldung und kontrolliere die neu geladene Wochenübersicht.
+
+Das Einrichten dieser Werte ist keine unverbindliche Simulation: Es kann nachgelagerte Abläufe ausserhalb der Bürozeiten beeinflussen. Lege Zeiten und Zuständigkeiten vor Aktivierung fest. Verdeckte oder nicht angebotene Optionen für automatische Annahme sind keine zusätzlich nutzbaren Schalter auf dieser Seite.
+
+## Standardwerte und Veröffentlichungsvorlage
+
+Unter **Standardwerte festlegen: Projekttyp & Projektleiter** wählst du einen vorhandenen Projekttyp und eine angebotene Kontaktperson. Nach einer Auswahländerung oder dem Leeren einer Auswahl **Speichern** in derselben Zeile klicken. Eine unverändert geöffnete Auswahl löst keine Speicherung aus. Fehlende Typen oder Personen müssen zunächst in den entsprechenden Stammdaten vorhanden sein; ein freier Name ersetzt keinen Listeneintrag.
+
+Unter **Vorlage festlegen für Veröffentlichung** wählst du eine vorhandene Benachrichtigungsvorlage. Nach Auswahl oder Leeren das Feld verlassen: erst dieser Schritt speichert die geänderte Auswahl. Es gibt dafür keinen aktiven zusätzlichen Speichern-Knopf. Das Bearbeiten des Vorlageninhalts erfolgt separat in der Vorlagenverwaltung.
+
+**Pufferzeit festlegen** erwartet Minuten und speichert beim Verlassen. Der Speicherhandler überspringt leere beziehungsweise falsy Werte; zum Löschen nicht auf eine leere Eingabe vertrauen, sondern den neu geladenen Wert prüfen. Alle diese Speicherwege sind getrennt. Eine erfolgreiche Speicherung der Bürozeiten bestätigt nicht auch Projekttyp, Kontaktperson, Vorlage und Puffer.
+
+## Kleiderbestimmungen anlegen, übersetzen und entfernen
+
+Über den Link bei den Kundenportal-Einstellungen öffnest du **Optionen für die Kleiderbestimmungen festlegen**. Die vier Kategorien sind **Oberteil**, **Unterteil**, **Schuhe** und **Accessoires**. Wähle in der passenden Kategorie die Funktion zum Hinzufügen. Im Dialog gibst du einen Titel in mindestens einem Sprachregister ein: English, Deutsch, Français oder Italiano.
+
+Die Übersetzen-Funktion verwendet einen gefüllten anderen Sprachtext und schreibt das Ergebnis zunächst in das Zielregister. Prüfe es und klicke **Speichern**; anders als die öffentliche Agenturbeschreibung wird die Kleidungsübersetzung nicht selbständig endgültig gespeichert. Ohne mindestens einen nicht leeren Titel bleibt der Dialog mit einer Feldmeldung offen.
+
+Über **Bearbeiten** an einer Option öffnest du die vorhandenen Titel, änderst sie und speicherst. **Abbrechen** setzt den Dialog zurück. **Löschen** verlangt eine Bestätigung und entfernt die Option nach erfolgreicher Antwort aus der Kategorie. Prüfe danach Liste und Sprache erneut. Dies ändert die angebotenen Optionen, nicht automatisch bereits erfasste Kleidungstexte in jedem Projekt.
+
+Die Agenturverwaltung und eine kundenspezifisch eingebettete Kleidungsverwaltung können dieselbe Oberfläche verwenden, speichern aber in unterschiedlichem Kontext. Prüfe daher, ob du aus dem Agenturprofil oder aus einem bestimmten Kundenprofil gekommen bist.
+
+## Einstellungen für einen bestimmten Kunden öffnen
+
+Öffne als Agenturbenutzer das gewünschte **Kundenprofil → Einstellungen**. Kontrolliere zuerst den Kundennamen. Hier werden Einstellungen für diesen Kunden gepflegt, nicht die Standardwerte aller Kunden im Agenturprofil. Die Bereiche Optionen, E-Mail-Benachrichtigungen, ausgehendes E-Mailkonto und Twilio haben getrennte Bearbeitungsfreigaben; die Agenturfreigabe **Kunden verwalten** ermöglicht diese Bearbeitung. Ein sichtbarer Abschnitt allein bedeutet nicht, dass du ihn bearbeiten darfst.
+
+Das eingebettete Einstellungsformular speichert selbständig: Schalter und Empfängerlisten unmittelbar, andere Werte beim Verlassen oder über die jeweilige Schaltfläche. Der allgemeine Hinweis unten im Kundenprofil, Änderungen mit dem grossen **Speichern**-Knopf zu sichern, ersetzt diese Speicherwege **nicht**. Bereits automatisch gespeicherte Änderungen werden durch Verlassen des Profils nicht rückgängig gemacht. Nach jeder Änderung Antwort abwarten und den konkreten Kundenabschnitt neu öffnen.
+
+Die kundenspezifischen **Kundenportal-Einstellungen** mit FTE, Arbeitstag, Bürozeiten und Standardvorlagen werden nur für Agenturbenutzer mit Kundenverwaltung angezeigt. **Mitgliederrollen verwalten** hat einen eigenen Zugang. Die Einrichtung eines Kunden ist nicht gleichbedeutend mit einer Einladung oder einer abgeschlossenen Bestellfreigabe.
+
+## Kundenoptionen: Standardort, Matrix und Mindestpausen
+
+Unter **Optionen → Standard-Bestellort** kannst du einen angebotenen Kundenstandort auswählen oder nach einem Ort suchen. Ein vorhandener Datenbankort wird bei Auswahl direkt gespeichert. Ein Suchtreffer ausserhalb der Datenbank öffnet zunächst den Ortsdialog; **Enter** im Suchfeld öffnet die Erfassung eines eigenen Orts. Erst nach Abschluss dieses Dialogs wird der Ort angelegt und anschliessend als Standard gespeichert. Das sind zwei Schritte, keine gemeinsame Transaktion. Mit dem Leeren-Symbol wird der Standardort unmittelbar entfernt. Nach der Erfolgsmeldung erneut öffnen und den ausgewählten Ort prüfen; ein getippter Suchbegriff ist noch keine gespeicherte Auswahl.
+
+Die **Arbeitszeiteinstellungen** verwenden dieselbe [Matrixbedienung und dieselben Regeln](06b_agency_rules_fields.mdx#arbeitszeitmatrix-bearbeiten-und-zurücksetzen) wie im Agenturprofil: Zelle anklicken, Zahl erfassen, mit Enter oder durch Verlassen speichern; Escape verwirft die laufende Eingabe. Bei peak/rest beide Werte erfassen. Eigene Projekttypwerte lassen sich über den Zurücksetzen-Pfeil entfernen. Hier stehen die Projekttypen dieses Kunden. Bei einem kundeneigenen Projekttyp gilt pro Regel: eigener Projekttypwert, sonst Kundenstandard, sonst Agenturstandard. Bei agentureigenen Projekttypen gilt weiterhin die Agenturmatrix. Ein leerer Kundenstandard bedeutet daher nicht automatisch, dass keine Regel gilt.
+
+Unter **Mindestpause** fügt **Neu hinzufügen** eine Zeile mit **von (min)**, **bis (min)** und **Dauer (min)** hinzu. Die erste beginnt bei 0, weitere beim bisherigen Ende plus 1. Eine weitere Zeile lässt sich erst hinzufügen, wenn die letzte eine obere Grenze hat. Start und Dauer müssen gesetzt sein, bevor das Verlassen einer Zelle die Zeile speichert; das Ende kann offen bleiben. Änderungen am Start können auch das Ende der vorherigen Zeile speichern. Überlappungen oder fehlende Dauer anhand der Fehlermeldung korrigieren und die Tabelle neu laden. Das Entfernen-Symbol verlangt Bestätigung; ungespeicherte Zeilen werden nur lokal entfernt.
+
+Eine leere Kundentabelle zeigt keine kopierten Agenturzeilen. Für Self-Service-Projekte und Bestellungen wird eine zur Arbeitsdauer passende Kundenpausen-Zeile bevorzugt: Die Arbeitsdauer muss grösser als „von“ und höchstens „bis“ sein; ein leeres „bis“ lässt den Bereich nach oben offen. Gibt es keine passende Kundenzeile, wird auf die Agenturpausen zurückgegriffen – auch wenn andere Kundenzeilen vorhanden sind. Andere Projekte verwenden die Agenturpausen. Deshalb ist eine leere Tabelle kein Beleg für „keine Pause“. Die fachliche Zulässigkeit der Werte muss unabhängig von der Maskenbedienung geprüft werden.
+
+## Standortalarm und Erinnerungen je Kunde
+
+Der **Standortalarm** ist ein Schieberegler von 0 bis 200 Metern in Zehnerschritten. Beim Loslassen wird gespeichert. **0 / OFF** entfernt hier den kundeneigenen Abstand; für Self-Service-Projekte und Bestellungen wird dann der Agenturwert verwendet. Das ist weder eine garantierte Abschaltung noch eine strenge Nullmeterkontrolle. Andere Projekte verwenden weiterhin den Agenturwert. Prüfe den neu geladenen Kundenwert und bei Vererbung zusätzlich den Agenturwert.
+
+Der Schalter für Mitarbeitende, die ihre Zuteilung noch nicht angenommen haben, speichert sofort für diesen Kunden. Der Erinnerungsablauf liest diesen Kundenwert, nicht ersatzweise den Agenturschalter. Die Einstellung betrifft spätere Erinnerungen zu noch offenen Zuteilungen; sie sendet beim Umschalten keinen Test. Erfolgsmeldung abwarten und nach erneutem Öffnen die Stellung kontrollieren. Eine Fehlermeldung nicht durch wiederholtes Umschalten übergehen.
+
+## Ereignisempfänger für einen Kunden
+
+Im Kundenabschnitt **E-Mail Benachrichtigungen** gibt es fünf Listen: neuer Mitarbeiter im **Kundenpool**, Bewerbung auf einen Einsatz, Selbstbuchung, Annahme und Absage eines Einsatzes. Die erste Liste ist nicht die Agenturliste für neu registrierte Mitarbeitende.
+
+Adresse eingeben und mit **Enter** als Eintrag übernehmen; zum Entfernen die Entfernen-Funktion des Eintrags nutzen. Jede Änderung speichert unmittelbar **alle fünf aktuell angezeigten Listen dieses Kunden gemeinsam**. Ein noch nicht bestätigter Eingabetext ist kein Empfänger. Nach einer Fehlermeldung neu öffnen und alle Listen prüfen, bevor du weiter bearbeitest.
+
+Bei Bewerbung, Selbstbuchung, Annahme und Absage wird eine gefüllte Kundenliste bevorzugt; ist sie leer, kann die entsprechende Agenturliste verwendet werden. Leeren ist deshalb kein verlässlicher Weg, das Ereignis insgesamt stummzuschalten. Die Kundenpool-Liste ist dagegen kundenspezifisch: ohne Empfänger wird hierfür keine solche Pool-Mail ausgelöst. Konfiguration und spätere Zustellung sind getrennt; hier gibt es keinen Testversand.
+
+## Ausgehende Providerkonten für einen Kunden
+
+Unter **E-Mail-Konto für ausgehende Nachrichten** pflegst du **E-Mail, Passwort, Host, Port und Verschlüsselung**. Port und Verschlüsselung sind Texteingaben, keine Liste garantierter Provideroptionen. Das Augensymbol ändert nur die Passwortanzeige. Klicke **Speichern** in genau diesem Abschnitt; Verlassen der Felder speichert diese Kontodaten nicht.
+
+Unter **Twilio Integration → SMS-Konto** sind **Twilio Account, Twilio Token und Twilio Phone** gemeinsam über die eigene **Speichern**-Schaltfläche zu sichern. Auch ein sichtbar lesbarer Token bleibt geheim. Niemals echte Providerwerte in Supporttexte oder Screenshots übernehmen.
+
+Die Kundenkonfiguration ist kein globaler Ersatz des Agenturkontos: Die geprüften manuellen Versandwege bevorzugen ein vollständig konfiguriertes Kundenkonto, wenn ein Benutzer im Kundenkontext sendet, und verwenden sonst den Agenturweg. Ein Speichern durch einen Agenturbenutzer bedeutet nicht, dass jeder spätere Agenturversand diesen Absender erhält. Teilweise ausgefüllte Providerdaten sind kein sicherer Fallback-Test. Erfolgsmeldung und sicher erneut geöffnete Einstellungen prüfen; Speicherung bestätigt weder Provideranmeldung noch Zustellung. Diese Abschnitte haben keine Test-Schaltfläche. Ein echter Mail- oder SMS-Versand ist separat abzustimmen und kann Kosten verursachen.
+
+## Bestellfreigabe einschalten und Anzahl bestätigen
+
+Unter **Freigabe von Bestellungen** zuerst die benötigten Konten mit der Kundenrolle **client validator (Client Approver)** einrichten. Auch eine solche weitere Mitgliedschaft eines aktuell anders angemeldeten Kontos wird bei der Anzahl berücksichtigt. Ein gesetztes Funktionsrecht ist nicht dasselbe wie ein vorhandenes Freigeberkonto. Schalte **Freigabe erforderlich** ein, trage **1 oder 2** benötigte Freigeber ein und klicke **Speichern** neben dem Zahlenfeld. Das Einschalten allein sendet noch keine Aktivierung; die Zahl hat hier keinen automatischen Speicheraufruf beim Verlassen.
+
+Sind weniger Freigeberkonten vorhanden als angefordert, wird das Speichern zurückgewiesen und die zuvor geladene Einstellung wiederhergestellt. Prüfe die Meldung und die Kontozuordnungen; nicht eine höhere Zahl als Ersatz für fehlende Konten eintragen. Die Anzeige berücksichtigt beim Nachladen die vorhandenen Freigeber und kann deshalb kleiner als die früher gespeicherte Anforderung sein.
+
+**Ausschalten** speichert unmittelbar die Anzahl **0** und deaktiviert das Zahlenfeld. Dafür gibt es keinen zusätzlichen Bestätigungsdialog. Zum Deaktivieren diesen Schalter benutzen, nicht 0 als vermeintlich aktive Freigabeanzahl speichern: Die Zahlenmaske kann dabei eine Fehlermeldung zeigen, obwohl 0 schon gespeichert wurde. Nach jeder Änderung neu öffnen und Schalter sowie Anzahl kontrollieren. Die Konfiguration selbst genehmigt keine einzelne Bestellung und sendet keine Freigabeeinladung.
+
+## Kundeneigene Portalwerte und Vererbungsgrenzen
+
+**FTE** und **Vollzeit-Arbeitstag** lassen sich beim Kunden als eigene Bezugsgrössen erfassen. Die Platzhalter zeigen die Agenturwerte, nicht bereits gespeicherte Kundenwerte. Eine tatsächliche Änderung speichert beim Verlassen; Enter ist kein zusätzlicher Speicherweg. Ein leer gespeicherter Wert lässt den Agenturwert gelten. Verwende ganze Stundenwerte und prüfe sie nach erneutem Öffnen.
+
+Für den virtuellen Consultant gilt eine andere Grenze: Solange keine eigene Kundenkonfiguration gespeichert wurde, kann die Agenturkonfiguration gelten. Sobald eine eigene Konfiguration vorhanden ist, wird sie als **ganzer Satz** verwendet; leere Einzelwerte werden nicht automatisch jeweils aus der Agentur ergänzt. Auch das Speichern einer FTE-Änderung übermittelt den aktuellen Consultant-Satz mit. Vor dem ersten Speichern deshalb Bürozeiten, Aktivierung, Projekttyp, Projektleiter, Veröffentlichungsvorlage und Puffer gemeinsam prüfen. Die zunächst angezeigten Bürozeiten können aus der Agentur stammen, ohne schon als Kundenwerte gespeichert zu sein.
+
+| Eingabe | Bedienung und Speichergrenze |
+| --- | --- |
+| Virtueller Consultant ausserhalb der Bürozeiten | Schalter speichert sofort; keine unverbindliche Vorschau. |
+| Bürozeiten Montag bis Sonntag | Start und Ende in Stunden:Minuten sowie Arbeitstag markieren, dann **Speichern** unter der Wochentabelle. Erst diese Schaltfläche übernimmt die bearbeitete Tabelle in die Kundenkonfiguration. |
+| Projekttyp und Projektleiter | Vorhandene Listeneinträge auswählen, dann **Speichern** daneben. Keine freien Namen als Ersatz. |
+| Vorlage für Veröffentlichung | Benachrichtigungsvorlage auswählen oder leeren, dann Auswahl verlassen. Der Inhalt wird separat im Vorlageneditor bearbeitet. |
+| Pufferzeit | Minuten eingeben und Feld verlassen. |
+
+Diese Aktionen übermitteln jeweils die aktuellen Portalwerte gemeinsam. Nicht gleichzeitig an mehreren offenen Fenstern desselben Kunden arbeiten. Unverändertes Fokussieren erzeugt keinen zusätzlichen Speichererfolg. Der Editor bietet keinen eigenen „Kundenkonfiguration löschen und vollständig zur Agentur zurückkehren“-Knopf. Einzelne Felder zu leeren stellt diese vollständige Vererbung nicht wieder her. Nach Erfolg erneut öffnen und sämtliche Werte prüfen; aus einem gespeicherten Aktivierungsschalter folgt noch kein erfolgreich ausgeführter Automatikablauf.
+
+**Kleiderbestimmungen** öffnet einen eigenen Dialog für diesen Kunden. Dort Oberteil, Unterteil, Schuhe oder Accessoires wählen, Optionen hinzufügen/bearbeiten, mindestens einen Titel in English, Deutsch, Français oder Italiano eingeben und speichern; Übersetzung vor dem Speichern prüfen. Löschen verlangt Bestätigung. Das Schliessen des grossen Dialogs ist kein zusätzlicher Speicherschritt und macht bereits gespeicherte Änderungen nicht rückgängig. Danach erneut öffnen und die Kundenoptionen kontrollieren. Der [allgemeine Kleidungseditor](06e_agency_client_portal.mdx#kleiderbestimmungen-anlegen-übersetzen-und-entfernen) beschreibt die einzelnen Aktionen.
+
+## Kundenrollen: getrennte Spalten und Konfliktbestätigung
+
+Die kundenspezifische Matrix **Mitgliederrollen verwalten** hat fünf Spalten: **client admin, client buyer, client validator, client work validator und client supervisor**. Die angezeigten Übersetzungen können abweichen. Wähle die Rolle und die konkrete Funktionszeile; geändert wird die Rolle bei diesem Kunden, nicht bei allen Kunden der Agentur.
+
+Die Zeilen sind in **Bestellungen**, **Self Service** und **Andere** gegliedert:
+
+- Bestellungen: erstellen/bearbeiten, anzeigen, gesamte laufende Arbeit anzeigen, übermitteln, freigeben und Kunden-Personalseite anzeigen.
+- Self Service: Projekte erstellen, alle/eigene anzeigen, alle/eigene bearbeiten, löschen/abbrechen; Agenturbewertung, weitere Dokumente, Löhne und Spesen anzeigen, Löhne und Spesen bearbeiten, Tarifgruppe anzeigen, Mitarbeiterpasswort zurücksetzen und Mitarbeiterlisten verwalten.
+- Andere: Arbeitsvalidierung, Supervisor vor Ort, Kundeneinstellungen, Kundenbenutzerverwaltung, Bestellfreigabeprozess definieren; Optionen, Benachrichtigungsempfänger, ausgehendes E-Mailkonto und Twilio bearbeiten sowie Mitgliederrollen verwalten.
+
+Anzeigen und Bearbeiten sind getrennte Zeilen. Ein Ansichtsrecht ist keine Bearbeitungsfreigabe. Die tatsächlich geladenen Zeilen hängen vom vorhandenen Funktionskatalog ab; eine leere Liste ist kein Beleg für unbeschränkten Zugang. **client admin × Mitgliederrollen verwalten** bleibt eingeschaltet und gesperrt. Andere gesperrte Zellen nicht durch eine andere Oberfläche umgehen.
+
+Jedes Umschalten speichert die ganze angezeigte Kundenmatrix. Werden für dieselbe Rolle Rechte aus Bestellungen aktiviert, während Self-Service-Rechte aktiv sind, oder umgekehrt, erscheint eine Bestätigung. **Ja** entfernt sämtliche kollidierenden Rechte des anderen Abschnitts in dieser Rolle und speichert; **Nein** verwirft das gerade gesetzte Häkchen. Vor Ja also den ganzen betroffenen Abschnitt prüfen, nicht nur die angeklickte Zeile. Andere Rollenspalten werden durch diese Konfliktauflösung nicht gezielt umgeschaltet. Nach der Antwort die Matrix erneut öffnen; ein lokal gesetztes Häkchen nach einem Fehler ist kein Persistenznachweis. Tooltiptexte sind Orientierung, keine vollständige Prüfung aller nachgelagerten Zugriffe.

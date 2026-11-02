@@ -1,0 +1,24 @@
+---
+title: "Systemsettings und Sicherheit"
+description: "Das separate Einstellungsdashboard von Agenturprofil und Benutzerverwaltung unterscheiden."
+---
+
+# Systemsettings und Sicherheit
+
+## Separates Dashboard und Einladungsregister
+
+Das separate **Einstellungen**-Dashboard enthält die Register **Mitglieder einladen**, **Kunden einladen** und für Nicht-Mitarbeiterkonten **Sicherheit**. Es ist nicht die Agenturprofil-Seite mit Unternehmensdaten. Beide Einstiege können je nach Freigabe unterschiedlich sichtbar sein.
+
+Die Einladungsregister zeigen **Nachricht**, **E-Mail** und **Einladen**. Beim Wechsel auf ein anderes Register werden Nachricht und Adresse geleert; erneutes Anklicken des aktiven Registers klappt dessen Inhalt zu. Leere Nachricht oder Adresse führen zu einer Fehlermeldung.
+
+**Wichtige Einschränkung:** Für diese beiden alten Einladungsformulare ist kein funktionierender Versand im zugehörigen Serverhandler hinterlegt. Eine mögliche Oberflächenmeldung ist deshalb kein verlässlicher Einladungsnachweis. Verwende für reale Agentur- oder Kundenrollen die [Benutzerverwaltung im Agenturprofil](06c_agency_users.mdx#mitglieder-gezielt-einladen), mit Rolle, Sprache und erforderlicher Kundenzuordnung. Dort kann **Einladen** tatsächlich eine E-Mail auslösen. Nicht durch wiederholtes Drücken des alten Formulars einen Versand zu erzwingen versuchen.
+
+## Sicherheitsregister erkennen
+
+Unter **Sicherheit → Passkeys** zeigt die Liste den Gerätenamen, das Hinzufügedatum und gegebenenfalls die letzte Nutzung. **Neuen Passkey hinzufügen** ist in nicht unterstützten Browsern gesperrt. Die Entfernen-Funktion wird nur angeboten, wenn die Sicherheitsbedingungen das Entfernen erlauben; andernfalls erscheint der Hinweis, dass mindestens ein Passkey benötigt wird.
+
+Bei aktivierter zusätzlicher Absicherung erscheint der Bereich **Wiederherstellungscodes**. Zwei oder weniger verbleibende Codes werden als Warnung dargestellt. Neue Codes müssen im dafür geöffneten Dialog gesichert werden: **Codes kopieren** oder **Datei herunterladen**, dann die Sicherung bestätigen und **Fertig** wählen. Während dieses Dialogs ist der Registerwechsel blockiert. Passwörter, Passkeys und Wiederherstellungscodes niemals an den Support senden.
+
+Vor **Entfernen** eines Passkeys oder **Neue Codes generieren** öffnet sich **Bestätigen Sie Ihr Passwort**. Gib dein eigenes Passwort ausschliesslich in diesem Dialog ein und wähle **Bestätigen** oder drücke **Enter**. Eine leere Eingabe lässt sich nicht über die Schaltfläche bestätigen. Dies ist eine echte Kontoänderung, keine Vorschau. Bei einem Fehler schliesst der Passwortdialog und die Liste wird neu geladen; prüfe die Meldung und den aktuellen Zustand statt die Aktion blind zu wiederholen.
+
+Das ist die Orientierung im Einstellungsdashboard, keine Anleitung zur Umgehung eines gesperrten Zugangs. Einrichtung, Gerätewechsel und Wiederherstellung bilden einen eigenen Sicherheitsablauf. Bei einer unklaren Geräte- oder Passwortabfrage nicht durch wiederholtes Löschen oder Generieren fortfahren.

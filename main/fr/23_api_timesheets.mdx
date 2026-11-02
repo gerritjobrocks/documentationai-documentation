@@ -1,0 +1,104 @@
+---
+title: Feuilles de temps
+description: Recevoir les temps de travail libérés
+---
+
+# Feuilles de temps
+
+L'API fournit des enregistrements de temps de travail qui ont été libérés pour le traitement ultérieur. L'accès aux données de temps de travail est convenu séparément pour chaque intégration partenaire.
+
+## Récupérer les temps libérés
+
+```http
+GET /staffing-orders/{order_id}/timesheets?from=2026-07-01&to=2026-07-31
+```
+
+| Paramètre | Type | Description |
+|-----------|------|-------------|
+| `from` | date (YYYY-MM-DD) | Date de début |
+| `to` | date (YYYY-MM-DD) | Date de fin |
+
+**Réponse (200):**
+
+```json
+{
+  "items": [
+    {
+      "timesheet_id": "jr_time_123",
+      "assignment_id": "jr_assignment_456",
+      "external_shift_id": "PARTNER-SHIFT-987",
+      "worker_reference": "jr_wref_789",
+      "date": "2026-07-10",
+      "planned_start": "17:00",
+      "planned_end": "23:00",
+      "actual_start": "17:05",
+      "actual_end": "23:10",
+      "break_minutes": 30,
+      "status": "validated"
+    }
+  ]
+}
+```
+
+### Champs
+
+| Champ | Description |
+|-------|-------------|
+| `timesheet_id` | ID d'enregistrement bejoo |
+| `assignment_id` | Référence vers l'affectation |
+| `external_shift_id` | Votre ID de shift |
+| `worker_reference` | Référence pseudonyme vers la personne |
+| `date` | Date d'affectation |
+| `planned_start` / `planned_end` | Heures planifiées |
+| `actual_start` / `actual_end` | Heures effectives |
+| `break_minutes` | Durée de la pause |
+| `status` | `validated` ou `amended` (corrigé) |
+
+## Catégories pertinentes pour le salaire
+
+Selon l'étendue de l'intégration, les données de temps de travail peuvent être complétées par des catégories de temps pertinentes pour le salaire et des dépenses validées. Ces champs servent de base de données pour le traitement ultérieur dans le système partenaire et ne constituent pas un calcul de salaire définitif.
+
+Pour les intégrations orientées hospitality, des catégories de temps pertinentes L-GAV/GAV peuvent être cartographiées en particulier, p. ex. les temps pertinents pour la majoration de nuit, les heures du dimanche, les heures de jours fériés, les heures supplémentaires ou les dépenses validées. Le calcul et l'application concrets des majorations ont lieu dans le système de salaire désigné, sauf accord contraire.
+
+```json
+{
+  "timesheet_id": "jr_time_123",
+  "payroll_categories": {
+    "regular_minutes": 355,
+    "night_minutes": 10,
+    "night_surcharge_relevant_minutes": 10,
+    "sunday_minutes": 0,
+    "public_holiday_minutes": 0,
+    "overtime_minutes": 0,
+    "break_minutes": 30,
+    "category_basis": ["l_gav", "gav_relevant_time_categories"]
+  },
+  "expenses": [
+    {
+      "category": "travel",
+      "amount": 12.00,
+      "currency": "CHF",
+      "status": "validated"
+    }
+  ]
+}
+```
+
+Le système partenaire reste responsable du calcul effectif du salaire, sauf accord contraire.
+
+## Workflow d'export typique
+
+```
+1. Récupérer les temps libérés (GET /timesheets)
+2. Optionnel: Recevoir un événement lors de la libération (Webhook)
+3. Traiter les données dans le système partenaire
+4. Documenter le traitement
+```
+
+## Aperçu des statuts
+
+| Statut | Description |
+|--------|-------------|
+| `pending` | Pas encore libéré; non inclus dans les exports par défaut |
+| `validated` | Vérifié et libéré |
+| `amended` | Corrigé ultérieurement |

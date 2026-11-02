@@ -1,0 +1,106 @@
+---
+title: Webhooks
+description: Event-basierte Benachrichtigungen
+---
+
+# Webhooks
+
+Webhooks informieren Ihr System in Echtzeit, sobald sich der Status eines Staffing Orders, einer Schicht oder einer Zuweisung ändert — ohne dass Sie pollen müssen.
+
+## Konzept
+
+```
+bejoo Ereignis → POST an Ihre Webhook-URL → Ihre Verarbeitung
+```
+
+## Verfügbare Events
+
+| Event | Auslöser |
+|-------|---------|
+| `staffing_order.status_changed` | Order-Status ändert sich |
+| `shift.status_changed` | Schicht-Status ändert sich |
+| `assignment.confirmed` | Zuweisung wurde bestätigt |
+| `assignment.cancelled` | Zuweisung wurde aufgehoben |
+| `timesheet.validated` | Arbeitszeiten freigegeben |
+
+## Payload
+
+```json
+{
+  "event_id": "evt_123",
+  "event_type": "assignment.confirmed",
+  "event_version": "1.0",
+  "created_at": "2026-06-24T16:45:00Z",
+  "data": {
+    "order_id": "jr_order_123",
+    "external_order_id": "PARTNER-ORDER-12345",
+    "assignment_id": "jr_assignment_456",
+    "external_shift_id": "PARTNER-SHIFT-987",
+    "status": "confirmed"
+  }
+}
+```
+
+| Feld | Beschreibung |
+|------|-------------|
+| `event_id` | Eindeutige Event-ID (für Idempotenz) |
+| `event_type` | Event-Typ (siehe Tabelle oben) |
+| `event_version` | Schema-Version des Events |
+| `created_at` | Zeitstempel (ISO 8601, UTC) |
+| `data` | Event-spezifische Nutzdaten |
+
+## Sicherheit
+
+### Signatur-Verifikation
+
+Jeder Request enthält `X-Jobrocks-Timestamp` und `X-Jobrocks-Signature`. Die Signatur basiert auf Timestamp und Body:
+
+```
+X-Jobrocks-Timestamp: 2026-06-24T16:45:00Z
+X-Jobrocks-Signature: sha256=a1b2c3d4e5f6...
+```
+
+Signaturbasis: `<timestamp>.<raw_body>`
+
+**Verifikation (Python):**
+
+```python
+import hmac, hashlib
+
+def verify_signature(timestamp: str, payload_body: bytes, signature_header: str, secret: str) -> bool:
+    signed = f"{timestamp}.".encode() + payload_body
+    expected = "sha256=" + hmac.new(secret.encode(), signed, hashlib.sha256).hexdigest()
+    return hmac.compare_digest(expected, signature_header)
+```
+
+### Replay-Schutz
+
+Bei einer Abweichung > 5 Minuten zwischen `X-Jobrocks-Timestamp` und Serverzeit sollte der Request abgelehnt werden.
+
+## Empfohlene Praxis
+
+1. **Signatur immer verifizieren** — verhindert gefälschte Requests
+2. **Schnell respondieren** — `200 OK` zurückgeben, dann asynchron verarbeiten
+3. **Idempotenz** — `event_id` speichern, um Duplikate zu vermeiden
+4. **Unbekannte Felder ignorieren** — neue optionale Felder können jederzeit hinzukommen
+
+## Retry-Verhalten
+
+Webhook-Retry-Verhalten wird pro Integration konfiguriert.
+
+| Antwort | Verhalten |
+|---------|----------|
+| `2xx` | Erfolgreich, kein Retry |
+| `400`, `401`, `403`, `404` | Konfigurationsfehler, kein Retry |
+| `408`, `429`, `5xx`, Timeout | Retry mit exponentiellem Backoff (sofern konfiguriert) |
+
+Empfohlen ist ein Retry mit exponentiellem Backoff und automatischer Deaktivierung bei dauerhaftem Fehlschlagen.
+
+## Konfiguration
+
+Webhooks werden gemeinsam mit dem bejoo-Team konfiguriert:
+
+1. Webhook-URL (HTTPS erforderlich) bekanntgeben
+2. Gewünschte Events definieren
+3. Webhook-Secret austauschen und sicher speichern
+4. Test-Event senden

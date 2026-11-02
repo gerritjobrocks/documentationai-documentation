@@ -1,0 +1,129 @@
+# Listen und Mitarbeiterfilter
+
+## Self-Service: eigene Kundenlisten verwalten
+
+Im Kundenportal öffnest du **Mitarbeiter** und für gespeicherte Listen **Meine Listen**. Die Übersicht zeigt aktive Personen aus deinem Kundenpool; sie ist nicht das Agentur-Dashboard mit dessen Status-Tabs. Die Schaltflächen **Als neue Liste speichern** und **Meine Listen** benötigen das Oberflächenrecht **Manage Employee Lists**. Für das tatsächliche Ändern wird zusätzlich die Self-Service-Bearbeitungsberechtigung geprüft. Wenn du die Liste lesen, aber nicht speichern kannst, lass beide Berechtigungen prüfen; ein sichtbarer Button ist keine Schreibfreigabe.
+
+1. Grenze die Personen mit **Filter** und der Suche ein. Prüfe Auswahlzahl und einzelne Häkchen, auch über mehrere Seiten. Achtung: Das Kopfkästchen kann nur die gerade geladenen Zeilen abwählen; andere Seiten bleiben ausgewählt. Verwende eine enge Filter-/Listenauswahl statt anzunehmen, dass alle Personen abgewählt wurden.
+2. Wähle **Als neue Liste speichern**, gib einen nicht leeren Namen ein und bestätige **Speichern**. Ein bereits verwendeter Name kann zurückgewiesen werden. Gespeichert werden die zum Zeitpunkt der Aktion passenden Personen abzüglich deiner Abwahl, nicht eine automatisch fortlaufende Suchregel.
+3. Öffne **Meine Listen**, suche die Liste in der oberen Auswahl und wähle sie. Ohne ausgewählte Liste siehst du den Pool. Das x in der Listenauswahl entfernt nur die Ansichtseinschränkung.
+4. Über den Stift neben der gewählten Liste änderst du den Namen. **Speichern** übernimmt, **Abbrechen** verwirft den Dialog.
+5. Zum Ergänzen suche rechts eine Person nach Name oder E-Mail und klicke den gewünschten Treffer. Angeboten werden Poolmitglieder, die der Liste noch nicht angehören. Prüfe die anschliessend aktualisierte Mitgliedertabelle.
+6. **Achtung: Die Entfernen-Aktion einer Tabellenzeile funktioniert im geprüften Stand nicht.** Auch bei ausgewählter Liste wird durch diesen Klick kein Entfernungsauftrag ausgelöst; die Person bleibt Mitglied. Verwende stattdessen den getrennten [Profilweg unter Kunden-Pool](/main/07c_self_service#personenprofil-kundenlisten-und-automatische-speicheraktionen): Die Person muss bereits zu deinem Kundenpool gehören, und du benötigst **Edit All Self Service Projects**, nicht nur Edit Own. Entferne dort die gewünschte Liste aus der Mehrfachauswahl. Jede Änderung speichert sofort die gesamte Listenauswahl, ohne zusätzliche Rückfrage oder anschliessenden Speichern-Knopf. Bei einem Fehler wird die lokale Auswahl nicht zurückgesetzt; ein vollständiges Zurückrollen aller Änderungen ist nicht zugesichert. Profil erneut laden und die Mitgliedschaft in der Liste kontrollieren. Dieser Weg ändert Kundenlistenmitgliedschaften, nicht die Poolzugehörigkeit oder das Mitarbeiterprofil. Lösche nicht die ganze Liste als Ersatz für die Entfernung einer Person.
+7. Der Papierkorb neben dem Listennamen löscht nach Bestätigung die Liste und ihre Mitgliedschaften, nicht die Mitarbeiterprofile. Kontrolliere die verbleibende Listenauswahl nach der Aktion.
+
+Kundenlisten haben hier eine Listenart; die drei Agenturarten normale Liste, Zusatzliste und schwarze Liste sind keine zusätzlichen Tabs dieser Verwaltung. Die Liste kopieren kannst du mit **Als neue Liste speichern** aus der ausgewählten Mitgliederansicht. Änderungen an der Kopie ändern nicht automatisch die ursprüngliche Liste.
+
+## Self-Service: Export und Nachrichten
+
+**Export:** Öffne in **Mitarbeiter** oder **Meine Listen** zuerst die gewünschte Filter-/Listenauswahl, dann **Export**. Wähle die benötigten Spalten: Mitarbeiter-ID, Adresse, E-Mail, Mobilnummer, Alter, Sprache, Schuh- und Shirtgrösse, Führerschein, letzter Einsatz, Anzahl Einsätze, Rollen, Mitarbeiterlisten, Mitarbeiternummer und letzter Login. Bestätige den XLSX-Export und öffne die erzeugte Datei. Wähle nur Daten, die du tatsächlich weitergeben darfst.
+
+**Wichtig zur Auswahl:** Die freie Namenssuche wird bei diesem Export nicht als eigenes Suchkriterium weitergereicht. Ein auf einen Namen reduzierter Bildschirm ist deshalb keine Garantie für eine gleich kleine Exportdatei. Grenze über Filter beziehungsweise eine geprüfte gespeicherte Liste ein und kontrolliere die Datei vor einer Weitergabe. Einzelabwahlen werden berücksichtigt. Der Kundenpool bleibt serverseitig begrenzt; daraus folgt keine Zusage, dass jeder Export dieselben Spaltenrechte wie das Profil hat.
+
+**Nachricht:** Öffne **Nachricht senden** aus der geprüften Auswahl. Wähle **Benachrichtigung** oder **E-Mail**, fülle Betreff und Nachricht aus und bestätige **Senden**. Hier gibt es keinen aktiven SMS-Schalter, keinen Vorlagenlader und keinen Dateiauswahl-Button. Anders als beim Export wird die Namenssuche an den Nachrichtenweg übergeben. Kontrolliere deshalb Auswahlzahl, Liste, Suche und Abwahlen unmittelbar vor dem Senden. Die gemeldete Empfängerzahl ist kein Zustell- oder Lesebeleg. Bei einem unklaren Fehler nicht blind nochmals senden; siehe [Kommunikation](/main/05d_employee_communication).
+
+## Agenturlisten exportieren und kontaktieren
+
+In **Mitarbeiterlisten** zuerst die Listenart (normale Liste, Zusatzliste oder schwarze Liste), die konkrete Liste und die gewünschte Personenauswahl prüfen. **Export** öffnet die Spaltenauswahl: Adresse, E-Mail, Mobilnummer, Alter, Status, Sprache, Schuh-/Shirtgrösse, Führerschein, letzter Einsatz, Einsatzzahl und Rollen. **XLSX exportieren** erzeugt die Datei. Im Mitarbeiterdashboard kommen je nach Exportdialog ID, Mitarbeiterlisten, Mitarbeiternummer und letzter Login hinzu. Die Namenssuche wird nicht als eigenes Exportkriterium übertragen; mit Listen-/Filterauswahl eingrenzen und die Datei prüfen.
+
+**Nachricht senden** verwendet Filter, Namenssuche und Abwahlen. Wähle Benachrichtigung, E-Mail oder SMS, fülle Betreff und Nachricht aus, kontrolliere die Empfänger und sende erst dann. Für Benachrichtigung/SMS begrenzt der Agenturlisten-Dialog den Betreff auf 24 Zeichen. E-Mail-Anhänge können hinzugefügt und vor dem Senden wieder entfernt werden. Die Vorlagen speichern Betreff und Nachricht, nicht die Empfänger oder Anhänge; im Vorlagenlader Namen suchen und den gewünschten Eintrag anklicken. **E-Mails kopieren** versendet nichts. Beachte die [Hinweise zu Zustellung und Fehlern](/main/05d_employee_communication).
+
+## Filtern, auswählen und übernehmen
+
+Öffne **Mitarbeiter → Filter**. Klappe die benötigten Bereiche auf. Änderungen berechnen die Treffer neu; warte, bis die Ladeanzeige verschwunden ist. Oben steht die Zahl **ausgewählt / zutreffend**. Ein Klick darauf öffnet die Personenliste mit **Alle auswählen**, **Alle abwählen** und einzelnen Auswahlkästchen.
+
+Die Namenssuche in dieser Seitenliste durchsucht Vor- oder Nachnamen der bereits gefundenen Personen. Sie ersetzt nicht die Filterkriterien. **Alle auswählen** bezieht sich auf die gesamte Treffermenge, nicht nur auf die durch die Namenssuche sichtbaren Personen. Kontrolliere die Auswahlzahl vor dem Speichern oder Kontaktieren.
+
+Mit **Gewählte Filter anwenden** übernimmst du die Auswahl in die aufrufende Ansicht. **Filter zurücksetzen** setzt Kriterien auf die Ausgangswerte zurück; das bedeutet nicht automatisch „alle Status und alle Organisationen“. Im Kundenkontext bleibt der Kundenpool erhalten. Das Schliessen über das x ist nicht der Anwenden-Schritt.
+
+## E-Mail direkt aus der Filter-Trefferliste
+
+Der Umschlag neben der aufgeklappten Trefferliste öffnet einen eigenen E-Mail-Dialog mit **Betreff** und **Beschreibung**. Prüfe die ausgewählten Personen in der Trefferliste, trage beide Texte ein und wähle **E-Mail senden**. Dieser Weg verwendet die ausgewählten Treffer, nicht automatisch nur die durch die seitliche Namenssuche sichtbaren Namen. Er bietet weder SMS noch Anhänge oder den normalen Nachrichtenvorlagenlader.
+
+Das Schliessen des Dialogs nach dem Senden ist kein Erfolgsnachweis. Bei unklarer Rückmeldung nicht nochmals senden; für einen besser kontrollierbaren Empfängerkreis und Kanal verwende den [Dashboard-Nachrichtendialog](/main/05d_employee_communication). Eine Trefferzahl ist keine Zustellbestätigung.
+
+## Personalien, Bewertungen und Bemerkungen
+
+| Bereich | Auswahl und Bedeutung |
+|---|---|
+| Personalien | Im Dashboard die Status **unvollständig**, **beworben**, **aktiv**, **geändert**, **abgelaufen**, **inaktiv**; ausserdem Geschlecht männlich/weiblich/Andere, Raucher ja/nein, Videoselbstportrait vorhanden ja/nein, Alter von/bis und Anzahl Kinder von/bis. Ohne ausgewählten Mitarbeiterstatus gibt es keine Treffer. |
+| Bewertungen | Getrennte Von-/Bis-Sterne für **Mitarbeiterbewertung durch Agentur** und **Mitarbeiterbewertung durch Kunden**. Nicht als Qualifikationsnachweis verstehen. |
+| Interne Bemerkungen | **Keine Vorfälle**, **Verwarnung (gelbe Karte)**, **Ausschluss (rote Karte)** sowie **Interne Bemerkung vorhanden** ja/nein. Die Auswahl sucht das Vorhandensein, nicht nach frei eingegebenem Bemerkungstext. |
+
+Verwende persönliche oder sensible Eigenschaften nur im dafür vorgesehenen berechtigten Arbeitskontext. Die Filteranleitung macht keine Aussage darüber, welche Auswahl für eine bestimmte Personalentscheidung zulässig ist.
+
+## Listen und Kunden-Pools kombinieren
+
+**Mitarbeiterlisten** und **Zusatzlisten** schliessen Mitglieder ein. Innerhalb einer Listenart reicht normalerweise die Mitgliedschaft in einer gewählten Liste. Aktiviere **nur Mitarbeiter anzeigen, welche auf allen Listen sind**, wenn die Person jeder gewählten Liste angehören muss. Für Zusatzlisten gibt es einen eigenen entsprechenden Schalter. Werden normale Listen und Zusatzlisten gleichzeitig eingeschränkt, muss eine Person beide Gruppenbedingungen erfüllen.
+
+Eine gewählte **schwarze Liste** schliesst deren Mitglieder aus. **Mitarbeiter auf Sperrliste einbeziehen** hebt diesen Ausschluss für die Suche auf; es löscht weder die Liste noch eine Mitgliedschaft. Eine Filterausnahme ist keine Freigabe für eine Buchung.
+
+Der Bereich **Kunden-Pool** unterscheidet den Arbeitskontext:
+
+- In der Agenturansicht mit Self-Service-Zugriff: Kunden wählen, deren Pool die Person enthalten soll; optional Mitgliedschaft in **allen** ausgewählten Kunden-Pools verlangen.
+- In der Kundenansicht: eigene Kunden-Mitarbeiterlisten auswählen, optional alle Listen verlangen. Dies sind nicht die Mitarbeiterlisten der Agentur. Die Kunden-Mitarbeiteransicht ist auf den eigenen Pool begrenzt.
+- Ein Kunden-Pool ist nicht dasselbe wie ein öffentliches Mitarbeiterangebot. Der Marktplatzschalter wird im Self-Service-Filter nicht angezeigt.
+
+## Einsätze, Aussehen und Bilder
+
+| Bereich | Felder |
+|---|---|
+| Zukünftige Jobs | Von-/Bis-Datum für vorhandene zukünftige Einsätze. Das ist kein Verfügbarkeitszeitraum. |
+| Job Historie | Von-/Bis-Datum für frühere Einsätze. |
+| Importierte job history | Separater Von-/Bis-Zeitraum für importierte Historien; in der Kundenfilteransicht ausgeblendet. |
+| Aussehen | Mehrfachauswahl Augenfarbe und Haarfarbe; Körperhöhe, Schuhgrösse, Grösse Oberteil, Hosenweite und Hosenlänge jeweils von/bis; sichtbare Tattoos und sichtbare Piercings ja/nein. |
+| Bilder | Für Portrait und die weiteren Bilder einzeln vorhanden ja/nein; in der Kundenfilteransicht ausgeblendet. |
+
+## Kompetenzen präzise auswählen
+
+- **Lebenslauf hochgeladen:** Die Oberfläche bietet ja/nein an. Im geprüften Stand passt die zugrunde liegende Prüfung nicht eindeutig zur Beschriftung: Sie berücksichtigt vorhandene Ausbildungs-, Berufserfahrungs- oder Spracheinträge statt zuverlässig den CV-Dateiupload. Verwende diesen Filter deshalb nicht als Nachweis für ein vorhandenes CV-Dokument; kontrolliere die Datei im Profil.
+- **Ausbildung:** Über **Kriterium hinzufügen** einen Eintrag anlegen; Typ, gestartet nach/vor, beendet nach/vor, aktuelle Ausbildung und Zertifikat hochgeladen festlegen. „Aktuelle Ausbildung“ ersetzt die Prüfung eines Enddatums. Bei mehreren Einträgen bestimmt der Schalter **alle gewünschten Ausbildungen**, ob alle oder mindestens eines der Ausbildungskriterien erfüllt sein müssen. Das Entfernen-Symbol entfernt nur das Suchkriterium.
+- **Berufserfahrung:** Beruf über die hierarchische Auswahl, Berufsbezeichnung, Start- und Enddatumsgrenzen sowie **aktuelle Position**. Mehrere Zeilen lassen sich mit „alle definierten beruflichen Erfahrungen“ verbinden.
+- **Sprachen:** Sprache und Niveau **Anfänger**, **Mittelstufe**, **Fortgeschritten** oder **Muttersprache**; Zertifikatauswahl, soweit eingeblendet. Das Niveau ist eine konkrete Stufe, nicht automatisch eine Mindeststufe. Bei Muttersprache wird die Zertifikatauswahl ausgeblendet. Mit dem Schalter „alle gewünschten Sprachen“ müssen alle gewählten Sprachen passen.
+
+Bei den Ja-/Nein-Prüfungen für vorhandene Zertifikate schränkt nur eine einzelne gewählte Antwort ein. Beide zusammen sind keine Forderung nach gleichzeitig vorhandenem und fehlendem Zertifikat.
+
+## Adresse und Verfügbarkeit
+
+Im Bereich **Adresse** wählst du, soweit der aufrufende Bildschirm dies zulässt, den Standort. Die beiden Distanzregler beziehen sich getrennt auf Haupt- und Zweitadresse. Sind beide gesetzt, können Treffer über eine der beiden Adressen passen. Es handelt sich nicht um eine Zusage zur tatsächlichen Reisezeit. Zusätzlich gibt es Von-/Bis-Grenzen für **Hauptadresse – gültig ab** und **Zweitadresse – gültig ab**.
+
+**Generelle Verfügbarkeit** hat je nach Aufruf zwei Formen:
+
+- Ohne Rollenbezug: wiederholbare Wochentag-/Von-/Bis-Uhrzeit-Kriterien und zusätzliche Datumszeiträume. Die Datumszeiträume suchen Personen ohne überschneidende hinterlegte Nichtverfügbarkeit; sie tragen keine neue Verfügbarkeit im Profil ein.
+- Im Rollenfilter: Schalter für hinterlegte Nichtverfügbarkeit und die strengere Prüfung auf Verfügbarkeit beziehungsweise Konflikte. Die strenge Variante schliesst Personen mit ermittelten Konflikten aus. Ein Filtertreffer ersetzt trotzdem nicht die Konfliktprüfung beim Zuteilen. Beachte auch die Konflikthinweise an einzelnen Personen.
+
+## Arbeitsinformation und Bankverbindung
+
+Diese beiden Filterbereiche werden in der Kundenfilteransicht nicht angezeigt.
+
+**Arbeitsinformation** enthält: AHV-Nummer angegeben, AHV-Ausweis hochgeladen, Zivilstand und dessen Gültigkeitszeitraum, Nationalität, Pass/Personalausweis vorhanden, Arbeitsbewilligung und zugehöriger Upload, Verfalldatum der Bewilligung, Mitarbeiternummer von/bis, Filiale, Berater, dauerhaft/interner Agenturmitarbeiter und Rahmenvertragsdokument vorhanden. Die auswählbaren Listen und Berater hängen vom Agenturkontext ab.
+
+Datumsfilter bestehen ausserdem für **Registrierung**, **Bewerbung**, **Interview**, **Aktivierung**, **ersten Arbeitstag**, **Inaktivierung** und **letzte mobile Anmeldung**. Sie betreffen unterschiedliche Ereignisse: „Registrierung“ ist nicht „erster Arbeitstag“.
+
+**Bankverbindung** prüft IBAN vorhanden, Kontoart, Kontonummer vorhanden, Bankname, Standort Bank und Clearing-Nr. Diese Filter ändern keine Bankdaten und bestätigen nicht deren Richtigkeit.
+
+## Mobilität, Jobinteressen und weitere Dokumente
+
+**Angaben zur Mobilität** umfassen ÖV-Abonnemente (keines, Halbtax, GA, Regionalverkehrsnetz), Führerscheinkategorien, Führerscheindokument vorhanden, Fahrkompetenzen (Automatik, Schaltgetriebe, Kleinlieferwagen, Hebebühne), eigener PKW/PKW im Haushalt/kein PKW, Marke, Karosserieform und PKW-Grösse. Carsharing lässt sich getrennt nach Mobility, GoMore, 2EM und anderen Abonnementen auswählen. Prüfe die konkrete Kategorie; ein Dokumentupload allein belegt nicht jede Fahrkompetenz.
+
+**Jobinteressen** unterscheidet Produkte (Automobil, Telekommunikation, IT, Sport, Beauty/Körperpflege, Finanzprodukte, Pharmazeutika, Tiere, Lebensmittel, Non-Food, Tabak, alkoholische Getränke) und Einsatzarten (Promotion, Merchandising, Mystery Shopping, Logistik, Empfang, Bedienung, Bar, Küche, Sicherheit, Pflege, Reinigung). Der Bereich ist in der Kundenfilteransicht ausgeblendet. Interessen sind keine abgeschlossene Ausbildung.
+
+**Weitere Dokumente** zeigt die vorhandenen Dokumenttypen mit je einer Ja-/Nein-Auswahl. Es wird nach einem nicht gelöschten Dokumenteintrag dieses Typs gesucht; daraus folgt keine inhaltliche Dokumentprüfung. In der Kundenansicht ist dieser Bereich zusätzlich vom Recht zum Anzeigen weiterer Dokumente abhängig. Die Agenturbewertung hat dort ebenfalls ein eigenes Sichtbarkeitsrecht.
+
+## Filtervorlage oder Personenliste speichern
+
+Eine **Filtervorlage** speichert die Kriterien. Wähle **Als Vorlage speichern**, gib einen Namen ein und speichere. Bei gleichem Namen erscheint eine Rückfrage zum Überschreiben. Über **Vorlage laden** suchst und wählst du eine gespeicherte Vorlage. Im Rollenfilter können nicht aktive Status aus einer Dashboardvorlage ignoriert werden; die Oberfläche warnt ausdrücklich davor.
+
+Eine **Personenliste** speichert dagegen die ausgewählten Mitglieder. Wähle mit Listenverwaltungsrecht **Als Liste speichern** oder die Aktion für eine schwarze Liste, gib einen Namen mit mindestens zwei Zeichen ein und speichere. Im Dashboard stehen zusätzlich normale Liste, Zusatzliste und schwarze Liste als Sammelaktionen bereit. Eine einmal gespeicherte Mitgliederliste wächst nicht allein deshalb mit, weil später weitere Profile die damaligen Suchkriterien erfüllen.
+
+## Bestehende Listen bearbeiten
+
+1. Öffne **Mitarbeiter → Listen bearbeiten**.
+2. Wähle **Mitarbeiterlisten**, **Zusatzlisten Mitarbeiter** oder **Schwarze Listen (Mitarbeiter)** und suche die gewünschte Liste.
+3. Zum Hinzufügen suche im separaten Feld nach Name oder E-Mail und wähle die Person. Dieses Feld bietet Personen an, die noch nicht Mitglied sind.
+4. Zum Entfernen verwende die Aktion **Mitarbeiter aus Liste entfernen** an der betreffenden Zeile und beachte die Rückfrage. Damit entfernst du die Mitgliedschaft, nicht das Mitarbeiterprofil.
+5. Mit dem Stift bearbeitest du den Listennamen. Der Papierkorb löscht nach Rückfrage die ausgewählte Liste samt Mitgliedschaften, nicht die darin enthaltenen Personen.
+
+Listenverwaltung verlangt das eigene Listenverwaltungsrecht. Das Zuordnen von Listen direkt im Mitarbeiterprofil hängt dagegen am Profilbearbeitungsrecht. **Export** und **Nachricht senden** beziehen sich auf die aktuelle Auswahl; der Wechsel von Liste oder Tab ist deshalb vor einer Sammelaktion erneut zu kontrollieren.
+
+Für den eigenen Kundenpool gibt es eine gesonderte Ansicht **Meine Listen**. Kundenlisten nicht mit einer gleich benannten Agenturliste verwechseln. Weiter: [Nachrichten senden](/main/05d_employee_communication), [Profile](/main/05a_employee_profiles), [Schritt 4](/main/04b_staff_allocation).

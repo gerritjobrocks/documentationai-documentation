@@ -1,0 +1,55 @@
+---
+title: "Templates and reuse"
+---
+
+Templates save repeated input, but they do not replace checking the new job. As a planner, you need edit rights for the target project and access to the respective template function. **Project template, role template, filter template, and notification template are different things.**
+
+## Choose the right template family
+
+| Template | Where to use? | What to check afterward |
+| --- | --- | --- |
+| **Project template** | Via **Projects → Load from template**, alternatively in the projects dashboard. Save in step 2 via **Save as project template**. | Basic information, client/contacts, automation and visibility switches, locations, and inherited role structure. Reassign assignment days. |
+| **Role template** | In step 2 under the desired location via **Load from template**. Save on the role via the **Save role as template** action. | Role name/translations, shifts, filters, and documents; additionally check pay, expenses, and clothing. Set cost center and department again. |
+| **Filter template** | In the role filter via **Load from template** or **Save as template**. | All criteria and manual selection, not just the name of an employee list. Then **Apply selected filters**. |
+| **Notification template** | In step 3 via **Load from template** or **Save as template**. | Subject, message, and language versions. Check sending options separately; loading is not publishing. |
+| **Tariff group template** | In the tariff group dialog in planning, if available for your user. | Name and minimum/maximum hourly rate in the correct customer/department context. Not a project or filter template. |
+
+## Save and reuse a project as a template
+
+1. Open a checked project in step **2 – project planning**.
+2. Click **Save as project template** at the top.
+3. Enter **template name** and click **Save**. If the same name already exists, a prompt to update may appear. Confirm only if you really want to replace this existing template.
+4. Check the success message and then the template in the load selection.
+5. For the new job, open **Projects → Load from template** and select the appropriate project template.
+6. Check the filled-in basic information and the switches. **Assignment days are cleared when the project template is loaded**; assign the new days to each location. Older templates may also exist without a location list.
+7. After checking, click **Next** and verify the inherited role/shift structure in step 2. Set and check staffing requirement by date and shift. Publish only after this check.
+
+**How to recognize success:** The new project contains the intended customer context and the correct new locations/days. A saved template or an inherited role name is not yet a fully planned job.
+
+## Use a role template in a targeted way
+
+1. Open step **2** of the target project and the correct location.
+2. There, click **Load from template** and select the required role template.
+3. Check the new role under this location: name and translations, shifts, breaks, documents, and role filter.
+4. Set **cost center** and **department** explicitly for this job. A standalone role template does not carry over these two values, not even automatically from the target project. That distinguishes it from the project template workflow.
+5. Check tariff group, salary details, expenses, and clothing rules separately. Do not rely on a template name to cover all details of the target customer.
+6. Enter the regular staffing requirement and, if applicable, overbooking for each shift and day. Open the role filter and check the entire saved filter before applying it.
+
+To **save a role template**, open **Save role as template** on the checked role, assign a name, and click **Save**. Read the confirmation: cost center and department do not belong in this template. If a name already exists, you can confirm an update; before doing so, check whether other planning workflows are supposed to reuse this template.
+
+## Reuse notification and filter separately
+
+A notification template contains texts and translations. Load it in step 3 and adapt the message to the job. Then check **Send push notifications**, **Resend push notifications**, the deadline, and, if applicable, the scheduling options. Only the deliberate publish action triggers the [publishing workflow](/main/en/04a_publication_and_allocation).
+
+A filter template describes selection criteria, not a promised team. Check lists, exclusions, availability, and any manual deselections in the role filter. **Save as list** is a different action from **save as template**; a list and a complete filter are not interchangeable.
+
+## Self Service and missing templates
+
+In Self Service, project, role, and notification templates are tied to the customer context. Role filters remain limited to the customer pool. Therefore, do not expect the same template or person selection as in a normal agency project.
+
+If a template is missing, first check the template family and customer context. Wait until the selection has finished loading. If **Load from template** is not usable, clarify access and availability with your administrator or support. No general price or package assignment can be inferred from this. If the result is unclear, do not load the same role multiple times; first check whether it has already been created.
+
+
+## Manage templates and agency settings
+
+The [template management](06g_agency_templates.mdx) describes editing saved payroll, expense, and notification templates. Use [Sedcard templates](06h_agency_sedcard.mdx) for the layout of your own staff presentations. [Customer portal settings](06e_agency_client_portal.mdx) and [clothing rules](06e_agency_client_portal.mdx#create-translate-and-remove-clothing-requirements) are configured separately.

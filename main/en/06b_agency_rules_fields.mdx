@@ -1,0 +1,104 @@
+---
+title: "Options, work time rules, and profile fields"
+description: "Differentiate save paths, minimum breaks, the working time matrix, and mandatory or review fields."
+---
+
+# Options, work time rules, and profile fields
+
+## Options and wage placeholders
+
+Open **Settings → Agency Profile → Options**. The area for the terms and conditions file is linked to the edit permission for options; not all of the following rows use the same visible lock area. No general permission for every setting can be inferred from this.
+
+Upload the terms and conditions file via the upload area. DOCX, DOC, and PDF are accepted. After a successful upload, a file link appears; use the delete icon and confirm to remove it. The link may also be called **file.pdf** even for an uploaded Word file: check the actual file, not just the link text. There is no additional global save step for this upload.
+
+Under **wage information**, there are three texts to distinguish: placeholder if no wage is entered; placeholder name if no wage class is selected for the base wage; and the associated placeholder key. Leaving any of these text fields saves the placeholder values submitted together. These texts do not set a wage amount and do not create a wage class. After a success message, reopen and check all three values.
+
+## Maintain minimum breaks as time ranges
+
+In **Options → Minimum break**, the table contains **From (min)**, **To (min)**, and **Duration (min)**. **Add new** first creates a local row. The first starts at 0; further rows start with the previous upper bound plus 1. Without an upper bound on the last row, no further row can be created: first add the existing bound.
+
+Enter the range limits and break duration in minutes. When leaving a table cell, it is saved provided the start and duration are filled in. The upper bound may remain empty. A missing duration is rejected; overlapping ranges can be rejected by the server. After an error, check the whole table again. Linking the range limits may also update the previous row; changes are not one shared transaction for all settings.
+
+To remove an entry, choose the row’s delete icon and confirm. For placeholder rows that have not yet been saved, the unsaved rows are removed locally. After successfully deleting a saved definition, the list is reloaded. Choosing substantively permissible breaks remains the responsibility of the responsible party.
+
+## Edit and reset the working time matrix
+
+Under **working time settings**, the rule is shown on the left, then **default**, and one column for each existing project type. A project type inherits the default as long as no custom value is set. A dash means that no numeric value is set there; it is not the same as 0. Without saved agency values, the matrix provides empty defaults, not legally approved limit values.
+
+1. Click the desired cell and enter a number in the displayed unit. A decimal comma is possible.
+2. For a single number, **Enter** or leaving the field saves it. **Escape** discards the current input.
+3. For **Exceptional max weekly hours**, there are **peak** and **rest**: the value for the peak week and for the remaining weeks. **Enter** or leaving the second field saves both values. Check both fields before confirming.
+4. A custom project type rule is highlighted. Use the reset arrow that appears when hovering to restore the default; this saves immediately. Completely clearing an override also restores inheritance; it does not switch off independently of the default.
+5. Wait for the success message and check the cell after reopening. If an error occurs, the local value may already look changed.
+
+The active rules and project types are loaded. **No business rules configured** is not a statement about missing legal obligations. When saving, the interface sends the matrix state; avoid concurrent edits. This saving is separate from minimum breaks, profile fields, and office hours.
+
+## Which rules and units are there
+
+The configured rule catalog includes the following field groups:
+
+| Rule | Input |
+| --- | --- |
+| Min. break between assignments | Minutes |
+| Max. consecutive working days | Days |
+| Max. working hours per week | Hours |
+| Exceptional max weekly hours | Two hour values: peak and rest |
+| Min. uninterrupted weekly rest period | Hours |
+| Max. working hours per month | Hours |
+| Max. Sundays per month | Count |
+| Handling late clock-in | Minutes |
+| Handling early clock-out | Minutes |
+| Handling late clock-out | Minutes |
+| Reason for late clock-in | Minutes |
+| Reason for early clock-out | Minutes |
+| Reason for late clock-out | Minutes |
+
+For each row, the default and project type deviation apply, as do the save rules described above. A help text may describe the intended handling, but it does not prove that every scheduling, app, or validation function already enforces the same rule. In particular, a saved **reason tolerance** does not imply automatic approval or rejection of a reason. Professional approval of working hours does not replace the matrix.
+
+## Approval process, location alert, and reminders
+
+**Work permit:** In the field for work permit expiry, the configured delay is saved when you leave the field. The help text describes how long employees should remain active after expiry. This is not a legal extension of a permit. In the associated email multi-select, recipients are added or removed and saved when leaving. Check the saved values and the specific employee status separately.
+
+**Location alert:** The slider shows 0 to 200 meters in steps of 10. Saving happens when you release it. Note: the help text describes 0 as a strict check, but saving treats 0 as a disabled value; the display shows **OFF** for this. Therefore do not rely on 0 as strict location control. Choose a professionally appropriate positive value and check it after reopening. A GPS deviation alone is not a reliable statement about time worked.
+
+**Notifications for unaccepted assignments:** The agency switch saves when toggled. It is not the same as the email recipients for applications or acceptances. The reminder control can additionally be handled per customer; do not infer an effective reminder for every customer assignment from the agency switch alone. This setting can affect later real notifications.
+
+## Mandatory fields in employee profiles
+
+Under **Field definitions → Mandatory fields in employee profiles**, you set or remove the mark for each field. You need edit permission for fields. Every change is saved immediately; there is no final button for the whole selection. The selection is loaded from the saved agency definitions. New agencies receive no mandatory fields through the default initialization; this does not mean that an existing agency has an empty selection.
+
+The selectable items are:
+
+- **Person and images:** Gender, portrait photo, full-body photo, CV, native language.
+- **Residence:** Street, house number, postal code, city, country, and canton.
+- **Emergency contact:** First name, last name, phone number, and email.
+- **Identity and social insurance:** AHV number, upload AHV card, marital status, nationality, upload passport/ID.
+- **Permit and payout:** Work permit, upload work permit, work permit expiry date, withholding tax details, IBAN.
+- **Mobility:** Public transport subscription details, driver’s license type, driving skills, car availability.
+
+This selection changes the definition, not the existing profile data. First name, last name, date of birth, mobile phone, and email are not listed here as freely switchable mandatory field options. Check the marks by reopening and then check the completeness indicator of the affected [employee profile](05a_employee_profiles.mdx). A completeness indicator does not replace checking the accuracy or validity of a document.
+
+## Mark changes for profile review
+
+The second selection under **Field definitions** is called **Fields whose changes trigger the status “edited” in the employee profile.** It is neither a second mandatory-fields list nor a general write permission for employees.
+
+The following are available for selection:
+
+- Last name, first name, gender, number of children, date of birth.
+- Portrait photo, full-body photo, and résumé.
+- Primary address: additional address line, street, house number, ZIP code, city, country, and canton; secondary address: street, house number, ZIP code, city, and country.
+- Landline, mobile phone, and email.
+- AHV no., AHV card, marital status, nationality, passport/ID.
+- Work permit, work authorization cover page, driver’s license document, work permit expiry date, IBAN, and other documents.
+
+Turning each definition on and off saves it individually. The checkmarks shown come from the agency configuration; the initial values of an empty form model are not binding agency defaults. Reload the page after making a change. The downstream review of profile changes and any EasyTemp synchronization remain separate processes; a checkmark confirms neither a completed review nor a successful export.
+
+## Field definitions: scope of selection and initialization
+
+The two field lists are fixed selections, not an editor for newly named custom profile fields. Use **Mandatory fields** for the completeness requirement and the second list for the **edited** status when something changes. A mandatory field is not automatically a review field; the lists must be maintained separately.
+
+The mandatory-fields list covers the personal/photo, residence, emergency, identity, permit, payment, and mobility fields listed above. First name, last name, date of birth, mobile phone, and email cannot be toggled there. In the review list, by contrast, these details, number of children, primary and secondary address, and document fields can be selected, but there is no separate native-language, emergency-contact, or mobility selection. Internal remarks and employee lists are not active review options there.
+
+The initial mandatory-field selection for new agencies is empty. For review definitions, initialization can add personal fields and document fields if no definition exists yet. That is why “remove all checkmarks” is not a guaranteed permanent state across every reinitialization. After changes, check the actually loaded checkmarks again. A checkmark for document review confirms neither the file contents nor a successful transfer to a payroll system.
+
+A separately visible administrative text field labeled **Employee Fields** is not this field definition and is not an offered customer editor. Changes to taxes, payroll, or permits are not approved here on a substantive basis; only the operation of the selection is documented.

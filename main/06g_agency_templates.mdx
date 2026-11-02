@@ -1,0 +1,79 @@
+---
+title: "Gespeicherte Vorlagen bearbeiten"
+description: "Vorlagenverwaltung, Lohn- und Spesenfelder sowie getrennte Benachrichtigungsvorlagen."
+---
+
+# Gespeicherte Vorlagen bearbeiten
+
+## Vorlagenverwaltung öffnen und Kontext prüfen
+
+Öffne **Agenturprofil → Vorlagen bearbeiten → Vorlagen bearbeiten**. Dafür sind Einstellungsanzeige und das Bearbeitungsrecht für Vorlagen relevant. Klappe die gewünschte Vorlagenfamilie auf und wähle **Bearbeiten** am gespeicherten Eintrag. **Noch keine Vorlagen erstellt** bedeutet, dass diese Liste keine gespeicherten Einträge liefert; es ist kein Aufruf zum Erstellen eines leeren Projekts.
+
+Die Unterdialoge für [Rollen, Tarifgruppen, Lohnkriterien und Lohnklassen](06i_role_tariff_templates.mdx) haben eigene Speicher- und Bestätigungsabläufe.
+
+Die Verwaltung kann auch in einem Kundenprofil eingebettet sein. Dort werden kundenbezogene Vorlagen geladen. Prüfe den Einstieg und den Kundenkontext, bevor du eine Vorlage änderst. Eine Vorlage gleichen Namens in der Agentur ist nicht automatisch dieselbe Kundenvorlage.
+
+Für das Anlegen und Anwenden von Projekt- und Rollenvorlagen nutze die [Anleitung zu Vorlagen und Wiederverwendung](06_templates_and_reuse.mdx). Der Bearbeiten-Link für eine vollständige Projektvorlage ist in dieser Verwaltungsübersicht nicht aktiv. Projekttypen haben dagegen eine Namensbearbeitung: **Bearbeiten**, Namen ändern, dann das Feld verlassen oder **Speichern** anklicken. Prüfe danach den erneut geladenen Namen.
+
+Zum Entfernen **Löschen** am richtigen Eintrag wählen und die Rückfrage prüfen. **Nein** bricht ab. Nach **Ja** die Liste neu laden und kontrollieren. Nicht aus dem Löschen einer Vorlage ableiten, dass zuvor daraus erstellte Projekte, Rollen oder Einsätze ebenfalls gelöscht wurden.
+
+## Lohn, Zulage und Zuschlag bearbeiten
+
+Öffne die jeweilige Familie und **Bearbeiten** am Eintrag. Die Dialoge unterscheiden sich:
+
+| Familie | Felder und auswählbare Werte |
+| --- | --- |
+| Lohn | Mehrsprachiger Titel, Betrag, über **+** eingeblendeter Höchstbetrag pro Einsatz, Währung EUR/USD/CHF, Häufigkeit h/d und vorhandene Lohnklasse. |
+| Zulage | Titel, Betrag, optionaler Höchstbetrag, EUR/USD/CHF, h/d/pro Einsatz/pro Einheit, Lohnklasse und Kriterium. |
+| Prozentualer Zuschlag | Titel, Prozentsatz, Lohnklasse und Kriterium. |
+| Betragsbasierter Zuschlag | Titel, Betrag, optionaler Höchstbetrag, EUR/USD/CHF, h/d, Lohnklasse und Kriterium. |
+
+Klicke auf den Titel, um dessen Sprachdialog zu öffnen. Pflege die angebotenen Sprachen, bestätige den Titeldialog und speichere anschliessend den eigentlichen Vorlagendialog. Eine Übersetzung muss vor der abschliessenden Speicherung geprüft werden. Lohnklasse und Kriterium werden aus vorhandenen Einträgen ausgewählt; ein leerer Bestand lässt sich nicht durch einen frei getippten Namen ersetzen.
+
+**Speichern** im Vorlagendialog übermittelt die Änderungen; die Zahlenfelder speichern nicht automatisch beim Verlassen. **Abbrechen** schliesst ohne diesen Speicheraufruf. Die Liste wird nach erfolgreicher Antwort aktualisiert. Öffne den Eintrag erneut und prüfe Betrag, Einheit, Währung und Zuordnungen. Die Felder sind technische Vorlagenwerte, keine verbindliche steuerliche oder lohnrechtliche Bewertung und keine aktuellen Tarifzusagen.
+
+## Spesenvorlagen und Zahlungsart
+
+Unter **Spesen → Bearbeiten** pflegst du Titel, Betrag, optionalen Höchstbetrag pro Einsatz, Währung EUR/USD/CHF, Häufigkeit, Spesenart, Zahlungsart, Lohnklasse und Kriterium.
+
+Als Häufigkeit sind Stunde, Tag, Kilometer, pro Einsatz und pro Einheit angeboten. Die Spesenart ist Transport, Verpflegung, Unterkunft oder Sonstiges. Die Zahlungsart unterscheidet effektiv und pauschal. **Wichtig:** Bei Kilometer und pro Einheit setzt der Speicherweg die Zahlungsart auf **effektiv**, auch wenn zuvor pauschal gewählt wurde. Nach der Speicherung deshalb nicht nur den Betrag, sondern auch die Zahlungsart erneut kontrollieren.
+
+Der Höchstbetrag wird über **+** sichtbar. **Speichern** im Dialog übermittelt die Vorlage; **Abbrechen** beendet die Bearbeitung ohne diesen Aufruf. Geänderte Werte ersetzen keine Prüfung der Spesenbelege oder Abrechnungsregeln. Zum späteren Verwenden die passende Vorlage in der Spesenkonfiguration der Rolle laden und die übernommenen Werte dort kontrollieren; siehe [Vorlagen und Wiederverwendung](06_templates_and_reuse.mdx).
+
+## Zwei getrennte Benachrichtigungsvorlagen
+
+Die Verwaltung unterscheidet Benachrichtigungsvorlagen für die Publikation von Vorlagen für Nachrichten aus dem Mitarbeiter-Dashboard. Wähle die passende Familie und **Bearbeiten**.
+
+Bei der Publikationsvorlage gibt es **Vorlagenname** und die Sprachregister Englisch, Deutsch, Französisch und Italienisch. Pro Sprache sind Betreff mit maximal 50 Zeichen und Nachricht mit maximal 256 Zeichen vorgesehen. Die verbleibenden Zeichen werden angezeigt. Die Übersetzen-Funktion setzt vorhandenen fremdsprachigen Inhalt voraus; prüfe das Ergebnis im Zielregister. Klicke danach **Speichern**. Die Sprachtexte werden gemeinsam gespeichert; der allgemeine Betreff und Nachrichtentext werden nach verfügbarem Betreff in der Reihenfolge Deutsch, Englisch, Französisch, Italienisch gewählt.
+
+Die Mitarbeiter-Dashboard-Vorlage hat dagegen **Vorlagenname**, **Subject** und **Message**, ohne dieselben vier Sprachregister. Auch hier gelten maximal 50 Zeichen für den Betreff und 256 für die Nachricht. Mit **Speichern** werden die Vorlagenwerte geändert, nicht unmittelbar eine Nachricht versendet. **Abbrechen** schliesst den Dialog ohne diesen Speicheraufruf.
+
+Beide Speicherfunktionen können den Dialog schon vor der Serverantwort schliessen. Kontrolliere daher die neu geladene Liste und öffne die Vorlage erneut; ein geschlossenes Fenster allein beweist keine Speicherung. Der tatsächliche [Versand an Mitarbeitende](05d_employee_communication.mdx) und die [Auswahl der Veröffentlichungsvorlage](06e_agency_client_portal.mdx#standardwerte-und-veröffentlichungsvorlage) sind eigene Schritte mit anderen Wirkungen.
+
+## Info-PDF-Vorlage ändern
+
+Der Abschnitt **Pdf info** ist nur in einer gesondert freigeschalteten Agenturkonfiguration sichtbar und kein allgemeiner Menüpunkt. Wenn er angeboten wird, öffnest du den vorhandenen Eintrag über **Bearbeiten**. Der Dialog enthält Notfallkontakt, Treffpunkt, Kontakt vor Ort, Anforderungen und Anreise. Anforderungen und Anreise sind formatierbare Textfelder; die übrigen Angaben sind separate Eingaben.
+
+Ändere die gewünschten Angaben und klicke **Speichern** im Dialog. **Abbrechen** oder Schliessen ist nicht dieser Speicheraufruf. Öffne die Vorlage danach erneut und prüfe die Texte. Das Bearbeiten der Vorlage versendet kein PDF an Mitarbeitende. Beim späteren Verwenden im Projekt die übernommenen projektspezifischen Kontakt- und Ortsangaben prüfen.
+
+## Schichtunterdialog einer Rollenvorlage
+
+In der Bearbeitung einer Rollenvorlage öffnet **Schichten** die vorhandenen Schichtdefinitionen. **Neue Schicht hinzufügen** ergänzt eine Zeile. Pro Zeile gibt es Start und Ende im Format Stunden:Minuten, Pausendauer in Minuten, einen mehrsprachigen Schichtnamen, den Split-Schicht-Dialog und **Löschen**.
+
+Der Name wird im Sprachdialog zunächst lokal übernommen. Bei Split-Schichten können bis zu vier Bereiche mit Start und Ende ergänzt oder entfernt werden. Jeder Bereich benötigt beide Zeiten, muss innerhalb der Gesamtschicht liegen und ein Ende nach dem Anfang besitzen. Überschneidungen werden beanstandet. Der Prüfer berücksichtigt Schichten über Mitternacht. **Speichern** im Split-Dialog bestätigt zunächst nur die lokale Schichtstruktur.
+
+**Achtung beim Schliessen:** Der äussere Schichtdialog speichert die Rollenvorlage beim Ausblenden und kehrt zur Hauptbearbeitung zurück. Sein Schliessen ist deshalb nicht mit einem sicheren Verwerfen aller Änderungen gleichzusetzen. Kontrolliere die neu geladene Rollenvorlage, insbesondere Zeiten, Pausen und übersetzte Namen. Eine Erfolgsmeldung im inneren Split-Dialog allein beweist noch keine dauerhaft gespeicherte Vorlage.
+
+## Projektliste und Grenzen alter Editoren
+
+Im Abschnitt **Projekt** werden gespeicherte Projektvorlagen angezeigt. **Löschen** öffnet eine Bestätigung; prüfe die richtige Vorlage, bestätige nur bei beabsichtigter Entfernung und kontrolliere anschliessend die aktualisierte Liste. Das ist kein Löschen eines bereits angelegten Projekts.
+
+In dieser Liste wird kein aktiver Knopf zum Bearbeiten des gesamten Projektvorlageninhalts angeboten. Leite aus dem angezeigten Namensfeld keine verlässliche Projektumbenennung ab: Es teilt seinen Bearbeitungszustand mit der Projekttyp-Liste. Für das Erstellen und Verwenden von Projektvorlagen gilt die [separate Vorlagenanleitung](06_templates_and_reuse.mdx). **Projekttyp** hat dagegen eine eigene aktive Bearbeiten-Aktion mit anschliessendem Speichern; Projekttyp und Projektvorlage nicht verwechseln.
+
+Im Agenturprofil werden die alten Dialoge für Mitarbeitergruppen/Wochenstunden, Abwesenheitskategorien und Feiertagskalender nicht über aktive Listenaktionen angeboten. Suche deshalb dort keine zusätzliche Alternative zur aktuellen Arbeitszeitmatrix. Ebenso gibt es dort keine zweite allgemeine Einstellungsmaske neben den dokumentierten Profilabschnitten. Ein fehlender Alt-Editor ist nicht durch Auswahl eines anderen Mandanten zu beheben.
+
+## Workreport ist eine Berichtsanzeige, kein Vorlageneditor
+
+Die separate **Workreport**-Ansicht zeigt für das ausgewählte Projekt Mitarbeitendenname, Schichtdatum, geplanten Beginn und Schluss sowie Gesamtzeit in Minuten. Darunter stehen vorhandene Zeitabschnitte mit Start-/Endzeit, Start-/Endtyp und Arbeitsdauer. Eine noch nicht beendete Zeit erscheint als **active**; deren laufende Dauer wird in der Anzeige fortgeschrieben.
+
+Die Ansicht versucht ungefähr alle zehn Sekunden, den Bericht neu zu laden. Für diesen alten Berichtseinstieg ist der zugehörige Abruf im geprüften Serverstand nicht nachgewiesen; eine tatsächlich verfügbare Anzeige wird deshalb nicht zugesichert. Bleibt sie leer oder schlägt das Laden fehl, den konkreten Berichtszugang mit dem Support klären. Eine fortlaufende Uhr ist kein Beleg einer abschliessend bestätigten Arbeitszeit. Die Seite bietet keine Feldauswahl, Layoutvorlage, Speichern-, Test- oder Versandaktion. Sie ist nicht der Ort zur Konfiguration einer Workreport-Vorlage und nicht mit Arbeitsvalidierung gleichzusetzen. Für eine gewünschte andere Berichtsvorlage muss der konkrete Bericht beziehungsweise Export geklärt werden; aus der Bezeichnung Workreport lässt sich kein zusätzlicher Einstellungsweg ableiten. Es wird hier bewusst kein nicht nachgewiesener Menüpfad zum Vorlageneditor angegeben.

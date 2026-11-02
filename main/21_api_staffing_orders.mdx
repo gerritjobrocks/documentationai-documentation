@@ -1,0 +1,219 @@
+---
+title: Staffing Orders & Shifts
+description: Personalbedarf übermitteln und Status abrufen
+---
+
+# Staffing Orders & Shifts
+
+Ein **Staffing Order** repräsentiert einen Personalbedarf, den Ihr System an bejoo übermittelt. Über die API können Sie diesen Bedarf anlegen, Schichten hinzufügen und den aktuellen Bearbeitungsstatus abrufen.
+
+## Staffing Order erstellen
+
+```http
+POST /staffing-orders
+```
+
+**Request:**
+
+```json
+{
+  "external_order_id": "PARTNER-ORDER-12345",
+  "customer": {
+    "external_customer_id": "CUST-001",
+    "name": "Beispiel AG"
+  },
+  "site": {
+    "external_site_id": "SITE-001",
+    "name": "Hotel Beispiel Zürich",
+    "address": "Beispielstrasse 1, 8000 Zürich"
+  },
+  "title": "Servicepersonal für Bankett",
+  "description": "Optionale Hinweise zum Einsatz",
+  "cost_center": "BANQUET-2026",
+  "language": "de"
+}
+```
+
+**Response (201):**
+
+```json
+{
+  "order_id": "jr_order_123",
+  "external_order_id": "PARTNER-ORDER-12345",
+  "status": "received"
+}
+```
+
+### Felder
+
+| Feld | Pflicht | Beschreibung |
+|------|---------|-------------|
+| `external_order_id` | Ja | Ihre interne Auftrags-ID (eindeutig pro Partner) |
+| `customer.external_customer_id` | Ja | Ihre Kunden-ID (wird beim ersten Mal angelegt, danach referenziert) |
+| `customer.name` | Ja | Kundenname |
+| `site.external_site_id` | Ja | Ihre Standort-ID (wird beim ersten Mal angelegt, danach referenziert) |
+| `site.name` | Ja | Standortbezeichnung |
+| `site.address` | Ja | Einsatzadresse |
+| `title` | Ja | Kurztitel des Einsatzes |
+| `description` | Nein | Freitext-Hinweise zum Einsatz |
+| `cost_center` | Nein | Kostenstelle für Kontierung |
+| `language` | Nein | Sprache (`de`, `fr`, `en`, `it`), Default pro Partner |
+
+### Idempotenz
+
+`external_order_id` ist pro Partner eindeutig. Erneutes POST mit gleicher ID und gleichem Payload gibt die bestehende Order zurück. Bei abweichendem Payload mit gleicher ID wird `409 CONFLICT` zurückgegeben.
+
+### Stammdaten
+
+Beim ersten Aufruf mit einer neuen `external_customer_id` oder `external_site_id` werden die Stammdaten in bejoo angelegt. Bei erneutem Aufruf mit gleicher ID werden die Stammdaten referenziert. Namens- oder Adressänderungen werden aktualisiert, sofern das Partnersystem als führend für Stammdaten definiert ist.
+
+## Shift Demand hinzufügen
+
+```http
+POST /staffing-orders/{order_id}/shifts
+```
+
+**Request:**
+
+```json
+{
+  "external_shift_id": "PARTNER-SHIFT-987",
+  "date": "2026-07-10",
+  "start_time": "17:00",
+  "end_time": "23:00",
+  "role": "Service",
+  "external_role_id": "PARTNER-ROLE-SERVICE",
+  "required_headcount": 8,
+  "break_minutes": 30,
+  "notes": "Schwarze Hose, weisses Hemd"
+}
+```
+
+**Response (201):**
+
+```json
+{
+  "shift_id": "jr_shift_456",
+  "external_shift_id": "PARTNER-SHIFT-987",
+  "status": "created"
+}
+```
+
+### Felder
+
+| Feld | Pflicht | Beschreibung |
+|------|---------|-------------|
+| `external_shift_id` | Ja | Ihre interne Schicht-ID (eindeutig pro Order) |
+| `date` | Ja | Einsatzdatum (YYYY-MM-DD) |
+| `start_time` | Ja | Startzeit (HH:mm) |
+| `end_time` | Ja | Endzeit (HH:mm) |
+| `role` | Ja | Rolle/Funktion (Freitext) |
+| `external_role_id` | Nein | Ihre interne Rollen-ID (empfohlen für Mapping) |
+| `required_headcount` | Ja | Benötigte Anzahl Personen (min. 1) |
+| `break_minutes` | Nein | Pausenlänge in Minuten |
+| `notes` | Nein | Hinweise (Kleidung, Ablauf, etc.) |
+
+## Shift Demand ändern
+
+```http
+PATCH /staffing-orders/{order_id}/shifts/{shift_id}
+```
+
+Änderbare Felder: `date`, `start_time`, `end_time`, `role`, `external_role_id`, `required_headcount`, `break_minutes`, `notes`.
+
+> Bei bereits bestehenden Zuweisungen können Änderungen eingeschränkt sein. Der aktuelle Status wird über die API zurückgemeldet.
+
+## Staffing Orders auflisten
+
+```http
+GET /staffing-orders?status=in_progress&limit=50&cursor=***
+```
+
+| Parameter | Typ | Beschreibung |
+|-----------|-----|-------------|
+| `external_order_id` | string | Nach externer ID filtern |
+| `status` | string | Nach Status filtern |
+| `limit` | int | Maximale Anzahl Ergebnisse (Default: 50) |
+| `cursor` | string | Paginierungs-Cursor |
+| `updated_since` | datetime | Nur seit diesem Zeitpunkt aktualisierte Orders |
+
+**Response (200):**
+
+```json
+{
+  "items": [
+    {
+      "order_id": "jr_order_123",
+      "external_order_id": "PARTNER-ORDER-12345",
+      "title": "Servicepersonal für Bankett",
+      "status": "in_progress",
+      "created_at": "2026-06-24T16:00:00Z",
+      "updated_at": "2026-06-24T16:30:00Z"
+    }
+  ],
+  "next_cursor": "***=="
+}
+```
+
+## Staffing Order Detail
+
+```http
+GET /staffing-orders/{order_id}
+```
+
+**Response (200):**
+
+```json
+{
+  "order_id": "jr_order_123",
+  "external_order_id": "PARTNER-ORDER-12345",
+  "status": "partially_filled",
+  "site": {
+    "name": "Hotel Beispiel Zürich",
+    "address": "Beispielstrasse 1, 8000 Zürich"
+  },
+  "shifts": [
+    {
+      "shift_id": "jr_shift_456",
+      "external_shift_id": "PARTNER-SHIFT-987",
+      "date": "2026-07-10",
+      "start_time": "17:00",
+      "end_time": "23:00",
+      "role": "Service",
+      "required_headcount": 8,
+      "confirmed_headcount": 5,
+      "status": "partially_filled"
+    }
+  ]
+}
+```
+
+## Order oder Shift stornieren
+
+```http
+POST /staffing-orders/{order_id}/cancel
+POST /staffing-orders/{order_id}/shifts/{shift_id}/cancel
+```
+
+**Request:**
+
+```json
+{
+  "reason": "Storniert im Partnersystem",
+  "external_cancelled_at": "2026-06-24T16:45:00Z"
+}
+```
+
+**Response (200):**
+
+```json
+{
+  "status": "cancelled"
+}
+```
+
+> Je nach Bearbeitungsstand kann eine Stornierung sofort wirksam sein oder zunächst als Anfrage verarbeitet werden. Der endgültige Status wird über den Order-Status und optional per Webhook zurückgemeldet.
+
+## Führendes System
+
+Je nach Integration wird festgelegt, welches System für Aufträge, Stammdaten und Schichten führend ist. Schreibzugriffe werden nur für die Bereiche aktiviert, für die der Partner als führendes System definiert ist.

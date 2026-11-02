@@ -1,0 +1,83 @@
+---
+title: "Importer les collaborateurs et les historiques"
+---
+
+# Importer des collaborateurs et des historiques de missions
+
+## Accès et préparation
+
+Dans le **tableau de bord des collaborateurs**, il existe les boutons **import employees** et **import job history** pour les superadministrateurs. L'intitulé et des parties de l'assistant peuvent rester en anglais même lorsque la langue du portail est l'allemand. Un administrateur d'agence normal ne voit pas automatiquement ces boutons. S'ils manquent, clarifiez l'accès autorisé avec votre administration ; le lien d'inscription n'est pas un outil d'import.
+
+Importez uniquement les données approuvées dans les agences explicitement choisies. L'assistant peut modifier des profils existants et ajouter des personnes à plusieurs pools d'agences. Vérifiez donc avant de commencer l'identification, les valeurs de statut et l'agence cible. La prévisualisation n'est **ni une validation complète ni une fonction d'annulation**.
+
+## Préparer le fichier pour les collaborateurs
+
+L'assistant accepte **CSV, XLSX, XLS et JSON**. Pour Excel, la première feuille est lue ; la première ligne contient les en-têtes de colonnes, puis un enregistrement par personne. Utilisez des en-têtes uniques et sans lacune. JSON doit contenir une liste d'objets construits de manière identique. Préparez si possible le CSV en UTF-8 et contrôlez les séparateurs et les umlauts dans la prévisualisation. La vérification de téléversement limite la taille du fichier à 50 MB.
+
+Les cinq attributions obligatoires sont :
+
+| Information | Cible dans le dialogue d'attribution |
+|---|---|
+| Prénom | `first_name` |
+| Nom de famille | `last_name` |
+| E-mail | `email` |
+| Numéro de mobile | `mobile` |
+| Date de naissance | `date_of_birth` |
+
+Ces valeurs doivent également être présentes pour chaque enregistrement. Utilisez pour les dates un format explicite comme `YYYY-MM-DD` ou `TT.MM.JJJJ`, et non pas seulement une année. Préparez les numéros de mobile avec l'indicatif pays correct et ne les enregistrez pas comme des nombres Excel arrondis. L'e-mail et le numéro de mobile sont aussi des éléments d'identification ; une mauvaise attribution peut viser le mauvais profil existant.
+
+## Cinq étapes jusqu'à l'import
+
+1. Ouvrez **import employees** et le nouvel import. Faites glisser le fichier dans la zone de téléversement ou sélectionnez-le. Retirez un mauvais choix avec le x à côté du nom du fichier. **Next** téléverse le fichier et lit les en-têtes.
+2. Sous **Detected column / Maps to**, vérifiez chaque colonne reconnue. Les attributions proposées ne sont que des suggestions. Attribuez les champs obligatoires ; laissez les colonnes non nécessaires non attribuées. N'attribuez pas plusieurs fois un champ cible standard. Pour **Additional Document**, **Select document type** est en outre requis.
+3. Vérifiez la **prévisualisation** : noms, contacts, date de naissance, décalage de colonnes et codage des caractères. Elle n'affiche que les huit premières lignes de données. Le tableau de prévisualisation actuel ne montre pas de colonne d'erreur séparée ; un tableau sans anomalie ne prouve donc pas que toutes les données sont valides. Avec **Back**, vous corrigez l'attribution ; en cas de fichier source erroné, fermez le processus avant de commencer et sélectionnez à nouveau le fichier corrigé.
+4. Sous **Choose agencies**, sélectionnez au moins une agence cible. La sélection multiple signifie que les personnes doivent être attribuées à ces plusieurs agences - et non que le système devine lui-même la bonne agence.
+5. Contrôlez **File**, **Agencies** et **Minimal mapping OK**. Seul **Start import** lance le traitement. Attendez la progression du traitement, puis vérifiez ensuite l'entrée dans l'aperçu des imports.
+
+**Processing** et un numéro de progression signifient que des lignes sont en cours de traitement. Le fait de fermer l'assistant déjà lancé n'arrête pas la tâche en arrière-plan. En cas de **Upload failed**, **Preview failed** ou **Failed to start import**, contrôlez d'abord le fichier, l'attribution et l'état d'import existant ; ne relancez pas plusieurs fois tant que l'état n'est pas clair.
+
+## Données et documents optionnels
+
+Le dialogue d'attribution contient, en plus des champs obligatoires, les groupes suivants. N'attribuez que les données que vous voulez réellement reprendre ; une colonne optionnelle vide n'est pas en général une commande sûre pour supprimer des données existantes.
+
+- **Données personnelles :** prénom usuel, sexe, civilité, enfants, évaluation, nombre de missions précédentes et indication de fumeur.
+- **Qualification :** compétences linguistiques ainsi que profession, entreprise, début, fin et description de l'expérience professionnelle.
+- **Apparence :** couleur des yeux/des cheveux, taille, pointure/taille du haut/taille du pantalon, tatouages et piercings avec description ainsi que d'autres caractéristiques personnelles proposées.
+- **Adresses :** adresse principale et deuxième adresse, rue, numéro, complément, code postal, localité, canton, pays, coordonnées et valide à partir de ; sélection de la deuxième adresse légale.
+- **Contact :** téléphone, numéro de mobile, site web et profils sociaux, contact de récupération, contact d'urgence avec nom, téléphone et e-mail.
+- **Informations sur le travail :** AVS, état civil, nationalité, permis de travail et expiration, statut du collaborateur, numéro personnel, succursale, conseiller, remarques internes, avertissements, personnel permanent/interne, taux d'occupation et les données de candidature, d'entretien, d'activation, de désactivation et du premier jour de travail proposées.
+- **Coordonnées bancaires :** type de compte, nom de la banque, IBAN, numéro de compte, lieu de la banque, clearing et BIC/SWIFT.
+- **Mobilité et intérêts :** abonnements TP, compétences de conduite et catégories de permis, données du véhicule, carsharing ainsi que les intérêts proposés pour les produits et les missions.
+- **Autres informations personnelles :** données proposées concernant le partenaire/l'état civil et dernière connexion. Ces attributions ne constituent pas une vérification métier des informations.
+- **Fichiers :** portrait, photos en pied/autres images, vidéo, CV, document AVS, passeport/ID et permis de travail, le cas échéant recto/verso, permis de conduire recto/verso, document de contrat-cadre ainsi que **Additional Document** avec type de document.
+
+Les colonnes de fichier contiennent un lien de fichier accessible ou une description de document correspondante avec `url` ou `public_url` ; un nom de fichier sur votre ordinateur ne suffit pas. La reprise d'un document peut échouer indépendamment des données de base. Vérifiez ensuite les fichiers dans le profil. Si un autre document du même type existe déjà, l'import ne le remplace pas simplement. Ne mettez pas de fichiers sensibles vous-même en libre accès sur Internet pour permettre un import ; clarifiez une voie de reprise appropriée et autorisée.
+
+## Ce qui est modifié lors de l’import des collaborateurs
+
+Les personnes existantes sont d’abord recherchées par e-mail, puis par numéro de mobile, puis par la combinaison prénom, nom de famille et date de naissance. Un résultat trouvé est mis à jour ; sinon, une nouvelle personne est créée. Si **modifié/édité** est présent dans l’une des agences sélectionnées, la personne est ignorée afin que les modifications manuelles ne soient pas écrasées.
+
+**Préparer l’état volontairement :** Sans état existant, une nouvelle affectation d’agence peut devenir **active**. L’import n’est donc pas un simple brouillon. Ne partez pas du principe qu’un état vide ou inconnu signifie « inactif ». Préparez explicitement un import inactif souhaité avec l’état prévu et contrôlez le résultat. L’activation et les processus de suivi liés au projet restent des opérations séparées ; aucun résultat d’import n’est une affectation de créneau confirmée.
+
+Les différentes lignes peuvent produire des résultats différents. Une erreur plus tard dans le traitement ne signifie pas avec certitude qu’aucune donnée de base n’a été écrite auparavant. Ne relancez donc pas tout le fichier sans vérification.
+
+## Vérifier le résultat et le rapport d’erreurs
+
+L’aperçu affiche vos imports précédents avec le fichier, l’état, les agences cibles, le total et le nombre de lignes traitées. Ouvrez le **Report** du traitement concerné. Le rapport Excel contient **Import Results** avec l’index de ligne, l’état, le message et la référence du collaborateur ainsi que, si disponible, les **Original Data**.
+
+- **created:** Personne créée.
+- **updated:** personne existante mise à jour.
+- **skipped:** ignoré ; lors de l’import des collaborateurs, notamment en raison d’un statut déjà modifié.
+- **failed:** ligne échouée ; le message indique la raison, par exemple des champs obligatoires manquants.
+
+L’état de traitement **done** signifie que le traitement est terminé, pas que chaque ligne a réussi. Comparez le rapport et des échantillons des profils concernés, y compris l’affectation à l’agence, l’état et les documents. Corrigez de manière ciblée les lignes en erreur. Les rapports d’import contiennent des données personnelles et ne doivent être accessibles qu’aux personnes autorisées.
+
+## Importer les historiques de missions séparément
+
+**import job history** reprend des informations historiques concernant des personnes **déjà existantes**. Le processus est également fichier → affectation → aperçu → agences → démarrer. Comme identification sûre, utilisez un **job.rocks id**, l’e-mail ou **personal_number** ; le nom et le numéro de mobile seuls ne suffisent pas pour ce flux de traitement. Une personne non trouvée n’est pas automatiquement créée ici.
+
+En plus de l’identification, **project_name** est obligatoire. Les affectations facultatives sont **location**, **client**, **role**, **from**, **to** et **rating**. Les colonnes supplémentaires proposées pour le nom / mobile ne remplacent pas l’identification nécessaire. Contrôlez la date et la période avant de démarrer.
+
+L’import crée des entrées dans l’**historique des missions importé**. Il n’en crée pas de vrais projets, créneaux, saisies du temps ou paiements. Les historiques déjà existants avec la même personne, agence, désignation de projet, site, client, rôle et dates de début / fin sont ignorés. Un nouveau fichier n’est donc pas un moyen général de modifier des historiques existants. Vérifiez aussi ici le rapport et la section de profil correspondante.
+
+Suite : [Profils de collaborateurs](/main/fr/05a_employee_profiles), [Inscription plutôt qu’import](/main/fr/05_employees_dashboard#inviter-des-collaborateurs-à-sinscrire).

@@ -1,0 +1,58 @@
+---
+title: "Créer des modèles de Sedcard"
+description: "Éléments de champ, mise en page, aperçu et enregistrement séparé d’un modèle de Sedcard."
+---
+
+# Créer des modèles de Sedcard
+
+## Créer ou ouvrir un modèle de Sedcard
+
+Ouvrez **Profil d’agence → Modifier les modèles → Modèles de Sedcard**. Cette section est proposée dans la gestion d’agence autonome, et non dans la gestion de modèles client intégrée. **Créer un modèle de Sedcard** ouvre l’éditeur de mise en page. Pour un modèle existant et modifiable, choisissez **modifier**. Pour le premier élément de la liste, les actions de modification et de suppression sont absentes ; il ne doit pas être traité comme un modèle créé manuellement.
+
+Le modèle définit la mise en page et les caractéristiques sélectionnées. Il ne s’agit ni d’un nouveau profil collaborateur ni d’un envoi à un client. **Supprimer** sur un modèle modifiable exige une confirmation. Vérifiez le nom, confirmez uniquement le bon modèle, puis contrôlez la liste.
+
+## Sélectionner les caractéristiques et la mise en page
+
+Faites glisser un élément depuis **liste des qualités** vers la grille. Les caractéristiques proposées sont :
+
+- Photo de profil, prénom, nom, sexe, âge et évaluation.
+- Formation, expérience et langues.
+- Adresse, lieu, e-mail et numéro de téléphone.
+- Abonnements TP, type de permis de conduire, compétences de conduite, disponibilité de voiture et abonnement d’autopartage.
+- Intérêts professionnels avec les variantes **Products** et **Job Types**.
+- Couleur des yeux, taille corporelle, couleur des cheveux, pointure, taille de t-shirt, largeur de pantalon, longueur de pantalon, piercing et tatouage.
+
+La formation et l’expérience peuvent être dépliées ; choisissez une variante avec une à quatre lignes. Les intérêts professionnels proposent les deux variantes au lieu d’un nombre de lignes. Retirez un module placé à l’aide de son symbole de suppression s’il ne doit pas apparaître dans la mise en page. Disposez les éléments dans la grille et vérifiez l’affichage via **Prévisualisation**.
+
+Le bouton d’orientation bascule entre portrait et paysage et affiche à chaque fois l’autre orientation comme action. La prévisualisation utilise des données d’exemple : elle ne prouve pas qu’un collaborateur donné a réellement enregistré ces informations. Déplacer, supprimer ou modifier l’orientation n’enregistre pas encore le modèle sur le serveur.
+
+## Enregistrer ou abandonner le modèle
+
+Cliquez sous la mise en page sur **Enregistrer**. **Enregistrer le modèle de sedcard** s’ouvre avec le champ **Titre**. Saisissez-y un titre non vide et cliquez à nouveau sur **Enregistrer** dans la boîte de dialogue. Seule cette deuxième étape envoie la mise en page avec le titre et l’orientation. Si le titre est invalide, rien n’est enregistré ; complétez le titre au lieu de considérer la fenêtre inchangée comme un succès.
+
+Si un modèle existe déjà, son entrée est mise à jour ; s’il s’agit d’un nouveau modèle, une entrée est créée. Après une réponse réussie, l’interface revient à la gestion des modèles. Rouvrez le modèle enregistré et contrôlez le titre, les champs et l’orientation. Une boîte de dialogue de nom simplement ouverte n’est pas encore un modèle enregistré.
+
+**Annuler** sous la mise en page demande une confirmation indiquant que les modifications peuvent être perdues. La confirmation ramène à la gestion des modèles. Fermer la prévisualisation met fin uniquement à la prévisualisation, pas à l’ensemble de l’éditeur.
+
+## Sélectionner des langues ou des niveaux linguistiques
+
+Faites glisser le module **Langues** dans la mise en page. La boîte de dialogue **Sélectionnezr la/les langue(s) ou le(s) niveau(s)** propose les colonnes séparées **Langues** et **Niveau**. Choisissez soit des langues, soit des niveaux, et non une saisie de niveau librement combinable par langue. Sélectionnez soit jusqu’à **huit langues** dans la liste de langues proposée, soit jusqu’à **quatre niveaux** : langue maternelle, courant, avancé et débutant. Dès qu’une sélection est faite d’un côté, l’autre côté est verrouillé. Pour changer, supprimez d’abord toutes les sélections existantes et vérifiez que l’autre sélection redevient utilisable.
+
+**Enregistrer** dans cette boîte de dialogue ajoutez d’abord uniquement le module de langue à la grille locale. Cela n’enregistre encore aucun modèle sur le serveur. L’icône de fermeture termine la boîte de dialogue sans cet ajout. Après l’ajout, vérifiez que le module figure bien dans la grille. Si la place ne suffit pas, un message d’erreur s’affiche ; retirez ou déplacez les modules existants puis ajoutez à nouveau. Pour recomposer le module de langue, retirez-le de la grille et ajoutez-le de nouveau.
+
+La prévisualisation ne doit pas être utilisée comme contrôle fiable d’exhaustivité pour les niveaux linguistiques : les niveaux peuvent être enregistrés dans la mise en page sans apparaître comme lignes de langue dans l’exemple affiché. Ne confondez pas une prévisualisation de langue vide avec une absence de connaissances linguistiques d’une personne. Vérifiez le modèle enregistré après l’avoir rouvert ; si l’affichage attendu manque, clarifiez le modèle avant de l’utiliser, au lieu de le tester par envoi.
+
+## Contrôler les sections de prévisualisation et la mise en page
+
+**Prévisualisation** en haut ouvre une représentation d’exemple séparée de la grille actuelle. Contrôlez la position, l’étendue, les textes tronqués et l’orientation portrait ou paysage. Le bouton de fermeture ramène à la grille éditable sans modification. La prévisualisation, le déplacement et le changement d’orientation n’enregistrent rien sur le serveur et n’envoient aucune sedcard.
+
+| Modules | Affichage dans la prévisualisation |
+| --- | --- |
+| Photo de profil | Image d’exemple sans téléversement d’image modifiable dans la prévisualisation. |
+| Abonnements aux transports publics, type de permis de conduire, compétences de conduite, intérêts professionnels | Titre avec des listes/marques de texte individuelles ; les intérêts professionnels sont insérés dans la grille via Products ou Job Types. |
+| Langues | Titre et lignes de langue groupées ; la sélection des niveaux a la limite d’affichage mentionnée ci-dessus. |
+| Formation et expérience | Tableaux avec titre et détails ; la ligne d’exemple n’est ni une formation ni une expérience professionnelle chargée depuis un profil de collaborateur. La variante de lignes choisie détermine l’espace prévu dans la mise en page. |
+| Évaluation | Étoiles en lecture seule, sans modification d’une évaluation de collaborateur. |
+| Autres propriétés | Titre et valeur d’exemple : nom, sexe, âge, adresse/localité, e-mail/téléphone, voiture/autopartage ainsi que certaines caractéristiques corporelles et vestimentaires. |
+
+Seuls les modules effectivement insérés dans la grille apparaissent. La formation/l’expérience nécessitent une variante de lignes ; les intérêts professionnels l’une des variantes proposées. Un clic sur la catégorie supérieure à lui seul n’insère pas ces modules. Les propriétés ou variantes déjà utilisées disparaissent de la sélection et redeviennent disponibles lorsqu’elles sont retirées de la grille. Aucun module supplémentaire général « Apparence » n’est proposé ; choisissez les propriétés individuelles. Après la prévisualisation, enregistrer le modèle via **Enregistrer → Titre → Enregistrer** et le rouvrir. Une prévisualisation ouverte avec succès n’est pas encore une preuve d’enregistrement.

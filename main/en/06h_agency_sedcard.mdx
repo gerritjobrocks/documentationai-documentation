@@ -1,0 +1,58 @@
+---
+title: "Design Sedcard templates"
+description: "Field modules, layout, preview, and separate saving of a Sedcard template."
+---
+
+# Design Sedcard templates
+
+## Create or open a Sedcard template
+
+Open **Agency profile → Edit templates → Sedcard templates**. This area is offered in the standalone agency administration, not in the embedded customer template management. **Create Sedcard template** opens the layout editor. For an existing editable template, choose **Edit**. For the first list entry, the edit and delete actions are missing; it is not to be treated like a self-created template.
+
+The template defines the layout and the selected properties. It is neither a new employee profile nor a sending to a customer. **Delete** on an editable template requires confirmation. Check the name, confirm only the correct template, and then verify the list.
+
+## Select properties and layout
+
+Drag a module from **Properties** into the grid. The available properties are:
+
+- Profile picture, first name, last name, gender, age, and rating.
+- Education, experience, and languages.
+- Address, city, email, and phone number.
+- Public transport subscriptions, driver's license type, driving skills, car availability, and car-sharing subscription.
+- Job interests with the variants **Products** and **Job Types**.
+- Eye color, height, hair color, shoe size, shirt size, trouser width, trouser length, piercing, and tattoo.
+
+Education and experience can be expanded; choose a variant with one to four lines. Job interests offer the two variants instead of a number of lines. Remove an inserted block using its remove icon if it should not appear in the layout. Arrange the elements in the grid and use **Preview** to check the display.
+
+The orientation button switches between portrait and landscape and shows the other orientation as the available action each time. The preview uses sample data: it is not proof that a specific employee has actually stored this information. Moving, removing, or changing the orientation does not save the template on the server yet.
+
+## Save or discard template
+
+Click **Save** below the layout. **Save Sedcard Template** opens with the **Name** field. Enter a non-empty title there and click **Save** again in the dialog. Only this second step sends the layout together with title and orientation. If the title is invalid, nothing is saved; complete the title instead of treating the unchanged window as success.
+
+If a template already exists, its entry is updated; if it is new, an entry is created. After a successful response, the interface returns to template management. Open the saved template again and check the title, fields, and orientation. A name dialog that is merely open is not yet a saved template.
+
+**Cancel** below the layout requires confirmation that the changes may be lost. Confirmation takes you back to template management. Closing the preview ends only the preview, not the entire editor.
+
+## Select languages or language levels
+
+Drag the **Languages** building block into the layout. The **Select language(s) or level(s)** dialog offers the separate columns **Languages** and **Level**. Choose either languages or levels, not a freely combinable level entry per language. Choose either up to **eight languages** from the offered language list or up to **four levels**: native speaker, fluent, advanced, and beginner. As soon as something is selected on one side, the other side is locked. To switch, first remove all previous selections and check whether the other selection becomes available again.
+
+**Save** in this dialog first adds the language block only to the local grid. It does not yet save any template on the server. The close icon ends the dialog without adding it. After adding, check whether the block is in the grid. If there is not enough space, an error message appears; remove or move existing blocks and add it again. To reassemble the language block, remove it from the grid and add it again.
+
+The preview must not be used as a reliable completeness check for language levels: the levels can be stored in the layout without appearing as language rows in the sample display. Do not equate an empty language preview with a person's lack of language skills. Check the saved template after reopening it; if the expected display is missing, clarify the template before using it rather than testing it by sending it.
+
+## Check preview sections and layout
+
+**Preview** at the top opens a separate sample view of the current grid. Check position, size, clipped text, and portrait or landscape format. The close button returns you to the grid, unchanged and still editable. Preview, moving, and orientation changes do not save on the server and do not send a Sedcard.
+
+| Building blocks | Display in the preview |
+| --- | --- |
+| Profile picture | Sample image without editable image upload in the preview. |
+| Public transport subscriptions, driver's license type, driving skills, job interests | Heading with individual list/text markers; job interests are inserted into the grid via Products or Job Types. |
+| Languages | Heading and grouped language rows; the level selection has the display limit mentioned above. |
+| Education and experience | Tables with title and details; the sample row is not an education entry or work experience loaded from an employee profile. The chosen row variant affects the intended space in the layout. |
+| Rating | Read-only stars, no change to an employee rating. |
+| Other properties | Heading and sample value: name, gender, age, address/city, email/phone, car availability/car-sharing, as well as individual body and clothing features. |
+
+Only building blocks that are actually inserted into the grid appear. Education/experience requires a row variant; job interests require one of the offered variants. Clicking the top-level category alone does not insert these building blocks. Properties or variants already in use disappear from the selection and become available again by removing them from the grid. No general additional “appearance” building block is offered; choose the individual properties. After the preview, save the template via **Save → title → Save** and open it again. A preview that opens successfully is not yet proof of saving.

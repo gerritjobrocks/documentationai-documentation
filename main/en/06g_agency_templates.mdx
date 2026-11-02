@@ -1,0 +1,79 @@
+---
+title: "Edit saved templates"
+description: "Template management, wage and expense fields, and separate notification templates."
+---
+
+# Edit saved templates
+
+## Open template management and check the context
+
+Open **Agency profile → Edit templates → Edit templates**. For this, the settings display and the edit permission for templates are relevant. Expand the desired template family and select **Edit** on the saved entry. **No templates created yet** means that this list returns no saved entries; it is not an invitation to create an empty project.
+
+The subdialogs for [roles, pay groups, wage criteria, and wage classes](06i_role_tariff_templates.mdx) have their own save and confirmation workflows.
+
+The management can also be embedded in a customer profile. In that case, customer-specific templates are loaded. Check the entry point and the customer context before changing a template. A template with the same name in the agency is not automatically the same customer template.
+
+For creating and applying project and role templates, use the [guide to templates and reuse](06_templates_and_reuse.mdx). The edit link for a complete project template is not active in this management overview. Project types, however, have name editing: **Edit**, change the name, then leave the field or click **Save**. After that, check the reloaded name.
+
+To remove an entry, choose **Delete** on the correct item and check the confirmation prompt. **No** cancels. After **Yes**, reload the list and verify. Do not infer from deleting a template that projects, roles, or assignments already created from it were also deleted.
+
+## Edit wage, allowance, and supplement
+
+Open the respective family and click **Edit** on the entry. The dialogs differ:
+
+| Family | Fields and selectable values |
+| --- | --- |
+| Wage | Multilingual title, amount, maximum amount per assignment shown via **+**, currency EUR/USD/CHF, frequency h/d, and existing wage class. |
+| Allowance | Title, amount, optional maximum amount, EUR/USD/CHF, h/d/per assignment/per unit, wage class, and criterion. |
+| Percentage supplement | Title, percentage, wage class, and criterion. |
+| Amount-based supplement | Title, amount, optional maximum amount, EUR/USD/CHF, h/d, wage class, and criterion. |
+
+Click the title to open its language dialog. Maintain the offered languages, confirm the title dialog, and then save the actual template dialog. A translation must be checked before final saving. Wage class and criterion are selected from existing entries; an empty set cannot be replaced by a freely typed name.
+
+**Save** in the template dialog submits the changes; the number fields do not save automatically when you leave them. **Cancel** closes without this save action. The list is updated after a successful response. Reopen the entry and check amount, unit, currency, and assignments. The fields are technical template values, not a binding tax or payroll assessment and not current tariff commitments.
+
+## Expense templates and payment type
+
+Under **Expenses → Edit**, you maintain title, amount, optional maximum amount per assignment, currency EUR/USD/CHF, frequency, expense type, payment type, wage class, and criterion.
+
+The available frequencies are hour, day, kilometer, per assignment, and per unit. The expense type is transport, catering, accommodation, or other. The payment type distinguishes effective and flat rate. **Important:** For kilometer and per unit, the save path sets the payment type to **effective**, even if flat rate was selected before. After saving, therefore check not only the amount, but also the payment type again.
+
+The maximum amount is shown via **+**. **Save** in the dialog submits the template; **Cancel** ends editing without this action. Changed values do not replace checking the expense receipts or billing rules. To use it later, load the appropriate template in the role's expense configuration and check the values transferred there; see [Templates and reuse](06_templates_and_reuse.mdx).
+
+## Two separate notification templates
+
+The management distinguishes between notification templates for publication and templates for messages from the employee dashboard. Choose the appropriate family and **Edit**.
+
+For the publishing template, there are **Template name** and the language tabs English, German, French, and Italian. For each language, subject lines are limited to 50 characters and messages to 256 characters. The remaining characters are displayed. The translate function assumes existing foreign-language content; check the result in the target tab. Then click **Save**. The language texts are saved together; the general subject and message text are chosen from the available subject in the order German, English, French, Italian.
+
+The employee dashboard template, by contrast, has **Template name**, **Subject**, and **Message**, without the same four language tabs. Here too, the subject is limited to 50 characters and the message to 256. With **Save**, the template values are changed, not a message sent immediately. **Cancel** closes the dialog without this save action.
+
+Both save functions can close the dialog before the server response arrives. Therefore check the reloaded list and open the template again; a closed window alone does not prove it was saved. The actual [sending to employees](05d_employee_communication.mdx) and the [selection of the publication template](06e_agency_client_portal.mdx#default-values-and-publication-template) are separate steps with different effects.
+
+## Edit info PDF template
+
+The **Pdf info** section is only visible in a separately enabled agency configuration and is not a general menu item. If it is offered, open the existing entry via **Edit**. The dialog contains emergency contact, meeting point, on-site contact, requirements, and travel. Requirements and travel are formatted text fields; the other details are separate inputs.
+
+Change the desired details and click **Save** in the dialog. **Cancel** or closing is not this save action. Then open the template again and check the texts. Editing the template does not send a PDF to employees. When using it later in the project, check the transferred project-specific contact and location details.
+
+## Shift subdialog of a role template
+
+When editing a role template, **Shifts** opens the existing shift definitions. **Add new shift** adds a row. Each row provides start and end in hours:minutes format, break duration in minutes, a multilingual shift name, the split shift dialog, and **Delete**.
+
+The name is first applied locally in the language dialog. For split shifts, up to four sections with start and end can be added or removed. Each section requires both times, must lie within the total shift, and must have an end after the start. Overlaps are rejected. The validator takes shifts across midnight into account. **Save** in the split dialog initially confirms only the local shift structure.
+
+**Caution when closing:** The outer shift dialog saves the role template when it is hidden and returns to the main edit view. Closing it is therefore not the same as safely discarding all changes. Check the reloaded role template, especially times, breaks, and translated names. A success message in the inner split dialog alone is not proof of a permanently saved template.
+
+## Project list and limits of legacy editors
+
+In the **Project** section, saved project templates are displayed. **Delete** opens a confirmation prompt; check the correct template, confirm only if removal is intended, and then verify the updated list. This does not delete an already created project.
+
+This list does not offer an active button to edit the full project template content. Do not infer a reliable project rename from the displayed name field: it shares its edit state with the project type list. For creating and using project templates, see the [separate template guide](06_templates_and_reuse.mdx). **Project type**, by contrast, has its own active edit action followed by saving; do not confuse project type and project template.
+
+In the agency profile, the old dialogs for employee groups/weekly hours, absence categories, and holiday calendars are not offered through active list actions. Therefore, do not look there for an additional alternative to the current working-time matrix. Likewise, there is no second general settings form there alongside the documented profile sections. A missing legacy editor cannot be fixed by selecting a different tenant.
+
+## Workreport is a report display, not a template editor
+
+The separate **Workreport** view shows, for the selected project, the employee name, shift date, planned start and end, and total time in minutes. Below that are the existing time segments with start/end time, start/end type, and working duration. A time that has not yet ended appears as **active**; its running duration is updated in the display.
+
+The view attempts to reload the report about every ten seconds. For this legacy report entry, the associated retrieval is not verified in the tested server state; therefore an actually available display is not guaranteed. If it stays empty or loading fails, clarify the specific report access with support. A running clock is not proof of a finally confirmed working time. The page offers no field selection, layout template, save, test, or send action. It is not the place to configure a Workreport template and is not the same as work validation. For a different desired report template, the concrete report or export must be clarified; no additional configuration path can be inferred from the name Workreport. No unverified menu path to the template editor is provided here on purpose.

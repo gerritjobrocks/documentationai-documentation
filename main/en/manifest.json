@@ -1,0 +1,25 @@
+{
+  "landing_page": "00_home.mdx",
+  "customer_docs": [
+    "00_home.mdx",
+    "01_getting_started.mdx",
+    "02_projects_dashboard.mdx",
+    "03_create_project.mdx",
+    "04_project_planning.mdx",
+    "05_employees_dashboard.mdx",
+    "06_templates_and_reuse.mdx",
+    "07_glossary.mdx",
+    "08_faq.mdx",
+    "09_visual_walkthrough.mdx"
+  ],
+  "assets_dir": "assets",
+  "includes_screenshots": true,
+  "excludes": [
+    "bejooGPT",
+    "MCP",
+    "OpenAPI",
+    "API structures",
+    "agent builder docs"
+  ],
+  "purpose": "Customer-facing Documentation.AI help center for bejoo usage."
+}

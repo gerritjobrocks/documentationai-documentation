@@ -1,0 +1,178 @@
+---
+title: "Staff assignment – Step 4"
+---
+
+# Assign staff in project step 4
+
+## Getting started and editing limits
+
+Open the project and **Step 4 – assign staff**. The page connects planned shift slots with applications and assignments. Planned roles/shifts and a suitable publication status are required; a shift without publication can be rejected during assignment.
+
+Check the project, location, role, date, and time before making changes. An archived project, a customer order that is still pending, or a missing project editing right can block actions. A readable plan is not permission to change it. In the Self Service/customer context, functions are limited differently than in the agency view; in particular, external assignments and sedcard actions are not offered everywhere.
+
+The following steps describe how to use it. An assignment or message is a real change and not a harmless test click.
+
+## Plan view and status filter
+
+Choose **List**, **Week**, or **Month**. Week and Month are marked as beta in the interface. Use the date picker and arrows to switch the displayed period. In the list, grouped levels can be expanded or collapsed; **Open/close all roles** changes the view, not the status of the shifts.
+
+The assignment filter distinguishes between:
+
+| Selection | Meaning |
+| --- | --- |
+| Unassigned | Open slots, including slots that have just been clicked or highlighted as a candidate target. |
+| Assigned | Assigned to a person, but not yet in confirmed status. |
+| Accepted | Confirmed or self-booked slots without an additional checkmark. |
+| Marked | Confirmed or self-booked slots with a checkmark set. |
+
+Multiple groups can be combined. **Reset** selects all groups again. A set filter can block batch actions so that invisible slots are not changed unintentionally. If a shift seems to be missing, first check the date, expanded levels, and status filter.
+
+## Understanding the candidate panel
+
+The panel distinguishes **Applied**, **Offered**, **Rejected**, and **Hidden** for applications rejected by the planner. These states are not the same as the employee status **active/inactive** in the agency pool.
+
+- **Applied:** The person has applied for the relevant assignments or has been recorded as an application. This does not automatically mean they are assigned.
+- **Offered:** The person has been invited. An invitation is not yet an application or a confirmation.
+- **Rejected:** The person rejected the offer.
+- **Hidden (rejected by the planner):** A previously existing application was rejected by the planner.
+
+Use the magnifying glass to show name search. It searches within the current tab for part of the first or last name without being case-sensitive. An empty search field restores the tab list. A search in the panel is not a search across the entire employee pool.
+
+If you click a person without a selected slot, the plan highlights matching application/invitation or rejection references. If you click them again, that selection is cleared. Color highlighting alone is not a saved assignment.
+
+**Note on the advanced filter:** In the tested version, the filter icon in the candidate panel is not consistently linked to an embedded filter dialog. Do not rely on it for a functioning full employee filter. Use name search and check the required profile criteria in the [employee dashboard](/main/en/05b_employee_lists_filters).
+
+## Assigning a person
+
+1. Click an open shift slot. The panel narrows the candidates to the selected shift.
+2. Check the person, application, profile access, and displayed conflicts. The profile icon opens the profile separately; it is not the assignment click.
+3. Click the suitable candidate. Alternatively, first select a person and then an open slot highlighted for them.
+4. Read every conflict or confirmation prompt. A closed shift cannot be assigned. If there is already an overlapping assignment, the action can be rejected.
+5. After processing, check whether the person is in the correct slot with status **assigned**. An unsuccessful attempt must not be treated as a reserved slot.
+
+Outside of work preparation, the assignment is saved and may trigger a notification to the person. The platform treats the application reference and the shift slot differently: the slot is initially **assigned**, not automatically **confirmed**. A processed application also does not mean that the person has already worked the assignment.
+
+If you click an already assigned or confirmed slot, the panel shows its references in view mode. This is not an automatic replacement of the person.
+
+## Multiple slots and conflicts
+
+For a batch assignment, first select an open slot and start batch mode. In list view, the selection is limited to the same shift definition; slots from another shift are rejected with a message. **Select all** in batch mode includes the open slots of that shift and leaves out past-dated slots. **Clear selection** removes the selection, not already saved assignments.
+
+The assignment is processed per selected slot. Existing assignments of the same person to the relevant need are not created again. Conflict prompts can appear one after another. Confirming the first dialog does not mean that all further slots were successfully assigned.
+
+Working time/rest time warnings and an already overlapping assignment are different checks. A warning may offer an explicit continue confirmation; an overlap can still block the action. **No** cancels the affected action that requires confirmation. Check the overall plan afterwards. The warnings are planning aids and not legal approval.
+
+## Reject applications and open requests
+
+The reject action on an applicant asks for confirmation. It affects that person's applications in the project, not just the currently visible table row. If an application is already assigned, the message appears that assigned employees cannot be rejected. An assignment must be handled separately and deliberately.
+
+The **Pending requests for follow-up assignments** dialog shows incoming requests. **Accept** explicitly asks whether the person should be invited to the project. Accepting this request is therefore not the same as assigning a shift slot. **Reject** rejects the request after confirmation. After processing, the list is reloaded; if the list is empty, the dialog closes.
+
+## Confirmation, checkmark, and comment
+
+Distinguish between confirmation by employees and the checkmark in the assignment detail. The checkmark saves an additional verification marker. It does not set the status to confirmed by itself and is not a time recording proof.
+
+In the details you can enter a comment for the slot. An empty comment, or one containing only spaces, is removed. When an assignment is removed, this comment can also be removed; a warning may appear for this. A copied email address or assignment number does not change the slot.
+
+## Remove assignment and handle cancellation
+
+Use the remove icon on the assigned slot, not **Reject application**. Depending on the status, a separate cancellation dialog follows:
+
+- **Sickness** or **accident:** A document is required.
+- **Other reason:** A justification is required.
+- **Cancel cancellation:** Close without confirming the cancellation.
+- **Confirm cancellation:** Continue only after checking the required information.
+
+Already recorded timestamps can block removal. An additional question about existing timestamp history is not a harmless formality: before you confirm deletion, the business responsibility must be clarified. Do not override an error message by clicking repeatedly.
+
+For a **person's cancellation request**, there are **Accept** and **Reject**. Accept removes the assignment through the intended cancellation process; reject keeps it in place. Check the slot afterwards and, if necessary, plan a replacement. Accepting a cancellation is not a new application from the replacement staff.
+
+## Enter an external person
+
+Where the agency view offers external assignment for an open slot, open the dialog and enter **First Name**, **Last Name**, **staffing provider**, and optionally **notes**. The first three entries are required. With **Assign**, the slot is managed as an external placement.
+
+This is not the same as a registered employee profile with an app application. This action is not offered in customer orders. An external staffing has its own remove action; check the slot after every change.
+
+## Open or close shifts
+
+The lock action applies to the shift or its staffing requirement, not just to expanding or collapsing the display. **Reopen** asks for confirmation; after that, the shift can be used again for the intended process. A closed shift does not allow normal assignment.
+
+With an active status filter, the action can be blocked if not all affected slots are visible. Remove the filter first and check the full need. **Close all shifts** has a broader scope than the lock on a single shift.
+
+## Work preparation and Save & Publish
+
+With **preparation mode**, you first collect changes in the current session. The interface may already show new names, colors, or comments even though the associated write operations have not yet been executed. Conflict checks can still already occur.
+
+- Turning off preparation mode with confirmed cancellation discards the collected actions and reloads the page.
+- **Save & Publish** asks for confirmation and releases the collected actions for execution.
+- This release is not a single atomic save operation for the entire plan. Multiple changes can succeed or fail independently.
+
+Do not leave or reload the page if you want to keep unsaved preparations. After **Save & Publish**, check the actual plan again. Preparation mode is not a permanently saved project draft and not a safe undo switch for actions that have already been executed. Avoid unrelated write actions in this mode, such as sending messages or changing templates.
+
+Publishing these prepared changes is different from [publishing the project and inviting employees](/main/en/04a_publication_and_allocation).
+
+## Team checkin at the location
+
+In the **List view** at the location, click **Team Checkin**. Check the location in the dialog: it shows today's confirmed or self-booked assignments with time submission still pending, not all applicants or all days of the plan. Planned shift time and date are shown next to each person. If the list is empty, first check the location, assignment day, confirmation, and whether submission has already taken place.
+
+The actions apply **per person**, not automatically to the whole team:
+
+1. **Clock In** records the start of work. Before the permitted start window, the button remains locked.
+2. **Pause** starts a break; after that, **Resume** is intended for continuing.
+3. **Clock Out** ends the recording after starting work or resuming.
+4. **Save** submits the assignment after clocking out. This is not just closing the window and is not yet a business approval or payment.
+
+The available buttons are updated after every response. They are locked for assignments that have already been submitted or are managed separately for time; the time window after the planned end also limits recording. There is no free date/time entry here for backfilling. Clarify incorrect or missing times through the responsible time-check process. In case of errors, do not simply clock again; instead, check the actual time status. Closing only ends the dialog; already recorded times are not undone by this. The project editing limits also apply here.
+
+## Select sedcards and forward them to the customer
+
+1. In step 4, open the **Applied** tab. In the agency view, when dealing with a customer order or assigned customer buyer, choose **Create sedcard**.
+2. Mark the desired people. The selection aids distinguish between all, assigned, and confirmed applicants. Before continuing, check the names that are actually selected.
+3. **Send to customer** opens the template selection. Explicitly select a suitable sedcard template; clicking a template that is already selected clears that selection again. Do not rely on an unchecked default template.
+4. Deliberately set or clear **share CV with the customer**. This option controls the additional CV link in the customer portal and is separate from the fields in the sedcard template.
+5. Only then click **Send**. If an error message appears, check the portal status before sending again.
+
+The recipients are the administrators and buyers of the **customer assigned to the project**; this dialog does not have a freely editable recipient field. Each send operation may trigger an email notification again. Additional selected people are added to the existing candidate sharing, not treated as a complete replacement of the previous selection. The last sent template and CV sharing setting apply to the sharing for this order. Therefore, unselecting a person in a later selection does not reliably remove a person who has already been shared. To withdraw, involve the responsible administration.
+
+A sedcard is not an assignment, invitation, or work confirmation. A success message does not confirm email receipt by the customer. In Self Service, the agency action for creating sedcards is not offered.
+
+## Define sedcard fields via the template
+
+Field selection is done **in the sedcard template**, not as an additional field list in the send dialog. Open the sedcard for editing in the agency template management. Drag the needed fields from the left list into the card, arrange them, and remove unneeded blocks with their delete icon. This removes a template block, not the person's master data.
+
+Available fields include profile picture, first/last name, gender, age, rating, education, experience, languages, address/city, email/phone, public transport subscriptions, driver's license class, driving skills, car availability, car sharing, job interests (products or job types), as well as eye/hair color, height, shoe/shirt size, trouser width/length, piercing, and tattoo. Only pass on the required data. For education/experience, choose one of the available numbers of lines; for job interests, choose the desired variant. For the language block, check the language/level selection in its own dialog.
+
+Check portrait/landscape format and **Preview**, then **Save**, enter a title, and **Save** again. The preview is for the layout and contains sample data; it does not replace checking the later output containing personal data. Then deliberately select the template in step 4. The CV switch remains a separate sharing setting.
+
+## Exports and PDF options
+
+Open **Exports** in step 4. Each export row has its own selection and trigger action; the selection in another row is not a shared global filter. Only export after checking the saved plan, especially after work preparation.
+
+| Output | Click path and options |
+| --- | --- |
+| Copy email addresses | In the **Copy emails** row, select date, location and role, then trigger the copy action. This copies addresses but does not send a message. |
+| Planning export / timesheet | Select date, location and role; choose language German, French or English, breakdown by day/week/month, and file type PDF or Excel. Under additional fields, you can add the mobile number. Then click the export icon for this row. |
+| Staff plan grid | Select employees from the offered list of assigned people, choose week or month, and select the matching weekly/monthly value and German/English/French/Italian. Generate it with the export icon. If the period is missing, no output will start; without matching assignments, an information message appears instead of a file. |
+| Assignments to Excel | Under **Export assignments to Excel**, mark the desired columns and click the associated export icon. Available selections are employee ID, personnel number, address, email, mobile number, language, age, status, driving licence, shirt/shoe size, trouser width/length and assignment comment. **Select all** selects the offered fields together. In Self Service, personnel number and employee status are missing even with this bulk selection. |
+| Agency-specific role PDF | Only if the corresponding row is offered: first choose the role, then the employees loaded as a result and German or French; then generate the PDF. Changing the role clears the previously selected person. |
+| Agency-specific info PDF | Only if offered: choose role, date, German/English/French/Italian and PDF or Excel. Under **Enter PDF content**, enter emergency contact, meeting point, local contact person, requirements and travel. **Save** generates the output; **Cancel** closes the dialog. |
+
+For the info PDF, you can click **Load from template** and select the template name. The template takes over the five content fields, but not automatically the role, date or output format. The template save icon stores these contents for reuse. In the verified version, the search in the template dialog is not reliably connected; select the name directly from the list.
+
+The generated file opens in a new tab. If no tab appears, check for browser popup blocking and any error message. Before sharing, check the period, people and sensitive columns in the file. An export is not sent automatically and does not confirm time tracking or delivery.
+
+## Pay-per-call: separate staff assignment
+
+In a pay-per-call project, **Step 4** leads to a separate, reduced assignment view. Use the project step bar; the standard view with weekly/monthly schedule, preparation mode, team check-in and export bar is not the same here.
+
+Open the location and role or **Open all**. The places are on the left, the available applicants on the right. Select an open place and then an applicant marked as suitable. Alternatively, click an applicant first and then a highlighted suitable place. A second click on a selected open place clears its selection. If multiple demands are selected, the person must fit all of them; another place of the same demand is not additionally selected. Each assignment is requested individually. Reload the plan after the action and check the names; a local color change is not proof.
+
+On an occupied place, hovering the mouse opens the details. There, the name leads to the employee profile; the remove action requests that the assignment be withdrawn. For a rejection request, there are **Accept** and **Reject**. Do not use these actions for testing: they can be triggered without the detailed rejection dialog of the standard view. Then check the saved state again and, if blocked, involve the planner.
+
+**Operating limits:** The visible Save button here is not a reliable bulk save. Search, the filter icon and the profile link in the right-hand applicant list do not provide a consistently connected workflow in the verified version. Instead, search for profiles in the employee dashboard or via the name in the occupied place. **Close all** only closes the view and does not close any shifts. For navigation, use the step bar instead of relying on the Back link to switch to the correct PPC planning.
+
+## Communication and sharing with customers
+
+For free messages to selected applicants, see [Contact employees](/main/en/05d_employee_communication). For sharing candidates with the customer, where offered in the project, there is a separate sedcard selection with template and the option to share the CV. This selection changes the scope of profile data shared. Check it explicitly; it does not automatically assign the person.
+
+Export and PDF actions are not an assignment confirmation either. The available selections for date, location, role, employees, language and additional fields determine the content of the respective output. A generated plan is an output of the current state, not proof that a prepared change has already been saved or that a message has been delivered.

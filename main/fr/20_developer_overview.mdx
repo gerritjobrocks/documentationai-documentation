@@ -1,0 +1,199 @@
+---
+title: Aperçu de l'API
+description: Premiers pas avec l'API Partenaire bejoo
+---
+
+# Aperçu de l'API
+
+L'API Partenaire bejoo est une interface orientée intégration pour les processus de staffing flexibles. Elle permet l'échange de besoins en personnel, de shifts, de statuts de traitement et d'occupation, ainsi que de temps de travail libérés. Optionnellement, des catégories de temps pertinentes pour le salaire peuvent être fournies pour les systèmes de payroll/ERP.
+
+> **Remarque:** L'étendue des fonctionnalités disponibles est définie et activée pour chaque intégration partenaire. Les accès sandbox et production sont fournis individuellement.
+
+## URL de base
+
+Les endpoints et URL sont fournis lors de l'activation:
+
+```text
+Sandbox:    https://sandbox-api.job.rocks/partner/v1
+Production: https://api.job.rocks/partner/v1
+```
+
+> Les URL ci-dessus décrivent l'étendue d'intégration prévue. L'activation technique est effectuée par projet partenaire.
+
+La spécification OpenAPI et l'accès sandbox sont fournis dans le cadre de l'onboarding partenaire. L'activation a lieu après accord sur l'étendue de l'intégration et les champs de données requis. Sur demande, nous fournissons également une collection Postman ou des exemples de requêtes pour les endpoints activés.
+
+## Authentification
+
+L'API utilise des identifiants spécifiques au partenaire pour émettre des **Bearer Tokens** de courte durée.
+
+Lors de l'onboarding, bejoo fournit au partenaire des identifiants sandbox puis, plus tard, des identifiants de production. Le partenaire s'authentifie via l'endpoint d'authentification et reçoit un access token pour l'environnement sélectionné.
+
+```http
+POST /auth/token
+Content-Type: application/json
+```
+
+Exemple de requête:
+
+```json
+{
+  "partner_id": "YOUR_PARTNER_ID",
+  "client_id": "YOUR_CLIENT_ID",
+  "client_secret": "YOUR_CLIENT_SECRET"
+}
+```
+
+Exemple de réponse:
+
+```json
+{
+  "access_token": "eyJ...",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+```
+
+Toutes les requêtes API suivantes utilisent le Bearer token retourné:
+
+```http
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+Aucun en-tête séparé d'identifiant partenaire n'est requis pour les requêtes API régulières. Le Bearer token identifie le partenaire, l'environnement et le scope autorisé.
+
+### Propriétés
+
+- **Identifiants par partenaire:** Chaque partenaire reçoit ses propres identifiants d'authentification
+- **Accès basé sur token:** Les requêtes API régulières nécessitent uniquement le Bearer token
+- **Portée par tenant:** Les tokens sont limités à l'intégration partenaire et à l'instance convenues
+- **Sandbox & Production:** Identifiants et tokens séparés pour les tests et la production
+- **Allowlisting IP:** Disponible en option pour la production
+
+## Formats de données
+
+- **Corps de requête:** `application/json`
+- **Corps de réponse:** `application/json`
+- **Formats de date:** ISO 8601 (`YYYY-MM-DD` pour les dates, `HH:mm` pour les heures)
+- **Fuseaux horaires:** Europe/Zurich (CET/CEST), sauf accord contraire
+
+## Concepts clés
+
+| Concept | Description |
+|---------|-------------|
+| **Staffing Order** (besoin en personnel) | Un ordre de votre système vers bejoo |
+| **Shift Demand** (besoin par shift) | Un shift concret avec rôle, date et nombre de personnes requis |
+| **Assignment** (affectation) | Occupation actuelle d'un shift concret |
+| **Timesheet Record** (feuille de temps) | Un enregistrement de temps de travail libéré pour le traitement ultérieur |
+
+L'API Partenaire fournit exclusivement les données de besoin, de statut et de résultat pertinentes pour l'intégration.
+
+## Directions d'intégration
+
+| Direction | Objectif | Exemples |
+|-----------|----------|----------|
+| Système partenaire → bejoo | Transmettre les besoins et les modifications | Orders, Shifts, Annulations |
+| bejoo → Système partenaire | Récupérer les statuts et les résultats | Statut d'occupation, Affectations, Temps de travail, Webhooks |
+
+## Modèle de statut
+
+Les Staffing Orders passent par les statuts suivants:
+
+| Statut | Signification |
+|--------|---------------|
+| `received` | Commande reçue par bejoo |
+| `in_progress` | Ordre en cours de traitement |
+| `partially_filled` | Partiellement couvert |
+| `filled` | Entièrement couvert |
+| `completed` | Terminé |
+| `cancelled` | Annulé |
+
+Les statuts sont définis par bejoo et peuvent être consultés par les partenaires.
+
+## Idempotence
+
+- `external_order_id` est la clé d'idempotence pour les Staffing Orders et doit être unique par partenaire
+- `external_shift_id` doit être unique par ordre
+- Un POST répété avec le même ID externe renvoie la ressource existante
+- Un payload différent avec le même ID externe renvoie `409 CONFLICT`
+
+## Pagination
+
+Tous les endpoints de liste prennent en charge la pagination par curseur:
+
+```http
+GET /staffing-orders?limit=50&cursor=***==
+```
+
+Réponse:
+
+```json
+{
+  "items": [...],
+  "next_cursor": "***=="
+}
+```
+
+## Versioning
+
+- Les changements cassants uniquement dans une nouvelle version majeure (`/v2`)
+- Les champs additifs (nouveaux champs optionnels) possibles à tout moment
+- Les partenaires doivent ignorer les champs inconnus
+- Fenêtre de dépréciation: au moins 90 jours avant suppression
+
+## Protection des données
+
+Les données personnelles ne sont fournies que dans la mesure convenue séparément. Par défaut, l'API travaille avec des références pseudonymes et des données de statut agrégées.
+
+## Modèle d'erreur
+
+```json
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "required_headcount must be at least 1",
+    "request_id": "req_123"
+  }
+}
+```
+
+Les codes d'erreur sont stables; les messages d'erreur ne sont pas destinés à une logique programmatique.
+
+| Code | HTTP | Signification |
+|------|------|---------------|
+| `AUTHENTICATION_FAILED` | 401 | Token manquant, expiré ou invalide |
+| `FORBIDDEN` | 403 | Pas d'autorisation pour cette ressource |
+| `NOT_FOUND` | 404 | Ressource introuvable |
+| `VALIDATION_ERROR` | 422 | Données de requête invalides |
+| `CONFLICT` | 409 | La ressource existe déjà ou conflit de statut |
+| `RATE_LIMITED` | 429 | Limite de débit dépassée |
+| `INTERNAL_ERROR` | 500 | Erreur serveur |
+
+Chaque réponse contient un en-tête `X-Request-Id` pour les demandes de support.
+
+## Limites de débit
+
+Les limites de débit sont configurées par intégration partenaire. Chaque réponse contient les en-têtes correspondants:
+
+```http
+X-Request-Id: req_123
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 998
+X-RateLimit-Reset: 1782316800
+Retry-After: 60
+```
+
+Les en-têtes peuvent varier selon l'environnement et l'étendue de l'intégration.
+
+## Sections disponibles
+
+| Section | Description |
+|---------|-------------|
+| [Staffing Orders & Shifts](/main/fr/21_api_staffing_orders) | Transmettre les besoins et récupérer les statuts |
+| [Affectations & Travailleurs](/main/fr/22_api_assignments) | Récupérer l'occupation et les références de personnes |
+| [Feuilles de temps](/main/fr/23_api_timesheets) | Recevoir les temps de travail libérés |
+| [Catégories payroll/temps](/main/fr/23_api_timesheets) | Données de temps optionnelles pertinentes pour le salaire pour les systèmes de payroll/ERP (nuit, dimanche, jour férié, heures supplémentaires, dépenses) |
+| [Webhooks](/main/fr/24_api_webhooks) | Notifications basées sur les événements |
+
+## Support
+
+Pour toute question technique, contactez-nous à [bejoo Support](mailto:support@job.rocks).

@@ -1,0 +1,73 @@
+---
+title: MCP Connector Guide
+description: Connect a compatible AI assistant to bejoo using MCP and OAuth.
+---
+
+# MCP Connector Guide
+
+This guide describes the public bejoo MCP connection for compatible AI assistants and connector reviewers. It is separate from the bejoo Partner REST API.
+
+## Connection settings
+
+| Setting | Value |
+| --- | --- |
+| Connection type | Model Context Protocol (MCP) |
+| Transport | Streamable HTTP |
+| Server URL | `https://mcp.jobrocks.ai/mcp` |
+| Authentication | OAuth 2.0 Authorization Code with PKCE (S256) |
+| OAuth scope | `jobrocks` |
+
+An OpenAPI specification is not required for this MCP connection. Compatible clients discover available tools through MCP after authentication.
+
+## Access requirements
+
+You need an existing bejoo account with access to the organisation you intend to use. Available data and actions depend on your account permissions and the tools exposed by the public connector. Connecting an assistant does not grant additional account permissions.
+
+Your AI client must support remote MCP over Streamable HTTP and the OAuth flow described below. Compatibility must be tested in the chosen client; this guide does not imply approval or listing by any connector marketplace.
+
+## Authentication and setup
+
+1. Add a remote MCP connection in your AI client using the server URL above.
+2. Select OAuth with PKCE, using the S256 challenge method.
+3. Allow the client to discover the authorization server and register using Dynamic Client Registration where supported.
+4. Complete the bejoo sign-in and authorization flow in your browser. Do not enter account passwords or access tokens in chat messages.
+5. After connecting, start with a read-only request and confirm that the result refers to the intended organisation.
+
+Public discovery metadata:
+
+- [OAuth authorization server metadata](https://mcp.jobrocks.ai/.well-known/oauth-authorization-server)
+- [OAuth protected resource metadata](https://mcp.jobrocks.ai/.well-known/oauth-protected-resource)
+
+The authorization server advertises authorization, token, registration and revocation endpoints. Authorization-code and refresh-token grants are supported. Clients should use the discovery metadata rather than hard-code derived endpoint URLs.
+
+An API key is not required for this documented OAuth connection. If your client cannot complete discovery or registration, contact support rather than substituting shared credentials.
+
+## First requests
+
+Start with a read-only request, for example:
+
+- "Show me our upcoming projects."
+- "Summarize the planning status of a selected project."
+
+Exact capabilities are determined by the authenticated tool discovery response. Do not assume that every bejoo website or application feature is available through the connector.
+
+For any action that changes data, review the proposed change before authorizing it. Publishing, sending notifications or other externally visible actions should only be requested intentionally. For testing, use an isolated organisation with synthetic data and avoid publication or messaging.
+
+## Troubleshooting
+
+- **Opening the server URL in a browser shows an error:** the MCP URL is a protocol endpoint, not a webpage. Use a compatible MCP client.
+- **Authentication fails:** reconnect through OAuth and check that the client supports PKCE S256 and the advertised registration flow.
+- **Data or an action is unavailable:** check the connected account, organisation, permissions and the tools available to the client. Do not work around access restrictions with another person's credentials.
+- **A connection test fails:** share the client name, time of the attempt and a redacted error message with support. Never include passwords or tokens.
+
+## Reviewer access
+
+Contact support to coordinate an isolated review account with synthetic data. Review credentials are not published on this page. A completed sign-in, authenticated tool discovery and a successful read-only request should be checked in the reviewing client before declaring the integration tested.
+
+## Support and legal
+
+- [bejoo Support](mailto:support@job.rocks)
+- [Privacy policy](https://www.job.rocks/data-protection/)
+- [Terms of service](https://www.job.rocks/allgemeine-geschaftsbedingungen-2/)
+
+This page documents the public connection interface only. It does not disclose private deployment details, customer data or internal implementation specifications.

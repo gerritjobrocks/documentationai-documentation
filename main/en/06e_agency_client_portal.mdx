@@ -1,0 +1,127 @@
+---
+title: "Configure the client portal from the agency."
+description: "Manage office hours, default values, and clothing requirements in the agency profile."
+---
+
+# Configure the client portal from the agency
+
+## Metrics and prerequisites
+
+Open **Agency profile → Client portal settings**. The edit areas require the permission for client portal settings. This page is the agency configuration, not the dashboard of a logged-in client.
+
+**Full-time equivalent (FTE)** contains the hours of a full-time person per month. **Full-time workday** contains a person's working time per day. Both fields save when you leave them. **Enter** is not a separate save step here. Check the success message and open the page again. Enter business reference values; this input is neither payroll nor legal approval under labor law.
+
+Use **Clothing requirements** to open the separate editor for the offered clothing options. These definitions are distinct from [saved project and role templates](06_templates_and_reuse.mdx).
+
+## Office hours and virtual consultant
+
+Under **Virtual consultant outside office hours** there is the **ENABLE / DISABLE office hours** switch. **Before activation**, the following information must already be saved:
+
+- **Office hours**: fill in the weekly table and save with **Save** below the table.
+- **Default project type** and **Default project lead**: select them in their section and confirm with **Save**.
+- **Publication template**: select it and leave the field so that the selection is saved.
+- **Default templates for the affected client roles**: the roles are checked for clients in your agency who have a user with the user role **client admin**. This refers to the client roles with their templates, not the user roles in the permissions matrix.
+
+Toggling it triggers a request immediately. If prerequisites are rejected, the interface shows the messages and switches the toggle off. If the system reports a missing default template for a role at a client, open exactly that client, add and save the default template for the named client role. Also add the other reported missing details in their respective sections and only then activate it again. A visually enabled position alone does not confirm a functioning automation.
+
+In **Set office hours and days**, enter the start time, end time, and the checkbox for the workday for each day from Monday to Sunday. Times are entered in hours:minutes format. A workday must be marked separately from the two time fields. Then click the **Save** button directly below this table; the individual time fields do not save when you leave them. Wait for the success message and check the reloaded weekly overview.
+
+Setting up these values is not a non-binding simulation: it can affect downstream processes outside office hours. Define times and responsibilities before activation. Hidden or unavailable options for automatic acceptance are not additional switches usable on this page.
+
+## Default values and publication template
+
+Under **Set default values: project type & project lead** you select an existing project type and an offered contact person. After changing a selection or clearing one, click **Save** in the same row. A selection left open unchanged does not trigger a save. Missing types or people must first exist in the corresponding master data; a free-form name does not replace a list entry.
+
+Under **Set template for publication** you select an existing notification template. After selecting or clearing it, leave the field: only this step saves the changed selection. There is no additional active save button for this. Editing the template content is done separately in template management.
+
+**Set buffer time** expects minutes and saves when you leave the field. The save handler skips empty or otherwise falsy values; to delete, do not rely on an empty input, but check the reloaded value. All of these save paths are separate. Successfully saving the office hours does not also confirm the project type, contact person, template, and buffer.
+
+## Create, translate, and remove clothing requirements
+
+Use the link in the client portal settings to open **Configure clothing requirements options**. The four categories are **Tops**, **Bottoms**, **Shoes**, and **Accessories**. In the appropriate category, choose the add function. In the dialog, enter a title in at least one language tab: English, Deutsch, Français, or Italiano.
+
+The translate function uses filled-in text from another language and first writes the result into the target tab. Check it and click **Save**; unlike the public agency description, the clothing translation is not automatically saved definitively. Without at least one non-empty title, the dialog stays open with a field message.
+
+Use **Edit** on an option to open the existing titles, change them, and save. **Cancel** resets the dialog. **Delete** requires confirmation and removes the option from the category after a successful response. Then check the list and language again. This changes the offered options, not automatically the clothing texts already recorded in each project.
+
+Agency administration and a client-specific embedded clothing administration can use the same interface, but they save in different contexts. Therefore check whether you came from the agency profile or from a specific client profile.
+
+## Open settings for a specific client
+
+As an agency user, open the desired **Client profile → Settings**. First check the client name. Settings for this client are maintained here, not the default values for all clients in the agency profile. The sections Options, Email notifications, Outgoing email account, and Twilio have separate edit permissions; the agency permission **Manage clients** enables this editing. A visible section alone does not mean you are allowed to edit it.
+
+The embedded settings form saves on its own: switches and recipient lists immediately, other values when you leave the field or via the respective button. The general note below in the client profile to save changes with the large **Save** button does **not** replace these save paths. Changes already saved automatically are not undone by leaving the profile. After every change, wait for the response and reopen the specific client section.
+
+The client-specific **Client portal settings** with FTE, workday, office hours, and default templates are shown only for agency users with client management. **Manage member roles** has a separate access path. Setting up a client is not the same as sending an invitation or completing order approval.
+
+## Client options: default location, matrix, and minimum breaks
+
+Under **Options → Default order location** you can select an offered client location or search for a place. An existing database location is saved immediately when selected. A search hit outside the database opens the location dialog first; **Enter** in the search field opens the entry of a custom location. Only after completing this dialog is the location created and then saved as default. These are two steps, not a shared transaction. The clear symbol removes the default location immediately. After the success message, open it again and check the selected location; a typed search term is not yet a saved selection.
+
+The **working time settings** use the same [matrix operation and the same rules](06b_agency_rules_fields.mdx#edit-and-reset-the-working-time-matrix) as in the agency profile: click the cell, enter the number, save with Enter or by leaving the field; Escape discards the current entry. For peak/rest, enter both values. Custom project type values can be removed with the reset arrow. Here you have the project types of this client. For a client-specific project type, the rule applies in this order: custom project type value, otherwise client default, otherwise agency default. For agency-owned project types, the agency matrix continues to apply. An empty client default therefore does not automatically mean that no rule applies.
+
+Under **Minimum break**, **Add new** adds a row with **From (min)**, **To (min)**, and **Duration (min)**. The first starts at 0, further ones at the previous end plus 1. Another row can only be added once the last one has an upper limit. Start and duration must be set before leaving a cell saves the row; the end may remain open. Changes to the start can also save the end of the previous row. Correct overlaps or missing duration using the error message and reload the table. The remove symbol requires confirmation; unsaved rows are only removed locally.
+
+An empty client table shows no copied agency rows. For self-service projects and orders, a client break row that matches the working duration is preferred: the working duration must be greater than “From” and at most “To”; an empty “To” leaves the range open at the top. If there is no matching client row, the agency breaks are used instead — even if other client rows exist. Other projects use the agency breaks. Therefore an empty table is not proof of “no break.” The business validity of the values must be checked independently of how the form is used.
+
+## Location alarm and reminders per client
+
+The **location alarm** is a slider from 0 to 200 meters in ten-meter increments. It is saved when released. **0 / OFF** removes the client-specific distance here; for self-service projects and orders, the agency value is then used. This is neither a guaranteed deactivation nor a strict zero-meter check. Other projects continue to use the agency value. Check the reloaded client value and, in the case of inheritance, also the agency value.
+
+The switch for employees who have not yet accepted their assignment saves immediately for this client. The reminder process reads this client value, not the agency switch as a fallback. The setting affects later reminders for still-open assignments; it does not send a test when toggled. Wait for the success message and check the position after reopening. Do not bypass an error message by toggling repeatedly.
+
+## Event recipients for a client
+
+In the client section **Email notifications** there are five lists: new employee in the **client pool**, application for a mission, self-booking, acceptance, and rejection of a mission. The first list is not the agency list for newly registered employees.
+
+Enter the address and accept it as an entry with **Enter**; to remove it, use the entry's remove function. Each change saves **all five currently displayed lists for this client together** immediately. Text that has not yet been confirmed is not a recipient. After an error message, reopen and check all lists before continuing to edit.
+
+For application, self-booking, acceptance, and rejection, a filled client list is preferred; if it is empty, the corresponding agency list can be used. Clearing it is therefore not a reliable way to mute the event entirely. The client pool list, however, is client-specific: without recipients, no such pool email is triggered for this. Configuration and later delivery are separate; there is no test send here.
+
+## Outgoing provider accounts for a client
+
+Under **Email account for outgoing messages** you maintain **email, password, host, port, and encryption**. Port and encryption are text inputs, not a list of guaranteed provider options. The eye symbol only changes password visibility. Click **Save** in exactly this section; leaving the fields does not save this account data.
+
+Under **Twilio Integration → SMS account**, **Twilio account, Twilio token, and Twilio phone** must be saved together using the section's own **Save** button. Even a readable token remains secret. Never include real provider values in support text or screenshots.
+
+Client configuration is not a global replacement for the agency account: the checked manual sending paths prefer a fully configured client account when a user sends in the client context, and otherwise use the agency path. Saving by an agency user does not mean that every later agency send will use this sender. Partially filled provider data is not a safe fallback test. Check the success message and reopen the settings securely; saving confirms neither provider login nor delivery. These sections have no test button. A real email or SMS send must be coordinated separately and may cause costs.
+
+## Turn on order approval and confirm the number
+
+Under **Order approval**, first set up the required accounts with the client role **client validator (Client Approver)**. Such an additional membership of an account currently logged in under another role is also counted in the number. A functional permission is not the same as an existing approver account. Turn on **Approval required**, enter **1 or 2** required approvers, and click **Save** next to the number field. Turning it on alone does not yet send any activation; the number does not auto-save on leaving the field here.
+
+If fewer approver accounts exist than requested, saving is rejected and the previously loaded setting is restored. Check the message and the account assignments; do not enter a higher number as a substitute for missing accounts. After reloading, the display takes the existing approvers into account and can therefore be smaller than the earlier saved request.
+
+**Disable** saves the number **0** immediately and deactivates the number field. There is no additional confirmation dialog for this. To deactivate, use this switch, not 0 as a supposedly active approval count: the number mask may show an error message even though 0 has already been saved. After each change, reopen and check the switch and number. The configuration itself does not approve a single order and does not send an approval invitation.
+
+## Client-specific portal values and inheritance limits
+
+**FTE** and **Full-time workday** can be recorded for the client as separate reference values. The placeholders show the agency values, not already saved client values. A real change is saved when you leave the field; Enter is not an additional save path. An empty saved value leaves the agency value in effect. Use whole-hour values and check them after reopening.
+
+A different boundary applies to the virtual consultant: as long as no client-specific configuration has been saved, the agency configuration can apply. As soon as a client-specific configuration exists, it is used as a **complete set**; empty individual values are not automatically filled from the agency one by one. Saving an FTE change also transmits the current consultant set. Before the first save, therefore check office hours, activation, project type, project manager, publication template, and buffer together. The office hours shown initially may come from the agency without already being saved as client values.
+
+| Input | Operation and save boundary |
+| --- | --- |
+| Virtual consultant outside office hours | Switch saves immediately; no non-binding preview. |
+| Office hours Monday to Sunday | Enter start and end in hours:minutes and mark the workday, then **Save** below the weekly table. Only this button transfers the edited table into the client configuration. |
+| Project type and project manager | Select existing list entries, then **Save** beside them. No free-form names as a substitute. |
+| Publication template | Select or clear the notification template, then leave the selection. The content is edited separately in the template editor. |
+| Buffer time | Enter minutes and leave the field. |
+
+These actions each transmit the current portal values together. Do not work in multiple open windows for the same client at the same time. Simply focusing without changes does not create another successful save. The editor does not offer its own “delete client configuration and fully revert to agency” button. Clearing individual fields does not restore this complete inheritance. After success, open again and check all values; a saved activation switch does not yet imply a successful automation run.
+
+**Clothing requirements** opens a separate dialog for this client. There, choose Upper body garment, Bottoms, Shoes, or Accessories, add/edit options, enter at least one title in English, Deutsch, Français, or Italiano, and save; check the translation before saving. Deleting requires confirmation. Closing the large dialog is not an additional save step and does not undo already saved changes. Then open it again and check the client options. The [general clothing editor](06e_agency_client_portal.mdx#create-translate-and-remove-clothing-requirements) describes the individual actions.
+
+## Client roles: separate columns and conflict confirmation
+
+The customer-specific **Manage member roles** matrix has five columns: **client admin, client buyer, client validator, client work validator, and client supervisor**. The translations shown may differ. Select the role and the specific function row; the role is changed for this customer, not for all customers of the agency.
+
+The rows are grouped into **Orders**, **Self Service**, and **Other**:
+
+- Orders: create/edit, view, view all ongoing work, submit, approve, and view the client staffing page.
+- Self Service: create projects, view all/own, edit all/own, delete/cancel; view agency rating, additional documents, wages and expenses, edit wages and expenses, view pay group, reset employee password, and manage employee lists.
+- Other: work validation, on-site supervisor, customer settings, customer user management, define order approval process; edit options, notification recipients, outgoing email account, and Twilio, as well as manage member roles.
+
+View and edit are separate rows. A view right is not an edit permission. The rows that are actually loaded depend on the available function catalog; an empty list is not proof of unrestricted access. **client admin × manage member roles** remains enabled and locked. Do not bypass other locked cells through a different interface.
+
+Each toggle saves the entire displayed customer matrix. If permissions from Orders are enabled for the same role while Self Service permissions are active, or vice versa, a confirmation appears. **Yes** removes all conflicting permissions from the other section in this role and saves; **No** discards the checkbox just set. So before clicking Yes, check the entire affected section, not just the row you clicked. Other role columns are not specifically toggled by this conflict resolution. After answering, reopen the matrix; a locally set checkmark after an error is not proof of persistence. Tooltip texts are for orientation, not a complete check of all downstream access.

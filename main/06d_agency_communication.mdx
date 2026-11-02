@@ -1,0 +1,46 @@
+---
+title: "Benachrichtigungen, E-Mailkonto und Credits"
+description: "Empfängerlisten, ausgehende Providerwerte und Credit-Warnungen sicher konfigurieren."
+---
+
+# Benachrichtigungen, E-Mailkonto und Credits
+
+## E-Mail-Empfänger je Ereignis festlegen
+
+Öffne **Agenturprofil → E-Mail Benachrichtigungen**. Benötigt werden die Anzeige der Einstellungen und das Bearbeitungsrecht für E-Mail. Es gibt fünf getrennte Empfängerlisten:
+
+| Ereignis | Welche Liste wird geändert? |
+| --- | --- |
+| Neue Mitarbeitende | E-Mail zur Benachrichtigung über neue Mitarbeitende |
+| Bewerbung auf einen Einsatz | E-Mail bei Bewerbung auf eine Mission |
+| Selbstbuchung eines Einsatzes | E-Mail bei Selbstbuchung einer Mission |
+| Annahme eines Einsatzes | E-Mail bei Annahme einer Mission |
+| Absage eines Einsatzes | E-Mail bei abgesagter Mission |
+
+Trage eine Adresse ein und bestätige mit **Enter**, damit ein eigener Eintrag entsteht. Mehrere Adressen sind möglich. Entferne einen Eintrag über dessen Entfernen-Funktion. Jede Auswahländerung speichert die betreffende Liste unmittelbar; keine gemeinsame Schaltfläche ist nötig. Andere Ereignislisten werden dadurch nicht ersetzt.
+
+Prüfe die Erfolgsmeldung und die nach erneutem Öffnen erhaltenen Einträge. Nur der Text im noch unbestätigten Eingabefeld ist kein gespeicherter Empfänger. Diese Konfiguration kann spätere echte E-Mails an alle eingetragenen Empfänger auslösen. Sie ist weder eine Testmail noch der Versand einer manuellen Nachricht; dafür gilt die [Kommunikationsanleitung](05d_employee_communication.mdx).
+
+## Ausgehendes E-Mailkonto speichern
+
+Unter **E-Mail-Konto für ausgehende Nachrichten** werden fünf Werte gemeinsam gepflegt: **E-Mail**, **Passwort**, **Host**, **Port** und **Verschlüsselung**. Das Bearbeitungsrecht für das ausgehende E-Mailkonto ist getrennt von dem für Benachrichtigungsempfänger.
+
+Übernimm die freigegebenen Werte deines Mailproviders. Port und Verschlüsselung sind Texteingaben, keine vorgegebene Liste mit garantiert passender Auswahl. Das Passwort ist ein geheimer Einstellungswert; nicht in Supportnachrichten, Screenshots oder öffentlichen Beispielen weitergeben. Das Augensymbol schaltet nur die Darstellung des Passwortfeldes um.
+
+Klicke **Speichern** in diesem Abschnitt. Die Felder haben hier keinen automatischen Speicheraufruf beim Verlassen. Die Erfolgsmeldung bestätigt die Speicherung, nicht eine erfolgreiche Anmeldung beim Mailprovider oder die Zustellung einer Nachricht. Es gibt in diesem Abschnitt keine gesonderte Test-Schaltfläche. Einen echten Versand nur mit abgestimmtem Empfänger durchführen; bei Störungen Host, Port, Verschlüsselung und Providerfreigabe sicher prüfen lassen, ohne Geheimnisse zu kopieren.
+
+## Twilio-Integration konfigurieren
+
+Unter **Twilio Integration → SMS-Konto** benötigt die Bearbeitung ein eigenes Twilio-Recht. Die Felder sind **Twilio Account**, **Twilio Token** und **Twilio Phone**. Erfasse die für die Agentur vorgesehenen Providerwerte und klicke hier **Speichern**. Erst die Schaltfläche übermittelt die drei Werte gemeinsam.
+
+Der Token ist geheim, auch wenn die Oberfläche ihn als Text zeigt. Keine Screenshots dieses Bereichs teilen. Das Speichern ist kein SMS-Test und keine Garantie für Zustellbarkeit oder verfügbares Provider-Guthaben. Die eigentliche SMS-Funktion ist ein separater Versandvorgang mit möglicher externer Wirkung und Kosten. Bei Fehlern die gespeicherte Konfiguration sicher prüfen lassen, nicht wiederholt Nachrichten versenden.
+
+## Credits anzeigen und Warnung konfigurieren
+
+Im **Agenturprofil → Credits** siehst du den Saldo und öffnest mit **Alle Credits** die Übersicht. Diese zeigt Creditwert, Projektname sowie Datum und Uhrzeit. Die Spalten sind sortierbar. Die Liste ist kein Kaufdialog und enthält keine Zusage zu aktuellen Preisen oder Tarifen. Ein fehlender Projektname kann bei einem nicht projektbezogenen Eintrag vorkommen.
+
+Für das Anzeigen des Abschnitts ist die Einstellungsanzeige relevant; die Detailabfrage kann zusätzlich an der Berechtigung zum Bearbeiten eigener Projekte scheitern. Ein sichtbarer Link allein garantiert daher keinen Zugriff. Bei einer leeren oder verweigerten Übersicht Rolle und Agenturkontext prüfen lassen.
+
+Mit dem Recht zum Verwalten der Credits kannst du die Benachrichtigung bei niedrigem Stand ein- oder ausschalten. Beim Umschalten wird gespeichert. Bei eingeschalteter Warnung erscheint der **Schwellenwert**; ändere ihn und verlasse das Feld. Zulässig ist eine ganze Zahl ab 1. Der zunächst im Formular vorgesehene Wert 200 ist keine Preisangabe und kein zugesagter Schwellenwert für bestehende Agenturen: deren gespeicherter Wert wird geladen.
+
+Die separate Mehrfachauswahl **E-Mail zur Benachrichtigung bei niedrigen Credits** wird durch Eingabe, **Enter** und Entfernen von Adressen gepflegt; Änderungen speichern sofort. Nach einer Änderung Erfolgsmeldung und neu geladene Werte prüfen. Weder der Warnschalter noch die Empfängerliste kauft Credits. Eine Warnung ersetzt keine Kontrolle des tatsächlichen Saldos.

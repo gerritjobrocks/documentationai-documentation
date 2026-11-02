@@ -1,0 +1,14 @@
+{
+  "docs_root": "/main",
+  "default_language": "de",
+  "languages": {
+    "de": "/main",
+    "en": "/main/en",
+    "fr": "/main/fr"
+  },
+  "landing_pages": {
+    "de": "/main/00_home.mdx",
+    "en": "/main/en/00_home.mdx",
+    "fr": "/main/fr/00_home.mdx"
+  }
+}

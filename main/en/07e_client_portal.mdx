@@ -1,0 +1,142 @@
+---
+title: "Customer portal: dashboard, settings, and staff"
+description: "Read monthly reports, use customer-specific settings, and use the staff view correctly."
+---
+
+# Customer portal: dashboard, settings, and staff
+
+## Start in the correct customer account
+
+These instructions apply to **Dashboard**, **Settings**, and **Staff** in the logged-in customer portal. **Staff** is not the employee list under **Self Service** and not the agency's employee dashboard.
+
+1. First check the logged-in account and the selected organization. Open **Dashboard** from the customer menu.
+2. For configuration, open **Settings** in the same menu. Use this entry point instead of an old saved settings link. Check the displayed customer name and wait until the values have loaded.
+3. If **Staff** is missing, have the right to view the customer staff page checked. If **Settings** is missing, have access to the customer settings checked. Rights to edit individual sections are checked separately as well.
+
+After a change of account or organization, reopen the relevant page via the menu. A previously open screen or saved link is not confirmation of the current customer context. If data is missing, do not insert other customer identifiers into links on your own; instead contact administration with the page name and error message.
+
+## Dashboard: choose month, unit, and comparison
+
+1. Open **Dashboard**. Without an inherited selection, it starts with the current month, **hours**, no comparison, and all departments offered to you. A saved dashboard link can restore month, unit, comparison, and department selection.
+2. Select the desired month in **Select a month**. This reloads the reports; there is no additional Apply button.
+3. Choose **Hours** or **Costs**. This switches the display of the reports that have already been loaded; it is not a change to the planning.
+4. Click **include previous year's data** to see the same month from the previous year next to it. In hours mode, you can instead choose **include effective work time**. At most one comparison can be active. Clicking the active comparison again turns it off.
+5. When switching to **costs**, an active effective comparison is removed. For the effective comparison, choose **hours** again and switch the comparison back on.
+6. Open **Departments** and select the desired entries. The selection triggers reloading. An empty selection is not the same as “all departments”; for the overall view, explicitly select the available entries.
+
+The selection contains your assigned departments. Data without a department is only included with the appropriate approval and a selected entry; this can appear as **no department**. **all departments** is a display of the selection, not an additional permission. If values are unexpected, check the selection, select the month again, and wait for loading to complete. For assignment data that has changed in the meantime, select the month again or reopen the page; switching from hours to costs alone does not request current data.
+
+## Dashboard: read charts, tables, and key figures
+
+The views refer to the selected month and the selected, accessible departments. **Planned**, **Previous year**, and **Effective** are different data series, not approval statuses.
+
+| Display | How to read it |
+| --- | --- |
+| Breakdown by department | The donut chart shows shares of hours or costs. With a comparison, the series are shown side by side. The legend assigns colors to the departments. |
+| Breakdown by department | The table shows department, amount or number of hours, and percentage share. Sort via the column header; use the page selector to display more rows. Five rows are shown per table. The comparison table has its own page selector. |
+| Breakdown by time of day | The bars distribute the monthly values across the hours of the day, not across individual calendar days. The unit follows hours/costs. |
+| Breakdown by age and gender | Age groups in five-year steps up to 80+ are shown by men/women. The hours or costs of assigned persons are shown, not the number of all employees in the pool. Age is based on the assignment date. |
+| Average assignment | In hours mode, average assignment duration; in costs mode, average cost value. The planned average is calculated from the staffing requirement rows taken into account, not weighted by their number of staff. |
+| Total | Total hours or total costs. Depending on the language, the tile may be called **Total**. |
+| Full-time equivalents | Total hours divided by the stored monthly number of hours for a full-time person. |
+| Workdays | Total hours divided by the stored number of hours in a full-time workday. This is not a count of different calendar days. |
+
+**Distinguish planning from actual work:** Planned totals take shift duration and staffing requirements into account. In department and key-figure views, stored interruptions are deducted; otherwise, break duration is deducted. Costs are based on the average wage value of the assigned tariff group. They are not an invoice, not a price commitment, and not a complete payroll statement. Missing tariff values cannot be added by switching the unit.
+
+The effective comparison for departments and key figures uses stored effective work minutes; the time-of-day view forms work intervals from clock-in/clock-out times as well as break/resume. The views have different data and break calculations and therefore do not have to produce the same total. The effective key figures take active requirements with more than one effective minute into account. The display **Effective** does not certify completed work validation.
+
+The reports are not a complete directory of all projects: they take into account requirements from the selected month in the selected, accessible departments; the project must have an order status and a client buyer stored. An empty status is not the same as a selected status, and a project without a client buyer can therefore be missing. The department, age/gender, and time-of-day reports filter active requirements. The base set of the current planned key figures **Average assignment, Total, Full-time equivalents, and Workdays** is different: inactive requirements can also be included here. By contrast, the planned previous-year key figures and the effective key figures exclude them. This differing base set cannot be corrected simply by matching month, department, unit, or comparison. Planned values are also not proof of already staffed positions. If there are discrepancies, check the selection and then have the requirement status, tariff group, and time recording reviewed with administration. For FTE and workdays, a stored customer value applies; otherwise, the agency value applies. Have missing or implausible reference values checked by the agency, and do not interpret them as actual zero staffing.
+
+## Arrange the dashboard and check empty displays
+
+Drag a dashboard tile to the desired position and drop it. The arrangement is saved for your user account without an additional save button. Other tiles may move out of the way. The tile size cannot be changed freely by dragging. Separate arrangements are used for narrow and wide windows; a different arrangement on a smaller screen is therefore not automatically a save error.
+
+Then reopen the dashboard at a comparable window width to check the arrangement. This saving does not change staffing data or the dashboard arrangement of other users. It is not an export and does not send a report.
+
+**No department found.** or an empty table: first check the month and department selection. An empty chart or a loading indicator still running is not reliable proof that there is no work. Reports load separately; before comparing, wait until the views have finished loading. If individual tiles remain empty, reopen the page and report the month, selection, and affected tile. There is no report download here and no detail navigation by clicking an employee row in the chart.
+
+## Settings: displayed master data and separate rights
+
+Under **Settings**, the customer name with logo appears at the top. Without a customer logo of your own, the agency logo or otherwise a standard image may appear. Logo and **Company Data** appear greyed out and mouse-locked, but that does not guarantee that they are write-protected. Do not edit the greyed-out fields with the keyboard: leaving a field can trigger a save action. Request changes from the agency via the [customer profile](07a_clients.mdx#create-customers-and-save-master-data). This also applies when a field looks like a text input.
+
+| Field group | Displayed details |
+| --- | --- |
+| General information | Customer name, legal company name, company website |
+| Address | Street, number, address line 2, ZIP code, city, country; additionally canton for Switzerland |
+| Contact persons | First name, last name, email, recovery email, mobile phone number, recovery mobile number, job title |
+
+The company data appear with the **manage client settings** permission. Contacts are not portal users. The buttons for adding and saving contact persons are hidden here. Deleting a contact is, however, not technically excluded. Do not use this greyed-out area for changes or deletions; instead, request them from the agency. Clarify logo changes, as well as country and canton, through the agency as well; the mouse lock is not a promise about keyboard behavior.
+
+The following sections have their own rights: **edit client options**, **edit client email notifications**, **edit client email sender**, and **edit client twilio**. If a right is missing, the relevant section remains greyed out. Access to settings alone does not unlock these four areas. **user management**, **order approval**, and **manage member roles** also have separate approvals.
+
+Wait for the saved values when opening for the first time. There is no common save button for the whole page. Automatically saved changes are not undone by leaving. Do not edit in multiple windows for the same customer at the same time; after an unclear response, open **Settings** again and check the affected section.
+
+## Use customer options and the approval process
+
+Open **Settings → Options** with the **edit client options** permission. The fields apply to your customer, not to all customers of the agency.
+
+| Area | Input and save path |
+| --- | --- |
+| Default location for orders | Select an existing customer location: saves immediately. A search hit for a new location or pressing Enter to enter it yourself opens the location dialog. Finish there first; creating the location and saving it as the default are separate steps. Clearing removes the default immediately. |
+| Business rule (working time matrix) | Click the desired cell in the customer matrix, enter numbers, and save with Enter or by leaving the field; Escape discards the current entry. For peak/rest, set both values. The reset arrow removes custom project type values. |
+| Definitions of minimum breaks | **Add new**, then fill in **From (min)**, **To (min)**, and **Duration (min)**. Leaving the field saves when start and duration are set; the end may remain open. Add another row only after the upper limit of the last row has been set. Removing requires confirmation. |
+| Location warning / location alarm distance | Choose a distance from 0 to 200 meters in steps of 10; releasing the control saves it. **0 / OFF** here means falling back to the agency value, not reliably “alarm off”. |
+| Reminder for assignments not yet accepted | Change the switch and wait for the response. This saves the customer value immediately; no test is sent as a result. |
+
+The complete rules and location-dialog steps also apply in this customer section: [default location, matrix, and minimum breaks](06e_agency_client_portal.mdx#client-options-default-location-matrix-and-minimum-breaks), [all working-time matrix rules](06b_agency_rules_fields.mdx#edit-and-reset-the-working-time-matrix), and [location alarm and reminders](06e_agency_client_portal.mdx#location-alarm-and-reminders-per-client). Important: An empty customer default can inherit an agency rule. If there is no matching customer break row, the system falls back to the agency breaks, not to “no break.” The reminder option, however, has no such agency fallback.
+
+**Order approval** appears with the **define order approval process** permission. First set up enough **Client Approvers**. Turn on **Approval required**, enter **1 or 2**, and click **Save** next to the number. Turning it on and leaving the number field does not save the activation. Too few existing approvers lead to rejection; the loaded setting is restored. To turn it off, switch the toggle off: this immediately saves 0. No additional confirmation dialog. Then reopen the page and check the toggle and number. The [exact approval rules](06e_agency_client_portal.mdx#turn-on-order-approval-and-confirm-the-number) are the same; the configuration does not yet approve any order and does not send an approval invitation.
+
+The agency-side settings for **FTE**, **Full-time workday**, **office hours**, the virtual consultant and its default templates, as well as the clothing editor in this portal-values section, are not offered to customer users here. Request the corresponding changes from the agency.
+
+## Configure email recipients and outgoing accounts
+
+Under **Email notifications** there are five separate recipient lists: new employee in the customer pool, application, self-booking, acceptance, and rejection of an assignment. For this you need **edit client email notifications**.
+
+1. Enter an address in the appropriate list and apply it with **Enter**. Typed text that has not yet been applied is not a recipient.
+2. Remove an address using the delete function for its entry. Any list change saves all five displayed lists together.
+3. Wait for the response and open settings again. After an error, first check all five lists before continuing.
+
+For application, self-booking, acceptance, and cancellation, an empty customer list can fall back to the agency recipients. Clearing it does not reliably disable these messages. The customer-pool list does not have this fallback. There is no test sending here; the saved list does not confirm later delivery. See [event recipients](06e_agency_client_portal.mdx#event-recipients-for-a-client).
+
+For **Email account for outgoing messages**, you need **edit client email sender**. Fill in **email, password, host, port**, and **Encryption** with the information from your provider and click **Save** in this section. Port and Encryption are text inputs. “Verschlüsselung” explains the meaning of Encryption here; a German display of this field label is not guaranteed. The eye only changes the password display. Leaving a field does not save these account details. If you intend to configure an account, re-enter the correct password; do not save unchanged, unreadable password contents as a connection test. Have unclear account data checked by the responsible administration.
+
+Under **Twilio Integration → SMS account** you need **edit client twilio**. Fill in **Twilio Account, Twilio Token, and Twilio Phone** and save them together using the separate **Save** button. A token shown openly remains secret: do not share credentials in support messages or screenshots.
+
+The manual sending paths from the customer context prefer a fully configured customer account; otherwise the agency path may apply. Partially completed data is not a reliable functional test. This page has no test button for either email or SMS. Saving configures the account, but does not confirm provider login or sending or delivery. An actual send is a separate process and may incur costs. [Provider accounts and fallback](06e_agency_client_portal.mdx#outgoing-provider-accounts-for-a-client) explains this shared limit.
+
+## Invite customer users, change roles, and remove them
+
+Open **settings → user management**. This section requires the permission to invite customer users. The table shows **role, email, invitation date and time, and status**. Sort using the column headers and check additional pages; five rows are shown per page. A note about an approver still to be invited does not replace checking the actual accounts and the approval count.
+
+**New invitation:**
+1. Select **Add new**. In the **invite member** dialog, fill in **email**, **role**, **language**, and **invitation email text**. Role, language, and message are initially empty.
+2. The role selection offers **Client Admin**, **Client Buyer**, **Client Approver**, and **Client Work Validator**. There is no option here for a different customer. Language: English, German, French, or Italian.
+3. Check the address, role, and message before **Invite**. This is a real sending action, not a preview. **Cancel** or closing leaves the dialog without sending an invitation.
+4. After sending, check the feedback and open **settings** again. A closed window proves neither a successful invitation nor delivery. If the error is unclear, first check whether an invitation already exists instead of sending it again immediately.
+
+An existing address can receive a join invitation instead of a new registration; identical open invitations or existing memberships can be rejected. **Resend** is available for pending, appropriately confirmed invitations; if registration has not yet been confirmed, a waiting status may appear instead. For removed users, **Reinvite** may be offered. Both actions are separate from creating an employee profile. If the same address has multiple roles, clarify the intended assignment with administration before resending. The [common rules for existing accounts, resending, and removing](06c_agency_users.mdx#existing-accounts-resend-and-removal) also apply to these actions.
+
+**Change role:** Open the pencil icon in the relevant row. Here the role is edited through the dialog, not via a direct role dropdown in the table. Email, language, and message are locked; the existing customer assignment remains in the dialog. Select one of the offered customer roles and **Save**. **Cancel** discards the change. Then reopen **settings** via the customer menu and check the role; do not rely only on the immediate table update. If the assignment in the account had to be corrected, also have the department permissions checked; their application may still be pending in the background. See the [common effects of a role change](06c_agency_users.mdx#change-a-users-role).
+
+**Delete:** Choose the row’s trash icon, check the person and role, and only then confirm **Yes**. **No** cancels. This is not just table cleanup: an open invitation can be withdrawn, an existing membership removed; with the last membership, the user account can also be removed. After the response, reopen the page and check the actual status.
+
+## Manage member rights and templates separately
+
+**Manage member roles** appears with the permission of the same name. In this customer matrix, **Client Admin, Client Buyer, Client Approver, Client work validator, and Client Supervisor** are shown separately side by side. Select the appropriate function row under **Orders**, **Self Service**, or **Other** and change only the desired role column. Every toggle saves the entire displayed matrix. **Client Admin × Manage member roles** remains locked on.
+
+If you enable order rights while the same role has self-service rights, or vice versa, a confirmation appears. **Yes** removes the conflicting rights from the other area in this role and saves. **No** discards the checkbox you just set. Therefore, before choosing Yes, check the entire affected section. Then reopen it; a local checkbox after an error is not proof that the rights were saved. The [complete functional groups and conflict rules](06e_agency_client_portal.mdx#client-roles-separate-columns-and-conflict-confirmation) apply to exactly this matrix.
+
+**Edit templates** is only offered with access to managing customer settings and available self service. The link opens the separate template management; it does not save the other settings. To edit the self-service templates, permission to edit all self-service projects must also be available. The [template management](06g_agency_templates.mdx) describes the shared edit dialogs. Check the customer context there: agency-only areas such as independent Sedcard and rate management are not customer functions unlocked by this. A saved template does not publish a project and does not send an invitation.
+
+## View staff and assess missing people
+
+1. Open **staff** in the customer menu. The customer staff page must be enabled for this. Wait until the loading indicator ends.
+2. The list shows **images, first name, last name, average rating, wishlist, and exclusion list**. Initially, the highest average customer ratings are at the top; the stars are rounded and read-only.
+3. Enter a name or search text under **Search staff here...**. The already loaded records are filtered without regard to upper/lower case. The search is not limited to first and last names and does not trigger a new server search. Clearing it shows the loaded list again. For data that has since changed, reopen the page.
+
+This view contains people with a rating for your customer and an existing agency assignment. It is therefore **not the complete staff pool**. A newly assigned person who has not yet been rated may be missing. **No staff to display yet.** can also be caused by the current search text: first clear the search field, then have the customer, organization, and existing rating checked.
+
+**Wishlist** and **exclusion list** are display checkboxes that are disabled here. Clicking them does not change them. Stars, names, images, and table rows also do not open employee details here. This page offers no button for adding, inviting, exporting, or editing the exclusion list, and no advanced filter dialog. To change a rating or exclusion assignment, use the responsible administration or the designated order process; do not infer editing permission from the visible checkmark.
+
+The separate employee list under **self service** has different access rights and workflows. The **staff** permission does not automatically grant access to employee profiles or the self-service employee management. The agency guide to the employee dashboard is therefore not a guide to additional buttons on this page.

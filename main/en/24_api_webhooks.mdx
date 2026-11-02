@@ -1,0 +1,106 @@
+---
+title: Webhooks
+description: Event-based notifications
+---
+
+# Webhooks
+
+Webhooks notify your system in real time as soon as the status of a Staffing Order, shift, or assignment changes — without you needing to poll.
+
+## Concept
+
+```
+bejoo event → POST to your webhook URL → your processing
+```
+
+## Available Events
+
+| Event | Trigger |
+|-------|---------|
+| `staffing_order.status_changed` | Order status changes |
+| `shift.status_changed` | Shift status changes |
+| `assignment.confirmed` | Assignment confirmed |
+| `assignment.cancelled` | Assignment cancelled |
+| `timesheet.validated` | Working hours released |
+
+## Payload
+
+```json
+{
+  "event_id": "evt_123",
+  "event_type": "assignment.confirmed",
+  "event_version": "1.0",
+  "created_at": "2026-06-24T16:45:00Z",
+  "data": {
+    "order_id": "jr_order_123",
+    "external_order_id": "PARTNER-ORDER-12345",
+    "assignment_id": "jr_assignment_456",
+    "external_shift_id": "PARTNER-SHIFT-987",
+    "status": "confirmed"
+  }
+}
+```
+
+| Field | Description |
+|-------|-------------|
+| `event_id` | Unique event ID (for idempotency) |
+| `event_type` | Event type (see table above) |
+| `event_version` | Schema version of the event |
+| `created_at` | Timestamp (ISO 8601, UTC) |
+| `data` | Event-specific payload |
+
+## Security
+
+### Signature Verification
+
+Every request includes `X-Jobrocks-Timestamp` and `X-Jobrocks-Signature`. The signature is based on the timestamp and body:
+
+```
+X-Jobrocks-Timestamp: 2026-06-24T16:45:00Z
+X-Jobrocks-Signature: sha256=a1b2c3d4e5f6...
+```
+
+Signature basis: `<timestamp>.<raw_body>`
+
+**Verification (Python):**
+
+```python
+import hmac, hashlib
+
+def verify_signature(timestamp: str, payload_body: bytes, signature_header: str, secret: str) -> bool:
+    signed = f"{timestamp}.".encode() + payload_body
+    expected = "sha256=" + hmac.new(secret.encode(), signed, hashlib.sha256).hexdigest()
+    return hmac.compare_digest(expected, signature_header)
+```
+
+### Replay Protection
+
+If the difference between `X-Jobrocks-Timestamp` and the server time is > 5 minutes, the request should be rejected.
+
+## Recommended Practices
+
+1. **Always verify the signature** — prevents forged requests
+2. **Respond quickly** — return `200 OK`, then process asynchronously
+3. **Idempotency** — store `event_id` to avoid duplicates
+4. **Ignore unknown fields** — new optional fields may be added at any time
+
+## Retry Behaviour
+
+Webhook retry behaviour is configured per integration.
+
+| Response | Behaviour |
+|----------|-----------|
+| `2xx` | Successful, no retry |
+| `400`, `401`, `403`, `404` | Configuration error, no retry |
+| `408`, `429`, `5xx`, timeout | Retry with exponential backoff (if configured) |
+
+A retry with exponential backoff and automatic deactivation on persistent failure is recommended.
+
+## Configuration
+
+Webhooks are configured together with the bejoo team:
+
+1. Provide webhook URL (HTTPS required)
+2. Define desired events
+3. Exchange webhook secret and store it securely
+4. Send a test event

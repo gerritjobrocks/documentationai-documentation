@@ -1,0 +1,199 @@
+---
+title: API Übersicht
+description: Erste Schritte mit der bejoo Partner API
+---
+
+# API Übersicht
+
+Die bejoo Partner API ist eine integrationsbezogene Schnittstelle für flexible Staffing-Prozesse. Sie ermöglicht den Austausch von Personalbedarf, Schichten, Bearbeitungs- und Besetzungsstatus sowie freigegebenen Arbeitszeiten. Optional können abrechnungsrelevante Zeitkategorien für Payroll-/ERP-Systeme bereitgestellt werden.
+
+> **Hinweis:** Der verfügbare Funktionsumfang wird pro Partnerintegration festgelegt und freigeschaltet. Sandbox- und Produktionszugänge werden individuell bereitgestellt.
+
+## Basis-URL
+
+Endpunkte und URLs werden bei Freischaltung bereitgestellt:
+
+```text
+Sandbox:    https://sandbox-api.job.rocks/partner/v1
+Produktion: https://api.job.rocks/partner/v1
+```
+
+> Die oben genannten URLs beschreiben den geplanten Integrationsumfang. Die technische Freischaltung erfolgt pro Partnerprojekt.
+
+OpenAPI-Spezifikation und Sandbox-Zugang werden im Rahmen des Partner-Onboardings bereitgestellt. Die Freischaltung erfolgt nach Abstimmung des Integrationsumfangs und der benötigten Datenfelder. Auf Wunsch stellen wir zusätzlich eine Postman Collection oder Beispiel-Requests für die freigeschalteten Endpunkte bereit.
+
+## Authentifizierung
+
+Die API verwendet partner-spezifische Zugangsdaten, um kurzlebige **Bearer Tokens** auszustellen.
+
+Im Rahmen des Onboardings stellt bejoo dem Partner Sandbox- und später Produktions-Zugangsdaten bereit. Der Partner authentifiziert sich über den Authentifizierungs-Endpunkt und erhält ein Access Token für die jeweilige Umgebung.
+
+```http
+POST /auth/token
+Content-Type: application/json
+```
+
+Beispiel-Request:
+
+```json
+{
+  "partner_id": "YOUR_PARTNER_ID",
+  "client_id": "YOUR_CLIENT_ID",
+  "client_secret": "YOUR_CLIENT_SECRET"
+}
+```
+
+Beispiel-Response:
+
+```json
+{
+  "access_token": "eyJ...",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+```
+
+Alle nachfolgenden API-Requests verwenden das zurückgegebene Bearer Token:
+
+```http
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+Für reguläre API-Requests ist kein zusätzlicher Partner-Identifier-Header erforderlich. Das Bearer Token identifiziert den Partner, die Umgebung und den erlaubten Scope.
+
+### Eigenschaften
+
+- **Per-Partner Credentials:** Jeder Partner erhält eigene Authentifizierungs-Zugangsdaten
+- **Token-basierter Zugriff:** Reguläre API-Requests benötigen nur das Bearer Token
+- **Tenant-Scoped:** Tokens sind auf die vereinbarte Partnerintegration und Instanz beschränkt
+- **Sandbox & Produktion:** Getrennte Zugangsdaten und Tokens für Test und Live
+- **IP-Allowlisting:** Optional für Produktion verfügbar
+
+## Datenformate
+
+- **Request Body:** `application/json`
+- **Response Body:** `application/json`
+- **Datumsformate:** ISO 8601 (`YYYY-MM-DD` für Daten, `HH:mm` für Zeiten)
+- **Zeitzonen:** Europe/Zurich (CET/CEST), sofern nicht anders vereinbart
+
+## Kernkonzepte
+
+| Konzept | Beschreibung |
+|---------|-------------|
+| **Staffing Order** (Personalbedarf) | Ein Auftrag aus Ihrem System an bejoo |
+| **Shift Demand** (Schichtbedarf) | Eine konkrete Schicht mit Rolle, Datum und benötigter Personenanzahl |
+| **Assignment** (Zuweisung) | Aktuelle Besetzung einer konkreten Schicht |
+| **Timesheet Record** (Arbeitszeitdatensatz) | Ein für die Weiterverarbeitung freigegebener Arbeitszeitdatensatz |
+
+Die Partner API stellt ausschliesslich die für die Integration relevanten Bedarfs-, Status- und Ergebnisdaten bereit.
+
+## Integrationsrichtungen
+
+| Richtung | Zweck | Beispiele |
+|----------|-------|-----------|
+| Partnersystem → bejoo | Bedarf und Änderungen übermitteln | Orders, Shifts, Stornos |
+| bejoo → Partnersystem | Status und Ergebnisse abrufen | Besetzungsstatus, Zuweisungen, Arbeitszeiten, Webhooks |
+
+## Status-Modell
+
+Staffing Orders durchlaufen folgende Status:
+
+| Status | Bedeutung |
+|--------|-----------|
+| `received` | Auftrag bei bejoo eingegangen |
+| `in_progress` | Auftrag wird bearbeitet |
+| `partially_filled` | Teilweise gedeckt |
+| `filled` | Vollständig gedeckt |
+| `completed` | Abgeschlossen |
+| `cancelled` | Storniert |
+
+Status werden von bejoo gesetzt und können von Partnern gelesen werden.
+
+## Idempotenz
+
+- `external_order_id` ist der Idempotenz-Schlüssel für Staffing Orders und muss pro Partner eindeutig sein
+- `external_shift_id` muss pro Order eindeutig sein
+- Erneutes POST mit gleicher externer ID gibt die bestehende Ressource zurück
+- Bei abweichendem Payload mit gleicher externer ID wird `409 CONFLICT` zurückgegeben
+
+## Paginierung
+
+Alle Listen-Endpunkte unterstützen Cursor-basierte Paginierung:
+
+```http
+GET /staffing-orders?limit=50&cursor=***==
+```
+
+Response:
+
+```json
+{
+  "items": [...],
+  "next_cursor": "***=="
+}
+```
+
+## Versionierung
+
+- Breaking Changes nur in neuer Major-Version (`/v2`)
+- Additive Felder (neue optionale Felder) jederzeit möglich
+- Partner sollen unbekannte Felder ignorieren
+- Deprecation Window: mindestens 90 Tage vor Entfernung
+
+## Datenschutz
+
+Personenbezogene Daten werden nur im jeweils vereinbarten Umfang bereitgestellt. Standardmässig arbeitet die API mit pseudonymen Referenzen und aggregierten Statusdaten.
+
+## Fehlermodell
+
+```json
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "required_headcount must be at least 1",
+    "request_id": "req_123"
+  }
+}
+```
+
+Fehlercodes sind stabil; Fehlermeldungen sind nicht für programmgesteuerte Logik gedacht.
+
+| Code | HTTP | Bedeutung |
+|------|------|-----------|
+| `AUTHENTICATION_FAILED` | 401 | Token fehlt, ist abgelaufen oder ungültig |
+| `FORBIDDEN` | 403 | Keine Berechtigung für diese Ressource |
+| `NOT_FOUND` | 404 | Ressource nicht gefunden |
+| `VALIDATION_ERROR` | 422 | Request-Daten ungültig |
+| `CONFLICT` | 409 | Ressource existiert bereits oder Status-Konflikt |
+| `RATE_LIMITED` | 429 | Rate Limit überschritten |
+| `INTERNAL_ERROR` | 500 | Serverfehler |
+
+Jede Response enthält einen `X-Request-Id` Header für Support-Anfragen.
+
+## Rate Limits
+
+Rate Limits werden pro Partnerintegration konfiguriert. Jede Response enthält entsprechende Header:
+
+```http
+X-Request-Id: req_123
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 998
+X-RateLimit-Reset: 1782316800
+Retry-After: 60
+```
+
+Header können je nach Umgebung und Integrationsscope abweichen.
+
+## Verfügbare Bereiche
+
+| Bereich | Beschreibung |
+|---------|-------------|
+| [Staffing Orders & Shifts](/main/21_api_staffing_orders) | Bedarf übermitteln und Status abrufen |
+| [Zuweisungen & Mitarbeitende](/main/22_api_assignments) | Besetzung und Personen-Referenzen abrufen |
+| [Arbeitszeiten](/main/23_api_timesheets) | Freigegebene Arbeitszeiten empfangen |
+| [Payroll-/Zeitkategorien](/main/23_api_timesheets) | Optionale abrechnungsrelevante Zeitdaten für Payroll-/ERP-Systeme (Nacht, Sonntag, Feiertag, Überzeit, Spesen) |
+| [Webhooks](/main/24_api_webhooks) | Event-basierte Benachrichtigungen |
+
+## Support
+
+Bei technischen Fragen kontaktieren Sie uns unter [bejoo Support](mailto:support@job.rocks).

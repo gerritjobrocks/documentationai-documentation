@@ -1,0 +1,25 @@
+{
+  "description": "Original documentation media preserved byte-for-byte in the bejoo media library.",
+  "files": {
+    "main/assets/01_projects_dashboard.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629818734-4kh236426p8-01_projects_dashboard.png?fm=auto&auto=compress%2Cformat",
+    "main/en/assets/01_projects_dashboard.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629818734-4kh236426p8-01_projects_dashboard.png?fm=auto&auto=compress%2Cformat",
+    "main/fr/assets/01_projects_dashboard.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629818734-4kh236426p8-01_projects_dashboard.png?fm=auto&auto=compress%2Cformat",
+    "main/assets/02_create_project.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629821515-vszmvcrulh-02_create_project.png?fm=auto&auto=compress%2Cformat",
+    "main/en/assets/02_create_project.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629821515-vszmvcrulh-02_create_project.png?fm=auto&auto=compress%2Cformat",
+    "main/fr/assets/02_create_project.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629821515-vszmvcrulh-02_create_project.png?fm=auto&auto=compress%2Cformat",
+    "main/assets/03_project_planning.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629823992-v0xt337at4o-03_project_planning.png?fm=auto&auto=compress%2Cformat",
+    "main/en/assets/03_project_planning.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629823992-v0xt337at4o-03_project_planning.png?fm=auto&auto=compress%2Cformat",
+    "main/fr/assets/03_project_planning.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629823992-v0xt337at4o-03_project_planning.png?fm=auto&auto=compress%2Cformat",
+    "main/assets/04_employees_dashboard.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629826608-bfvmqpqvhp4-04_employees_dashboard.png?fm=auto&auto=compress%2Cformat",
+    "main/en/assets/04_employees_dashboard.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629826608-bfvmqpqvhp4-04_employees_dashboard.png?fm=auto&auto=compress%2Cformat",
+    "main/fr/assets/04_employees_dashboard.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629826608-bfvmqpqvhp4-04_employees_dashboard.png?fm=auto&auto=compress%2Cformat",
+    "main/assets/app-guide/dashboard.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629829187-j7qaq59u7br-dashboard.png?fm=auto&auto=compress%2Cformat",
+    "main/assets/app-guide/language.png": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629831601-pkr86heilx-language.png?fm=auto&auto=compress%2Cformat",
+    "main/assets/app_bejoo_support_walkthrough.gif": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629834288-u6qni4lgdp8-app_bejoo_support_walkthrough.gif?fm=auto&auto=compress%2Cformat",
+    "main/en/assets/app_bejoo_support_walkthrough.gif": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629834288-u6qni4lgdp8-app_bejoo_support_walkthrough.gif?fm=auto&auto=compress%2Cformat",
+    "main/fr/assets/app_bejoo_support_walkthrough.gif": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629834288-u6qni4lgdp8-app_bejoo_support_walkthrough.gif?fm=auto&auto=compress%2Cformat",
+    "main/assets/app_bejoo_support_walkthrough.mp4": "https://video-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629836906-qxah0folf9-app_bejoo_support_walkthrough.mp4",
+    "main/en/assets/app_bejoo_support_walkthrough.mp4": "https://video-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629836906-qxah0folf9-app_bejoo_support_walkthrough.mp4",
+    "main/fr/assets/app_bejoo_support_walkthrough.mp4": "https://video-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629836906-qxah0folf9-app_bejoo_support_walkthrough.mp4"
+  }
+}

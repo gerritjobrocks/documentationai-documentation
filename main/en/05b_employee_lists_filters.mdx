@@ -1,0 +1,133 @@
+---
+title: "Lists and filters"
+---
+
+# Lists and employee filters
+
+## Self-Service: manage your own customer lists
+
+In the customer portal, open **Employees** and, for saved lists, **My lists**. The overview shows active people from your customer pool; it is not the agency dashboard with its status tabs. The **Save as new list** and **My lists** buttons require the interface permission **Manage Employee Lists**. Actual changes are additionally checked against the Self-Service edit permission. If you can read the list but not save it, have both permissions checked; a visible button is not write access.
+
+1. Narrow down the people with **Filter** and search. Check the selection count and individual checkboxes, also across multiple pages. Attention: the header checkbox can only deselect the rows currently loaded; other pages remain selected. Use a narrow filter/list selection instead of assuming that all people were deselected.
+2. Select **Save as new list**, enter a non-empty name, and confirm **Save**. A name already in use may be rejected. The people matching the action at that moment, minus your deselections, are saved, not an automatically continuing search rule.
+3. Open **My lists**, find the list in the top selection, and select it. Without a selected list, you see the pool. The x in the list selection only removes the view restriction.
+4. Use the pencil next to the selected list to change the name. **Save** applies it, **Cancel** discards the dialog.
+5. To add someone, search by name or email on the right and click the desired result. The results offered are pool members who are not yet part of the list. Check the membership table that is updated afterwards.
+6. **Attention: the remove action of a table row does not work in the verified state.** Even with a list selected, this click does not trigger a removal order; the person remains a member. Instead, use the separate [profile path under customer pool](/main/en/07c_self_service#person-profile-client-lists-and-automatic-save-actions): the person must already belong to your customer pool, and you need **Edit All Self Service Projects**, not just Edit Own. There, remove the desired list from the multi-selection. Every change saves the entire list selection immediately, without additional confirmation or a subsequent Save button. If an error occurs, the local selection is not reset; a complete rollback of all changes is not guaranteed. Reload the profile and check the membership in the list. This path changes customer list memberships, not pool membership or the employee profile. Do not delete the whole list as a substitute for removing one person.
+7. The trash can next to the list name deletes the list and its memberships after confirmation, not the employee profiles. Check the remaining list selection after the action.
+
+Customer lists have a list type here; the three agency types normal list, additional list, and blacklist are not additional tabs in this management area. You can copy the list with **Save as new list** from the selected member view. Changes to the copy do not automatically change the original list.
+
+## Self-Service: export and messages
+
+**Export:** In **Employees** or **My lists**, first open the desired filter/list selection, then **Export**. Select the required columns: employee ID, address, email, mobile number, age, language, shoe and shirt size, driving license, last assignment, number of assignments, roles, employee lists, employee number, and last login. Confirm the XLSX export and open the generated file. Only select data that you are actually allowed to pass on.
+
+**Important about selection:** Free text name search is not passed along as a separate search criterion in this export. A screen reduced to one name is therefore no guarantee of an equally small export file. Narrow it down using filters or a checked saved list and inspect the file before sharing it. Individual deselections are taken into account. The customer pool remains limited on the server side; this does not imply that every export has the same column permissions as the profile.
+
+**Message:** Open **Send message** from the checked selection. Choose **Notification** or **Email**, fill in subject and message, and confirm **Send**. There is no active SMS switch, no template loader, and no file selection button here. Unlike with export, the name search is passed on to the message path. Therefore check the selection count, list, search, and deselections immediately before sending. The reported number of recipients is not proof of delivery or reading. If there is an unclear error, do not send again blindly; see [communication](/main/en/05d_employee_communication).
+
+## Exporting and contacting agency lists
+
+In **Employee lists**, first check the list type (normal list, additional list, or blacklist), the specific list, and the desired person selection. **Export** opens the column selection: address, email, mobile number, age, status, language, shoe/shirt size, driving license, last assignment, number of assignments, and roles. **Export XLSX** creates the file. In the employee dashboard, depending on the export dialog, ID, employee lists, employee number, and last login are added. Name search is not transferred as a separate export criterion; narrow it with list/filter selection and check the file.
+
+**Send message** uses filters, name search, and deselections. Choose notification, email, or SMS, fill in subject and message, check the recipients, and only then send. For notification/SMS, the agency-lists dialog limits the subject to 24 characters. Email attachments can be added and removed again before sending. Templates save subject and message, not recipients or attachments; search by name in the template loader and click the desired entry. **Copy emails** does not send anything. Note the [instructions on delivery and errors](/main/en/05d_employee_communication).
+
+## Filter, select, and apply
+
+Open **Employees → Filter**. Expand the required sections. Changes recalculate the matches; wait until the loading indicator disappears. The number **selected / matching** appears at the top. Clicking it opens the people list with **Select all**, **Deselect all**, and individual checkboxes.
+
+The name search in this page list searches the first or last names of the people already found. It does not replace the filter criteria. **Select all** refers to the entire result set, not only the people visible through the name search. Check the selection count before saving or contacting.
+
+With **Apply selected filters**, you apply the selection to the calling view. **Clear filters** resets criteria to the initial values; this does not automatically mean "all statuses and all organizations." In the customer context, the customer pool remains. Closing with the x is not the apply step.
+
+## Email directly from the filter result list
+
+The envelope next to the expanded result list opens a separate email dialog with **Subject** and **Description**. Check the selected people in the result list, enter both texts, and choose **Send email**. This path uses the selected results, not automatically only the names visible through the side search. It offers neither SMS nor attachments nor the normal message template loader.
+
+Closing the dialog after sending is not proof of success. If the response is unclear, do not send again; for a more controllable recipient group and channel, use the [dashboard message dialog](/main/en/05d_employee_communication). A result count is not delivery confirmation.
+
+## Personal details, ratings, and notes
+
+| Area | Selection and meaning |
+|---|---|
+| Personal details | In the dashboard, the statuses **incomplete**, **applied**, **active**, **changed**, **expired**, **inactive**; also gender male/female/other, smoker yes/no, video self-portrait present yes/no, age from/to, and number of children from/to. Without a selected employee status, there are no matches. |
+| Ratings | Separate from/to stars for **employee rating by agency** and **employee rating by customers**. Do not interpret this as proof of qualification. |
+| Internal comments | **No incidents**, **Warning (yellow card)**, **Exclusion (red card)**, as well as yes/no for **Internal comment available**. The selection checks for the presence of a comment, not for freely entered comment text. |
+
+Use personal or sensitive characteristics only in the intended authorized work context. The filter guide does not state which selection is permissible for a specific personnel decision.
+
+## Combine lists and customer pools
+
+**Employee lists** and **additional lists** include members. Within one list type, membership in a selected list is usually sufficient. Activate **show only employees who are on all lists** if the person must belong to every selected list. There is a separate corresponding switch for additional lists. If normal lists and additional lists are restricted at the same time, a person must satisfy both group conditions.
+
+A selected **black list** excludes its members. **include employees on the exclusion list** lifts this exclusion for the search; it does not delete either the list or a membership. A filter exception is not a clearance for a booking.
+
+The **customer pool** area distinguishes the work context:
+
+- In the agency view with Self Service access: select customers whose pool should include the person; optionally require membership in **all** selected customer pools.
+- In the customer view: select your own customer employee lists, optionally requiring all lists. These are not the agency's employee lists. The customer employee view is limited to your own pool.
+- A customer pool is not the same as a public employee offer. The marketplace switch is not shown in the Self Service filter.
+
+## Assignments, appearance, and images
+
+| Area | Fields |
+|---|---|
+| Future jobs | From/to date for existing future assignments. This is not an availability period. |
+| Job history | From/to date for past assignments. |
+| Imported job history | Separate from/to period for imported histories; hidden in the client filter view. |
+| Appearance | Multiple selection for eye color and hair color; body height, shoe size, top size, trouser width, and trouser length each from/to; visible tattoos and visible piercings yes/no. |
+| Images | Yes/no for portrait and each additional image separately; hidden in the client filter view. |
+
+## Select skills precisely
+
+- **CV uploaded:** The interface offers yes/no. In the checked version, the underlying check does not clearly match the label: it takes account of existing training, work experience, or language entries instead of reliably checking the CV file upload. Therefore, do not use this filter as proof that a CV document exists; check the file in the profile.
+- **Education:** Create an entry via **Add criterion**; set type, started after/before, ended after/before, current education, and certificate uploaded. “Current education” replaces the check for an end date. If there are multiple entries, the switch **all desired educations** determines whether all or at least one education criterion must be met. The remove icon removes only the search criterion.
+- **Work experience:** Occupation via the hierarchical selection, job title, start and end date limits, and **current position**. Multiple lines can be linked with “all defined work experiences.”
+- **Languages:** Language and level **Beginner**, **Intermediate**, **Advanced**, or **mother tongue**; certificate selection, where displayed. The level is a specific level, not automatically a minimum level. For mother tongue, the certificate selection is hidden. With the switch “all desired languages,” all selected languages must match.
+
+For the yes/no checks for existing certificates, only a single selected answer filters. The two together are not a requirement for both a present and a missing certificate at the same time.
+
+## Address and availability
+
+In the **Address** area, you select the location, insofar as the calling screen allows it. The two distance sliders apply separately to the main and secondary address. If both are set, matches can fit via either of the two addresses. This is not a commitment regarding actual travel time. In addition, there are from/to limits for **Main address – valid from** and **Secondary address – valid from**.
+
+**General availability** has two forms depending on where you open it:
+
+- Without a role reference: repeatable weekday/from/to time criteria and additional date periods. The date periods search for people without overlapping stored unavailability; they do not write new availability into the profile.
+- In the role filter: switches for stored unavailability and the stricter check for availability or conflicts. The strict variant excludes people with identified conflicts. A filter match still does not replace conflict checking during assignment. Also note the conflict hints on individual people.
+
+## Work information and bank information
+
+These two filter areas are not shown in the customer filter view.
+
+**Work information** includes: AHV number provided, AHV certificate uploaded, marital status and its validity period, nationality, passport/ID card available, work permit and associated upload, permit expiry date, employee number from/to, branch, consultant, permanent/internal agency employee, and framework agreement document available. The selectable lists and consultants depend on the agency context.
+
+Date filters also exist for **registration**, **application**, **interview**, **activation**, **first work day**, **inactivation**, and **last mobile login**. They refer to different events: “registration” is not “first work day.”
+
+**Bank information** checks IBAN present, account type, account number present, bank name, bank location, and clearing number. These filters do not change bank data and do not confirm its correctness.
+
+## Mobility, job interests, and further documents
+
+**Mobility information** includes public transport passes (none, half-fare, GA, regional transport network), driver’s license categories, driver’s license document available, driving skills (automatic, manual transmission, small delivery van, tail lift), own car/car in household/no car, make, body style, and car size. Car sharing can be selected separately for Mobility, GoMore, 2EM, and other subscriptions. Check the specific category; a document upload alone does not prove every driving skill.
+
+**Job interests** distinguishes products (automotive, telecommunications, IT, sports, beauty/body care, financial products, pharmaceuticals, animals, food, non-food, tobacco, alcoholic beverages) and assignment types (promotion, merchandising, mystery shopping, logistics, reception, service, bar, kitchen, security, care, cleaning). This area is hidden in the customer filter view. Interests are not a completed education.
+
+**Further documents** shows the existing document types, each with a yes/no selection. The search looks for an undeleted document entry of this type; this does not amount to a content review of the document. In the customer view, this area additionally depends on the right to display further documents. The agency rating there also has its own visibility right.
+
+## Save filter template or person list
+
+A **filter template** saves the criteria. Select **Save as template**, enter a name, and save. If the name is the same, a prompt appears asking whether to overwrite it. Use **load from template** to search for and select a saved template. In the role filter, inactive statuses from a dashboard template can be ignored; the interface explicitly warns about this.
+
+A **person list**, by contrast, saves the selected members. With list management rights, choose **save as list** or the action for a black list, enter a name of at least two characters, and save. In the dashboard, normal list, additional list, and black list are also available as bulk actions. Once saved, a member list does not grow just because later profiles also meet the criteria that applied at the time.
+
+## Edit existing lists
+
+1. Open **Employees → Edit lists**.
+2. Select **Employee lists**, **additional employee lists**, or **employee blacklists** and search for the desired list.
+3. To add, search in the separate field by name or email and select the person. This field suggests people who are not yet members.
+4. To remove, use the **Remove employee from list** action on the relevant row and pay attention to the confirmation prompt. This removes the membership, not the employee profile.
+5. Use the pencil to edit the list name. After confirmation, the trash can deletes the selected list together with its memberships, not the people it contains.
+
+List management requires your own list management right. Assigning lists directly in the employee profile, by contrast, depends on the profile edit right. **Export** and **Send message** apply to the current selection; therefore, before a bulk action, check again whether the list or tab has changed.
+
+For your own customer pool, there is a separate **My lists** view. Do not confuse customer lists with an agency list of the same name. Next: [send messages](/main/en/05d_employee_communication), [profiles](/main/en/05a_employee_profiles), [step 4](/main/en/04b_staff_allocation).

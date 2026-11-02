@@ -1,0 +1,98 @@
+---
+title: "Edit role and tariff group templates"
+description: "Subdialogs, customer assignment, and different save limits for role templates."
+---
+
+# Edit role and tariff group templates
+
+## Edit role template and filter
+
+Open **Agency profile → Edit templates → Role templates → Edit**. Creating from an existing role and applying it later is described in [Templates and reuse](06_templates_and_reuse.mdx). In the main dialog, maintain the template name as well as the role name and description in the language tabs English, German, French, and Italian. The description can be formatted. The Translate function copies existing text in another language into the selected target language; check it before saving.
+
+**Save** in the main dialog updates the role template. If the role name is missing in all languages, saving is rejected. **Cancel** closes the main dialog without this call, but does not undo changes already saved in subdialogs.
+
+Open the shared employee filter via **Filter**. The template is loaded with its saved filter state, including person-specific selection. An old template without customer pool selection starts there with an empty list. Check the [filter and selection rules](05b_employee_lists_filters.mdx) before applying; a template does not guarantee that the people found earlier are available today. Confirming the filter editor triggers the template update.
+
+Standalone **Filter templates → Edit** also use this filter editor and save through its confirmation. Creating and applying filter templates are described in [Lists and filters](05b_employee_lists_filters.mdx). After changing a template, open it again and check the saved filters.
+
+## Salary and expenses lines within a role
+
+In the **Salary** subdialog, base salary, surcharges, and allowances are separate. **Add new** adds a line in the relevant group; **Load from template** copies an existing matching salary, surcharge, or allowance template. Choose the correct type and check the copied values rather than just the name.
+
+The base salary line contains title, amount, optional maximum amount via **+**, currency EUR/USD/CHF, frequency h/d/per assignment, and salary class. Percentage surcharges contain title, percentage, salary class, and criterion; fixed surcharges contain an amount instead of a percentage, optional maximum amount, currency, and frequency h/d/per assignment. Allowances additionally offer **per unit**. These frequencies are not the same as the shorter selection list of the standalone salary template.
+
+In the **Expenses** subdialog, each line has title, amount, optional maximum amount, EUR/USD/CHF, hour/day/kilometer/per assignment/per unit, transport/food/accommodation/other, payment type actual/flat rate, salary class, and criterion. For kilometer or per unit, the save path sets the payment type to actual. Adding new lines and loading an expense template are separate actions.
+
+The remove icon for a line requires confirmation. **Save** in the salary or expenses subdialog updates the role template and returns to the main editor. **Cancel** closes without this save call, but local changes still present in the main dialog are not demonstrably reset by that. If you want to discard changes for sure, end the edit and reload the saved template. After every save, check values, units, and assignments again.
+
+## Clothing, documents, and customers of a role template
+
+**Clothing** opens subject and description per language tab as well as images. This is not the editor for the four general clothing categories in the customer portal. In the role template, you can load a clothing template. The upload area is offered only while fewer than two images are in the list; use the remove icon to remove an image from the list. After translating and editing text, choose **Save** in the clothing dialog and check the template again. Upload and template saving are separate steps; closing is not a promise that an already uploaded image has been reverted.
+
+Standalone **Clothing templates → Edit** also show the language texts and images. The offered fields are subject and description, not the category selection top/bottom/shoes/accessories. **Save** updates the selected template. Applying it in a role is another step.
+
+Under **Documents**, files are uploaded and listed as links. Upload responses with errors must be fixed; a selected file name alone is not a successful upload. **Delete** requires confirmation and then sends the remaining file list. The document dialog has no shared later save button: upload and confirmed removal are separate actions.
+
+Under **Customers**, unassigned and assigned customers are shown side by side. Move one customer at a time to the correct side. Each move triggers the assignment change immediately; it does not wait for **Save** in the main dialog. Closing this subdialog additionally updates the role template. If there is an error, reload and check the assignment; **Cancel** in the main dialog does not reverse these server-side changes.
+
+## Tariff group within the role template
+
+Under **Tariff group** in a role template, there are the tariff group name and minimum and maximum costs per hour. Enter the values intended by the company. An empty name means no tariff group; empty minimum or maximum values are saved as not set. The placeholder 0.00 is not a promised price and not an automatic business approval.
+
+**Save** closes the subdialog. Closing it in any other way also triggers the update of the role template through dialog completion. This is not a safe discard step. Open the template again after the response and check the name and both limits. These three role fields are not identical to a standalone tariff group template with customer and department assignments.
+
+## Standalone tariff group template with customers and departments
+
+The **Tariff groups** family is visible in the standalone agency template management, not in the embedded customer view. **Create tariff group** opens an initially empty form: name, minimum cost per hour, maximum cost per hour, and a multi-selection for departments. Name and both cost fields are marked as required.
+
+1. Open **Customers** in the creation dialog and move one matching customer at a time into the assigned list. As long as the template does not yet exist, these customers are only held locally.
+2. Return to the form. The departments of the selected customers are offered. If a customer is removed, department selections that no longer fit are removed. An empty department list can therefore be caused by the missing customer selection.
+3. Enter name and limits, mark the required departments, and choose **Save**. The template is created first; the customer assignments follow as separate requests. Avoid duplicate template names and then check both the entry and the customers. This is not an atomic save of all assignments.
+4. For an existing template, **Edit** opens the same basic fields. **Save** applies name, limits, and departments. In the customer subdialog there, assignments are saved as soon as they are moved. Closing the edit dialog does not discard any customer assignment that has already been saved.
+5. **Delete** on the list entry requires confirmation. Then check the reloaded list.
+
+Changing this template is not the same as editing every tariff group in a role that was already created from it. When loading later, check the role values that were actually applied. Neither minimum nor maximum costs are a current price commitment from bejoo.
+
+## Salary criteria with time grid or hourly threshold
+
+Under **Edit templates → Salary criteria → Edit** you open the selected criterion. There is a template name and a multilingual name. Use the language tabs English, German, French, and Italian; check automatic translations before saving.
+
+The three criterion types are mutually exclusive: **time criterion**, **hour criterion**, or **no criterion**. When switching, the inputs of the other type are reset. Therefore choose the correct type before filling it in.
+
+- **Time criterion:** Mark hours in the weekly grid. One cell covers one hour. Holding the mouse button down lets you set or remove multiple cells. A day header sets or clears the entire day, an hour label the hour across all days; **Select/deselect all** controls the entire grid. **Only evenings** marks 18:00 to 24:00, **Only weekends** Saturday and Sunday. Together, these result in the evening hours on the weekend, not the sum of both areas. Selecting a preset again resets the grid; check manual markings beforehand. The night preset that is not offered is not an additional visible selection. At least one hour must be marked.
+- **Hour criterion:** Choose **up to** or **after** a number of hours and enter hours and minutes in the time field. When switching to this type, the selection starts at **up to**, without a filled-in value. As long as the other threshold is filled in, switching is locked: first clear its value. Mark the applicable weekdays Monday through Sunday. Without a filled-in threshold, saving is rejected.
+- **No criterion:** None of the two time conditions is configured. This is not the same as an unchanged previous time grid.
+
+**Save** opens a choice for an existing criterion between **Save existing criterion** and **Create new criterion**. The warning applies to all places that use the existing criterion. For a new variant, choose **Create new criterion**, enter your own template name in the following dialog, and save. A name that has already been assigned can be rejected. When creating it for the first time, the process requires confirmation of the settings.
+
+**Cancel** closes the editor and resets its local state. After saving, reopen it and check the name, type, grid, or threshold. If the list does not update despite the success message, reload and check the saved values instead of creating several new criteria. To remove it, choose **Delete** in the list and confirm; the row may disappear locally before the server response, so reload again.
+
+Criteria in the embedded customer profile can be customer-specific. Check the agency or customer context; a visible edit link is not a promise of every server permission.
+
+## Maintain salary classes and key
+
+Under **Edit templates → Salary classes → Edit**, you maintain the name per language and the shared **key**. The offered language tabs are English, German, French, and Italian. A translation initially changes the name of the target language; check it before **Save**. Name and key are required. A name only in another language is not reliably sufficient for the active name validator: check the name in your current interface language in particular.
+
+**Save** opens a confirmation. For an existing salary class, it warns about effects in places that already use this class. Confirm only the intended shared change. For a new creation, the confirmation points out that later editing is done in the agency settings. **Cancel** closes the editor without this save call. If editing is locked in the respective context, saving is disabled as well.
+
+After success, open the salary class again and check the name and key. A key is a technical master data value and not a guarantee of successful Payroll or EasyTemp transfer. Then select the saved class in the relevant salary/expenses field; changing placeholder text in the agency profile does not create a salary class.
+
+**Delete** on the list entry requires confirmation. The interface removes the row locally while the request is in progress. After an error or unclear result, reload and do not rely solely on the disappeared row.
+
+## Load templates into a role
+
+Open a **role template → Edit** and the desired section. The load actions remain separate from one another:
+
+| Section | Selection and result |
+| --- | --- |
+| Base salary | **Load from template** shows salary templates without the old additional compensation entries. The role can contain only one base salary; if a base salary already exists, there is no second base-salary transfer available. |
+| Additional compensation | Separate list of additional compensation templates; selecting one adds another salary line. |
+| Salary surcharges | Separate dialog with **percentage** and **fixed** surcharges. Each page has its own search; type part of the template name. Case does not matter for this search. An empty result area is not a new template. |
+| Expenses | Separate expense template list; selecting one adds another expense line. |
+| Clothing rules | Separate clothing template list; selecting one replaces the current clothing block, including its images and language texts. Check any existing changes beforehand. |
+
+The lists for base salary, additional compensation, expenses, and clothing also have a case-insensitive search by parts of the template name. Customer and department filters are not offered in these role subtemplate lists.
+
+Click the desired list entry to transfer it locally into the role being edited; the selection dialog closes. Closing without a selection loads nothing. For salary/allowance, among other things the amount or percentage, upper limit, currency, frequency, criteria, and salary type are transferred; payment and type fields are not guaranteed to be copied in full. For expenses, the existing payment/type values are also transferred. Check all visible values after loading. Numerical zero values may appear as empty values during transfer; correct them explicitly if necessary.
+
+**Loading does not save the role template yet.** Then save in the role edit dialog and reopen the role. The original salary, allowance, expense, or clothing template is not modified by the local transfer. A later change to the source does not mean that roles already transferred will automatically be changed as well. Using this form is not a payroll or tax-law assessment of the selected values.

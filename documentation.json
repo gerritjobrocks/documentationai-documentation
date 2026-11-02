@@ -1,154 +1,746 @@
 {
-  "name": "Starter Kit",
-  "colors": {
-    "light": {
-      "brand": "#F97316"
-    },
-    "dark": {
-      "brand": "#FDBA74"
-    }
+  "defaultLanguage": "de",
+  "languages": {
+    "de": "/main",
+    "en": "/main/en",
+    "fr": "/main/fr"
   },
+  "home": {
+    "de": "main/00_home",
+    "en": "main/en/00_home",
+    "fr": "main/fr/00_home"
+  },
+  "assets": {
+    "mode": "local-markdown-linked-only"
+  },
+  "notes": [
+    "Only index content under /main and language subfolders.",
+    "Do not use legacy or generated sources outside /main."
+  ],
+  "initialRoute": "main/00_home",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Documentation",
-        "icon": "book",
-        "groups": [
+        "language": "Deutsch",
+        "tabs": [
           {
-            "group": "Start Here",
-            "icon": "rocket",
-            "pages": [
+            "tab": "Einsatzplaner-Portal",
+            "groups": [
               {
-                "title": "Introduction",
-                "path": "introduction",
-                "icon": "home"
+                "group": "Übersicht",
+                "path": "main/einsatzplaner_portal",
+                "pages": [
+                  {
+                    "title": "Startseite",
+                    "path": "main/00_home"
+                  },
+                  {
+                    "title": "Erste Schritte",
+                    "path": "main/01_getting_started"
+                  },
+                  {
+                    "title": "Projekte-Dashboard",
+                    "path": "main/02_projects_dashboard"
+                  },
+                  {
+                    "title": "Projekt anlegen",
+                    "path": "main/03_create_project"
+                  },
+                  {
+                    "title": "Projektplanung",
+                    "path": "main/04_project_planning"
+                  },
+                  {
+                    "title": "Publikation und Zuteilung",
+                    "path": "main/04a_publication_and_allocation"
+                  },
+                  {
+                    "title": "Personalzuteilung – Schritt 4",
+                    "path": "main/04b_staff_allocation"
+                  },
+                  {
+                    "title": "Mitarbeitenden-Dashboard",
+                    "path": "main/05_employees_dashboard"
+                  },
+                  {
+                    "title": "Mitarbeiterprofile",
+                    "path": "main/05a_employee_profiles"
+                  },
+                  {
+                    "title": "Listen und Filter",
+                    "path": "main/05b_employee_lists_filters"
+                  },
+                  {
+                    "title": "Mitarbeiter und Historien importieren",
+                    "path": "main/05c_employee_imports"
+                  },
+                  {
+                    "title": "Mitarbeitende kontaktieren",
+                    "path": "main/05d_employee_communication"
+                  },
+                  {
+                    "title": "Vorlagen und Wiederverwendung",
+                    "path": "main/06_templates_and_reuse"
+                  },
+                  {
+                    "title": "Glossar",
+                    "path": "main/07_glossary"
+                  },
+                  {
+                    "title": "FAQ",
+                    "path": "main/08_faq"
+                  },
+                  {
+                    "title": "Visueller Walkthrough",
+                    "path": "main/09_visual_walkthrough"
+                  }
+                ]
               },
               {
-                "title": "Quickstart",
-                "path": "quickstart",
-                "icon": "zap"
+                "group": "Kunden und Kundenportal",
+                "pages": [
+                  {
+                    "title": "Kunden, Kontakte und Abteilungen",
+                    "path": "main/07a_clients"
+                  },
+                  {
+                    "title": "Standorte bearbeiten",
+                    "path": "main/07b_locations"
+                  },
+                  {
+                    "title": "Self Service und Mitarbeiterpool",
+                    "path": "main/07c_self_service"
+                  },
+                  {
+                    "title": "Bestellungen und Freigabe",
+                    "path": "main/07d_orders"
+                  },
+                  {
+                    "title": "Dashboard, Einstellungen und Personal",
+                    "path": "main/07e_client_portal"
+                  }
+                ]
               },
               {
-                "title": "Components",
-                "path": "components",
-                "icon": "code"
+                "group": "Agentur / Einstellungen",
+                "pages": [
+                  {
+                    "title": "Agenturprofil und Unternehmensdaten",
+                    "path": "main/06a_agency_profile"
+                  },
+                  {
+                    "title": "Optionen, Arbeitszeitregeln und Profilfelder",
+                    "path": "main/06b_agency_rules_fields"
+                  },
+                  {
+                    "title": "Benutzer einladen und Mitgliederrollen verwalten",
+                    "path": "main/06c_agency_users"
+                  },
+                  {
+                    "title": "Benachrichtigungen, E-Mailkonto und Credits",
+                    "path": "main/06d_agency_communication"
+                  },
+                  {
+                    "title": "Kundenportal aus der Agentur konfigurieren",
+                    "path": "main/06e_agency_client_portal"
+                  },
+                  {
+                    "title": "Systemsettings und Sicherheit",
+                    "path": "main/06f_system_settings"
+                  },
+                  {
+                    "title": "Gespeicherte Vorlagen bearbeiten",
+                    "path": "main/06g_agency_templates"
+                  },
+                  {
+                    "title": "Sedcard-Vorlagen gestalten",
+                    "path": "main/06h_agency_sedcard"
+                  },
+                  {
+                    "title": "Rollen- und Tarifgruppenvorlagen bearbeiten",
+                    "path": "main/06i_role_tariff_templates"
+                  }
+                ]
               }
             ]
           },
           {
-            "group": "Components",
-            "icon": "layers",
-            "pages": [
+            "tab": "Mitarbeiter App",
+            "groups": [
               {
-                "title": "Images",
-                "path": "components/images",
-                "icon": "image"
-              },
+                "group": "Übersicht",
+                "path": "main/mitarbeiter_app",
+                "pages": [
+                  {
+                    "title": "App Download",
+                    "path": "main/10_app_download"
+                  },
+                  {
+                    "title": "Erster Login",
+                    "path": "main/11_first_login"
+                  },
+                  {
+                    "title": "Passwort vergessen",
+                    "path": "main/12_forgot_password"
+                  },
+                  {
+                    "title": "Einsätze finden und annehmen",
+                    "path": "main/13_find_accept_shifts"
+                  },
+                  {
+                    "title": "Profil einpflegen",
+                    "path": "main/14_profile_setup"
+                  },
+                  {
+                    "title": "Neu registrieren",
+                    "path": "main/15_register"
+                  },
+                  {
+                    "title": "Zeiterfassung in der App",
+                    "path": "main/16_time_tracking"
+                  },
+                  {
+                    "title": "App-Navigation und Einsatzübersicht",
+                    "path": "main/17_app_navigation"
+                  },
+                  {
+                    "title": "Profilfelder und Verfügbarkeit",
+                    "path": "main/18_app_profile_fields"
+                  },
+                  {
+                    "title": "Kalender und vergangene Einsätze",
+                    "path": "main/19_app_calendar_history"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Developer",
+            "groups": [
               {
-                "title": "Cards",
-                "path": "components/cards",
-                "icon": "square"
-              },
-              {
-                "title": "Code",
-                "path": "components/code",
-                "icon": "code"
-              },
-              {
-                "title": "Callouts",
-                "path": "components/callouts",
-                "icon": "message-square"
-              },
-              {
-                "title": "Steps",
-                "path": "components/steps",
-                "icon": "list-ordered"
-              },
-              {
-                "title": "Tabs",
-                "path": "components/tabs",
-                "icon": "columns"
+                "group": "Übersicht",
+                "path": "main/20_developer_overview",
+                "pages": [
+                  {
+                    "title": "API Übersicht",
+                    "path": "main/20_developer_overview"
+                  },
+                  {
+                    "title": "Staffing Orders & Shifts",
+                    "path": "main/21_api_staffing_orders"
+                  },
+                  {
+                    "title": "Zuweisungen & Mitarbeitende",
+                    "path": "main/22_api_assignments"
+                  },
+                  {
+                    "title": "Arbeitszeiten",
+                    "path": "main/23_api_timesheets"
+                  },
+                  {
+                    "title": "Webhooks",
+                    "path": "main/24_api_webhooks"
+                  }
+                ]
               }
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
-        "icon": "code",
-        "groups": [
+        "language": "Français",
+        "tabs": [
           {
-            "group": "Overview",
-            "icon": "file-text",
-            "pages": [
+            "tab": "Portail de planification",
+            "groups": [
               {
-                "title": "Authentication",
-                "path": "authentication",
-                "icon": "lock"
+                "group": "Aperçu",
+                "path": "main/fr/einsatzplaner_portal",
+                "pages": [
+                  {
+                    "title": "Accueil",
+                    "path": "main/fr/00_home"
+                  },
+                  {
+                    "title": "Prise en main",
+                    "path": "main/fr/01_getting_started"
+                  },
+                  {
+                    "title": "Tableau de bord des projets",
+                    "path": "main/fr/02_projects_dashboard"
+                  },
+                  {
+                    "title": "Créer un projet",
+                    "path": "main/fr/03_create_project"
+                  },
+                  {
+                    "title": "Planification du projet",
+                    "path": "main/fr/04_project_planning"
+                  },
+                  {
+                    "title": "Publication et affectation",
+                    "path": "main/fr/04a_publication_and_allocation"
+                  },
+                  {
+                    "title": "Affectation du personnel – étape 4",
+                    "path": "main/fr/04b_staff_allocation"
+                  },
+                  {
+                    "title": "Tableau de bord des collaborateurs",
+                    "path": "main/fr/05_employees_dashboard"
+                  },
+                  {
+                    "title": "Profils de collaborateurs",
+                    "path": "main/fr/05a_employee_profiles"
+                  },
+                  {
+                    "title": "Listes et filtres",
+                    "path": "main/fr/05b_employee_lists_filters"
+                  },
+                  {
+                    "title": "Importer les collaborateurs et les historiques",
+                    "path": "main/fr/05c_employee_imports"
+                  },
+                  {
+                    "title": "Contacter les collaboratrices et collaborateurs",
+                    "path": "main/fr/05d_employee_communication"
+                  },
+                  {
+                    "title": "Modèles et réutilisation",
+                    "path": "main/fr/06_templates_and_reuse"
+                  },
+                  {
+                    "title": "Glossaire",
+                    "path": "main/fr/07_glossary"
+                  },
+                  {
+                    "title": "FAQ",
+                    "path": "main/fr/08_faq"
+                  },
+                  {
+                    "title": "Guide visuel pas à pas",
+                    "path": "main/fr/09_visual_walkthrough"
+                  }
+                ]
+              },
+              {
+                "group": "Clients et portail client",
+                "pages": [
+                  {
+                    "title": "Clients, contacts et départements",
+                    "path": "main/fr/07a_clients"
+                  },
+                  {
+                    "title": "Modifier les sites",
+                    "path": "main/fr/07b_locations"
+                  },
+                  {
+                    "title": "Self Service et pool de collaborateurs",
+                    "path": "main/fr/07c_self_service"
+                  },
+                  {
+                    "title": "Commandes et approbation",
+                    "path": "main/fr/07d_orders"
+                  },
+                  {
+                    "title": "Tableau de bord, paramètres et personnel",
+                    "path": "main/fr/07e_client_portal"
+                  }
+                ]
+              },
+              {
+                "group": "Agence / paramètres",
+                "pages": [
+                  {
+                    "title": "Profil de l’agence et données de l’entreprise",
+                    "path": "main/fr/06a_agency_profile"
+                  },
+                  {
+                    "title": "Options, règles de temps de travail et champs du profil",
+                    "path": "main/fr/06b_agency_rules_fields"
+                  },
+                  {
+                    "title": "Inviter des utilisateurs et gérer les rôles des membres",
+                    "path": "main/fr/06c_agency_users"
+                  },
+                  {
+                    "title": "Notifications, compte e-mail et crédits",
+                    "path": "main/fr/06d_agency_communication"
+                  },
+                  {
+                    "title": "Configurer le portail client depuis l’agence",
+                    "path": "main/fr/06e_agency_client_portal"
+                  },
+                  {
+                    "title": "Paramètres système et Sécurité",
+                    "path": "main/fr/06f_system_settings"
+                  },
+                  {
+                    "title": "Modifier des modèles enregistrés",
+                    "path": "main/fr/06g_agency_templates"
+                  },
+                  {
+                    "title": "Créer des modèles de Sedcard",
+                    "path": "main/fr/06h_agency_sedcard"
+                  },
+                  {
+                    "title": "Modifier les modèles de rôles et de groupes tarifaires",
+                    "path": "main/fr/06i_role_tariff_templates"
+                  }
+                ]
               }
             ]
           },
           {
-            "group": "Sample Endpoints",
-            "openapi": "openapi.yaml"
+            "tab": "App Employé",
+            "groups": [
+              {
+                "group": "Aperçu",
+                "path": "main/fr/mitarbeiter_app",
+                "pages": [
+                  {
+                    "title": "Télécharger l'app",
+                    "path": "main/fr/10_app_download"
+                  },
+                  {
+                    "title": "Première connexion",
+                    "path": "main/fr/11_first_login"
+                  },
+                  {
+                    "title": "Mot de passe oublié",
+                    "path": "main/fr/12_forgot_password"
+                  },
+                  {
+                    "title": "Trouver et accepter des missions",
+                    "path": "main/fr/13_find_accept_shifts"
+                  },
+                  {
+                    "title": "Remplir son profil",
+                    "path": "main/fr/14_profile_setup"
+                  },
+                  {
+                    "title": "Nouvelle inscription",
+                    "path": "main/fr/15_register"
+                  },
+                  {
+                    "title": "Suivi du temps dans l'app",
+                    "path": "main/fr/16_time_tracking"
+                  },
+                  {
+                    "title": "Navigation dans l’application et aperçu des missions",
+                    "path": "main/fr/17_app_navigation"
+                  },
+                  {
+                    "title": "Champs du profil et disponibilité",
+                    "path": "main/fr/18_app_profile_fields"
+                  },
+                  {
+                    "title": "Calendrier et missions passées",
+                    "path": "main/fr/19_app_calendar_history"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tab": "Developer",
+            "groups": [
+              {
+                "group": "Aperçu",
+                "path": "main/fr/20_developer_overview",
+                "pages": [
+                  {
+                    "title": "Aperçu de l'API",
+                    "path": "main/fr/20_developer_overview"
+                  },
+                  {
+                    "title": "Staffing Orders & Postes",
+                    "path": "main/fr/21_api_staffing_orders"
+                  },
+                  {
+                    "title": "Affectations & Travailleurs",
+                    "path": "main/fr/22_api_assignments"
+                  },
+                  {
+                    "title": "Feuilles de temps",
+                    "path": "main/fr/23_api_timesheets"
+                  },
+                  {
+                    "title": "Webhooks",
+                    "path": "main/fr/24_api_webhooks"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       {
-        "tab": "Help Center",
-        "icon": "help-circle",
-        "pages": [
+        "language": "English",
+        "tabs": [
           {
-            "title": "Help Center",
-            "path": "help-center",
-            "icon": "home"
-          },
-          {
-            "group": "FAQs",
-            "icon": "help-circle",
-            "expandable": false,
-            "pages": [
+            "tab": "Staff Planning Portal",
+            "groups": [
               {
-                "title": "Documentation Source",
-                "path": "help-center/faq/getting-started"
+                "group": "Overview",
+                "path": "main/en/einsatzplaner_portal",
+                "pages": [
+                  {
+                    "title": "Home",
+                    "path": "main/en/00_home"
+                  },
+                  {
+                    "title": "Getting Started",
+                    "path": "main/en/01_getting_started"
+                  },
+                  {
+                    "title": "Projects dashboard",
+                    "path": "main/en/02_projects_dashboard"
+                  },
+                  {
+                    "title": "Create project",
+                    "path": "main/en/03_create_project"
+                  },
+                  {
+                    "title": "Project planning",
+                    "path": "main/en/04_project_planning"
+                  },
+                  {
+                    "title": "Publication and assignment",
+                    "path": "main/en/04a_publication_and_allocation"
+                  },
+                  {
+                    "title": "Staff assignment – Step 4",
+                    "path": "main/en/04b_staff_allocation"
+                  },
+                  {
+                    "title": "Employee dashboard",
+                    "path": "main/en/05_employees_dashboard"
+                  },
+                  {
+                    "title": "Employee profiles",
+                    "path": "main/en/05a_employee_profiles"
+                  },
+                  {
+                    "title": "Lists and filters",
+                    "path": "main/en/05b_employee_lists_filters"
+                  },
+                  {
+                    "title": "Import employees and histories",
+                    "path": "main/en/05c_employee_imports"
+                  },
+                  {
+                    "title": "Contact employees",
+                    "path": "main/en/05d_employee_communication"
+                  },
+                  {
+                    "title": "Templates and reuse",
+                    "path": "main/en/06_templates_and_reuse"
+                  },
+                  {
+                    "title": "Glossary",
+                    "path": "main/en/07_glossary"
+                  },
+                  {
+                    "title": "FAQ",
+                    "path": "main/en/08_faq"
+                  },
+                  {
+                    "title": "Visual walkthrough",
+                    "path": "main/en/09_visual_walkthrough"
+                  }
+                ]
+              },
+              {
+                "group": "Customers and customer portal",
+                "pages": [
+                  {
+                    "title": "Customers, contacts and departments",
+                    "path": "main/en/07a_clients"
+                  },
+                  {
+                    "title": "Edit locations",
+                    "path": "main/en/07b_locations"
+                  },
+                  {
+                    "title": "Self Service and employee pool",
+                    "path": "main/en/07c_self_service"
+                  },
+                  {
+                    "title": "Orders and approval",
+                    "path": "main/en/07d_orders"
+                  },
+                  {
+                    "title": "Dashboard, settings, and staff",
+                    "path": "main/en/07e_client_portal"
+                  }
+                ]
+              },
+              {
+                "group": "Agency / Settings",
+                "pages": [
+                  {
+                    "title": "Agency profile and company data",
+                    "path": "main/en/06a_agency_profile"
+                  },
+                  {
+                    "title": "Options, work time rules, and profile fields",
+                    "path": "main/en/06b_agency_rules_fields"
+                  },
+                  {
+                    "title": "Invite users and manage member roles",
+                    "path": "main/en/06c_agency_users"
+                  },
+                  {
+                    "title": "Notifications, email account, and credits",
+                    "path": "main/en/06d_agency_communication"
+                  },
+                  {
+                    "title": "Configure the client portal from the agency",
+                    "path": "main/en/06e_agency_client_portal"
+                  },
+                  {
+                    "title": "System settings and security",
+                    "path": "main/en/06f_system_settings"
+                  },
+                  {
+                    "title": "Edit saved templates",
+                    "path": "main/en/06g_agency_templates"
+                  },
+                  {
+                    "title": "Design Sedcard templates",
+                    "path": "main/en/06h_agency_sedcard"
+                  },
+                  {
+                    "title": "Edit role and tariff group templates",
+                    "path": "main/en/06i_role_tariff_templates"
+                  }
+                ]
               }
             ]
           },
           {
-            "group": "Troubleshooting",
-            "icon": "alert-triangle",
-            "expandable": false,
-            "pages": [
+            "tab": "Employee App",
+            "groups": [
               {
-                "title": "Page Missing in Sidebar",
-                "path": "help-center/troubleshooting/install-error"
+                "group": "Overview",
+                "path": "main/en/mitarbeiter_app",
+                "pages": [
+                  {
+                    "title": "App Download",
+                    "path": "main/en/10_app_download"
+                  },
+                  {
+                    "title": "First Login",
+                    "path": "main/en/11_first_login"
+                  },
+                  {
+                    "title": "Forgot Password",
+                    "path": "main/en/12_forgot_password"
+                  },
+                  {
+                    "title": "Find and Accept Shifts",
+                    "path": "main/en/13_find_accept_shifts"
+                  },
+                  {
+                    "title": "Profile Setup",
+                    "path": "main/en/14_profile_setup"
+                  },
+                  {
+                    "title": "Register",
+                    "path": "main/en/15_register"
+                  },
+                  {
+                    "title": "Time Tracking in App",
+                    "path": "main/en/16_time_tracking"
+                  },
+                  {
+                    "title": "App navigation and assignment overview",
+                    "path": "main/en/17_app_navigation"
+                  },
+                  {
+                    "title": "Profile fields and availability",
+                    "path": "main/en/18_app_profile_fields"
+                  },
+                  {
+                    "title": "Calendar and past assignments",
+                    "path": "main/en/19_app_calendar_history"
+                  }
+                ]
               }
             ]
           },
           {
-            "group": "Guides",
-            "icon": "book-open",
-            "expandable": false,
-            "pages": [
+            "tab": "Developer",
+            "groups": [
               {
-                "title": "Create Your First Page",
-                "path": "help-center/guides/setup-project"
+                "group": "Overview",
+                "path": "main/en/20_developer_overview",
+                "pages": [
+                  {
+                    "title": "API Overview",
+                    "path": "main/en/20_developer_overview"
+                  },
+                  {
+                    "title": "Staffing Orders & Shifts",
+                    "path": "main/en/21_api_staffing_orders"
+                  },
+                  {
+                    "title": "Assignments & Workers",
+                    "path": "main/en/22_api_assignments"
+                  },
+                  {
+                    "title": "Timesheets",
+                    "path": "main/en/23_api_timesheets"
+                  },
+                  {
+                    "title": "Webhooks",
+                    "path": "main/en/24_api_webhooks"
+                  },
+                  {
+                    "title": "MCP Connector Guide",
+                    "path": "main/en/25_mcp_connector"
+                  }
+                ]
               }
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Changelog",
-        "icon": "clock",
-        "pages": [
-          {
-            "title": "Changelog",
-            "path": "changelog",
-            "icon": "history"
           }
         ]
       }
     ]
-  }
+  },
+  "title": "bejoo Hilfe-Center",
+  "name": "bejoo Hilfe-Center",
+  "description": "Hilfe und Anleitungen für bejoo: Einsatzplanung, Mitarbeitende, Zeiterfassung und Integrationen.",
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-6301EL9HYJ"
+    }
+  },
+  "colors": {
+    "light": {
+      "brand": "#0098ad",
+      "heading": "#102f38",
+      "text": "#102a2b"
+    },
+    "dark": {
+      "brand": "#00A1BA",
+      "heading": "#f2f2f2",
+      "text": "#c1c1c1"
+    }
+  },
+  "logo-dark": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629391929-evy6rn6uo2h-bejoo.svg?rasterize-bypass=true",
+  "logo-light": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629391929-evy6rn6uo2h-bejoo.svg?rasterize-bypass=true",
+  "favicon": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629394811-rtbnt2v6iws-bejoo-icon.png?fm=auto&auto=compress%2Cformat",
+  "navbar": {
+    "actions": {
+      "primary": {
+        "title": "Demo buchen",
+        "link": "https://app.apollo.io/#/meet/inbound-router/spi-pol-51p?utm_source=channel_contrast&utm_medium=formular"
+      }
+    }
+  },
+  "logo-small-light": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629394811-rtbnt2v6iws-bejoo-icon.png?fm=auto&auto=compress%2Cformat",
+  "logo-small-dark": "https://blob-cdn.documentation.ai/org-7aa7d923-67b9-4045-ad12-ff8d2837828a/doc-51a51a6f-73fd-4faf-b887-333d5ff8ddaa/1793629394811-rtbnt2v6iws-bejoo-icon.png?fm=auto&auto=compress%2Cformat"
 }
