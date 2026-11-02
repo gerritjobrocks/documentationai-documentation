@@ -1,0 +1,104 @@
+---
+title: Arbeitszeiten
+description: Freigegebene Arbeitszeiten empfangen
+---
+
+# Arbeitszeiten
+
+Die API liefert Arbeitszeit-Aufzeichnungen, die für die Weiterverarbeitung freigegeben sind. Der Zugriff auf Arbeitszeit-Daten wird pro Partnerintegration separat vereinbart.
+
+## Freigegebene Arbeitszeiten abrufen
+
+```http
+GET /staffing-orders/{order_id}/timesheets?from=2026-07-01&to=2026-07-31
+```
+
+| Parameter | Typ | Beschreibung |
+|-----------|-----|-------------|
+| `from` | date (YYYY-MM-DD) | Von-Datum |
+| `to` | date (YYYY-MM-DD) | Bis-Datum |
+
+**Response (200):**
+
+```json
+{
+  "items": [
+    {
+      "timesheet_id": "jr_time_123",
+      "assignment_id": "jr_assignment_456",
+      "external_shift_id": "PARTNER-SHIFT-987",
+      "worker_reference": "jr_wref_789",
+      "date": "2026-07-10",
+      "planned_start": "17:00",
+      "planned_end": "23:00",
+      "actual_start": "17:05",
+      "actual_end": "23:10",
+      "break_minutes": 30,
+      "status": "validated"
+    }
+  ]
+}
+```
+
+### Felder
+
+| Feld | Beschreibung |
+|------|-------------|
+| `timesheet_id` | bejoo-Datensatz-ID |
+| `assignment_id` | Referenz zur Zuweisung |
+| `external_shift_id` | Ihre Schicht-ID |
+| `worker_reference` | Pseudonyme Referenz auf die Person |
+| `date` | Einsatzdatum |
+| `planned_start` / `planned_end` | Geplante Zeiten |
+| `actual_start` / `actual_end` | Tatsächliche Zeiten |
+| `break_minutes` | Pausenzeit |
+| `status` | `validated` oder `amended` (korrigiert) |
+
+## Abrechnungsrelevante Kategorien
+
+Je nach Integrationsscope können Arbeitszeit-Daten um abrechnungsrelevante Zeitkategorien und validierte Spesen erweitert werden. Diese Felder dienen als Datengrundlage für die Weiterverarbeitung im Partnersystem und stellen keine definitive Lohnberechnung dar.
+
+Für Hospitality-nahe Integrationen können insbesondere L-GAV-/GAV-relevante Zeitkategorien abgebildet werden, z. B. Nachtzuschlag-relevante Zeiten, Sonntagsstunden, Feiertagsstunden, Überzeit oder validierte Spesen. Die konkrete Berechnung und Anwendung von Zuschlägen erfolgt im dafür vorgesehenen Abrechnungssystem, sofern nicht anders vereinbart.
+
+```json
+{
+  "timesheet_id": "jr_time_123",
+  "payroll_categories": {
+    "regular_minutes": 355,
+    "night_minutes": 10,
+    "night_surcharge_relevant_minutes": 10,
+    "sunday_minutes": 0,
+    "public_holiday_minutes": 0,
+    "overtime_minutes": 0,
+    "break_minutes": 30,
+    "category_basis": ["l_gav", "gav_relevant_time_categories"]
+  },
+  "expenses": [
+    {
+      "category": "travel",
+      "amount": 12.00,
+      "currency": "CHF",
+      "status": "validated"
+    }
+  ]
+}
+```
+
+Das Partnersystem bleibt für die eigentliche Lohnabrechnung verantwortlich, sofern nicht anders vereinbart.
+
+## Typischer Export-Workflow
+
+```
+1. Freigegebene Zeiten abrufen (GET /timesheets)
+2. Optional: Event bei Freigabe empfangen (Webhook)
+3. Daten im Partnersystem weiterverarbeiten
+4. Verarbeitung dokumentieren
+```
+
+## Status-Übersicht
+
+| Status | Beschreibung |
+|--------|-------------|
+| `pending` | Noch nicht freigegeben; standardmässig nicht in Exporten enthalten |
+| `validated` | Geprüft und freigegeben |
+| `amended` | Nachträglich korrigiert |
