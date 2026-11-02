@@ -1,0 +1,104 @@
+---
+title: Timesheets
+description: Receive released working hours
+---
+
+# Timesheets
+
+The API provides working-time records that have been released for further processing. Access to working-time data is agreed separately per partner integration.
+
+## Retrieve Released Timesheets
+
+```http
+GET /staffing-orders/{order_id}/timesheets?from=2026-07-01&to=2026-07-31
+```
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `from` | date (YYYY-MM-DD) | From date |
+| `to` | date (YYYY-MM-DD) | To date |
+
+**Response (200):**
+
+```json
+{
+  "items": [
+    {
+      "timesheet_id": "jr_time_123",
+      "assignment_id": "jr_assignment_456",
+      "external_shift_id": "PARTNER-SHIFT-987",
+      "worker_reference": "jr_wref_789",
+      "date": "2026-07-10",
+      "planned_start": "17:00",
+      "planned_end": "23:00",
+      "actual_start": "17:05",
+      "actual_end": "23:10",
+      "break_minutes": 30,
+      "status": "validated"
+    }
+  ]
+}
+```
+
+### Fields
+
+| Field | Description |
+|-------|-------------|
+| `timesheet_id` | bejoo record ID |
+| `assignment_id` | Reference to the assignment |
+| `external_shift_id` | Your shift ID |
+| `worker_reference` | Pseudonymous reference to the person |
+| `date` | Assignment date |
+| `planned_start` / `planned_end` | Scheduled times |
+| `actual_start` / `actual_end` | Actual times |
+| `break_minutes` | Break duration |
+| `status` | `validated` or `amended` (corrected) |
+
+## Payroll-Relevant Categories
+
+Depending on the integration scope, working-time data can be extended with payroll-relevant time categories and validated expenses. These fields serve as a data basis for further processing in the partner system and do not constitute a definitive payroll calculation.
+
+For hospitality-oriented integrations, L-GAV/GAV-relevant time categories can be mapped in particular, e.g. night surcharge-relevant times, Sunday hours, public holiday hours, overtime, or validated expenses. The actual calculation and application of surcharges takes place in the designated payroll system, unless agreed otherwise.
+
+```json
+{
+  "timesheet_id": "jr_time_123",
+  "payroll_categories": {
+    "regular_minutes": 355,
+    "night_minutes": 10,
+    "night_surcharge_relevant_minutes": 10,
+    "sunday_minutes": 0,
+    "public_holiday_minutes": 0,
+    "overtime_minutes": 0,
+    "break_minutes": 30,
+    "category_basis": ["l_gav", "gav_relevant_time_categories"]
+  },
+  "expenses": [
+    {
+      "category": "travel",
+      "amount": 12.00,
+      "currency": "CHF",
+      "status": "validated"
+    }
+  ]
+}
+```
+
+The partner system remains responsible for the actual payroll calculation, unless agreed otherwise.
+
+## Typical Export Workflow
+
+```
+1. Retrieve released timesheets (GET /timesheets)
+2. Optional: Receive event on release (Webhook)
+3. Process data in the partner system
+4. Document processing
+```
+
+## Status Overview
+
+| Status | Description |
+|--------|-------------|
+| `pending` | Not yet released; not included in exports by default |
+| `validated` | Checked and released |
+| `amended` | Subsequently corrected |

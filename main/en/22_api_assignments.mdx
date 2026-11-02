@@ -1,0 +1,79 @@
+---
+title: Assignments & Workers
+description: Retrieve staffing and person references
+---
+
+# Assignments & Workers
+
+An **Assignment** describes the current staffing status of a specific shift. The API provides the status and reference data released for your system.
+
+## List Assignments
+
+```http
+GET /staffing-orders/{order_id}/assignments
+```
+
+**Response (200):**
+
+```json
+{
+  "items": [
+    {
+      "assignment_id": "jr_assignment_456",
+      "external_shift_id": "PARTNER-SHIFT-987",
+      "worker_reference": "jr_wref_789",
+      "display_name": "Max M.",
+      "status": "confirmed",
+      "role": "Service",
+      "date": "2026-07-10",
+      "start_time": "17:00",
+      "end_time": "23:00"
+    }
+  ]
+}
+```
+
+### Assignment Status
+
+| Status | Description |
+|--------|-------------|
+| `confirmed` | Confirmed |
+| `cancelled` | Assignment was revoked |
+| `completed` | Assignment completed |
+| `no_show` | Did not show up |
+
+## Data Privacy: Person References
+
+The API intentionally uses **pseudonymous references** instead of full person profiles.
+
+### Default Behaviour
+
+- `worker_reference`: Pseudonymous, partner-specific reference to the person
+- `display_name`: Abbreviated name (`Max M.`)
+
+### Extended Person Data
+
+Full contact details (name, phone, email) are **only released upon explicit agreement**. The release depends on:
+
+- The defined integration scope
+- The legal basis (DPA, GDPR/FADP)
+- The specific use case
+
+Talk to us about which fields are required for your use case.
+
+## Assignment Object
+
+| Field | Description |
+|-------|-------------|
+| `assignment_id` | bejoo reference for this assignment |
+| `external_shift_id` | Your shift ID (reference) |
+| `worker_reference` | Pseudonymous reference to the person |
+| `display_name` | Abbreviated display name |
+| `status` | Assignment status (see above) |
+| `role` | Role/function |
+| `date` | Assignment date |
+| `start_time` / `end_time` | Scheduled times |
+
+## Note: Read-only in v0.1
+
+In the current version, assignments are **read-only**. Write operations will be added after the leading system has been clarified.

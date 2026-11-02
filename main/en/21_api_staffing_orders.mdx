@@ -1,0 +1,219 @@
+---
+title: Staffing Orders & Shifts
+description: Submit staffing demand and retrieve status
+---
+
+# Staffing Orders & Shifts
+
+A **Staffing Order** represents a staffing demand that your system submits to bejoo. Via the API, you can create this demand, add shifts, and retrieve the current processing status.
+
+## Create Staffing Order
+
+```http
+POST /staffing-orders
+```
+
+**Request:**
+
+```json
+{
+  "external_order_id": "PARTNER-ORDER-12345",
+  "customer": {
+    "external_customer_id": "CUST-001",
+    "name": "Example AG"
+  },
+  "site": {
+    "external_site_id": "SITE-001",
+    "name": "Example Hotel Zurich",
+    "address": "Example Street 1, 8000 Zurich"
+  },
+  "title": "Service staff for banquet",
+  "description": "Optional notes about the assignment",
+  "cost_center": "BANQUET-2026",
+  "language": "en"
+}
+```
+
+**Response (201):**
+
+```json
+{
+  "order_id": "jr_order_123",
+  "external_order_id": "PARTNER-ORDER-12345",
+  "status": "received"
+}
+```
+
+### Fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `external_order_id` | Yes | Your internal order ID (unique per partner) |
+| `customer.external_customer_id` | Yes | Your customer ID (created on first use, then referenced) |
+| `customer.name` | Yes | Customer name |
+| `site.external_site_id` | Yes | Your site ID (created on first use, then referenced) |
+| `site.name` | Yes | Site name |
+| `site.address` | Yes | Assignment address |
+| `title` | Yes | Short title of the assignment |
+| `description` | No | Free-text notes about the assignment |
+| `cost_center` | No | Cost center for accounting |
+| `language` | No | Language (`de`, `fr`, `en`, `it`), default per partner |
+
+### Idempotency
+
+`external_order_id` is unique per partner. Repeated POST with the same ID and the same payload returns the existing order. A different payload with the same ID returns `409 CONFLICT`.
+
+### Master Data
+
+On the first call with a new `external_customer_id` or `external_site_id`, the master data is created in bejoo. On subsequent calls with the same ID, the master data is referenced. Name or address changes are updated, provided the partner system is defined as the leading system for master data.
+
+## Add Shift Demand
+
+```http
+POST /staffing-orders/{order_id}/shifts
+```
+
+**Request:**
+
+```json
+{
+  "external_shift_id": "PARTNER-SHIFT-987",
+  "date": "2026-07-10",
+  "start_time": "17:00",
+  "end_time": "23:00",
+  "role": "Service",
+  "external_role_id": "PARTNER-ROLE-SERVICE",
+  "required_headcount": 8,
+  "break_minutes": 30,
+  "notes": "Black trousers, white shirt"
+}
+```
+
+**Response (201):**
+
+```json
+{
+  "shift_id": "jr_shift_456",
+  "external_shift_id": "PARTNER-SHIFT-987",
+  "status": "created"
+}
+```
+
+### Fields
+
+| Field | Required | Description |
+|-------|----------|-------------|
+| `external_shift_id` | Yes | Your internal shift ID (unique per order) |
+| `date` | Yes | Assignment date (YYYY-MM-DD) |
+| `start_time` | Yes | Start time (HH:mm) |
+| `end_time` | Yes | End time (HH:mm) |
+| `role` | Yes | Role/function (free text) |
+| `external_role_id` | No | Your internal role ID (recommended for mapping) |
+| `required_headcount` | Yes | Required number of persons (min. 1) |
+| `break_minutes` | No | Break duration in minutes |
+| `notes` | No | Notes (dress code, schedule, etc.) |
+
+## Modify Shift Demand
+
+```http
+PATCH /staffing-orders/{order_id}/shifts/{shift_id}
+```
+
+Editable fields: `date`, `start_time`, `end_time`, `role`, `external_role_id`, `required_headcount`, `break_minutes`, `notes`.
+
+> For shifts that already have assignments, changes may be restricted. The current status is returned via the API.
+
+## List Staffing Orders
+
+```http
+GET /staffing-orders?status=in_progress&limit=50&cursor=***
+```
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `external_order_id` | string | Filter by external ID |
+| `status` | string | Filter by status |
+| `limit` | int | Maximum number of results (default: 50) |
+| `cursor` | string | Pagination cursor |
+| `updated_since` | datetime | Only orders updated since this timestamp |
+
+**Response (200):**
+
+```json
+{
+  "items": [
+    {
+      "order_id": "jr_order_123",
+      "external_order_id": "PARTNER-ORDER-12345",
+      "title": "Service staff for banquet",
+      "status": "in_progress",
+      "created_at": "2026-06-24T16:00:00Z",
+      "updated_at": "2026-06-24T16:30:00Z"
+    }
+  ],
+  "next_cursor": "***=="
+}
+```
+
+## Staffing Order Detail
+
+```http
+GET /staffing-orders/{order_id}
+```
+
+**Response (200):**
+
+```json
+{
+  "order_id": "jr_order_123",
+  "external_order_id": "PARTNER-ORDER-12345",
+  "status": "partially_filled",
+  "site": {
+    "name": "Example Hotel Zurich",
+    "address": "Example Street 1, 8000 Zurich"
+  },
+  "shifts": [
+    {
+      "shift_id": "jr_shift_456",
+      "external_shift_id": "PARTNER-SHIFT-987",
+      "date": "2026-07-10",
+      "start_time": "17:00",
+      "end_time": "23:00",
+      "role": "Service",
+      "required_headcount": 8,
+      "confirmed_headcount": 5,
+      "status": "partially_filled"
+    }
+  ]
+}
+```
+
+## Cancel Order or Shift
+
+```http
+POST /staffing-orders/{order_id}/cancel
+POST /staffing-orders/{order_id}/shifts/{shift_id}/cancel
+```
+
+**Request:**
+
+```json
+{
+  "reason": "Cancelled in partner system",
+  "external_cancelled_at": "2026-06-24T16:45:00Z"
+}
+```
+
+**Response (200):**
+
+```json
+{
+  "status": "cancelled"
+}
+```
+
+> Depending on the processing stage, a cancellation may take effect immediately or may first be processed as a request. The final status is returned via the order status and optionally via webhook.
+
+## Leading System
+
+Depending on the integration, it is defined which system is the leading system for orders, master data, and shifts. Write access is only enabled for the areas where the partner is defined as the leading system.

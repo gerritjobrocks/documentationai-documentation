@@ -1,0 +1,199 @@
+---
+title: API Overview
+description: Getting started with the bejoo Partner API
+---
+
+# API Overview
+
+The bejoo Partner API is an integration-oriented interface for flexible staffing processes. It enables the exchange of staffing demand, shifts, processing and staffing status, and released working hours. Optionally, payroll-relevant time categories can be provided for payroll/ERP systems.
+
+> **Note:** The available feature set is defined and activated per partner integration. Sandbox and production access is provided individually.
+
+## Base URL
+
+Endpoints and URLs are provided upon activation:
+
+```text
+Sandbox:    https://sandbox-api.job.rocks/partner/v1
+Production: https://api.job.rocks/partner/v1
+```
+
+> The URLs above describe the planned integration scope. Technical activation occurs per partner project.
+
+The OpenAPI specification and sandbox access are provided during partner onboarding. Activation takes place after aligning the integration scope and the required data fields. Upon request, we additionally provide a Postman collection or sample requests for the activated endpoints.
+
+## Authentication
+
+The API uses partner-specific credentials to issue short-lived **Bearer Tokens**.
+
+During onboarding, bejoo provides the partner with sandbox and, later, production credentials. The partner authenticates against the authentication endpoint and receives an access token for the selected environment.
+
+```http
+POST /auth/token
+Content-Type: application/json
+```
+
+Example request:
+
+```json
+{
+  "partner_id": "YOUR_PARTNER_ID",
+  "client_id": "YOUR_CLIENT_ID",
+  "client_secret": "YOUR_CLIENT_SECRET"
+}
+```
+
+Example response:
+
+```json
+{
+  "access_token": "eyJ...",
+  "token_type": "Bearer",
+  "expires_in": 3600
+}
+```
+
+All subsequent API requests use the returned Bearer token:
+
+```http
+Authorization: Bearer YOUR_ACCESS_TOKEN
+```
+
+No separate partner identifier header is required on regular API requests. The Bearer token identifies the partner, environment, and permitted scope.
+
+### Properties
+
+- **Per-Partner Credentials:** Each partner receives its own authentication credentials
+- **Token-Based Access:** Regular API requests require only the Bearer token
+- **Tenant-Scoped:** Tokens are restricted to the agreed partner integration and instance
+- **Sandbox & Production:** Separate credentials and tokens for test and live environments
+- **IP Allowlisting:** Optionally available for production
+
+## Data Formats
+
+- **Request Body:** `application/json`
+- **Response Body:** `application/json`
+- **Date Formats:** ISO 8601 (`YYYY-MM-DD` for dates, `HH:mm` for times)
+- **Time Zones:** Europe/Zurich (CET/CEST), unless agreed otherwise
+
+## Core Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Staffing Order** | An order from your system to bejoo |
+| **Shift Demand** | A specific shift with role, date, and required headcount |
+| **Assignment** | Current staffing of a specific shift |
+| **Timesheet Record** | A working-time record released for further processing |
+
+The Partner API exclusively provides the demand, status, and result data relevant for the integration.
+
+## Integration Directions
+
+| Direction | Purpose | Examples |
+|-----------|---------|----------|
+| Partner system → bejoo | Submit demand and changes | Orders, Shifts, Cancellations |
+| bejoo → Partner system | Retrieve status and results | Staffing status, Assignments, Working hours, Webhooks |
+
+## Status Model
+
+Staffing Orders pass through the following statuses:
+
+| Status | Meaning |
+|--------|---------|
+| `received` | Order received by bejoo |
+| `in_progress` | Order is being processed |
+| `partially_filled` | Partially staffed |
+| `filled` | Fully staffed |
+| `completed` | Completed |
+| `cancelled` | Cancelled |
+
+Statuses are set by bejoo and can be read by partners.
+
+## Idempotency
+
+- `external_order_id` is the idempotency key for staffing orders and must be unique per partner
+- `external_shift_id` must be unique per order
+- Repeated POST with the same external ID returns the existing resource
+- A different payload with the same external ID returns `409 CONFLICT`
+
+## Pagination
+
+All list endpoints support cursor-based pagination:
+
+```http
+GET /staffing-orders?limit=50&cursor=***==
+```
+
+Response:
+
+```json
+{
+  "items": [...],
+  "next_cursor": "***=="
+}
+```
+
+## Versioning
+
+- Breaking changes only in a new major version (`/v2`)
+- Additive fields (new optional fields) possible at any time
+- Partners should ignore unknown fields
+- Deprecation window: at least 90 days before removal
+
+## Data Privacy
+
+Personal data is provided only to the extent separately agreed. By default, the API works with pseudonymous references and aggregated status data.
+
+## Error Model
+
+```json
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "required_headcount must be at least 1",
+    "request_id": "req_123"
+  }
+}
+```
+
+Error codes are stable; error messages are not intended for programmatic logic.
+
+| Code | HTTP | Meaning |
+|------|------|---------|
+| `AUTHENTICATION_FAILED` | 401 | Token missing, expired, or invalid |
+| `FORBIDDEN` | 403 | No permission for this resource |
+| `NOT_FOUND` | 404 | Resource not found |
+| `VALIDATION_ERROR` | 422 | Request data invalid |
+| `CONFLICT` | 409 | Resource already exists or status conflict |
+| `RATE_LIMITED` | 429 | Rate limit exceeded |
+| `INTERNAL_ERROR` | 500 | Server error |
+
+Every response includes an `X-Request-Id` header for support inquiries.
+
+## Rate Limits
+
+Rate limits are configured per partner integration. Each response includes the corresponding headers:
+
+```http
+X-Request-Id: req_123
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 998
+X-RateLimit-Reset: 1782316800
+Retry-After: 60
+```
+
+Headers may vary depending on the environment and integration scope.
+
+## Available Sections
+
+| Section | Description |
+|---------|-------------|
+| [Staffing Orders & Shifts](/main/en/21_api_staffing_orders) | Submit demand and retrieve status |
+| [Assignments & Workers](/main/en/22_api_assignments) | Retrieve staffing and person references |
+| [Timesheets](/main/en/23_api_timesheets) | Receive released working hours |
+| [Payroll/Time Categories](/main/en/23_api_timesheets) | Optional payroll-relevant time data for payroll/ERP systems (night, Sunday, public holiday, overtime, expenses) |
+| [Webhooks](/main/en/24_api_webhooks) | Event-based notifications |
+
+## Support
+
+For technical questions, contact us at [bejoo Support](mailto:support@job.rocks).
