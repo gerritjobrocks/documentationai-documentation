@@ -1,0 +1,219 @@
+---
+title: Staffing Orders & Shifts
+description: Transmettre les besoins en personnel et récupérer les statuts
+---
+
+# Staffing Orders & Shifts
+
+Un **Staffing Order** représente un besoin en personnel que votre système transmet à bejoo. Via l'API, vous pouvez créer ce besoin, ajouter des shifts et récupérer le statut de traitement actuel.
+
+## Créer un Staffing Order
+
+```http
+POST /staffing-orders
+```
+
+**Requête:**
+
+```json
+{
+  "external_order_id": "PARTNER-ORDER-12345",
+  "customer": {
+    "external_customer_id": "CUST-001",
+    "name": "Exemple SA"
+  },
+  "site": {
+    "external_site_id": "SITE-001",
+    "name": "Hôtel Exemple Zurich",
+    "address": "Rue Exemple 1, 8000 Zurich"
+  },
+  "title": "Personnel de service pour banquet",
+  "description": "Notes optionnelles sur l'affectation",
+  "cost_center": "BANQUET-2026",
+  "language": "fr"
+}
+```
+
+**Réponse (201):**
+
+```json
+{
+  "order_id": "jr_order_123",
+  "external_order_id": "PARTNER-ORDER-12345",
+  "status": "received"
+}
+```
+
+### Champs
+
+| Champ | Obligatoire | Description |
+|-------|-------------|-------------|
+| `external_order_id` | Oui | Votre ID d'ordre interne (unique par partenaire) |
+| `customer.external_customer_id` | Oui | Votre ID client (créé à la première utilisation, puis référencé) |
+| `customer.name` | Oui | Nom du client |
+| `site.external_site_id` | Oui | Votre ID de site (créé à la première utilisation, puis référencé) |
+| `site.name` | Oui | Désignation du site |
+| `site.address` | Oui | Adresse d'affectation |
+| `title` | Oui | Titre court de l'affectation |
+| `description` | Non | Notes en texte libre sur l'affectation |
+| `cost_center` | Non | Centre de coût pour la comptabilisation |
+| `language` | Non | Langue (`de`, `fr`, `en`, `it`), valeur par défaut par partenaire |
+
+### Idempotence
+
+`external_order_id` est unique par partenaire. Un POST répété avec le même ID et le même payload renvoie l'ordre existant. Un payload différent avec le même ID renvoie `409 CONFLICT`.
+
+### Données de base
+
+Lors du premier appel avec un nouveau `external_customer_id` ou `external_site_id`, les données de base sont créées dans bejoo. Lors d'un appel ultérieur avec le même ID, les données de base sont référencées. Les modifications de nom ou d'adresse sont mises à jour, à condition que le système partenaire soit défini comme système référent pour les données de base.
+
+## Ajouter un Shift Demand
+
+```http
+POST /staffing-orders/{order_id}/shifts
+```
+
+**Requête:**
+
+```json
+{
+  "external_shift_id": "PARTNER-SHIFT-987",
+  "date": "2026-07-10",
+  "start_time": "17:00",
+  "end_time": "23:00",
+  "role": "Service",
+  "external_role_id": "PARTNER-ROLE-SERVICE",
+  "required_headcount": 8,
+  "break_minutes": 30,
+  "notes": "Pantalon noir, chemise blanche"
+}
+```
+
+**Réponse (201):**
+
+```json
+{
+  "shift_id": "jr_shift_456",
+  "external_shift_id": "PARTNER-SHIFT-987",
+  "status": "created"
+}
+```
+
+### Champs
+
+| Champ | Obligatoire | Description |
+|-------|-------------|-------------|
+| `external_shift_id` | Oui | Votre ID de shift interne (unique par ordre) |
+| `date` | Oui | Date d'affectation (YYYY-MM-DD) |
+| `start_time` | Oui | Heure de début (HH:mm) |
+| `end_time` | Oui | Heure de fin (HH:mm) |
+| `role` | Oui | Rôle/fonction (texte libre) |
+| `external_role_id` | Non | Votre ID de rôle interne (recommandé pour le mapping) |
+| `required_headcount` | Oui | Nombre de personnes requises (min. 1) |
+| `break_minutes` | Non | Durée de la pause en minutes |
+| `notes` | Non | Notes (tenue vestimentaire, déroulement, etc.) |
+
+## Modifier un Shift Demand
+
+```http
+PATCH /staffing-orders/{order_id}/shifts/{shift_id}
+```
+
+Champs modifiables: `date`, `start_time`, `end_time`, `role`, `external_role_id`, `required_headcount`, `break_minutes`, `notes`.
+
+> Pour les shifts ayant déjà des affectations, les modifications peuvent être restreintes. Le statut actuel est renvoyé via l'API.
+
+## Lister les Staffing Orders
+
+```http
+GET /staffing-orders?status=in_progress&limit=50&cursor=***
+```
+
+| Paramètre | Type | Description |
+|-----------|------|-------------|
+| `external_order_id` | string | Filtrer par ID externe |
+| `status` | string | Filtrer par statut |
+| `limit` | int | Nombre maximum de résultats (par défaut: 50) |
+| `cursor` | string | Curseur de pagination |
+| `updated_since` | datetime | Uniquement les ordres mis à jour depuis cette date |
+
+**Réponse (200):**
+
+```json
+{
+  "items": [
+    {
+      "order_id": "jr_order_123",
+      "external_order_id": "PARTNER-ORDER-12345",
+      "title": "Personnel de service pour banquet",
+      "status": "in_progress",
+      "created_at": "2026-06-24T16:00:00Z",
+      "updated_at": "2026-06-24T16:30:00Z"
+    }
+  ],
+  "next_cursor": "***=="
+}
+```
+
+## Détail d'un Staffing Order
+
+```http
+GET /staffing-orders/{order_id}
+```
+
+**Réponse (200):**
+
+```json
+{
+  "order_id": "jr_order_123",
+  "external_order_id": "PARTNER-ORDER-12345",
+  "status": "partially_filled",
+  "site": {
+    "name": "Hôtel Exemple Zurich",
+    "address": "Rue Exemple 1, 8000 Zurich"
+  },
+  "shifts": [
+    {
+      "shift_id": "jr_shift_456",
+      "external_shift_id": "PARTNER-SHIFT-987",
+      "date": "2026-07-10",
+      "start_time": "17:00",
+      "end_time": "23:00",
+      "role": "Service",
+      "required_headcount": 8,
+      "confirmed_headcount": 5,
+      "status": "partially_filled"
+    }
+  ]
+}
+```
+
+## Annuler un ordre ou un shift
+
+```http
+POST /staffing-orders/{order_id}/cancel
+POST /staffing-orders/{order_id}/shifts/{shift_id}/cancel
+```
+
+**Requête:**
+
+```json
+{
+  "reason": "Annulé dans le système partenaire",
+  "external_cancelled_at": "2026-06-24T16:45:00Z"
+}
+```
+
+**Réponse (200):**
+
+```json
+{
+  "status": "cancelled"
+}
+```
+
+> Selon l'état d'avancement du traitement, une annulation peut être immédiatement effective ou d'abord traitée comme une demande. Le statut définitif est renvoyé via le statut de l'ordre et optionnellement par webhook.
+
+## Système référent
+
+Selon l'intégration, il est défini quel système est le système référent pour les ordres, les données de base et les shifts. L'accès en écriture n'est activé que pour les domaines pour lesquels le partenaire est défini comme système référent.

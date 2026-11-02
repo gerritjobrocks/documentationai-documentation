@@ -1,0 +1,79 @@
+---
+title: Affectations & Travailleurs
+description: Récupérer l'occupation et les références de personnes
+---
+
+# Affectations & Travailleurs
+
+Un **Assignment** décrit le statut d'occupation actuel d'un shift concret. L'API fournit les données de statut et de référence libérées pour votre système.
+
+## Lister les affectations
+
+```http
+GET /staffing-orders/{order_id}/assignments
+```
+
+**Réponse (200):**
+
+```json
+{
+  "items": [
+    {
+      "assignment_id": "jr_assignment_456",
+      "external_shift_id": "PARTNER-SHIFT-987",
+      "worker_reference": "jr_wref_789",
+      "display_name": "Max M.",
+      "status": "confirmed",
+      "role": "Service",
+      "date": "2026-07-10",
+      "start_time": "17:00",
+      "end_time": "23:00"
+    }
+  ]
+}
+```
+
+### Statut des affectations
+
+| Statut | Description |
+|--------|-------------|
+| `confirmed` | Confirmé |
+| `cancelled` | Affectation a été levée |
+| `completed` | Affectation terminée |
+| `no_show` | Ne s'est pas présenté |
+
+## Protection des données: Références de personnes
+
+L'API utilise délibérément des **références pseudonymes** au lieu de profils de personnes complets.
+
+### Comportement par défaut
+
+- `worker_reference`: Référence pseudonyme, spécifique au partenaire, vers la personne
+- `display_name`: Nom abrégé (`Max M.`)
+
+### Données de personne étendues
+
+Les coordonnées complètes (nom, téléphone, e-mail) ne sont **libérées que sur accord explicite**. La libération dépend de:
+
+- L'étendue d'intégration définie
+- La base légale (DPA, RGPD/LPn)
+- Le cas d'usage concret
+
+Parlez-nous des champs nécessaires à votre cas d'usage.
+
+## Objet Assignment
+
+| Champ | Description |
+|-------|-------------|
+| `assignment_id` | Référence bejoo pour cette affectation |
+| `external_shift_id` | Votre ID de shift (référence) |
+| `worker_reference` | Référence pseudonyme vers la personne |
+| `display_name` | Nom d'affichage abrégé |
+| `status` | Statut de l'affectation (voir ci-dessus) |
+| `role` | Rôle/fonction |
+| `date` | Date d'affectation |
+| `start_time` / `end_time` | Heures planifiées |
+
+## Remarque: Lecture seule en v0.1
+
+Dans la version actuelle, les affectations sont en **lecture seule**. Les opérations d'écriture seront ajoutées après clarification du système référent.
