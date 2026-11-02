@@ -1,0 +1,345 @@
+---
+title: "Bestellungen speichern und zur Freigabe übermitteln"
+description: "Erster Bestellschritt, Zusammenfassung, Freigabeanforderung und Rückzug."
+---
+
+# Bestellungen speichern und zur Freigabe übermitteln
+
+## Eine Bestellung beginnen und den ersten Schritt speichern
+
+1. Öffne im Kundenportal **Bestellungen**. Mit dem Erstellrecht kannst du über das Plus am Menüpunkt eine neue Bestellung beginnen.
+2. Trage **Name der Bestellung** ein. Ergänze optional **Auftragsnummer** und **Kostenstelle**. Die Kostenstelle kann eingegeben oder aus vorhandenen Einträgen ausgewählt werden.
+3. Wähle die **Abteilung**. Wer keine Daten ohne Abteilungszuordnung sehen darf, muss eine Abteilung auswählen. Die Auswahl kann durch die zugänglichen Abteilungen und die Rollenplanung eingeschränkt sein. Ein Hinweis auf mehrere Abteilungen oder Kostenstellen bedeutet, dass unterschiedliche Werte auf den Rollen vorliegen; die gemeinsame Auswahl ist dann nicht das richtige Änderungsfeld.
+4. Beschreibe den Bedarf unter **Details der Bestellung**. Für eine neue Bestellung ist die Beschreibung erforderlich; der Editor begrenzt den Text auf 500 Zeichen. Bei einer aus einem Projekt stammenden Bestellung wird die Beschreibung nicht auf dieselbe Weise als Voraussetzung verlangt.
+5. Wähle unter **Ort hinzufügen** einen Standort. Ein hinterlegter Standardstandort kann bereits vorausgewählt sein. Prüfe ihn trotzdem.
+6. Markiere die Standorte, für die du Termine setzen möchtest, und wähle unter **Datum festlegen** die Tage. Jeder hinzugefügte Standort benötigt mindestens einen Tag. Öffne die Datumsliste am Standort zur Kontrolle; einzelne Tage lassen sich dort entfernen.
+7. Wähle **Weiter** und warte auf den Wechsel zu **Details der Planung**. Öffne bei Unsicherheit die Bestellung erneut und kontrolliere, ob Name, Standorte und Tage vorhanden sind.
+
+**Speichern ist nicht Übermitteln:** Der erste Schritt speichert die Bestelldaten, übermittelt aber noch keine Bestellanfrage. Verlasse dich nicht auf eine automatische Sicherung beim Schliessen oder Aktualisieren des Browsers. Der erste Schritt versucht zwar auch beim Verlassen zu speichern; ohne bestätigtes Ergebnis ist daraus keine dauerhafte Speicherung ableitbar.
+
+Wenn **Weiter** nicht funktioniert, prüfe zuerst Name/Beschreibung, dann die Termine jedes Standorts und die Abteilung. Bereits zugeteilte Tage können nicht einfach aus der Bestellung gelöscht werden. Kläre in diesem Fall die bestehende Zuteilung, statt denselben Löschversuch zu wiederholen.
+
+## Zusammenfassung prüfen und Freigabe anfordern
+
+1. Prüfe in **Zusammenfassung** die Standorte, Tage, Rollen, Mengen, Stunden und Kostenschätzung. Bei fehlenden Daten oder Konditionen zuerst die Planung beziehungsweise die Agentur klären.
+2. Wähle bei **Entwurf** oder **Abgelehnt** die Aktion **Bestellung übermitteln**. Dafür ist das eigene Übermittlungsrecht vorgesehen. Die optisch gesperrte Aktion ist keine allgemeine technische Rechteschranke. Bei fehlendem Recht die Administration kontaktieren, nicht andere Eingabepfade ausprobieren.
+3. Lies die Rückfrage zur Übermittlung. **Nein** sendet in diesem Schritt nichts. **Ja** führt entweder zur Freigabeauswahl oder direkt in den Übermittlungsweg. Die Rückfrage warnt vor später eingeschränkter Bearbeitung; sie ersetzt keine Prüfung der Daten oder Vertragsbedingungen.
+4. Wenn **Diese Bestellung muss zunächst freigegeben werden.** erscheint, warte auf die Liste. Markiere die E-Mail-Adressen der zuständigen Freigabepersonen und mindestens die angeforderte Anzahl. Zu wenige ausgewählte Personen lösen eine Meldung aus, die englisch erscheinen kann. Die Häkchen ändern zunächst nur die lokale Auswahl. **Abbrechen** oder das Kreuz schliesst die Auswahl ohne neue Anforderung; beim erneuten Öffnen können Häkchen noch gesetzt sein, daher nochmals prüfen.
+5. Klicke **Übermitteln** im Freigabedialog. Während der Anfrage ist dieser Knopf deaktiviert. Bei erfolgreicher Antwort erscheint **Anfrage gesendet!**; der Server legt Freigabeeinträge an, setzt die Bestellung auf **Freigabe ausstehend**, setzt das Übermittlungsdatum und stösst den Versand persönlicher Links an. Das ist weder die Entscheidung aller Personen noch eine Zustellbestätigung.
+6. Kehre über **Zurück** im Ergebnisdialog zur Bestellliste zurück und öffne die Bestellung erneut. Kontrolliere den tatsächlichen Status. Das Kreuz schliesst nur den Ergebnisdialog und nimmt nichts zurück.
+
+**Ohne erforderliche Freigabe** zeigt die Oberfläche nach Ja bereits **Bestellung übermittelt.**, während der getrennte Speichervorgang noch laufen kann. Diese Anzeige ist **keine Speicherbestätigung**. Vor dem Speichern werden Abteilung und Kostenstelle erneut geladen; das ist kein vollständiger Schutz gegen gleichzeitig geänderte andere Bestellfelder. Eine Fehlermeldung oder ein fachlicher Fehler in der Antwort kann von einem bereits sichtbaren Erfolg überlagert sein. Vor erneutem Übermitteln immer den tatsächlichen Bestellstand prüfen lassen.
+
+**Bei fehlender Freigabeliste oder Ladefehler:** Nicht das Ausbleiben des Dialogs als Beweis verstehen, dass keine Freigabe nötig sei. Die Lade-/Rechteabfragen laufen getrennt; bei einer fehlgeschlagenen Liste kann der direkte Weg sichtbar werden. Vorgesehene Freigaberegel und Bestellstatus mit der Administration prüfen. Bei einem Fehler nach Übermitteln können einzelne Freigabeeinträge und Versandversuche bereits erfolgt sein; kein automatischer vollständiger Rollback. Ein hängen gebliebener Sendeindikator bedeutet nicht zwingend, dass die Anfrage noch läuft.
+
+**Bei fehlendem Freigabelink:** Empfänger und Spamordner prüfen lassen und den aktuellen Status kontrollieren. Eine erneute Anforderung markiert frühere noch aktive Freigabeeinträge als ersetzt. Nicht mehrfach auf Verdacht senden. Bleibt die Bestellung trotz Antworten ausstehend, Bestellname und Status an die Administration geben, ohne persönliche Links weiterzugeben. Die Linkansicht und ihre Entscheidung sind im Abschnitt **Eine Bestellung über den persönlichen Freigabelink entscheiden** erläutert.
+
+## Freigabe zurückziehen und weitere Schritte finden
+
+Bei **Freigabe ausstehend** oder **Abgelehnt** steht in **Zusammenfassung** **Bestellung zurückziehen** bereit. Prüfe den Namen und bestätige nur die gewünschte Rücknahme. **Nein** sendet nichts; **Ja** startet zwei getrennte Vorgänge: die Statusspeicherung durch die übergeordnete Ansicht und die Rücknahme der Freigabeanforderung. Der Rücknahmeweg setzt Status und Typ auf Entwurf, entfernt das Übermittlungsdatum und markiert die passenden bisherigen Freigabeeinträge als zurückgezogen.
+
+**Prüfe danach die neu geöffnete Bestellung.** Die zwei Anfragen sind keine gemeinsame atomare Speicherung; sie können getrennt scheitern oder in anderer Reihenfolge antworten. Eine Erfolgsmeldung des Rücknahmewegs beweist nicht den Erfolg jeder anderen Speicherung. Bei Fehlern oder abweichendem Status erst klären, nicht wiederholt klicken. Bereits verschickte Nachrichten verschwinden nicht aus Postfächern.
+
+**Zurückziehen ist nicht Stornieren eines besetzten Einsatzes.** Es sagt keine Person ab, löscht nicht die gesamte Bestellung und ist kein Ersatz für die Abstimmung über bereits zugeteiltes Personal. **Zurück** zur Planung oder Schliessen eines Dialogs ist ebenfalls keine Rücknahme. Nach erneuter Übermittlung bestimmen die geladenen Ressourcen und vergangenen Einsätze wieder die weiteren Schrittnamen; aus der Liste neu öffnen.
+
+## Bestellungen suchen, filtern und als Excel exportieren
+
+1. Öffne **Bestellungen** und wähle **ENTWÜRFE BESTELLUNGEN**, **ÜBERMITTELTE BESTELLUNGEN** oder **VERGANGENE BESTELLUNGEN**. Das Register wechselt zwischen den geladenen Listen; es fordert allein keine neue Speicherung an. Lies den Zeilenstatus: Entwürfe können auch **Freigabe ausstehend** oder **Abgelehnt** enthalten. Vergangene übermittelte Bestellungen mit offener Folgeeinsatz-Anfrage können weiterhin im übermittelten Bereich stehen. Register und Status sind nicht dasselbe.
+2. Gib einen Teil des Bestellnamens in **Bestellung hier suchen** ein. Jede Tastatureingabe lädt serverseitig die Listen neu; gesucht wird im gespeicherten Namen, nicht in sämtlichen sichtbaren Spalten. Der angezeigte übersetzte Name kann davon abweichen. Für alle Namen leere das Suchfeld. Bei schnellen Eingaben können ältere Antworten eine neuere Liste ersetzen; warte und kontrolliere den Namen, bevor du die Zeile öffnest.
+3. Wähle **Abteilungen**, **Von**, **Bis** und gegebenenfalls **Datum der Übermittlung**. Für Einsatztage müssen **Von und Bis zusammen** gesetzt sein; eine einzelne Grenze genügt nicht. Das Übermittlungsdatum ist ein eigener Filter. Die Kalender sind nicht nur lesbar: auch getippte Werte vor dem Anwenden auf Vollständigkeit prüfen.
+4. Klicke **Filtern**. Erst dadurch werden Kalender-/Abteilungsauswahl in die Abfrage übernommen. Die angewendeten Werte stehen in der Browseradresse; zusätzlich wird lokal ein Filterstand gespeichert. Eine Rückkehr per Browsernavigation lädt die Liste nicht zuverlässig neu: bei abweichender Anzeige erneut **Filtern** oder die Ansicht neu öffnen. Das **x** neben Filtern leert alle drei Daten und die Abteilungsauswahl und wendet dies an; den Suchtext musst du zusätzlich leeren.
+5. Über die Spaltenköpfe sortierst du lokal die aktuell geladenen Zeilen nach Name, Beginn oder Status im Entwurfsregister, nach Name, Beginn oder Übermittlungsdatum in den anderen Registern. Erneutes Klicken kann die Richtung wechseln. Leere Datumsfelder bedeuten nicht automatisch einen ungültigen oder gelöschten Auftrag. Die Zähler zeigen die geladenen Listenlängen, nicht eine rechtsverbindliche Gesamtzahl oder zwingend eindeutige Bestellungen.
+
+**Sichtbarkeit prüfen:** Fehlt eine Bestellung, lasse Bestell-Ansichtsrecht, das zusätzliche Recht für alle laufenden Bestellungen, Client-Buyer-Zuordnung und Abteilungen prüfen. Bei Bestellungen ohne Rollen wird die Bestellabteilung herangezogen; sonst können Rollenabteilungen relevant sein. Auch Daten ohne Abteilung benötigen die entsprechende Berechtigung. Filter leeren erweitert keine Rechte. Eigene Self-Service-Projekte gehören in den getrennten Bereich **Self Service**. Bei unerwarteten Einträgen oder Duplikaten die Administration einschalten; diese Liste ist keine umfassend geprüfte Berechtigungs- oder Vollständigkeitsbestätigung.
+
+**Excel herunterladen:** Wähle das Register, übernimm Filter mit **Filtern** und klicke **BESTELLUNGEN EXPORTIEREN**. Der aktive Knopf startet direkt den Download, **keine Export-Seitenleiste**. Das Blatt enthält ID, Name, Startdatum, Enddatum und Einreichungsdatum für das gewählte Register. Es verwendet den Suchtext und zuletzt angewendete Datums-/Abteilungswerte; die lokale Sortierung wird nicht als eigene Sortiervorgabe mitgesendet. Die Dateisprache richtet sich nach der Benutzersprache. Vergleiche Register, Namen, Daten und mögliche doppelte Zeilen in der Datei. Ein ausstehender Eintrag kann in zusammengestellten Listen mehrfach vorkommen; Anzahl Zeilen nicht ungeprüft als Anzahl verschiedener Aufträge verwenden.
+
+Bei fehlendem Download die Browserdownloads prüfen; ein leerer oder fehlerhafter Download ist keine erfolgreiche Datei. Die Liste hat keine verlässliche Fehler-/Ladeanzeige für jede erneute Suche. Ein Export verändert weder Bestellstatus noch Freigaben oder Besetzung und versendet keine Bestellung an Personen.
+
+## Rollen pro Standort auswählen und ändern
+
+1. Öffne **Details der Planung** und suche den richtigen Standort. Füge dort eine Rolle hinzu. Wähle im Rollendialog zuerst die Abteilung und dann die passende hinterlegte Kundenrolle. Bei einer gewählten Abteilung werden nur die ihr zugeordneten Rollen angeboten. Ein Abteilungswechsel kann eine bisherige Rollenauswahl leeren; wähle sie dann erneut.
+2. Speichere den Dialog. Fehlt die erforderliche Rolle oder eine für deinen Benutzer verpflichtende Abteilung, korrigiere die Auswahl. Derselbe Rollenname lässt sich nicht nochmals am gleichen Standort neu anlegen.
+3. Hat die erste beziehungsweise einzige Rolle eine andere Abteilung als die Bestellung, fragt das Portal nach, ob die Bestellung entsprechend angepasst werden soll. **Nein bricht diesen Speichervorgang ab.** Es speichert hier nicht einfach eine abweichende Rolle. Bei mehreren Rollen kann eine gesonderte Warnung vor unterschiedlichen Abteilungen erscheinen; bestätige sie nur, wenn diese Aufteilung beabsichtigt ist.
+4. Prüfe die angelegte Rolle und ihre Schichten. Eine hinterlegte Standardvorlage kann Schichten und Dokumente übernehmen; ergänzende Lohn-/Spesendaten werden gesondert gespeichert. Ohne Vorlagenschichten wird zunächst eine Schicht von 08:00 bis 16:00 angelegt. Diese Vorgabe ist noch nicht dein bestätigter Bedarf.
+5. Über **Bearbeiten** an der Rollenkarte kannst du die Kundenrolle oder Abteilung ändern. Bestehende Schichten, Dokumente und Kleiderbestimmungen bleiben dabei erhalten. Prüfe die Lohnspanne und Kostenschätzung neu; eine andere Rolle ist kein vollständiger Austausch der bestehenden Planung.
+
+**Abteilung und Kostenstelle nachkontrollieren:** Bei einheitlichen Rollenwerten kann die Bestellung die gemeinsame Abteilung beziehungsweise Kostenstelle übernehmen. Vor der Übermittlung werden diese Werte nochmals geladen. Kontrolliere deshalb nach Rollenänderungen auch die Grunddaten. Die Anpassung der Bestellabteilung und das Speichern der Rolle sind getrennte Anfragen: Ein geschlossener Dialog beweist nicht, dass beides erfolgreich war.
+
+**Rollen kopieren:** Soweit verfügbar, wähle bei einer Rolle den Zielstandort. Für **Alle Rollen kopieren** markiere die Zielstandorte und übernimm die Auswahl. Ohne Zielstandort wird nichts kopiert. Die Funktionen sind an die Premium-/Archivbedingungen der Ansicht gebunden; alle Rollen gemeinsam lassen sich nur bei mindestens zwei Rollen am Quellstandort und mindestens einem anderen Zielstandort kopieren. Gibt es am Quellstandort nur eine Rolle, nutze **Duplizieren** an dieser Rollenkarte. Prüfe anschliessend am Ziel die Rollen, Zeiten, Tage und Mengen; eine Kopie ist weder eine Freigabe noch eine Personalzuteilung.
+
+## Schichtzeiten, Pausen und Personalbedarf bearbeiten
+
+1. Kontrolliere in jeder Rollenkarte Anfang, Ende und Pause. Trage Zeiten im Format **HH:MM** ein und verlasse das Feld. Beim Verlassen von Anfang oder Ende wird die Pause anhand der hinterlegten Regeln neu berechnet und die Schicht aktualisiert. Eine zuvor manuell eingetragene Pause kann dabei ersetzt werden. Prüfe deshalb die Pause nach jeder Zeitänderung erneut.
+2. Eine manuelle Pause wird beim Verlassen des Pausenfelds gespeichert. Die Pausenberechnung ist eine Konfigurationsfunktion, keine Zusicherung zur arbeitsrechtlichen Zulässigkeit oder Lohnabrechnung.
+3. Füge bei Bedarf eine weitere Schicht hinzu. Nach einer bestehenden Schicht startet die neue Zeile mit deren Endzeit als Anfang **und Ende**. Ergänze die tatsächliche Endzeit; gehe nicht von einer automatisch vollständigen Folgeschicht aus. Sind noch keine Schichten vorhanden, ist die Vorgabe 08:00 bis 16:00.
+4. Gib den Personalbedarf in der Zelle des richtigen Tages und der richtigen Schicht ein. **Schon die Eingabe löst eine Speicheranfrage aus.** Die Summenzeile ist nur eine Anzeige. Inaktive Tageszellen sind nicht zur Eingabe freigegeben. Nutze die seitlichen Pfeile, um weitere Tage zu sehen.
+5. Warte auf die Verarbeitung und öffne die Bestellung zur Nachkontrolle erneut. Bei einer Fehlermeldung zu Schicht oder Mitarbeiteranzahl ist der angezeigte Eingabewert kein sicherer Nachweis der Speicherung.
+
+**Mengen reduzieren ist keine Personalabsage:** Bestehende Zuteilungen können als Überbuchung erhalten bleiben, wenn du den Bedarf verkleinerst. Wird ein Bedarf vollständig auf null zurückgeführt, können noch offene Einladungen entfernt werden. Bereits zugeteilte Personen werden dadurch nicht einfach ordnungsgemäss abgemeldet. Kläre besetzte Einsätze mit der Einsatzplanung.
+
+**Schicht entfernen:** Klicke das Entfernen-Symbol der Schicht und bestätige nur die beabsichtigte Zeile. Bestimmte bereits bestätigte oder automatisch angenommene Einladungen verhindern die Löschung. Die übrige Löschung betrifft nicht nur die sichtbare Zeile, sondern auch zugehörige Bedarfs- und Zuteilungsdaten. Bei der Meldung, eine Schicht mit Einladungen könne nicht gelöscht werden, nicht durch Bedarf null oder Rollenlöschung ausweichen.
+
+**Weiter** öffnet die Zusammenfassung; es ist in diesem Schritt kein gemeinsamer Speichern-Knopf und kein Zurücksetzen bereits ausgeführter Einzeländerungen. Ebenso macht **Zurück** gespeicherte Änderungen nicht rückgängig.
+
+## Kleiderbestimmungen, Dokumente und Mehrfachauswahl
+
+Öffne an der richtigen Rollenkarte die Kleiderbestimmungen. Warte, bis die vorhandene Auswahl geladen ist, markiere die gewünschten Vorgaben und ergänze bei **Andere** den Text. Bestätige mit dem Speichern-Knopf des Dialogs. **Abbrechen** beziehungsweise Schliessen verwirft die noch nicht übermittelte Dialogauswahl, nicht bereits gespeicherte Änderungen anderer Bereiche. Öffne den Dialog danach erneut und kontrolliere den Text.
+
+**Mehrere Rollen bearbeiten:** Aktiviere die Mehrfachbearbeitung und prüfe die markierten Rollen, bevor du Kleiderbestimmungen oder Dokumente änderst. **Alle Rollen auswählen** bezieht sich auf die geladenen Rollen der Ansicht, nicht nur auf die unmittelbar daneben stehende Rollenkarte. Bei Kleiderbestimmungen wird die geöffnete Rolle und zusätzlich die markierte Auswahl gespeichert. Das sind einzelne Anfragen; kontrolliere jede betroffene Rolle. Beende die Mehrfachbearbeitung vor der nächsten Einzeländerung, damit die Auswahl geleert wird.
+
+**Dokument hochladen:** Öffne den Upload an der Rolle. Die Dateiauswahl ist auf Word-, PDF-, Excel-, PowerPoint- und CSV-Dateien eingestellt. Der Upload ist eine unmittelbare Anfrage zur bestehenden Rolle, keine Anlage, die erst mit der Bestellübermittlung gespeichert wird. Bei aktiver Mehrfachbearbeitung wird die markierte Rollenauswahl übergeben. Warte auf die Dateiliste, öffne die Datei zur Kontrolle und lade die Bestellung bei Unsicherheit neu. Ein bereits vorhandener Dateiname kann den Upload verhindern; prüfe die bestehende Datei, statt denselben Namen wiederholt hochzuladen.
+
+**Dokument entfernen:** Verwende das Entfernen-Symbol an der Datei und bestätige die Rückfrage. Bei markierten Rollen kann dies mehrere Zuordnungen betreffen. Entfernt wird die Dokumentzuordnung; daraus folgt keine Zusicherung, dass die zugrunde liegende Datei physisch vernichtet wurde. Schliessen oder **Zurück** stellt eine bereits entfernte Zuordnung nicht wieder her.
+
+**Spesen nicht mit einer verfügbaren Bestellaktion verwechseln:** In dieser nativen Planungsansicht ist der Einstieg in die Spesenbearbeitung nicht aktiv. Spesendaten können dennoch aus einer Rollenvorlage stammen. Für eine Änderung wende dich an die zuständige Administration; ein Spesendialog aus einer anderen Projektoberfläche ist keine Anleitung für diese Bestellansicht.
+
+## Ressourcen ansehen und Vorschläge favorisieren
+
+**Ressourcen** zeigt die von der Agentur für diesen Kunden und diese Bestellung bereitgestellten Personalvorschläge, nicht den gesamten Personalpool. Der Schritt erscheint erst ausserhalb von Entwurf, ausstehender Freigabe und abgelehntem Entwurf und nur bei geladenen Vorschlägen. Ohne Vorschläge folgt **Einsatzplanung** direkt als Schritt 4; mit Vorschlägen steht sie an Schritt 5. Richte dich nach dem Namen, nicht nur nach einer gespeicherten Schrittnummer. **Zurück** führt zur Zusammenfassung, **Weiter** zur Einsatzplanung; beides ist keine gemeinsame Speicherbestätigung.
+
+Die feste Tabelle zeigt Bild beziehungsweise Initialen, Vorname, Nachname, Kunden-Durchschnittsbewertung, **Zuvor bereits gebucht**, Wunschliste, Sperrliste und Favoritenmarkierung. Die Sterne sind nur lesbar; der Kundenmittelwert wird auf ganze Sterne aufgerundet. Der Hinweis auf frühere Beschäftigung beruht auf vergangenen, abgeschlossenen Anfragen beim Kunden und ist keine neue Zusage. Die Vorschläge sind nach Vor- und Nachname sortiert. Eine Einladung ohne passende Bewerbung oder eine nicht freigegebene Person muss hier nicht erscheinen; vollständig auf null zurückgeführte Bedarfe werden nicht als normale Vorschläge geführt.
+
+Hier gibt es **keine eigenen Such-/Filterfelder, Bewerbungsregister, Spaltenkonfiguration, Mehrfachauswahl oder Kopieraktion**. Wunschliste und Sperrliste sind Anzeigen, keine bearbeitbaren Häkchen. Die separate Favoritenaktion hat andere Folgen; beachte den Abschnitt **Favoriten, Rechte und NOH-Zuteilung**. Ein Klick auf die Personenzeile öffnet die Sedcard. Ein fehlendes Bild wird durch Initialen ersetzt. Eine leere oder dauerhaft ladende Tabelle belegt weder eine Löschung noch fehlenden Personalbestand: Bestellung neu öffnen und Freigabe sowie Berechtigungen prüfen lassen.
+
+## Einsatzplanung prüfen und einen Folgeeinsatz anfragen
+
+**Einsatzplanung** ist die Übersicht nach Standort, Rolle und Datum. Klappe die Standort- und Rollenüberschrift und danach den Tag auf. Die Standorte sind alphabetisch, die Tage aufsteigend angeordnet; vergangene Tage beginnen eingeklappt. Auf-/Zuklappen und horizontales Scrollen ändern nur die Ansicht. Die Zeitleiste und die Einsatzbalken werden gemeinsam verschoben. Sie sind kein Zieh-/Verschiebeeditor für Schichtzeiten.
+
+Die Überschrift **Einsatz/Einsätze** zählt die angezeigten Zuteilungszeilen dieses Tages, einschliesslich freier Plätze; sie ist **nicht die Anzahl persönlich bestätigter Mitarbeitender**. Bedarf, Überbuchung, freie Zeile, Zuteilung und Zusage dürfen nicht gleichgesetzt werden. Zeilen ohne Person sind nicht durch einen Favoriten automatisch besetzt. Der serverseitige Abruf lässt Bedarfe mit Menge null weg; das Fehlen einer Zeile ist deshalb kein verlässlicher Lösch- oder Absagenachweis.
+
+Prüfe pro Zeile Datum, Anfang, Ende und Person. Interne Personen erscheinen gegebenenfalls mit Bild, externe mit gesondert dargestellten Namen. Statusfarben unterscheiden unter anderem frei, zugeteilt, bestätigt, selbst gebucht und abgelehnt; eine Zuteilung allein ist noch keine persönliche Bestätigung. Bei Teilschichten zeigt der Hinweis am Balken die Zeitabschnitte, bearbeitet sie aber nicht. Vergleiche die ausgeschriebenen Zeiten: Nachtzeiten und die begrenzte grafische Zeitleiste können nicht als Arbeitszeit- oder Vollständigkeitsprüfung verwendet werden.
+
+Der Hinweis auf eingeschränkte Daten kann an Abteilungszuordnungen liegen. Die Rollenliste wird für Kundenbenutzer nach zugänglichen Abteilungen und dem Recht für Daten ohne Abteilung begrenzt. Fehlende Rollen sind nicht automatisch gelöscht. Diese native Ansicht bietet keine Bewerbungsregister, Filterleiste, Spaltenauswahl, Sortierreihenfolge-Konfiguration, Mengenänderung, Kopie oder **Entfernen-/Abmelden-Aktion**. Änderungen am Bedarf gehören in **Details der Planung**; für besetzte Einsätze die zuständige Einsatzplanung kontaktieren.
+
+Für eine interne benannte Person steht **Folgeeinsatz** zur Verfügung, nicht für externe Personen oder eine freie Zeile. Die genaue Datumsauswahl und das Senden werden unten beschrieben. Nach Änderungen neu öffnen: Diese Übersicht wird nach einer Folgeeinsatz-Anfrage nicht automatisch aktualisiert. Ein dauerhaftes Laden oder ein Abteilungshinweis ist keine Speicherbestätigung.
+
+## Nach dem Einsatz bewerten, kommentieren und Listen pflegen
+
+**Bewertung** erscheint erst, wenn passende vergangene Einsätze vorhanden sind. Die Ansicht kann bei noch nicht abgelaufenem Bestellzeitraum oder fehlender Bearbeitungsmöglichkeit gesperrt dargestellt werden. Diese Darstellung ist kein Ersatz für die Prüfung deiner Rechte durch die Administration.
+
+1. Suche die betreffende Person und ändere die Sternebewertung. Die Auswahl wird unmittelbar als Kundenbewertung für die passenden Zuteilungen dieser Person in der Bestellung gespeichert, nicht erst mit einem abschliessenden Übermitteln-Knopf. Das Zurücksetzen der Sterne sendet den Wert null beziehungsweise null Sterne als **0**. Bei einem Speicherfehler kann die Auswahl wieder leer erscheinen; lade erneut und prüfe den Stand.
+2. Öffne das Kommentarfeld. **Jede Textänderung löst bereits eine Speicheranfrage aus**, nicht erst das Verlassen des Felds. Auch das Leeren des Kommentars wird übermittelt. Schreibe nur die beabsichtigte sachliche Rückmeldung. Bei einer unterbrochenen Verbindung oder raschen Änderungen kontrolliere den Kommentar nach erneutem Öffnen; die sichtbare Eingabe ist kein Speichernachweis.
+3. Setze oder entferne die **Wunschliste**, wenn du die Person für diesen Kunden entsprechend führen möchtest. Das Hinzufügen entfernt eine bestehende Sperrlistenzuordnung. Es ist keine neue Einsatzbuchung.
+4. Eine Änderung an der **Sperrliste** verlangt eine Bestätigung. **Nein** lässt den bisherigen Zustand bestehen. Bestätigtes Hinzufügen entfernt zugleich die Wunschlistenmarkierung. Beim Entfernen von der Sperrliste wird die Wunschliste nicht automatisch wiederhergestellt.
+
+Wunsch- und Sperrliste betreffen den Kundenbezug und sind nicht bloss lokale Markierungen dieser Bestellzeile. Kontrolliere nach einer Änderung beide Anzeigen. Diese Aktionen sind weder eine Absage bestehender Zuteilungen noch eine allgemeine Löschung des Personalprofils.
+
+## Eine Bestellung über den persönlichen Freigabelink entscheiden
+
+1. Öffne deinen persönlichen Freigabelink und warte, bis der Bestellname geladen ist. Prüfe, ob es die erwartete Bestellung ist. Gib den Link nicht weiter und veröffentliche ihn nicht.
+2. Wähle **Freigeben**, wenn du zustimmst, und bestätige anschliessend mit **Ja**. **Nein** schliesst nur die Rückfrage; es sendet keine Zustimmung.
+3. Für eine Ablehnung wähle **Ablehnen**. Im Dialog kannst du eine **Bemerkung zur Ablehnung (optional)** eingeben. Erst **Bestätigen** übermittelt die Ablehnung. **Abbrechen** verwirft die Bemerkung und sendet keine Entscheidung. Auch eine leere Bemerkung verhindert die Ablehnung nicht.
+4. Warte auf die Darstellung deiner Entscheidung. Eine einzelne Zustimmung kann noch weitere erforderliche Freigaben offenlassen. Bitte den Besteller, den tatsächlichen Bestellstatus in der Liste zu kontrollieren.
+
+Eine Ablehnung führt zum abgelehnten Entwurf und entfernt das Übermittlungsdatum; der Benachrichtigungsversand an den Ersteller wird angestossen. Erst bei erfüllter Freigabebedingung wird die Bestellung übermittelt. Eine eventuell anschliessende automatische Veröffentlichung und Personalverarbeitung ist ein weiterer Vorgang, keine garantierte Sofortbesetzung.
+
+**Abgelaufen, bereits entschieden oder nicht geladen:** Die Seite bietet bei einer als abgelaufen oder entschieden geladenen Freigabe keine neue Entscheidung an. Ein abgelaufener Link kann einen Grund anzeigen. Bei leerem Inhalt, dauerhaftem Laden oder unklarem Ergebnis nicht wiederholt bestätigen, sondern den Besteller um eine Statusprüfung und nötigenfalls eine neue Freigabeanforderung bitten. Verwende für eine Korrektur den geregelten Bestellablauf statt eines alten Links. Eine fehlende Fehlermeldung und ein verschwundener Ladeindikator sind keine Bestätigung, dass die Entscheidung gespeichert wurde.
+
+## Entwurf löschen und Abbruchfolgen unterscheiden
+
+**Achtung: Der Papierkorb löscht ohne zusätzliche Löschrückfrage.** Öffne zuerst den Entwurf zur Kontrolle, kehre zur Bestellliste zurück und klicke erst dann beim richtigen Eintrag auf **Löschen**. Der native Knopf sendet unmittelbar. Er erscheint nur beim Status **Entwurf**, nicht bei ausstehender Freigabe oder abgelehntem Entwurf. Der Kundenweg benötigt das Erstellrecht und den passenden Kundenbezug; der Server prüft zusätzlich den Entwurfsstatus. Ein sichtbarer Papierkorb allein beweist nicht, dass die Löschung erlaubt ist.
+
+Bestehende einer Person zugewiesene Zuteilungen verhindern die Löschung. Die Liste lädt sowohl nach Antwort als auch nach Transportfehler neu; der Handler wertet nicht jeden fachlichen Fehler sichtbar aus. Kontrolliere deshalb, ob der Eintrag wirklich verschwunden ist. Bei weiterhin sichtbarer Bestellung oder unklarem Fehler die Agentur kontaktieren, nicht mehrfach löschen oder den Bedarf als Ersatz auf null setzen.
+
+**Löschen ist kein Archivieren:** Bestellung und zahlreiche zugehörige Planungs-, Anfrage-, Freigabe-, Nachrichten- und Abrechnungsreferenzen werden dauerhaft entfernt. Dazu gehören Freigabeeinträge und zugeordnete Credit-Datensätze; das ist **keine Kontingent- oder Geldrückerstattungszusage**. Verknüpfte Unterprojekte bleiben bestehen, verlieren aber ihre Elternzuordnung. Ein Bild wird gesondert auf weitere Referenzen geprüft; keine Zusage, dass sämtliche Dateien oder bereits heruntergeladenen Kopien entfernt werden. Der Ablauf ist keine belegte atomare Alles-oder-nichts-Löschung. Bereits ausgelöste E-Mails, Push-Nachrichten oder laufende Verarbeitung werden nicht zuverlässig zurückgeholt.
+
+| Aktion | Wirkung und Grenze |
+| --- | --- |
+| Dialog abbrechen | Sendet die noch nicht bestätigte Dialogaktion nicht; frühere Einzeländerungen bleiben. Der Papierkorb hat hier keinen solchen Bestätigungsdialog. |
+| Grunddaten/Planung speichern | Ändert Bestell-/Planungsdaten; keine Freigabeentscheidung. |
+| Bestellung übermitteln | Freigabeanforderung oder direkter Übermittlungsweg; nicht gleich bestätigte Besetzung. |
+| Bestellung zurückziehen | Freigabestand auf Entwurf, keine Personalabsage. |
+| Entwurf löschen | Dauerhafte Entfernung, kein Wiederherstellungs-Papierkorb. |
+| Besetzten Auftrag stornieren | Mit der zuständigen Einsatzplanung abstimmen, nicht durch Rückzug oder Bedarf null ersetzen. |
+
+Eine Projektstornierung durch eine dazu berechtigte Stelle ist ein **anderer Vorgang**: Sie kann Personen aus Zuteilungen lösen, die Plätze auf frei setzen, Anfragen entfernen und Benachrichtigungsjobs für betroffene Personen anstossen. Das Projekt bleibt mit storniertem Typ und einem Namenspräfix **C/** bestehen. Daraus folgt weder, dass jedes Statusfeld gleich lautet, noch dass alle Personen bereits informiert sind. Die native Bestellliste bietet **keinen allgemeinen Stornieren-Knopf**. Lass bei besetzten Aufträgen den tatsächlichen Abbruch und die Information der Betroffenen bestätigen; weder Versandauftrag noch technischer Lösch-/Stornoerfolg ist eine Vertrags-, Erstattungs- oder Rechtsgarantie.
+
+## Grunddaten: Felder, Voreinstellungen und Speichergrenze
+
+Die Grunddaten stehen unter **Details der Bestellung**; bei einer neuen Bestellung heisst die Ansicht **Bestellung erstellen & bearbeiten**. Name und Beschreibung beginnen leer, die neue Bestellung ist ein Entwurf. Auftragsnummer und Kostenstelle sind optional. Die Kostenstellenvorschläge werden beim Tippen lokal eingegrenzt; Auswahl und Freitext ändern zunächst das Formular. Das Verlassen dieses Felds schliesst nur die Vorschlagsliste, es speichert nicht eigens.
+
+Die Abteilungsliste enthält die für deinen Benutzer zugänglichen Abteilungen. Bei einer bestehenden Rollenplanung kann sie weiter eingeschränkt sein. Ist genau eine wählbare Abteilung vorhanden und noch keine gesetzt, wird sie vorausgewählt. Ohne Berechtigung für Daten ohne Abteilung ist die Abteilung beim normalen **Weiter** erforderlich und nicht leer auswählbar. Bei unterschiedlichen Rollenabteilungen beziehungsweise Kostenstellen erscheint statt des gemeinsamen Eingabefelds ein Hinweis. Ein Grunddaten-Speichern kann auch Rollenwerte nachziehen, die bisher leer waren oder zum bisherigen gemeinsamen Wert gehörten; kontrolliere danach die Rollen.
+
+**Details der Bestellung** ist ein Texteditor mit Linkfunktion. Die Grenze von 500 Textzeichen wird beim Ändern geprüft. Bei zu langem Text wird der letzte zulässige Inhalt wiederhergestellt; kontrolliere insbesondere eingefügte Texte. Der Editor zeigt nicht vier separate Sprachfelder. Name und Beschreibung können in der Anzeigesprache mit Rückfall auf andere vorhandene Übersetzungen erscheinen.
+
+**Weiter** prüft Name, die erforderliche Beschreibung, mindestens einen Standort mit Datum sowie die erforderliche Abteilung. Erst eine Antwort mit gültiger Bestellkennung führt zur Planung. Die Schrittnavigation oben ist davon verschieden: Sie wechselt die Ansicht; sie ist keine zusätzliche Speicherbestätigung. Beim Verlassen der Grunddaten wird eine separate Sicherung versucht, deren Prüfung schwächer ist als bei **Weiter**. Deshalb ist Abbruch oder Wechsel kein verlässliches Verwerfen. Beim Abmelden wird ohne bestehende Sitzung keine Verlassens-Sicherung versucht. Ein Browser-Schliessen garantiert nicht, dass eine begonnene Anfrage noch ankommt.
+
+Bei fehlgeschlagenem Speichern nicht von einem unveränderten Gesamtauftrag ausgehen: Auch wenn das Entfernen eines zugeteilten Tages abgewiesen wird, können andere Grunddaten bereits gespeichert sein. Bestellung neu öffnen, Werte vergleichen und erst dann weiterarbeiten. Ein Ladeindikator oder ein geschlossener Dialog ersetzt diese Kontrolle nicht.
+
+## Standorte und einzelne Tage sicher ändern
+
+Unter **Ort hinzufügen** werden vorhandene Standorte und Suchvorschläge angeboten. Wähle den tatsächlichen Eintrag; freies Eintippen allein fügt noch keinen Standort hinzu. Ein Kunden-Standardort kann vorausgefüllt sein, hat aber noch keine automatisch gewählten Tage. Derselbe Adresstext wird im offenen Formular nicht doppelt ergänzt. Beim Hinzufügen wird der neue Standort ausgewählt, die bisherigen werden abgewählt.
+
+Die Häkchen neben den Standorten legen fest, auf welche Standorte die nächste Kalenderänderung angewendet wird. Sie sind keine Personalzuordnung. Der Kalender zeigt die gemeinsame Auswahl der markierten Standorte; bei unterschiedlichen Terminen musst du die aufgeklappten Listen pro Standort prüfen. Das Aufklappen selbst speichert nichts. Die Ansicht bietet einzelne Mehrfachtermine, keinen aktiven Von-bis-Bereich: Bereichsdaten im Hintergrund sind kein zusätzliches Kalenderfeld.
+
+Ein Tag lässt sich in seiner Standortliste unmittelbar aus dem **lokalen Formular** entfernen. Für einen ganzen Standort erscheint eine Ja/Nein-Rückfrage; **Nein** lässt die Liste unverändert. Auch **Ja** entfernt zunächst nur die Formularzeile. Das ist keine Löschung aus dem zentralen Standortverzeichnis. Insbesondere bedeutet eine verschwundene Standortzeile nicht, dass ein bereits gespeicherter Standort samt Tagen dauerhaft aus der Bestellung entfernt wurde. Öffne nach dem Speichern neu und lasse einen wiederkehrenden Eintrag prüfen.
+
+**Datum und Zeitzone:** Der Kalender beginnt bei heute gemäss Browserdatum. Die Tage werden aus lokalen Kalenderbestandteilen gespeichert; die Zeitfelder der Planung enthalten keine auswählbare Zeitzone. Wechsle für die Kontrolle nicht unbemerkt die Gerätezeitzone. Prüfe nach Neuladen die dargestellten Tage, besonders bei Arbeit aus einer anderen Zeitzone. Eine Datumsauswahl ist keine Prüfung sämtlicher Einsatz- oder Arbeitszeitregeln.
+
+## Rollendialog, Kopien und Entfernen im Detail
+
+**Neue Rolle hinzufügen** öffnet eine neue Auswahl ohne bisherigen Rollennamen. Die Bestellabteilung dient als Vorgabe. Im Bearbeitungsdialog wird die Rollenabteilung verwendet, ersatzweise die Bestellabteilung. Wähle eine hinterlegte Kundenrolle, keinen beliebigen neuen Rollennamen. Bei einer Abteilung werden nur Rollen angeboten, die ihr zugeordnet sind. Löschen der Abteilungswahl ist nur möglich, wenn Daten ohne Abteilung erlaubt sind. Eine Rollenwahl bleibt beim Abteilungswechsel erhalten, wenn sie weiterhin passt; andernfalls wird sie geleert.
+
+**Abbrechen** oder das Kreuz schliesst den Rollendialog ohne dessen Speicheranfrage. Nach einem abgebrochenen Bearbeiten öffnet **Neue Rolle hinzufügen** wieder eine neue Anlage. **Speichern** prüft zuerst die nötige Abteilung, den Rollennamen und bei Neuanlage doppelte Namen am selben Standort. Danach können die Abteilungsrückfragen folgen. Auch bei der einzigen bereits bestehenden Rolle speichert **Nein** in der Rückfrage nichts. Bei mehreren Rollen bestätigt **Ja** die unterschiedliche Zuordnung, nicht eine gemeinsame Bestellabteilung.
+
+Eine Standardvorlage wird bei der Rollenanlage im Hintergrund geladen; es gibt hier keinen eigenen aktiven Rollenvorlagen-Auswahldialog. Werden keine verwendbaren Vorlagenschichten geladen, greift die Standardschicht. Prüfe daher nach fehlender Vorlage oder Ladefehler Zeiten und Dokumente. Rollen-Kostenstellen können aus der Kundenrolle stammen, ersatzweise aus der Bestellung. Spätere Rollenbearbeitung ersetzt nicht die vorhandenen Schichten oder Dokumente durch den Inhalt einer neuen Vorlage.
+
+**Duplizieren** an einer Rolle kann auch denselben Standort zum Ziel haben; die Kopie erhält nötigenfalls einen Zusatz im Namen. **Alle Rollen kopieren** bietet andere Standorte an und benötigt mindestens ein Ziel, mindestens zwei Rollen am Quellstandort, Premium und einen nicht archivierten Auftrag. Gibt es am Quellstandort nur eine Rolle, nutze **Duplizieren** an dieser Rollenkarte. Die Auswahl im aufgeklappten Feld ist noch kein Kopierauftrag; erst **Anwenden** startet die einzelnen Kopien. Es wird kein kompletter Zeitraum und keine Personalbesetzung dupliziert. Die Zielbedarfe müssen geprüft und eingegeben werden; sichtbare Nullwerte nach dem Kopieren sind kein Beleg für eine vollständig übernommene Menge. Bei mehreren Kopien kann eine schon fertig sein, während eine andere noch läuft oder scheitert.
+
+**Löschen** an einer Rolle verlangt eine eigene Bestätigung. Ein vertraglich gebundener Einsatz kann das Löschen verhindern. Andernfalls können zugehörige Schichten, Bedarfe und Zuordnungen betroffen sein; es ist nicht nur das Entfernen eines Namens. Lösche keine Rolle, um eine gesperrte Schicht oder eine Personalabsage zu umgehen. Bei unklarem Ergebnis neu laden statt wiederholt klicken.
+
+## Zeitvalidierung, Mengen und gemeinsame Schichten
+
+Eine Schichtzeile gehört zu einer Rolle am Standort. Ihre Anfangszeit, Endzeit und Pause gelten gemeinsam für die Tageszellen dieser Zeile; nur die Mengen werden pro Tag eingegeben. Für abweichende Zeiten benötigst du eine passende weitere Schicht. Die Pfeile verschieben die Tagesansicht, nicht die Daten.
+
+Die Zeitmaske erwartet zwei Ziffern für Stunde und Minute. **24:00**, Minuten über 59 oder unvollständige Werte werden geleert, nicht als gültige Zeit übernommen. Ergänze beide Zeiten vollständig. Beim Verlassen wird dennoch der Berechnungsweg angestossen; eine leere Anzeige bedeutet deshalb nicht, dass die alte gespeicherte Zeit sicher erhalten oder bereits gelöscht ist. Prüfe nach Neuladen. Tab kann den Wechsel zum nächsten Feld auslösen, ist aber keine gesonderte Speicherbestätigung.
+
+Die automatische Pause verwendet bei Bestellungen die zum Auftrag gehörende Kundenkonfiguration, soweit ein passender Kundenbereich vorliegt; andernfalls fällt die Berechnung auf Agenturregeln zurück. Ein früheres Ende als der Anfang wird für die Dauer über Mitternacht gerechnet. Gleiche Anfangs- und Endzeit gilt dabei nicht als ganzer Tag. Die manuelle Pause ist eine Minutenangabe. Änderungen an Anfang oder Ende können sie erneut überschreiben. Eine bereits begonnene bestätigte Schicht kann eine Zeitänderung abweisen, ohne dass die Eingabe zuverlässig zurückgesetzt wird. Vorhandene Teilschichten werden beim Überfahren als Zeitabschnitte angezeigt; der Hinweis ist kein Editor für diese Abschnitte.
+
+Mengen werden bereits beim Tippen einzeln angefragt. Die angezeigte Anzahl ist der Bedarf ohne Überbuchung; intern kann wegen schon zugeteilter Personen mehr erhalten bleiben. Es gibt hier keine gemeinsame Warteschlange bis **Weiter**, keine garantierte Reihenfolge rascher Antworten und kein Gesamt-Rückgängig. Auch eine Erfolgsmeldung bei einer anderen Aktion beweist nicht, dass die letzte Menge angekommen ist. Bei Fehlern oder schnellen Änderungen erneut öffnen und die einzelne Tageszelle prüfen.
+
+Die **Kostenschätzung** der Rollenkarte ist keine belastbare Kontrollsumme für deinen Bedarf. Sie ist nur unter bestimmten Rollen-/Abteilungsbedingungen sichtbar und kann trotz eingetragener Mengen fehlen oder null zeigen. Verwende sie weder als Preiszusage noch als Lohnabrechnung oder Rechtsprüfung; kläre Preise separat.
+
+## Mehrfachauswahl: Ziele und Fehler bei Kleidung und Dateien
+
+Die Mehrfachauswahl gilt für die geladenen Rollen über alle Standorte. Einzelhäkchen und **Alle Rollen auswählen** speichern noch nichts. Beim Beenden der Mehrfachbearbeitung werden die Häkchen und die Zielliste geleert. Prüfe die Auswahl vor jeder Änderung, nicht nur die gerade geöffnete Rollenkarte.
+
+- **Kleiderbestimmungen:** Der Dialog lädt die vorhandene Auswahl und die zum Kunden gehörenden Vorgaben. Normale Einträge und **Andere** werden über Häkchen ausgewählt; ein Text bei **Andere** wirkt nur mit gesetztem Häkchen. Dieser Freitext wird auch in die anderen Sprachwerte übernommen. Speichern ersetzt die zusammengefasste Kleiderbeschreibung. Eine leere Auswahl kann die bisherige Beschreibung leeren. Gespeichert wird die geöffnete Rolle **und zusätzlich** jede markierte Rolle; ist sie selbst markiert, kann sie doppelt angefragt werden. Ein Erfolg kann daher eintreten, bevor alle Ziele erfolgreich sind.
+- **Upload:** Bei aktiver Mehrfachbearbeitung ist die übergebene Auswahl das Ziel; die geöffnete Rolle ist nicht automatisch zusätzlich enthalten. Markiere sie ausdrücklich, wenn sie dieselbe Datei erhalten soll. Ohne Mehrfachbearbeitung ist die geöffnete Rolle das Ziel. Wähle vor einem Mehrfachupload mindestens eine Rolle. Das Uploadfeld ist bei archiviertem Auftrag deaktiviert; andere gesperrt wirkende Darstellungen sind nicht mit dieser Deaktivierung gleichzusetzen.
+- **Datei entfernen:** Bestätigt wird die Entfernung aus den ausgewählten Rollenzuordnungen, bei leerer Auswahl aus der geöffneten Rolle. Prüfe die Dateilisten danach neu, besonders wenn die Datei nicht auf allen markierten Rollen vorhanden war. Keine Zusicherung physischer Dateivernichtung.
+
+Nach einem Uploadfehler kann die Anzeige weiter beschäftigt wirken. Auch eine Antwort wegen doppeltem Dateinamen kann wie eine Erfolgsantwort verarbeitet werden. Entscheidend ist deshalb die neu geladene Dateiliste pro Zielrolle, nicht allein die Farbe oder Überschrift der Meldung. Eine bereits hochgeladene Datei wird weder durch Schliessen des Kleiderdialogs noch durch **Zurück** zurückgenommen. Die Anzahlbegrenzung im Uploadfeld ist keine Zusicherung einer Gesamtgrenze aller bereits gespeicherten Rollendokumente.
+
+## Ansichtssperren und Verarbeitung richtig einordnen
+
+Die Darstellung kann nach Übermittlung, während ausstehender Freigabe, bei fehlender Bearbeitungsmöglichkeit oder nach dem letzten Auftragstag gesperrt wirken. Ein Hinweis auf eingeschränkte Daten bedeutet, dass Abteilungszuordnungen die geladene Planung begrenzen können. Fehlende Rollen sind nicht automatisch gelöschte Rollen. Lasse Benutzerrechte, Kunde und Auftrag prüfen, statt Daten nochmals anzulegen.
+
+Die visuelle Überlagerung ist keine verlässliche Aussage, dass jedes Feld und jede Tastaturaktion technisch deaktiviert ist. Verwende eine gesperrt wirkende Ansicht nicht zum Umgehen des vorgesehenen Ablaufs. Insbesondere stehen Bestell-Erstellrecht, Übermittlungsrecht und Self-Service-Bearbeitung für unterschiedliche Vorgänge; daraus folgt kein pauschales Bearbeitungsrecht für alle Bestellungen.
+
+Rollen- und Schichtaktionen können eine Verarbeitungsanzeige öffnen. Diese ist weder eine gemeinsame Speicherquittung noch ein Abbruchknopf. Bei dauerhaftem Laden nicht mehrere gleiche Anlagen starten: Auftrag neu öffnen und den tatsächlichen Stand prüfen. Ja/Nein-Rückfragen gehören zur jeweiligen Aktion; **Nein** fordert diese Änderung nicht an. Bereits zuvor gespeicherte Änderungen bleiben davon unberührt.
+
+## Spesendialog: kein aktiver Einstieg in dieser Planung
+
+Der Spesendialog gehört nicht zu den erreichbaren Bedienaktionen dieser nativen Planung. Dass Spesendaten aus einer Standardvorlage übernommen werden können, macht den ausgeblendeten Dialog nicht zu einem verfügbaren Bearbeitungsschritt. Nutze dafür die Abstimmung mit der zuständigen Administration.
+
+
+## Sedcard: freigegebene Felder und Anzeigegrenzen
+
+Klicke auf die Personenzeile. Die Sedcard wird aus der für die Freigabe hinterlegten Vorlage aufgebaut; ohne passende Vorlage verwendet das System eine Grundvorlage. Sie ist eine **Ansicht**, kein Profil- oder Vorlageneditor. Es gibt hier keine Register zum Wechseln von Profilbereichen und keine aktiven Vor-/Zurückknöpfe für die nächste Person. Schliesse die Karte mit dem Kreuz und wähle eine andere Zeile. Schliessen ändert keine Daten.
+
+| Vorlagenbereich | Was du kontrollieren kannst |
+| --- | --- |
+| Identität und Kontakt | Vor-/Nachname, Bild oder Initialen, Geschlecht, Altersanzeige, Stadt beziehungsweise Stadt/Kanton, E-Mail und Telefonnummer, soweit die Vorlage diese Felder enthält. Das Alter ist eine berechnete Näherung, kein verifiziertes Geburtsdatum. |
+| Bewertung und Erscheinungsbild | Nur lesbare Sterne; je nach Vorlage Erscheinungsbild, Augen-/Haarfarbe, Körpergrösse, Schuh-/Hemdgrösse, Herkunft, Hosenweite/-länge sowie Piercing/Tattoo. Leere Werte und Nein-Darstellungen sind keine Prüfung der Vollständigkeit oder Richtigkeit des Personalprofils. Insbesondere ist das zusammengefasste Erscheinungsbild nicht verlässlich befüllt. |
+| Sprachen | Sprache und Kenntnisstufe; die Vorlage kann nach Sprachen oder Stufen auswählen. Werden beide Auswahlarten verwendet, können Angaben mehrfach erscheinen. Nicht zuordenbare Stufen können als unbekannt dargestellt werden. |
+| Ausbildung und Berufserfahrung | Ausbildung mit Typ, Institut und Zeitraum; Erfahrung mit Beruf, Stufe/Position, Firma und Zeitraum. Laufende Einträge lassen das Enddatum leer. Die Vorlagenhöhe begrenzt die Zahl sichtbarer Zeilen; ein kurzer Auszug beweist nicht, dass keine weiteren Einträge existieren. |
+| Mobilität | ÖV-Abonnemente, Führerscheintypen, Fahrkenntnisse, Autoverfügbarkeit und Carsharing-Abonnemente. Es handelt sich um Profilangaben, nicht um eine bestätigte Einsatzverfügbarkeit. |
+| Interessen | Produktbereiche und Jobarten entsprechend der gewählten Vorlagenvariante; keine Änderung von Rollenanforderungen oder Buchung. |
+
+Die Vorlage bestimmt Anordnung und Hoch-/Querformat. Sie ist keine Garantie, dass jedes angefragte Feld tatsächlich geliefert wird. Bei einer unvollständigen Karte oder einem Darstellungsfehler nicht aus fehlenden Feldern auf eine fehlende Qualifikation schliessen; Angaben bei der Agentur klären. Die bereitgestellten Informationen werden hier nicht automatisch laufend nachgeladen.
+
+## Favoriten, Rechte und NOH-Zuteilung
+
+1. Prüfe die Person und die Sperrlistenanzeige. Bei einem noch nicht gesetzten Favoriten verhindert eine angezeigte Sperre die Auswahl. Klicke zum Favorisieren auf das graue Favoritensymbol, nicht nur auf die Personenzeile.
+2. Die Oberfläche benötigt die vom Server gelieferte Bearbeitungsmöglichkeit aus **Bestellung erstellen & bearbeiten**. Reines Ansehen ist keine Änderungsfreigabe. Bei fehlendem Recht sendet der Favoritenhandler nicht. Eine optisch gesperrte Fläche oder ein sichtbarer Menüpunkt beweist aber keine allgemeine technische Berechtigung für jede andere Aktion.
+3. Im normalen Auftrag wird die Markierung unmittelbar angefragt. Nach erfolgreicher Antwort erscheint sie gesetzt; der gesetzte Favorit kann dort wieder umgeschaltet werden. Die Präferenz betrifft die Anfragen derselben Person aus derselben Veröffentlichung, nicht nur eine sichtbare Tageszelle. Sie ist weder Wunschlistenpflege noch eine persönliche Einsatzzusage.
+4. Bei einem als **NOH** geführten Auftrag öffnet das Setzen zuerst eine Rückfrage zur automatischen Zuteilung. Ohne **Ja**, insbesondere bei **Nein**, wird diese Favoritenanfrage nicht gesendet. Bestätige nur, wenn die Zuteilungswirkung beabsichtigt ist.
+
+**NOH ist hier keine unverbindliche Favoritenliste:** Die Bestätigung kann verfügbare freie Plätze der Bestellung ab heute für passende angenommene beziehungsweise automatisch angenommene Bewerbungen dieser Person zuteilen. Bereits bestehende Überschneidungen oder fehlende freie Plätze können einzelne Zuteilungen verhindern. Die Rückfrage ist daher keine Zusage, dass ausnahmslos alle Einsätze besetzt werden. Der gesetzte Favorit lässt sich bei NOH in dieser Ansicht **nicht zurückschalten**. Für eine Korrektur oder Abmeldung die zuständige Einsatzplanung kontaktieren; das Entfernen aus einer Wunschliste wäre kein Ersatz.
+
+Kontrolliere danach die Einsatzplanung neu. Der gespeicherte Favorit, eine Zuteilung und eine ausdrückliche Bestätigung durch die Person sind unterschiedliche Zustände. Einzelne Zuteilungen und Benachrichtigungen können getrennt verarbeitet werden; keine Zustell- oder Vollbesetzungsgarantie. Während der Favoritenanfrage gibt es keine eigene verlässliche Sendesperre oder Rückmeldung für jeden Fehler. Nicht mehrfach klicken, wenn die Antwort ausbleibt; erst neu laden und prüfen lassen.
+
+## CV öffnen und Sedcard als PDF herunterladen
+
+**Lebenslauf öffnen** wird nur angeboten, wenn die Agentur das CV mit den Sedcards geteilt hat und für die Person ein CV gemeldet wird. Klicke darauf, um die Datei in einem neuen Tab zu laden. Die Dateianfrage prüft den Agentur-/Kundenbezug der Bestellung, die Freigabe dieser Sedcard und das vorhandene CV. Ein sichtbarer Knopf garantiert nicht, dass die Datei noch abrufbar ist. Bei verweigerter oder fehlender Datei wird der vorab geöffnete Tab geschlossen und eine Fehlermeldung angezeigt. Prüfe auch die Pop-up-Einstellungen; ein blockierter neuer Tab ist kein Beleg für fehlende Rechte.
+
+Der PDF-Exportknopf lädt dagegen die **angezeigte Sedcard** als `sedcard.pdf` herunter; seine Beschriftung kann englisch erscheinen. Es ist nicht der CV-Download und kein vollständiger Personalaktenexport. Die Karte wird als Bild in eine A4-Seite eingepasst; Hoch-/Querformat folgt der Vorlage. Das Profilbild wird für die Aufnahme gesondert geladen. Scheitert das, kann die Datei ohne Bild entstehen. Bei einem Aufnahmefehler kann eine verständliche Meldung fehlen. Öffne die gespeicherte Datei und prüfe Inhalt, Lesbarkeit und Bild, bevor du sie verwendest.
+
+Weder Download noch PDF-Export ändert die Favoriten, die Besetzung oder die Freigabe. Heruntergeladene Kopien verschwinden nicht automatisch, wenn sich später die Freigabe ändert. Gehe mit diesen personenbezogenen Unterlagen entsprechend sorgfältig um.
+
+## Planung als Excel exportieren
+
+Wähle oben **Zeiterfassungsblatt**, wenn die Einsatzplanung geladen ist. Die Aktion fordert eine Excel-Datei für die geladenen Standorte, Tage und Rollen an, mit Datum, Personalnummer, Vor-/Nachname, Rolle und Anfang/Ende. Hier öffnet sich **kein zusätzlicher Auswahl- oder Spaltenkonfigurationsdialog**. Eingeklappte Tage oder Rollen werden dadurch nicht aus dem Export ausgeschlossen. Es handelt sich nicht um die Bestellliste und nicht um eine Änderung der Zuteilung.
+
+Voraussetzung sind geladene Tage, Standorte und Rollen sowie exportierbare Planungsdaten. Leere Auswahl oder fehlende Zuteilungsdaten können die Erstellung verhindern. Die Datei wird nach Antwort in einem neuen Tab geöffnet. Ein leerer Tab oder eine fehlende Fehlermeldung ist kein erfolgreicher Download; prüfe die gespeicherte Datei sowie Datum und Namen. Besonders bei abweichender Gerätezeitzone nicht ungeprüft auf die exportierten Tage vertrauen. Freie beziehungsweise externe Plätze können andere oder leere Personendaten enthalten; der Export ist keine Zusagenliste, Lohnabrechnung oder rechtliche Arbeitszeitprüfung.
+
+## Folgeeinsatz: Datum, Rolle und Zeiten auswählen
+
+1. Klicke bei der richtigen internen Person auf **Folgeeinsatz**. Der Dialog kopiert Person, ursprünglichen Einsatz, Rolle und Anfang/Ende als Ausgangswerte. Die ursprüngliche Schicht wird dadurch nicht verlängert oder verschoben. Zuerst werden Schichtdaten und eine Duplikatprüfung geladen; bei Ladefehlern kann der Dialog ausbleiben.
+2. Prüfe das Datum: Vorgeschlagen wird der Tag nach dem ausgewählten Einsatz, mindestens jedoch **morgen gemäss Browserdatum**. Das ist keine pauschale Verfügbarkeit der Person an diesem Tag. Die Datumsgrenze wird beim Öffnen der Ansicht gesetzt; bei einer über Nacht offen gebliebenen Ansicht neu laden.
+3. Wähle die gewünschte vorhandene Rolle aus der geladenen Rollenliste. Mit einer anderen Rolle kann auch ein anderer Standort verbunden sein. Ein Rollenwechsel übernimmt **nicht automatisch andere Schichtzeiten**. Der früher vorgesehene Schicht-Auswahllistenweg ist hier nicht aktiv.
+4. Prüfe **von** und **bis** in den Zeitfeldern im 24-Stunden-Format. Datum und Zeiten zunächst vollständig eingeben. Die Auswahl über Kalender-/Zeitauswahl und der Rollenwechsel lösen eine erneute Duplikatprüfung aus. Reines Tippen in ein Kalenderfeld kann dagegen den Wert ändern, ohne diese Prüfung erneut auszulösen. Verwende nach Freitextänderungen die Auswahlfunktion und kontrolliere die Angaben vor dem Senden. Leere, unplausible, gleiche oder über Mitternacht gehende Zeiten nicht als automatisch fachlich validiert betrachten.
+5. Ein Hinweis auf eine bestehende Einladung oder bereits gesendete Folgeeinsatz-Anfrage sperrt den Senden-Knopf. Die Prüfung bezieht sich auf Person, Bestellung, Rolle, Datum und exakt gleiche Anfangs-/Endzeit; sie ist **keine allgemeine Kollisions-, Verfügbarkeits- oder Arbeitszeitprüfung**. Auch eine früher bearbeitete Anfrage kann diese Kombination weiter blockieren.
+6. **Abbrechen** beziehungsweise das Kreuz schliesst den Dialog ohne neue Folgeeinsatz-Anfrage. Beim erneuten Öffnen werden die Ausgangswerte neu geladen; noch nicht gesendete Eingaben sind kein gespeicherter Entwurf.
+
+Warte nach Änderungen auf die Prüfung. Bei schnellen Änderungen können ältere Antworten die Warnanzeige beeinflussen; während einer laufenden Prüfung ist der Senden-Knopf nicht zuverlässig gesperrt. Auch nach einem Abbruch kann eine verspätete Antwort noch eintreffen. Wenn Warnung und Felder nicht zusammenpassen, nicht auf Verdacht senden, sondern die Ansicht neu öffnen. Ein deaktivierter Knopf oder ein fehlender Hinweis ersetzt keine Prüfung des tatsächlich gespeicherten Stands.
+
+## Folgeeinsatz senden: Bestätigung, NOH und tatsächliche Wirkung
+
+**Anfrage senden** prüft zunächst, ob Person, Rolle, Datum und beide Zeiten vorhanden sind, und öffnet dann eine eigene Ja/Nein-Rückfrage. **Nein** fordert keinen Folgeeinsatz an. Erst **Ja** sendet die Anfrage. Kontrolliere die Felder vor der Bestätigung; eine offene Rückfrage ist keine bereits gespeicherte Bestellung. Es gibt hier keinen zusätzlichen Kundenentscheid über Lohn, Spesen, Tarif, Pause, Kleiderbestimmungen oder Dokumente. Deren Übernahme aus dem bisherigen Einsatz ist durch den Folgeeinsatz-Dialog nicht zugesichert; notwendige Leistungsbedingungen mit der Agentur abstimmen.
+
+| Verarbeitung | Bedeutung |
+| --- | --- |
+| Normaler Ablauf | Eine neue Anfrage wird als ausstehend gespeichert. Die Meldung über erfolgreiches Senden ist keine persönliche Zusage und **kein Nachweis einer zugestellten E-Mail an Projektleitung oder HR**. Den weiteren Bearbeitungsstand mit der Agentur klären. |
+| Automatische NOH-Verarbeitung | Die aktuelle Kunden-NOH-Konfiguration, ersatzweise die Agenturkonfiguration, kann ausserhalb der eingestellten Geschäftszeiten eine automatische Annahme auslösen. Ein vorhandener Kundenkonfigurationssatz ersetzt dabei die Agenturvorgabe, auch wenn er NOH ausschaltet. Der Puffer verkürzt das als regulär betrachtete Geschäftszeitfenster. Das ist nicht allein vom früher gespeicherten NOH-Kennzeichen der Bestellung abhängig. Die Rückfrage mit Hinweis auf Agenturbestätigung garantiert daher keine manuelle Prüfung. |
+| Weiterverarbeitete Anfrage | Für die gewählte Rolle und Zeit wird eine passende Schicht verwendet oder neu angelegt. Der Bedarf am Tag wird um eins erhöht oder mit eins neu angelegt; dazu kommt ein zunächst freier Zuteilungsplatz. Ein fehlender Standorttag wird ergänzt, fehlende Bedarfszeilen anderer Schichten dieses Standorts können mit null angelegt werden. Für die Person wird nötigenfalls eine offene Einladung angelegt. **Automatisch angenommene Folgeeinsatz-Anfrage ist nicht automatisch bestätigte Personalzuteilung.** |
+
+Die Einladung verwendet Informationen der ursprünglichen Veröffentlichung; sie ist kein vollständiges Kopieren aller bisherigen Einsatzbedingungen. Benachrichtigungsverarbeitung und eine Mitteilung über die Annahme werden im Weiterverarbeitungsweg angestossen, ihre tatsächliche Zustellung ist damit nicht belegt. Vergangene Termine werden bei dieser Weiterverarbeitung zurückgewiesen. Ein identischer bereits vorhandener Anfrageeintrag verhindert einen neuen Sendeversuch; das ist kein umfassender Schutz gegen jede parallele oder fachlich widersprüchliche Änderung.
+
+Bei Erfolg **und** bei einem Transportfehler kann der Dialog geschlossen und geleert werden. Die Übersicht lädt danach nicht automatisch neu. Eine Erfolgsmeldung wird nicht auf sämtliche fachlichen Antwortinhalte geprüft. Umgekehrt beweist eine Fehlermeldung nicht, dass noch gar nichts gespeichert wurde: Anfrageanlage und anschliessende Weiterverarbeitung haben unterschiedliche Grenzen. Vor einem erneuten Senden zuerst Bestellung und Anfragezustand prüfen lassen. Ein späteres **Abbrechen** holt eine bereits gesendete Anfrage oder Einladung nicht zurück; dafür gibt es in dieser Ansicht keinen Rücknahme-/Entfernenknopf.
+
+Bestellzugriff, Abteilungszuordnung, Bearbeitungsrecht und Kunden-/Agenturkonfiguration sind getrennte Voraussetzungen. Sichtbare Navigation, ein nicht deaktivierter Knopf oder ein erfolgreich angenommener Request sind **keine allgemeine Sicherheits- oder Leistungszusage**. Bei fehlenden Rechten oder unklarem Stand die zuständige Administration einbeziehen, statt mit abweichenden Daten erneut zu senden.
+
+
+## Schritte, Ladezustand und Berechtigungen sicher einordnen
+
+Öffne die richtige Bestellung über ihre Zeile in **Bestellungen**. **Details der Bestellung**, **Details der Planung** und **Zusammenfassung** sind die ersten drei Schritte einer bestehenden Bestellung. Ein neuer Eintrag beginnt mit den Grunddaten. Die Schrittüberschriften wechseln die Ansicht; sie sind kein gemeinsamer Speichern-, Freigeben- oder Rückgängig-Knopf. Einzelne Felder können bereits vorher gespeichert worden sein.
+
+Bei **Entwurf**, **Freigabe ausstehend** und **Abgelehnt** werden Ressourcen, Einsatzplanung und Bewertung nicht eingeblendet. Sonst hängt die Reihenfolge von den geladenen Daten ab: mit Personalvorschlägen Ressourcen an Position 4, Einsatzplanung an Position 5 und gegebenenfalls Bewertung an Position 6; ohne Vorschläge Einsatzplanung an Position 4 und gegebenenfalls Bewertung an Position 5. Bewertung benötigt geladene vergangene Einsätze. Die Schrittnummer allein ist deshalb kein stabiler Direktlink. Nach einer Übermittlung die Bestellung erneut öffnen und den **Schrittnamen** wählen.
+
+Eine ungültige Bestelladresse kann zur Neuanlage zurückführen; ein Zugriffs- oder Ladefehler zur Bestellliste. Prüfe dort Bestellname und Status, bevor du erneut Daten eingibst. Ein leerer Schritt, ein kurz sichtbarer Schritt oder ein beendeter Ladeindikator ist kein Beleg für eine vollständige Berechtigungs- oder Datenprüfung. Beim Schrittwechsel läuft eine Zugriffsabfrage, sie wartet aber nicht zuverlässig vor dem Ansichtswechsel auf deren Ergebnis. Veraltete Links und während des Ladens wechselnde Nummern nicht durch wiederholtes Klicken korrigieren: aus der Liste neu öffnen.
+
+Ansichtsrecht, Erstell-/Bearbeitungsrecht und Übermittlungsrecht sind getrennt. Zuständiger Client Buyer, Ersteller, Kunden-/Agenturbezug und Abteilungen können je nach Aktion unterschiedliche Prüfungen beeinflussen; ein sichtbarer Schritt beweist nicht das Änderungsrecht. Die gemeinsame Ja/Nein-Rückfrage speichert nur die jeweils bestätigte Aktion. **Nein** ist kein Rückrollen früherer Änderungen.
+
+## Zusammenfassung: Mengen, Stunden und Kostenvorschau
+
+Öffne **Zusammenfassung**, warte auf die Daten und prüfe den Bestellnamen. Die Seite ist eine **lesende Vorschau**, kein Editor für Zeiten, Mengen oder Konditionen. Für Änderungen führt **Zurück** zu **Details der Planung**. Ein vorhandenes **Weiter** wechselt nur in den nächsten Bereich.
+
+| Anzeige | Prüfung vor dem Übermitteln |
+| --- | --- |
+| Standort und Zeitraum | Die Standortüberschrift zeigt den ersten und letzten hinterlegten Standorttag. Die Rollenüberschrift verwendet bevorzugt Tage mit positivem Bedarf, andernfalls Standorttage. Das sind nicht zwingend identische Zeiträume. Fehlende oder leere Tage in den Grunddaten korrigieren; eine unvollständige Vorschau nicht als vollständigen Auftrag behandeln. |
+| Rolle und Tagesaufschlüsselung | Am Rollenpfeil die Tage öffnen. Angezeigt werden Datum, Anzahl Einsätze, Stunden und gegebenenfalls eine CHF-Spanne. Die Einsatzanzahl summiert den geplanten Bedarf, **nicht bestätigte Personen**. Anfang/Ende und die einzelnen Pausen in Details der Planung nachprüfen; die Zusammenfassung zeigt aggregierte Stunden statt jeder Schichtzeit. |
+| Rollen-/Standorttotal | Stunden werden aus Zeitdauer abzüglich Unterbrechungen und multipliziert mit Bedarf berechnet. Vorhandene Teilschicht-Unterbrechungen ersetzen dabei den gewöhnlichen Pausenabzug, sie kommen nicht zusätzlich dazu. Nachtzeiten können den Folgetag einbeziehen; gleiche Anfangs-/Endzeit ist hier nicht automatisch ein ganzer Tag. Der Standortpfeil öffnet die Kosten pro Tag. |
+| Gesamtzusammenfassung | Gleichnamige Rollen werden über Standorte zusammengefasst. Die CHF-Gesamtspanne kommt aus den berechneten Tageswerten. Auf-/Zuklappen speichert nichts. |
+
+Die Kostenschätzung verwendet die hinterlegten Mindest-/Höchstwerte der Rollen. Fehlende oder nullwertige Konditionen können Tageskosten ausblenden, obwohl Bedarf besteht. Eine leere oder Null-Anzeige ist daher **kein Nachweis kostenloser Einsätze oder fehlenden Bedarfs**. Die Anzeige ist keine verbindliche Offerte, Abrechnung, Lohn- oder Rechtsprüfung. Bei einer aus einem Projekt entstandenen Bestellung erscheint ein Konditionenhinweis; kläre Preise und Leistungsbedingungen mit der Agentur. Ein zusätzlicher Hinweistext kann in einer Ersatzsprache erscheinen, wenn für die gewählte Sprache keiner hinterlegt ist.
+
+Bei eingeschränkten Abteilungen können Rollen und Kosten fehlen. Kläre den Hinweis vor dem Senden. Nach Änderungen neu öffnen und Mengen mit der Planung vergleichen. Dauerhaftes Laden, fehlende Werte oder eine Fehlermeldung nicht durch blindes Übermitteln übergehen. In dieser Ansicht gibt es **kein zusätzliches Konditionen- oder AGB-Zustimmungskästchen**, keinen eigenen Vorschau-Export und keine direkte Tarifbearbeitung.
+
+## Speichern, Freigeben, Übermitteln und Veröffentlichen trennen
+
+| Vorgang | Was sich ändert und was nicht bewiesen ist |
+| --- | --- |
+| Entwurf speichern | Grunddaten und einzelne Planungsänderungen werden gespeichert. Das ist keine Freigabeanforderung und keine Personalveröffentlichung. |
+| Freigabe anfordern | Ausgewählte Freigabepersonen erhalten einen Versandauftrag für persönliche Links; Bestellung wird ausstehend. Ein Linkversand ist keine Zustimmung. |
+| Freigabeentscheidung | Eine Person stimmt zu oder lehnt ab. Ablehnung kann die Bestellung als abgelehnten Entwurf zurückführen. Erst die erforderliche Gesamtentscheidung führt weiter; bei widersprüchlichem Status die Administration einschalten. |
+| Bestellung übermitteln | Der Status wird übermittelt. Im direkten Weg können bei fehlendem Projekttyp Rollenvorlagen angewendet oder die NOH-Verarbeitung angestossen werden. Das ist nicht bloss ein Entwurfssave. Der Freigabeweg hat eine eigene Weiterverarbeitung und ist nicht in allen Einzelheiten derselbe wie der direkte Weg. |
+| Automatische NOH-Verarbeitung | Kundenkonfiguration, ersatzweise Agenturkonfiguration, kann ausserhalb regulärer Zeiten und abhängig vom Einsatzbeginn eine automatische Verarbeitung vorsehen. Dabei können Projekttyp und Zuständigkeit gesetzt, Rollenvorlagen angewendet, die Bestellung veröffentlicht und Einladungen vorbereitet werden. Ein angenommener Auftrag an diese Verarbeitung ist noch kein Nachweis ihres erfolgreichen Abschlusses. |
+| Veröffentlichung, Einladung, Zuteilung und Benachrichtigung | Das sind getrennte Schritte. Eine veröffentlichte Bestellung oder offene Einladung ist keine persönlich bestätigte Besetzung. Ein Benachrichtigungsauftrag beweist keine Zustellung. |
+
+Die Zusammenfassung besitzt keinen eigenständigen **Veröffentlichen**- oder **Personal zuteilen**-Knopf. Verlasse dich auch nicht auf eine automatische Budgetfreigabe aus der Kostenvorschau. Prüfe nach dem Übermitteln in der Liste den Status und danach in der Einsatzplanung die tatsächliche Besetzung. Ein Schliessen des Ergebnisdialogs oder die Rückkehr zur Liste widerruft keine bereits gestartete Verarbeitung. Für unklare Teilzustände die zuständige Agentur kontaktieren, statt erneut zu übermitteln.
+
+## Tabellenzeilen, Buchungsstatus und weitere Aktionen
+
+Klicke auf die Zeile der richtigen Bestellung, um ihre Grunddaten zu öffnen. **BESTELLUNG HINZUFÜGEN** führt bei vorhandenem Erstellrecht zur Neuanlage. Eine allgemeine Kopier-, Archivieren-, Review-/Freigeben- oder Stornieren-Aktion ist in dieser nativen Liste **nicht vorhanden**. Die Freigabeentscheidung erfolgt über den persönlichen Link; der Papierkorb beim Entwurf ist eine andere Aktion.
+
+Rote Hinweise kennzeichnen offene Folgeeinsatz-Anfragen, nicht automatisch eine fehlende Bestellfreigabe. Im übermittelten Register unterscheidet der Buchungsstatus-Balken bestätigte, zugeteilte, freie und externe Anteile. Zuteilung ist keine persönliche Zusage. Überbuchung fliesst in die Prozentdarstellung ein; eine Farbe oder ein Prozentwert allein ist kein zuverlässiger Vollbesetzungsnachweis.
+
+Ein Klick auf den Hinweis beziehungsweise Balken versucht einen nummerierten Folgeschritt zu öffnen. Diese Nummer wird nach Zuteilungszahlen gewählt, nicht nach den tatsächlich geladenen Ressourcen; zusätzlich kann der Zeilenklick mit ausgelöst werden. Deshalb bei falschem Ziel die Bestellung normal öffnen und **Einsatzplanung** nach Namen wählen. Die vergangene Liste zeigt keinen entsprechenden Buchungsbalken. Status und konkrete Personenzuteilung in der passenden Detailansicht kontrollieren, nicht aus einer Navigation oder einem roten Punkt ableiten.
+
+## Keine zusätzliche Export- oder E-Mail-Kopierseitenleiste
+
+In der aktuellen Bestellübersicht führt **BESTELLUNGEN EXPORTIEREN** direkt zum Excelblatt der Bestellungen. Es gibt von dort **keinen erreichbaren zusätzlichen Dialog** zur Auswahl einzelner Bestellungen, Mitarbeiterfelder, Datums-/Rollen-/Standortgruppen, PDF-Sprache, Dateityp oder Exportkriterien. Ebenso gibt es dort keinen aktiven Weg zum Kopieren von Mitarbeiter-E-Mail-Adressen. Solche Optionen nicht aus anderen Planungsansichten auf diese Liste übertragen.
+
+Für das **Zeiterfassungsblatt** öffne stattdessen die konkrete Bestellung und deren **Einsatzplanung**; dieser eigene Export ist weiter oben beschrieben. Das Ausbleiben einer Exportseitenleiste in der Bestellliste ist kein Beweis für fehlende Rechte und kein Anlass, den Bestellexport erneut zu senden.

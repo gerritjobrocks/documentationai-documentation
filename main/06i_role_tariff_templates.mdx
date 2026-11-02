@@ -1,0 +1,98 @@
+---
+title: "Rollen- und Tarifgruppenvorlagen bearbeiten"
+description: "Unterdialoge, Kundenbezug und unterschiedliche Speichergrenzen bei Rollenvorlagen."
+---
+
+# Rollen- und Tarifgruppenvorlagen bearbeiten
+
+## Rollenvorlage und Filter bearbeiten
+
+Öffne **Agenturprofil → Vorlagen bearbeiten → Rollenvorlagen → Bearbeiten**. Das Anlegen aus einer vorhandenen Rolle und das spätere Anwenden beschreibt [Vorlagen und Wiederverwendung](06_templates_and_reuse.mdx). Im Hauptdialog pflegst du den Vorlagennamen sowie Rollenname und Beschreibung in den Sprachregistern Englisch, Deutsch, Französisch und Italienisch. Die Beschreibung lässt sich formatieren. Die Übersetzen-Funktion übernimmt einen vorhandenen anderen Sprachtext in die gewählte Zielsprache; prüfe ihn vor dem Speichern.
+
+**Speichern** im Hauptdialog aktualisiert die Rollenvorlage. Fehlt der Rollenname in sämtlichen Sprachen, wird das Speichern abgelehnt. **Abbrechen** schliesst den Hauptdialog ohne diesen Aufruf, macht aber bereits gespeicherte Änderungen in Unterdialogen nicht rückgängig.
+
+Über **Filter** öffnest du den gemeinsamen Mitarbeiterfilter. Die Vorlage wird mit ihrem gespeicherten Filterzustand geladen, einschliesslich personenspezifischer Auswahl. Eine alte Vorlage ohne Kunden-Pool-Auswahl startet dort mit einer leeren Liste. Prüfe vor dem Anwenden die [Filter und Auswahlregeln](05b_employee_lists_filters.mdx); eine Vorlage garantiert nicht, dass die früher gefundenen Personen heute verfügbar sind. Das Bestätigen des Filtereditors löst die Aktualisierung der Vorlage aus.
+
+Auch eigenständige **Filtervorlagen → Bearbeiten** verwenden diesen Filtereditor und speichern über dessen Bestätigung. Anlegen und Anwenden von Filtervorlagen sind in [Listen und Filter](05b_employee_lists_filters.mdx) beschrieben. Nach einer Vorlagenänderung erneut öffnen und die gespeicherten Filter prüfen.
+
+## Lohn- und Spesenzeilen innerhalb einer Rolle
+
+Im Unterdialog **Lohn** sind Basislohn, Zuschläge und Zulagen getrennt. **Neu hinzufügen** ergänzt eine Zeile in der betreffenden Gruppe; **Aus Vorlage laden** übernimmt eine vorhandene passende Lohn-, Zuschlags- oder Zulagenvorlage. Wähle den richtigen Typ und kontrolliere die übernommenen Werte statt nur den Namen.
+
+Die Basislohnzeile enthält Titel, Betrag, optionalen Höchstbetrag über **+**, Währung EUR/USD/CHF, Häufigkeit h/d/pro Einsatz und Lohnklasse. Prozentzuschläge enthalten Titel, Prozentsatz, Lohnklasse und Kriterium; feste Zuschläge enthalten statt Prozent einen Betrag, optionalen Höchstbetrag, Währung und Häufigkeit h/d/pro Einsatz. Zulagen bieten zusätzlich **pro Einheit**. Diese Häufigkeiten sind nicht mit der kürzeren Auswahlliste der eigenständigen Lohnvorlage gleichzusetzen.
+
+Im Unterdialog **Spesen** gibt es pro Zeile Titel, Betrag, optionalen Höchstbetrag, EUR/USD/CHF, Stunde/Tag/Kilometer/pro Einsatz/pro Einheit, Transport/Verpflegung/Unterkunft/Sonstiges, Zahlungsart effektiv/pauschal, Lohnklasse und Kriterium. Bei Kilometer oder pro Einheit setzt der Speicherweg die Zahlungsart auf effektiv. Neue Zeilen und das Laden einer Spesenvorlage sind getrennte Aktionen.
+
+Das Entfernen-Symbol einer Zeile verlangt eine Bestätigung. **Speichern** im Lohn- bzw. Spesenunterdialog aktualisiert die Rollenvorlage und führt zur Hauptbearbeitung zurück. **Abbrechen** schliesst ohne diesen Speicheraufruf, doch weiter im Hauptdialog vorhandene lokale Änderungen sind damit nicht nachweislich zurückgesetzt. Wenn du sicher verwerfen willst, die Bearbeitung beenden und die gespeicherte Vorlage neu laden. Nach jeder Speicherung Werte, Einheiten und Zuordnungen nochmals prüfen.
+
+## Kleidung, Dokumente und Kunden einer Rollenvorlage
+
+**Kleidung** öffnet Betreff und Beschreibung je Sprachregister sowie Bilder. Das ist nicht der Editor für die vier allgemeinen Kleiderkategorien im Kundenportal. In der Rollenvorlage kannst du eine Kleidungsvorlage laden. Die Uploadfläche wird nur angeboten, solange weniger als zwei Bilder in der Liste stehen; über das Entfernen-Symbol löst du ein Bild aus der Liste. Nach Übersetzung und Textbearbeitung **Speichern** im Kleidungsdialog wählen und die Vorlage erneut prüfen. Upload und Vorlagenspeicherung sind verschiedene Schritte; Schliessen ist keine Zusage, dass ein bereits hochgeladenes Bild rückgängig gemacht wurde.
+
+Eigenständige **Kleidervorlagen → Bearbeiten** zeigen ebenfalls die Sprachtexte und Bilder. Die angebotenen Felder sind Betreff und Beschreibung, nicht die Kategorieauswahl Oberteil/Unterteil/Schuhe/Accessoires. **Speichern** aktualisiert die gewählte Vorlage. Die Anwendung in einer Rolle ist ein weiterer Schritt.
+
+Unter **Dokumente** werden Dateien hochgeladen und als Links aufgelistet. Uploadantworten mit Fehlern müssen behoben werden; ein ausgewählter Dateiname allein ist kein erfolgreicher Upload. **Löschen** verlangt eine Bestätigung und sendet anschliessend die verbleibende Dateiliste. Der Dokumentdialog besitzt keinen gemeinsamen nachträglichen Speichern-Knopf: Upload und bestätigtes Entfernen sind eigenständige Aktionen.
+
+Unter **Kunden** stehen nicht zugeordnete und zugeordnete Kunden gegenüber. Verschiebe jeweils einen Kunden auf die richtige Seite. Jede Bewegung löst die Zuordnungsänderung unmittelbar aus; sie wartet nicht auf **Speichern** im Hauptdialog. Das Schliessen dieses Unterdialogs aktualisiert zusätzlich die Rollenvorlage. Bei einem Fehler neu laden und die Zuordnung prüfen; **Abbrechen** im Hauptdialog macht diese serverseitigen Änderungen nicht rückgängig.
+
+## Tarifgruppe innerhalb der Rollenvorlage
+
+Unter **Tarifgruppe** einer Rollenvorlage gibt es Tarifgruppenname sowie minimale und maximale Kosten pro Stunde. Erfasse die betrieblich vorgesehenen Werte. Ein leerer Name bedeutet keine Tarifgruppe; leere Mindest- oder Höchstwerte werden als nicht gesetzt gespeichert. Der Platzhalter 0.00 ist kein zugesagter Preis und keine automatische fachliche Freigabe.
+
+**Speichern** schliesst den Unterdialog. Auch das anderweitige Schliessen löst über den Dialogabschluss die Aktualisierung der Rollenvorlage aus. Dies ist kein sicherer Verwerfen-Schritt. Öffne die Vorlage nach der Antwort erneut und kontrolliere Name und beide Grenzen. Diese drei Rollenfelder sind nicht identisch mit einer selbständigen Tarifgruppenvorlage samt Kunden- und Abteilungszuordnungen.
+
+## Selbständige Tarifgruppenvorlage mit Kunden und Abteilungen
+
+Die Familie **Tarifgruppen** ist in der eigenständigen Agentur-Vorlagenverwaltung sichtbar, nicht in der eingebetteten Kundenansicht. **Tarifgruppe erstellen** öffnet ein zunächst leeres Formular: Name, minimale Kosten pro Stunde, maximale Kosten pro Stunde und eine Mehrfachauswahl für Abteilungen. Name und beide Kostenfelder sind als Pflichtangaben markiert.
+
+1. Öffne **Kunden** im Anlegedialog und verschiebe jeweils einen passenden Kunden in die zugeordnete Liste. Solange die Vorlage noch nicht existiert, werden diese Kunden nur lokal vorgemerkt.
+2. Kehre zum Formular zurück. Als Abteilungen werden die Abteilungen der gewählten Kunden angeboten. Wenn ein Kunde entfernt wird, werden nicht mehr passende Abteilungsmarkierungen entfernt. Eine leere Abteilungsliste kann deshalb an der fehlenden Kundenauswahl liegen.
+3. Erfasse Name und Grenzen, markiere die benötigten Abteilungen und wähle **Speichern**. Die Vorlage wird zuerst angelegt; die Kundenzuordnungen folgen als separate Anfragen. Vermeide doppelte Vorlagennamen und prüfe danach sowohl den Eintrag als auch die Kunden. Das ist keine atomare Speicherung aller Zuordnungen.
+4. Bei einer bestehenden Vorlage öffnet **Bearbeiten** dieselben Grundfelder. **Speichern** übernimmt Name, Grenzen und Abteilungen. Im dortigen Kunden-Unterdialog werden Zuordnungen dagegen bereits beim Verschieben gespeichert. Das Schliessen des Bearbeitungsdialogs verwirft keine bereits gespeicherte Kundenzuordnung.
+5. **Löschen** am Listeneintrag verlangt eine Bestätigung. Prüfe danach die neu geladene Liste.
+
+Eine Änderung dieser Vorlage ist nicht gleichbedeutend mit der Bearbeitung jeder bereits aus ihr entstandenen Tarifgruppe in einer Rolle. Prüfe beim späteren Laden die tatsächlich übernommenen Rollenwerte. Weder Mindest- noch Höchstkosten sind eine aktuelle Preiszusage von bejoo.
+
+## Lohnkriterien mit Zeitraster oder Stundenschwelle
+
+Unter **Vorlagen bearbeiten → Lohnkriterien → Bearbeiten** öffnest du das gewählte Kriterium. Es gibt einen Vorlagennamen und einen mehrsprachigen Namen. Verwende die Sprachregister Englisch, Deutsch, Französisch und Italienisch; automatische Übersetzungen vor der Speicherung prüfen.
+
+Die drei Kriterienarten schliessen sich aus: **Zeitkriterium**, **Stundenkriterium** oder **kein Kriterium**. Beim Wechsel werden die Eingaben der anderen Art zurückgesetzt. Daher die richtige Art vor dem Ausfüllen wählen.
+
+- **Zeitkriterium:** Markiere Stunden im Wochenraster. Eine Zelle umfasst eine Stunde. Mit gedrückter Maustaste lassen sich mehrere Zellen setzen oder entfernen. Ein Tageskopf setzt oder löscht den ganzen Tag, eine Stundenbeschriftung die Stunde an allen Tagen; **Alle auswählen/abwählen** bedient das gesamte Raster. **Nur abends** markiert 18:00 bis 24:00, **Nur Wochenenden** Samstag und Sonntag. Beide zusammen ergeben die Abendstunden am Wochenende, nicht die Summe beider Bereiche. Eine erneute Presetauswahl setzt das Raster neu; manuelle Markierungen vorher prüfen. Die nicht angebotene Nacht-Voreinstellung ist keine zusätzliche sichtbare Auswahl. Mindestens eine Stunde muss markiert sein.
+- **Stundenkriterium:** Wähle **bis** oder **nach** einer Stundenzahl und erfasse Stunden und Minuten im Zeitfeld. Beim Wechsel zu dieser Art startet die Auswahl bei **bis**, ohne ausgefüllten Wert. Solange die jeweils andere Schwelle ausgefüllt ist, ist der Wechsel gesperrt: zuerst deren Wert leeren. Markiere die zutreffenden Wochentage Montag bis Sonntag. Ohne ausgefüllte Schwelle wird Speichern abgelehnt.
+- **Kein Kriterium:** Es wird keine der beiden Zeitbedingungen konfiguriert. Das ist nicht gleichbedeutend mit einem unveränderten vorherigen Zeitraster.
+
+**Speichern** öffnet bei einem bestehenden Kriterium die Wahl zwischen **Bestehendes Kriterium speichern** und **Neues Kriterium erstellen**. Die Warnung betrifft alle Stellen, die das bestehende Kriterium verwenden. Wähle für eine neue Variante **Neues Kriterium erstellen**, gib im folgenden Dialog einen eigenen Vorlagennamen ein und speichere. Ein bereits vergebener Name kann zurückgewiesen werden. Beim erstmaligen Erstellen verlangt der Ablauf eine Bestätigung der Einstellungen.
+
+**Abbrechen** schliesst den Editor und setzt dessen lokalen Zustand zurück. Nach einem Speichervorgang neu öffnen und Namen, Art, Raster oder Schwelle kontrollieren. Falls die Liste trotz Erfolgsmeldung nicht aktualisiert wird, neu laden und die gespeicherten Werte prüfen, statt mehrfach neue Kriterien anzulegen. Zum Entfernen **Löschen** an der Liste wählen und bestätigen; die Zeile kann schon vor der Serverantwort lokal verschwinden, deshalb erneut laden.
+
+Kriterien im eingebetteten Kundenprofil können kundenspezifisch sein. Prüfe Agentur- oder Kundenkontext; ein sichtbarer Bearbeiten-Link ist keine Zusage für jede Serverberechtigung.
+
+## Lohnklassen und Schlüssel pflegen
+
+Unter **Vorlagen bearbeiten → Lohnklassen → Bearbeiten** pflegst du den Namen je Sprache und den gemeinsamen **Schlüssel**. Die angebotenen Sprachregister sind Englisch, Deutsch, Französisch und Italienisch. Eine Übersetzung verändert zunächst den Namen der Zielsprache; kontrolliere sie vor **Speichern**. Name und Schlüssel sind erforderlich. Ein Name nur in einer anderen Sprache genügt dem aktiven Namensprüfer nicht zuverlässig: prüfe insbesondere den Namen in deiner aktuellen Oberflächensprache.
+
+**Speichern** öffnet eine Bestätigung. Bei einer vorhandenen Lohnklasse warnt sie vor Auswirkungen an Stellen, die diese Klasse bereits verwenden. Bestätige nur die beabsichtigte gemeinsame Änderung. Bei einer Neuanlage weist die Bestätigung darauf hin, dass spätere Bearbeitung in den Agentureinstellungen erfolgt. **Abbrechen** schliesst den Editor ohne diesen Speicheraufruf. Ist die Bearbeitung im jeweiligen Kontext gesperrt, ist auch Speichern deaktiviert.
+
+Nach Erfolg die Lohnklasse erneut öffnen und Name sowie Schlüssel prüfen. Ein Schlüssel ist ein technischer Stammdatenwert und keine Garantie für eine erfolgreiche Payroll- oder EasyTemp-Übertragung. Wähle die gespeicherte Klasse anschliessend im entsprechenden Lohn-/Spesenfeld aus; das Ändern eines Platzhaltertexts im Agenturprofil erstellt keine Lohnklasse.
+
+**Löschen** am Listeneintrag verlangt eine Bestätigung. Die Oberfläche entfernt die Zeile bereits lokal, während die Anfrage läuft. Nach einem Fehler oder unklarem Ergebnis neu laden und nicht allein auf die verschwundene Zeile vertrauen.
+
+## Vorlagen in eine Rolle laden
+
+Öffne eine **Rollenvorlage → Bearbeiten** und den gewünschten Abschnitt. Die Laden-Aktionen bleiben voneinander getrennt:
+
+| Abschnitt | Auswahl und Ergebnis |
+| --- | --- |
+| Basislohn | **Aus Vorlage laden** zeigt Lohnvorlagen ohne die alten Zusatzentschädigungs-Einträge. Die Rolle kann nur einen Basislohn enthalten; bei vorhandenem Basislohn steht keine zweite Basislohnübernahme zur Verfügung. |
+| Zusätzliche Entschädigungen | Eigene Liste der Zusatzentschädigungsvorlagen; Auswahl fügt eine weitere Lohnzeile hinzu. |
+| Gehaltszuschläge | Eigener Dialog mit **prozentualen** und **fixen** Zuschlägen. Jede Seite hat ihre eigene Suche; tippe einen Teil des Vorlagennamens. Gross-/Kleinschreibung spielt für diese Suche keine Rolle. Ein leerer Trefferbereich ist keine neue Vorlage. |
+| Spesen | Eigene Spesenvorlagenliste; Auswahl fügt eine weitere Spesenzeile hinzu. |
+| Kleidungsbestimmungen | Eigene Kleidungsvorlagenliste; Auswahl ersetzt den aktuellen Kleidungsblock einschliesslich seiner Bilder und Sprachtexte. Vorhandene Änderungen vorher prüfen. |
+
+Auch die Listen für Basislohn, Zusatzentschädigungen, Spesen und Kleidung haben eine Suche nach Teilen des Vorlagennamens, unabhängig von Gross-/Kleinschreibung. Kunden- und Abteilungsfilter werden in diesen Rollen-Teilvorlagenlisten nicht angeboten.
+
+Klicke den gewünschten Listeneintrag, um ihn lokal in die bearbeitete Rolle zu übernehmen; der Auswahldialog schliesst. Schliessen ohne Auswahl lädt nichts. Bei Lohn/Zuschlag werden unter anderem Betrag beziehungsweise Prozentsatz, Obergrenze, Währung, Häufigkeit, Kriterien und Lohnart übernommen; Zahlungs- und Typfelder werden dabei nicht als vollständige Kopie zugesichert. Bei Spesen werden auch die vorhandenen Zahlungs-/Typwerte übernommen. Kontrolliere sämtliche sichtbaren Werte nach dem Laden. Numerische Nullwerte können bei der Übernahme als leere Werte erscheinen; gegebenenfalls ausdrücklich korrigieren.
+
+**Laden speichert die Rollenvorlage noch nicht.** Speichere anschliessend im Rollenbearbeitungsdialog und öffne die Rolle erneut. Die Ursprungs-Lohn-, Zuschlags-, Spesen- oder Kleidungsvorlage wird durch die lokale Übernahme nicht bearbeitet. Ein später geänderter Ursprung ist keine Zusage, dass bereits übernommene Rollen automatisch mitgeändert werden. Diese Maskenbedienung ist keine lohn- oder steuerrechtliche Bewertung der ausgewählten Werte.
