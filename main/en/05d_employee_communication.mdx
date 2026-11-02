@@ -1,0 +1,56 @@
+---
+title: "Contact employees"
+---
+
+# Contact employees
+
+## Choose the correct recipient group
+
+| Entry point | Recipients and effect |
+| --- | --- |
+| **Employees → Send message** | The employees matching the current filter and search name, minus any deselected persons. The selection may extend beyond the visible table page. |
+| **Employee profile → Send notification** | A single person. Note the limitation for email/SMS in this dialog described below. |
+| **Project → Step 4 → Applied → Send message** | The persons selected with checkboxes in the candidate panel. In addition, non-active employees are skipped server-side. |
+| **Publish project/Invitations** | A project assignment invitation with the associated application rules, not a free-form message. See [Publish](/main/en/04a_publication_and_allocation). |
+
+A free-form message does not change an application or assignment. Check the recipients before sending; a template name is not a recipient list. In the customer context, the dashboard selection is additionally limited to your own customer pool.
+
+## Message from the employee dashboard
+
+1. Open **Employees**, set [search and filter](/main/en/05b_employee_lists_filters), and check the selected count. Deselect any unwanted people. Even with multiple pages, verify that the desired total number is actually selected.
+2. Open **Send message**. The dialog starts with empty subject/message fields and no attachments.
+3. Choose **Notification**, **email**, or **SMS**. Email/SMS channels that are not set up are disabled or may be rejected server-side. Missing setup is not a sign that clicking again will fix the sending.
+4. Fill in **Subject** and **message**. The `[first-name]` and `[last-name]` placeholders are inserted for each person. Do not put real personal data into a reusable template.
+5. For emails, you can add files in the provided attachment area and remove individual attachments again. A visible filename is not yet proof of sending.
+6. Check the text, channel, attachments, and recipient group once more. **Send** starts the sending job; in the dashboard there is no additional confirmation dialog like in step 4.
+
+If subject or message is missing, a prompt appears asking you to fill in all fields. If the selection contains no employees, **No employees selected** appears. A success message with a count describes the people included in the job, not guaranteed delivery or read confirmation for each person.
+
+## Save and load templates
+
+With **Save as template**, you enter a name and save the subject and message. With **Load from template**, you select an entry; its text replaces the current text fields. After loading, check the full content and the channel again.
+
+The dashboard and step 4 use the same category for employee message templates. The template does not automatically save recipients, attachments, or the sending channel. Saving a template does not send anything. **Cancel** or closing the template dialog does not recall a message that has already been sent.
+
+## Message from step 4
+
+Switch to **Applied** in the candidate panel and activate message selection. Mark the desired persons. The selection aids for all, assigned, and confirmed persons are different; check the checkboxes instead of relying only on the number in the tab.
+
+Then open the message dialog. Choose the channel and fill in the subject and text, or load a template. For notification/SMS, the interface shows a maximum of **50 subject characters** and **256 message characters**; these two interface limits do not apply to email. The first-name/last-name placeholders are replaced per person.
+
+After **Send**, you are asked whether the selected employees should be contacted. **Yes** releases this sending job; **No** does not execute it. The sending considers only checked persons and skips non-active employees. Therefore, a count in the candidate panel is not automatically the number of people actually contacted.
+
+## Individual profile and known limitation
+
+In the individual profile, **Send notification** opens a similar dialog. Always fill in the subject and message. A notification is addressed to the opened person, not to the last filter set in the dashboard.
+
+**Email and SMS from the individual profile are not reliably confirmed as a functioning sending route in the reviewed state.** Use the dashboard dialog for this, with the selection carefully limited to that person. After an unclear sending attempt, do not resend immediately: first have it checked whether a job has already been processed. The similarity of the dialogs does not mean that their sending routes work identically.
+
+## Distinguish success, error, and delivery
+
+- **Email** requires a complete sending configuration. An error message about settings or sending is not proof of delivery.
+- **SMS** is handed over as a sending job. In the customer context, the SMS sender can come from the customer's full configuration; otherwise, it comes from the agency configuration.
+- **Notification** is handed over for processing. Acceptance of the job does not prove that a device received the message or that the person read it.
+- In a bulk message, individual recipients may already have been processed before an error occurs. Sending again can create duplicate messages.
+
+Copying email addresses and loading/saving a template do not send anything. **Deactivate with message**, by contrast, is its own status action, not merely another communication channel. For this, check the dialog and existing assignments in the [employee dashboard](/main/en/05_employees_dashboard).

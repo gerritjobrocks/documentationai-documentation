@@ -1,0 +1,67 @@
+---
+title: "Invite users and manage member roles"
+description: "Invitations, role changes, removal, and role-based approvals in the agency profile."
+---
+
+# Invite users and manage member roles
+
+## Invite members selectively
+
+Open **Agency profile → User management**. This section requires permission to view settings and to manage users. The table shows role, email, date and time of invitation, client, and status. It has pagination; check further pages before creating a supposedly missing invitation again.
+
+Select **Add new** to open **Invite member**. Fill in email, role, language, and invitation email content. The language can be selected separately: English, German, French, or Italian. A new invitation starts without a preselected role or language.
+
+The available agency roles are **Admin**, **Project Manager**, **Project Supervisor**, **Recruiting Manager**, **HR Manager**, **Finance**, and **Employee**. In addition, there are **client admin**, **client buyer**, **client validator**, and **client work validator**. A **Client** must be selected for a client role. Without a client role, this selection is locked; when switching back to an agency role, the client assignment is cleared.
+
+**Invite** triggers a real send; it is not a preview. **Cancel** or closing dismisses the dialog. Missing required information or a missing client prevents submission. After sending, a closed window is not proof: check the success message and the table row. If the error is unclear, reload the table first instead of sending again immediately.
+
+## Existing accounts, resend, and removal
+
+For an email address with an existing user not maintained as an employee account, an invitation to join is sent instead of a new registration. An identical active membership or already open invitation may be rejected. The same address with a different role is not automatically the same membership relationship. An address belonging to an existing employee account may be rejected on the join path.
+
+**Resend invitation** is another real email send. If there are multiple invitations for the same address with different roles, first check the affected assignment; the sending path searches by address and agency and is not a reliable role-by-role selection mechanism. A success message is not a delivery guarantee.
+
+**Delete** opens a confirmation. This is not just hiding a table row: an open invitation that has not yet been accepted is withdrawn. For an existing member, the relevant agency/client/role assignment can be removed. If the account has other memberships, those remain; with the last membership, the user account can also be removed. Therefore, before **Yes**, check the person, role, and client assignment. Then check the updated table. **No** cancels.
+
+An offered re-invitation of a removed user is a separate process. Do not equate it with a new employee profile or the restoration of all previous rights.
+
+## Change a user's role
+
+Administrators can open role editing in user management. In the edit dialog, email, language, and message remain locked; role and, where applicable, client can be changed. A client selection is required for a client role. **Before saving:** if you switch to a client role and the assigned client changes, the assignment to **all departments of the target client** is triggered. When switching from a client role to an agency role, the **client and department assignments are removed**. Therefore, check in advance whether this access scope is intended.
+
+**Save** applies the role and client and reloads the invitation table; **Cancel** discards the dialog changes. The department assignment runs in the background and may still be pending after the dialog is closed. After saving, check **client and departments**; if processing is still ongoing, reload later instead of assuming a completed assignment from the closed dialog.
+
+A direct role dropdown change in the table has its own immediate save path. For switching to a client role with a specific client assignment, use the full edit dialog. Then check the table values. The role does not alone describe the actual scope: functional permissions and, for client users, the client and department context remain relevant.
+
+## Member roles and functional rights
+
+Under **Manage member roles** you see functions as rows and **Admin**, **Project Manager**, **Project Supervisor**, **Recruiting Manager**, **HR Manager**, **Finance**, and **Employee** as columns. Access requires the permission of the same name. The selection applies to the role in the agency, not just to a single user.
+
+Set or clear an active checkbox in the desired column. The change is saved immediately; there is no additional **Save privileges** button. Not every combination can be operated: the interface limits the editable cells by role. **Admin × Manage member roles** cannot be disabled. Client-specific portal rights and the hidden IBAN row cannot be configured through this agency matrix.
+
+If **On-site supervisor** is revoked and the role is already used as team manager in projects, a confirmation appears. **No** restores the checkmark; **Yes** saves the revocation. Before confirming, check the affected responsibilities.
+
+The agency matrix is separate from the rights in the client profile. Client users need the correct client and department context in addition to functional permissions. Self-service and order functions are not granted simply by finding a corresponding agency column. After a change, check the success message and the matrix reloaded again; visible buttons are not a complete assurance for all server-side permissions.
+
+## Which cells in the agency matrix are editable
+
+A grayed-out checkbox indicates a non-editable combination; it does not automatically mean “right off.” The following overview describes **editability**, not the preselected or effective permission of an agency. The current marking must be checked separately. All named functions must also be loaded as rows.
+
+For **Admin, Project Manager, Project Supervisor, Recruiting Manager, HR Manager, and Finance**, these shared functional groups are editable:
+
+- Projects: create, view own/all, edit own/all, delete, and cancel.
+- Employees: view/edit all profiles, manage lists, display/change status, and reset password.
+- Work validation: view and edit; create payroll export and import payroll file.
+- Clients: view and manage; edit templates.
+- Settings: edit company data, manage credits, user management, edit public visibility; options, fields, email notifications, email sender, and Twilio each with the offered read/edit rows; NOH read access and edit client portal settings.
+- Responsible time tracking (on-site supervisor): note the separate conflict confirmation when revoking.
+
+In addition, there are differences:
+
+| Role column | Additionally editable or locked |
+| --- | --- |
+| Project Manager, Project Supervisor, Recruiting Manager, HR Manager, Finance | **View settings** and **Manage member roles** are additionally editable. Their offered editable cells are the same among themselves. Own employee profile rows, employer profile picture, and the four agency-side self-service project rows cannot be toggled freely here. |
+| Admin | Additionally view/edit own employee profile, favorite employee suggestions, rate employees, read company data/credits, edit employer profile picture, and create, view all, edit all, delete/cancel self-service projects. **Manage member roles** and **View settings** cannot be toggled freely in this column. |
+| Employee | Only **View own employee profile** and **Edit own employee profile** are editable; the other visible function cells are locked. |
+
+Client roles as well as client order rights, client payroll/expense rights, and the client’s own self-service rows are maintained in the [client matrix](06e_agency_client_portal.mdx#client-roles-separate-columns-and-conflict-confirmation). The IBAN row is hidden in the agency matrix. Do not infer an additional offered option from old tooltip texts. The matrix does not replace checking whether a specific access is permitted server-side; in particular, do not equate read access with editing.

@@ -1,0 +1,46 @@
+---
+title: "Notifications, email account, and credits"
+description: "Configure recipient lists, outgoing provider values, and credit warnings safely."
+---
+
+# Notifications, email account, and credits
+
+## Define email recipients per event
+
+Open **Agency profile → Email notifications**. You need permission to view settings and to edit email. There are five separate recipient lists:
+
+| Event | Which list is changed? |
+| --- | --- |
+| New employees | Email for notifications about new employees |
+| Application for a mission | Email for application to a mission |
+| Self-booking of a mission | Email for self-booking of a mission |
+| Acceptance of a mission | Email for acceptance of a mission |
+| Cancellation of a mission | Email for canceled mission |
+
+Enter an address and confirm with **Enter** so that a separate entry is created. Multiple addresses are possible. Remove an entry using its remove function. Any change to the selection saves the relevant list immediately; no shared button is needed. Other event lists are not replaced by this.
+
+Check the success message and the entries obtained after reopening. Only the text in the still-unconfirmed input field is not a saved recipient. This configuration can trigger later real emails to all entered recipients. It is neither a test email nor sending a manual message; for that, use the [communication guide](05d_employee_communication.mdx).
+
+## Save outgoing email account
+
+Under **Email account for outgoing messages**, five values are maintained together: **Email**, **Password**, **Host**, **Port**, and **Encryption**. Editing rights for the outgoing email account are separate from those for notification recipients.
+
+Use the approved values from your mail provider. Port and encryption are text inputs, not a predefined list with a guaranteed matching selection. The password is a secret setting value; do not share it in support messages, screenshots, or public examples. The eye icon only switches the display of the password field.
+
+Click **Save** in this section. The fields here do not autosave on exit. The success message confirms the save, not a successful login to the mail provider or the delivery of a message. There is no separate test button in this section. Perform a real send only with an agreed recipient; in case of issues, have host, port, encryption, and provider approval checked securely without copying secrets.
+
+## Configure Twilio integration
+
+Under **Twilio Integration → SMS account**, editing requires a separate Twilio permission. The fields are **Twilio Account**, **Twilio Token**, and **Twilio Phone**. Enter the provider values intended for the agency and click **Save** here. Only the button sends the three values together.
+
+The token is secret even if the interface displays it as text. Do not share screenshots of this area. Saving is not an SMS test and no guarantee of deliverability or available provider credit. The actual SMS function is a separate sending process with possible external impact and costs. If there are errors, have the saved configuration checked securely, and do not resend messages repeatedly.
+
+## Display credits and configure warning
+
+In **Agency profile → Credits** you can see the balance and open the overview with **All credits**. This shows the credit value, project name, and date and time. The columns can be sorted. The list is not a purchase dialog and contains no commitment to current prices or rates. A missing project name can occur for a non-project-related entry.
+
+For displaying the section, the settings display is relevant; the detailed query can additionally fail due to the permission to edit own projects. A visible link alone therefore does not guarantee access. If the overview is empty or denied, have the role and agency context checked.
+
+With the right to manage credits, you can turn the notification for low balance on or off. When toggled, it is saved. If the warning is enabled, the **threshold value** appears; change it and leave the field. A whole number from 1 upward is allowed. The initially provided value of 200 in the form is neither a price statement nor a committed threshold value for existing agencies: their saved value is loaded.
+
+The separate multi-select **Email address for low-credit notifications** is maintained by typing, **Enter**, and removing addresses; changes are saved immediately. After a change, check the success message and the reloaded values. Neither the warning switch nor the recipient list buys credits. A warning does not replace checking the actual balance.

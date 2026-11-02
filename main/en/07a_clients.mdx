@@ -1,0 +1,162 @@
+---
+title: "Manage customers, contacts, and departments"
+description: "Find customers, save master data, and distinguish contacts from portal users."
+---
+
+# Manage customers, contacts, and departments
+
+## Find customers and open the profile
+
+1. Open **Customers** in the agency menu. If the menu item is missing, have your administration check the access.
+2. Enter part of the customer name in the **Search customers** field. The search is case-insensitive; it searches the customer name, not the external customer number or the contact email.
+3. Open the desired customer by name in the table. For a new customer, select **Add New**. Creating one requires permission to manage customers.
+4. If the result list is empty, first remove the search text. Then check whether you are working in the correct agency. Empty search results do not prove that a customer was deleted.
+
+The table shows ID, name, and legal company name. **Delete** is a separate action with confirmation; it is not archiving. Do not use it merely to hide a search hit. Without customer-management rights, the action can be rejected even if a delete icon is visible.
+
+**Check customer deletion:** Select the trash icon only after verifying the correct customer, confirm with **Yes**, or cancel with **No**. After confirmation, deletion is requested immediately; after the response, the entry is removed from the displayed list. If the response is unclear, reload the list. This does not cancel related orders and does not promise that all associated data has been permanently removed. There is no restore button here. If a customer is deleted by mistake, do not create a replacement customer with the same name too hastily; contact support instead.
+
+## Create customers and save master data
+
+Open **Customers → Add New** or an existing customer. Start in the first tab with the general details (depending on translation status, "General Information"). After the first save, choose **Back → customer list → reopen saved customer** before working in the locations tab. Switching tabs alone does not reload the location list. Reloading the creation form in the browser does not replace this path. In a new record, Switzerland is preset as the country. The tabs are part of the same profile form: a missing required field in another tab can prevent saving.
+
+| Field | Input and effect |
+|---|---|
+| Customer name | Required field, at least two characters. For a new record, the name must not already exist in the agency. |
+| Legal company name | Optional; if filled in, at least two characters. This name is also checked against existing customers of the same agency when creating a new record. |
+| Company website | Optional text for the website. |
+| External customer number | Optional text for your external reference; not the search field of the customer dashboard. |
+| Street, no., address line 2 | Optional parts of the company address. |
+| ZIP, city, country | Optional address details; choose the country from the list. |
+| Canton | Offered when the country is Switzerland; the list entries are canton abbreviations. |
+| Summary - additional info | Up to 200 characters per language tab. The note appears in an order summary. Fill in the desired language; if it is missing, an existing other language version is used. |
+
+Select **Save** at the bottom of the profile. Wait for the response and check the newly loaded values. Changing the text field alone is not yet saved. Saving also applies the contacts and departments from the profile form; it does not send an invitation to a contact.
+
+**If saving fails:** Check all tabs for required fields, and for a new record also check the customer name and legal company name for existing entries. A permission error cannot be fixed by clicking again. After an unclear response, first reopen the profile and check the values instead of creating a second customer.
+
+**Translate summary - additional info:** Choose English, German, French, or Italian. The translation button appears when another language contains text. It takes the first filled other language in the order English, German, French, Italian and replaces the text of the selected target language. Check the translation and its length before **Save**; the button alone does not save the profile.
+
+**Do not confuse this with available input fields:** This customer profile currently has no usable field for a second address or an order budget. A separate remarks area is also not accessible through the available tabs. The company address is likewise not an assignment location with a map pin. For locations, use **Locations**; if additional master data is needed, clarify the intended maintenance process with support instead of searching for a nonexistent tab.
+
+## Maintain contacts without inviting users
+
+1. Open **Customers → desired customer → Contacts**.
+2. Select **Add New Contact**. Fill in first name, last name, and email. First and last name need at least two characters; the first name is limited to 24 characters. The email must have a valid format.
+3. If needed, add **recovery email**, **mobile phone number**, **recovery mobile number**, location, department, and **job title**. Both mobile numbers are optional; if entered, they must be 6 to 16 characters long. The job title must be 6 to 50 characters long if entered. The recovery email is also validated for format.
+4. The location and department come from the entries available for the customer. Assigning a contact does not replace a portal user's access rights.
+5. Select **Save** at the bottom of the profile and check the contact after reloading.
+
+**Contact and user are different:** This process saves a contact person. It does not create a portal invitation or assign a user role. User access is managed separately.
+
+To remove a contact, click its trash icon and confirm the prompt. For an already saved contact, deletion is requested immediately; leaving the profile form later does not undo it. An unsaved contact row is removed only from the open form.
+
+## Distinguish departments from user access
+
+**Create department:** Open **Departments** in the customer profile, select **Add New**, and enter a name. The name is required. Optionally choose a location and add the shift note in the text field; up to 500 characters are available for this. Then save the profile.
+
+A new department can be automatically assigned to existing customer users. After creating it, therefore, check the user assignments instead of assuming only the department name was added. A department already in use cannot be deleted: assigned project roles, projects, or rate groups must first be reviewed from a business perspective. Do not delete ongoing planning just to bypass this message.
+
+**Change user assignment:**
+1. Open **Users** in the customer profile. The table shows the customer users and their roles; one person can have multiple customer roles.
+2. For the person, select **Manage Departments**. First name, last name, email, and role are shown here only; they cannot be edited.
+3. Select the allowed departments in the multi-select. Also pay attention to the switch for data without department assignment: a selected department and permission for data without a department are separate settings.
+4. Save in the dialog. The selection replaces the user's previous department assignments; deselected departments are not simply kept in addition. Reopen the dialog and check the selection.
+
+The department of a **contact** is not a user permission. An entry in **Roles** for the order is also not a user role. For changes to the actual user role and their consequences for customer/department assignments, use the [guide to user management](./06c_agency_users.mdx). For the functions allowed per customer role, see [Customer roles and conflict confirmation](./06e_agency_client_portal.mdx#client-roles-separate-columns-and-conflict-confirmation).
+
+The automatic assignment of a new department affects especially users who were already assigned to all previous departments; for the first department, it also affects users without a previous assignment. After saving, therefore, check the user permissions that were actually loaded. In the trash icon of a saved department, clicking **Yes** immediately triggers a delete attempt; later profile saving is not required for this. **No** keeps it. An unsaved department row is removed only locally. If you close the user-department dialog without saving, no assignment has been transferred; reopen the tab so that a locally still visible selection is not mistaken for a saved state.
+
+## Change settings and templates in the right place
+
+In the customer profile, **Settings** leads to the customer-specific defaults. Use the existing guide for this so that default settings and customer-specific deviations are not confused:
+
+- [Customer options: default location, matrix, and minimum breaks](./06e_agency_client_portal.mdx#client-options-default-location-matrix-and-minimum-breaks)
+- [Enable order approval and confirm quantity](./06e_agency_client_portal.mdx#turn-on-order-approval-and-confirm-the-number)
+- [Customer-specific portal values and inheritance limits](./06e_agency_client_portal.mdx#client-specific-portal-values-and-inheritance-limits)
+- [Event recipients for a customer](./06e_agency_client_portal.mdx#event-recipients-for-a-client)
+
+The **Edit Templates** tab is shown when Self Service is available. It opens the template editor for this customer. Selecting or loading a template is not the same as permanently saving a changed template. See [Edit saved templates](./06g_agency_templates.mdx).
+
+The **Locations** tab is explained in [Edit locations and use them correctly](./07b_locations.mdx). After creating the customer, after a successful save choose **Back → customer list → reopen saved customer** before working in the locations tab. For the **Employee Pool**, use the [pool guide](./07c_self_service.mdx#edit-a-customers-employee-pool); for the native customer workflow, use the [order guide](./07d_orders.mdx).
+
+The note about saving the profile form is not a promise that every subfunction waits until that click: locations, user departments, and the employee pool have their own save actions. Check the description of the relevant action each time.
+
+## Upload, view, and remove a logo
+
+1. Open the desired customer and check the name at the top. Customer administration rights are required for changes. If no logo exists yet, select an image file in the logo area. The upload selection is set up for one file and a maximum of 50 MB; use a suitable image, not a PDF file.
+2. Wait until the image is displayed. **When reopening a saved customer from the customer list, the upload is saved directly**, without waiting for the large profile button. In the still open creation form, a later upload remains provisional even after the first save: after this upload, select Save again at the bottom of the customer profile so that the logo is permanently assigned. The safer route is the clear one: after the first save, **Back → customer list → reopen saved customer**, and only then upload the logo. For a new record that has not yet been saved, the image is provisional: save the customer so that it is permanently assigned. An upload alone does not create a customer.
+3. Use the magnifier to open the larger view. Clicking outside the image closes it; nothing is changed.
+4. To remove it, select the trash icon and confirm the logo prompt with **Yes**. **No** cancels. For an existing customer, the removal is requested immediately. To replace it, remove the old logo and then upload the new image.
+
+**Check after deletion:** The image disappears as soon as the request is triggered. Reopen the saved customer profile and check whether it was really removed. If the response is unclear, do not rely only on the empty preview. Save a new customer before using the delete function.
+
+A logo previously transferred into a project can remain there. Removing it at the customer is not a promise that all existing project documents or exports will later receive a different logo.
+
+## Enter cost centers and really save changes
+
+1. On an already saved customer, open **Cost Center**. The heading is **Cost Center Management**. The table shows the cost center and actions; if the list is empty, no values have been loaded or created yet.
+2. Select **Add New**, enter a cost center, and confirm **Save** in the dialog. The field must not be empty; use at most 255 characters. Leading and trailing spaces are removed. Values already present in the open list are detected as duplicates without regard to case. The dialog heading may read "Add Cost Center".
+3. To change it, select the pencil, correct the value, and save the dialog. Closing with the X does not apply this dialog entry.
+4. To remove it, select the trash icon and confirm the cost-center prompt. **No** cancels. **Yes** first removes the row from the open list.
+5. **Only saving at the bottom of the customer profile transfers the added, edited, and removed cost centers.** The dialog button alone is not enough here. Then reopen the cost centers and check each changed row.
+
+Switching between free text and predefined values is not operable in this profile. Likewise, there is no active cost center selection button in the department form. A maintained cost center list therefore means neither a switched input mode nor an automatically assigned cost center for existing projects. Have the intended maintenance path clarified for the required mode change.
+
+**If cost centers were not saved:** Check length, empty values, duplicate names, and customer management rights. If possible, create several new rows one after another and check them before the final save. After an unclear deletion attempt on several still-unsaved rows, check the remaining values. If the feedback is contradictory, the following instructions on save order apply.
+
+## Save order and recognizing partial errors
+
+The large **Save** button first checks the required fields of the entire profile form, including tabs that are currently hidden. It then processes customer master data, the submitted locations, departments, and contacts one after another. Missing customer role specifications are supplemented from the agency specifications; existing customer-specific rights are not reset across the board. For maintaining them, follow the [customer roles instructions](./06e_agency_client_portal.mdx#client-roles-separate-columns-and-conflict-confirmation).
+
+Only after a successful profile response do the individual cost center requests for deletion, modification, and creation follow. They are started together, not processed as a guaranteed completed sequence of deletion, modification, and creation. **This process is not a shared all-or-nothing save.** If an error occurs, master data and individual cost centers may already be saved while other changes are missing. After a cost center error, the screen can still display a general success message and reload. A later success message does not cancel out the previous error.
+
+**This is how to proceed in the event of a partial error:**
+1. Record the exact wording of the message and the affected rows, without sharing any confidential personal data.
+2. Reopen the same customer; do not create a second customer just in case.
+3. Compare master data, contacts, and departments, as well as every added, changed, or removed cost center, with the expected status.
+4. Repeat only changes that are demonstrably missing. If the results are still contradictory, contact support with the customer, affected tab, and time.
+
+Location dialogs, role and tariff templates, confirmed logo/contact/department deletions, user departments, and the employee pool each have their own save actions. The profile button is neither their additional confirmation nor an undo button. Save any open profile changes before using separate subfunctions, and reload the profile after changes to locations before assigning contacts or departments there. That way you do not work with an outdated selection list.
+
+## Maintain order roles and tariff groups
+
+These **roles** are customer-orderable activities, not portal users' access roles.
+
+1. First save the customer and, if applicable, any new departments. Open **Roles → Add**. The table shows name, minimum/maximum cost, role template, and actions.
+2. Enter **title** and select **role template**. When creating a new one, both details are required. The selection starts without a predefined template; if none is offered, first check the [role templates](./06i_role_tariff_templates.mdx).
+3. The tariff group is optional. Leave **tariff group name**, **minimum hourly rate**, and **maximum hourly rate** all blank, or fill in all three. The 0.00 placeholder is not a default price. Use professionally validated limits; a successful save does not automatically check whether the calculation is sensible. If you intend to use a zero rate, check especially carefully after saving, because it can arrive blank when transferred.
+4. If needed, select multiple saved departments of the customer under **department**. This is the role's department assignment, not a user's access permission. When saved, the selection replaces the previous assignments. Also check the user departments if someone cannot find a role.
+5. Select **Save** in the role dialog and check the reloaded table entry. This save takes effect immediately; the large profile button is not required. The X closes without this role save action.
+
+**Edit:** Select the pencil, check the name, role template, tariff group, and departments, save in the dialog, and open it again. To remove the tariff group from the customer role, clear all three tariff fields. Do not confuse this with deleting a tariff template.
+
+**Effect on existing drafts:** The role change can update hourly rates and the default template of roles already taken over from this customer role in order drafts that have not yet been deleted. Then check affected drafts separately. This does not imply a blanket change to all projects or the certain removal of all previously transferred tariff links.
+
+**Delete:** Select the trash can on the role and confirm the prompt. The delete attempt starts immediately. It is not a cancellation of an existing order or staffing assignment. Reload the role list afterward. If there is an error message about min/max, also check the other role details and the template; the message does not necessarily name the only cause of the error.
+
+## Load tariff template or save separately
+
+In the create and edit dialog of a customer role, there are **Load template** and **Save as template** for the tariff group.
+
+**Load:** Open the template list. **Show only tariff groups of the selected customer** is initially enabled. If needed, turn it off to see the available agency tariff templates. Search for part of the name and click the desired row. The tariff group name as well as the minimum and maximum hourly rates are transferred. Your role's department selection is **not** replaced by the departments stored in the template. Check all values and then save the role. Closing the list without making a selection does not transfer any template. An empty result may be due to the name or customer filter; a failed load is not proof that template management is empty.
+
+**Save as template:** First fill in the tariff group name and both hourly rates. Select the template save button and confirm the prompt. If a tariff template with the same name already exists, a further confirmation to overwrite it follows. If unsure, choose **No** and check the existing entry.
+
+This process saves the **template separately and immediately**, not the open customer role. The current customer is linked with the tariff template in the process. When overwriting, the departments passed in are added to the existing template assignment, not treated as a complete replacement. The template's tariff values are changed; this is not an automatic update of all roles previously created from it. Closing the role dialog afterward does not undo a template that has already been saved.
+
+For this process, template or Self Service edit rights may also be required. Check the saved template again, especially when identical names exist in different customer contexts. For complete template management, see [independent tariff group templates](./06i_role_tariff_templates.mdx#standalone-tariff-group-template-with-customers-and-departments).
+
+## Tabs, views, and separate actions
+
+After the first save, further tabs become available. However, when creating a new customer, first select **Back → Customer list → reopen saved customer** before working in the locations tab. Simply switching tabs does not reload the location list. In the reopened saved customer, the tabs for general information, **Locations**, **Cost center**, **Departments**, **Contacts**, **Roles**, **Users**, **Wish and block list**, and **Settings** are available. **Employee pool** and **Edit templates** also depend on the available Self Service. Simply switching tabs does not save open profile changes. **Back** at the top takes you to the customer list, not to a save confirmation.
+
+**Wish and block list:** Open the tab to see the two separate name lists with photo or initials. If you have customer management rights, a person's link opens the employee profile in a new tab. In these two tables, there is no separate button to unblock or add someone. An empty list does not say anything about the customer employee pool. Changes in the employee profile follow the [separate profile instructions](./05a_employee_profiles.mdx); a block, a wish, and pool membership are not the same thing.
+
+**Users:** Sort the table by first name, last name, email, or role if needed. For **manage departments**, the separate dialog save described above applies. No user is invited in this tab.
+
+**Edit templates:** The embedded tab loads templates for the selected customer. Expand the desired family and select the pencil on the saved entry. For names and delete confirmations, follow [open template management](./06g_agency_templates.mdx#open-template-management-and-check-the-context); for amounts, currency, frequency, and criteria, follow [wages and allowances](./06g_agency_templates.mdx#edit-wage-allowance-and-supplement); for expense type and payment method, follow [expense templates](./06g_agency_templates.mdx#expense-templates-and-payment-type). [notification templates](./06g_agency_templates.mdx#two-separate-notification-templates) save text, but do not send a message automatically. [wage criteria](./06i_role_tariff_templates.mdx#salary-criteria-with-time-grid-or-hourly-threshold) have their own choice between an existing criterion and a new variant.
+
+For **role templates**, there are separate subdialogs for wages/expenses, shifts/breaks, tariff group, clothing/documents, customers, and employee filter. Follow the [exact role subdialogs](./06i_role_tariff_templates.mdx#edit-role-template-and-filter), especially the save actions described there when closing. A confirmed filter updates the template; this is not the publication of a project. In the embedded tab, the standalone lists for wage classes, tariff groups, sedcards, and surcharges are not available as an entry point. Surcharge rows within a role template remain separately operable. Info PDF templates are only visible in certain agency configurations. Therefore, do not look for a missing agency button in the customer profile. Do not confuse this with the separate wage export. No already saved template change is undone by canceling in the customer profile.
+
+**Settings** and **Employee pool** remain separate subfunctions with the [customer-specific save rules](./06e_agency_client_portal.mdx#open-settings-for-a-specific-client) and the [pool instructions](./07c_self_service.mdx#edit-a-customers-employee-pool). If a tab is missing or not operable, first check the saved customer and feature permissions; do not create a second customer.

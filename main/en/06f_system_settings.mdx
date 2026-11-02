@@ -1,0 +1,24 @@
+---
+title: "System settings and security"
+description: "Distinguish the separate settings dashboard from the agency profile and user management."
+---
+
+# System settings and security
+
+## Separate dashboard and invitation register
+
+The separate **Settings** dashboard contains the tabs **Invite members**, **Invite customers**, and, for non-employee accounts, **Security**. It is not the agency profile page with company data. The visibility of both entry points may vary depending on permissions.
+
+The invitation tabs show **Message**, **Email**, and **Invite**. When you switch to another tab, the message and address are cleared; clicking the active tab again collapses its contents. An empty message or address triggers an error message.
+
+**Important limitation:** For these two legacy invitation forms, no working send action is wired in the associated server handler. A possible interface message is therefore not reliable proof of an invitation. For real agency or customer roles, use the [user management in the agency profile](06c_agency_users.mdx#invite-members-selectively), with role, language, and required customer assignment. There, **Invite** can actually trigger an email. Do not try to force a send by repeatedly pressing the legacy form.
+
+## Identifying the Security tab
+
+Under **Security → Passkeys**, the list shows the device name, the date added, and, if applicable, the last use. **Add new passkey** is disabled in unsupported browsers. The remove function is offered only when the security conditions allow removal; otherwise, a notice appears that at least one passkey is required.
+
+When additional protection is enabled, the **Recovery codes** area appears. Two or fewer remaining codes are shown as a warning. New codes must be saved in the dialog that opens for this purpose: **Copy codes** or **Download file**, then confirm the backup and choose **Done**. During this dialog, switching tabs is blocked. Never send passwords, passkeys, or recovery codes to support.
+
+Before **Remove** on a passkey or **Generate new codes**, **Confirm your password** opens. Enter your own password only in this dialog and choose **Confirm** or press **Enter**. An empty entry cannot be confirmed via the button. This is a real account change, not a preview. If an error occurs, the password dialog closes and the list is reloaded; check the message and the current state instead of blindly repeating the action.
+
+This is guidance for the settings dashboard, not instructions for bypassing locked access. Setup, device replacement, and recovery form a separate security workflow. If a device or password prompt is unclear, do not continue by repeatedly deleting or generating.

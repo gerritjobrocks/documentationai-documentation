@@ -1,0 +1,83 @@
+---
+title: "Import employees and histories"
+---
+
+# Import employees and assignment histories
+
+## Access and preparation
+
+In the **employee dashboard**, there are the buttons **import employees** and **import job history** for super administrators. The labels and parts of the wizard may remain in English even when the portal language is German. A regular agency administrator does not automatically see these buttons. If they are missing, clarify authorized access with your administration; the registration link is not an import tool.
+
+Import only the approved data into the explicitly selected agencies. The wizard can change existing profiles and add people to multiple agency pools. Therefore, before starting, check the identification, status values, and target agency. The preview is **not a complete approval or undo function**.
+
+## Prepare the employee file
+
+The wizard accepts **CSV, XLSX, XLS, and JSON**. For Excel, the first worksheet is read; the first row contains column headers, and each row below contains one record per person. Use unique, complete headers. JSON must contain a list of objects with the same structure. Prepare CSV in UTF-8 if possible and check delimiters and umlauts in the preview. The upload check limits the file size to 50 MB.
+
+The five required mappings are:
+
+| Information | Destination in the mapping dialog |
+|---|---|
+| First name | `first_name` |
+| Last name | `last_name` |
+| Email | `email` |
+| Mobile number | `mobile` |
+| Date of birth | `date_of_birth` |
+
+These values must also be present for each record. Use a clear date format such as `YYYY-MM-DD` or `TT.MM.JJJJ`, not just a year. Prepare mobile numbers with the correct country code and do not store them as rounded Excel numbers. Email and mobile number are also identifiers; an incorrect mapping can hit the wrong existing profile.
+
+## Five steps to import
+
+1. Open **import employees** and the new import. Drag the file onto the upload area or select it. Remove a wrong selection via the x next to the file name. **Next** uploads the file and reads the headers.
+2. Under **Detected column / Maps to**, check each recognized column. The proposed mappings are only suggestions. Map required fields; leave unneeded columns unmapped. Do not assign a default target field more than once. For **Additional Document**, **Select document type** is also required.
+3. Check the **preview**: names, contact details, date of birth, column shift, and character encoding. It shows only the first eight data rows. The current preview table does not show a separate error column; therefore, an unobtrusive table does not prove that all data is valid. Use **Back** to correct the mapping; for a faulty source file, close the process before starting and select the corrected file again.
+4. Under **Choose agencies**, select at least one target agency. Multiple selection means the people should be assigned to these multiple agencies — not that the system itself guesses the correct agency.
+5. Check **File**, **Agencies**, and **Minimal mapping OK**. Only **Start import** triggers processing. Wait for processing progress and then check the entry in the import overview.
+
+**Processing** and a progress number mean that rows are being processed. Closing the wizard after it has already started does not cancel the background job. If **Upload failed**, **Preview failed**, or **Failed to start import** appears, first check the file, the mapping, and the existing import status; do not start it repeatedly while the state is unclear.
+
+## Optional data and documents
+
+In addition to the required fields, the mapping dialog contains the following groups. Map only data that you actually want to transfer; an empty optional column is not generally a safe command to delete existing data.
+
+- **Personal details:** preferred name, gender, salutation, children, rating, previous number of assignments, and smoker status.
+- **Qualification:** language skills as well as job title, company, start, end, and description of work experience.
+- **Appearance:** eye/hair color, body height, shoe/top/pants sizes, tattoos and piercings with description, and other available personal characteristics.
+- **Addresses:** main and secondary address, street, house number, addition, postal code, city, canton, country, coordinates, and valid from; selection of the legal secondary address.
+- **Contact:** telephone, mobile number, website and social profiles, recovery contact, emergency contact with name, telephone, and email.
+- **Work information:** AHV, marital status, nationality, work permit and expiry, employee status, personnel number, branch, consultant, internal comments, warnings, permanent/internal staff, workload, and the offered application, interview, activation, inactivation, and first work day data.
+- **Bank information:** account type, bank name, IBAN, account number, bank location, clearing, and BIC/SWIFT.
+- **Mobility and interests:** public transport subscriptions, driving skills and driver’s license categories, vehicle details, car sharing, as well as the offered product and assignment interests.
+- **Other personal details:** offered partner/marital-status details and last login. These mappings are not a substantive validation of the information.
+- **Files:** portrait, full-body/other images, video, CV, AHV document, passport/ID and work permit each, where applicable, front/back side, driver’s license front/back side, framework agreement document, and **Additional Document** with document type.
+
+File columns contain an accessible file link or a corresponding document description with `url` or `public_url`; a file name on your computer is not enough. Document transfer can fail independently of the master data. Check the files in the profile afterward. If another document of the same type already exists, the import does not simply replace it. Do not make sensitive files freely available on the internet just to enable an import; clarify an appropriate approved transfer method.
+
+## What is changed during employee import
+
+Existing people are first searched by email, then by mobile number, then by the combination of first name, last name, and date of birth. A match is updated; otherwise, a new person is created. If **changed/edited** is set in one of the selected agencies, the person is skipped so that manual changes are not overwritten.
+
+**Prepare the status intentionally:** Without an existing status, a new agency assignment can be created as **active**. The import is therefore not just a draft. Do not assume that an empty or unknown status means “inactive.” If you want an inactive import, prepare it explicitly with the intended status and verify it in the result. Activation and project-related follow-up processes remain separate operations; no import result is a confirmed shift assignment.
+
+Individual rows can produce different results. An error later in the processing does not necessarily mean that no master data was written beforehand. Therefore, do not repeat the entire file without checking.
+
+## Check the result and error report
+
+The overview shows your own previous imports with file, status, target agencies, total count, and processed row count. Open the **Report** for the relevant run. The Excel report contains **Import Results** with row index, status, message, and employee reference, as well as **Original Data** where available.
+
+- **created:** person newly created.
+- **updated:** existing person updated.
+- **skipped:** skipped; during employee import, in particular because the status was already changed/edited.
+- **failed:** row failed; the message states the reason, such as missing mandatory fields.
+
+The run status **done** means that processing is complete, not that every row was successful. Compare the report and sample checks of the affected profiles, including agency assignment, status, and documents. Correct the faulty rows specifically. Import reports contain personal data and are for authorized persons only.
+
+## Import job histories separately
+
+**import job history** transfers historical data for **already existing** people. The flow is also file → mapping → preview → agencies → start. Use a **job.rocks id**, email, or **personal_number** for reliable identification; name and mobile number alone are not sufficient for this processing path. A person not found here is not automatically created.
+
+Besides identification, **project_name** is mandatory. Optional mappings are **location**, **client**, **role**, **from**, **to**, and **rating**. The additional name/mobile columns offered do not replace the required identification. Check the date and time range before starting.
+
+The import creates entries in the **imported job history**. It does not create real projects, shifts, time tracking, or payments from them. Existing histories with the same person, agency, project name, location, client, role, and from/to dates are skipped. A repeated file is therefore not a general edit path for existing histories. Also check the report and the corresponding profile section here.
+
+Next: [Employee profiles](/main/en/05a_employee_profiles), [Registration instead of import](/main/en/05_employees_dashboard#invite-employees-to-register).

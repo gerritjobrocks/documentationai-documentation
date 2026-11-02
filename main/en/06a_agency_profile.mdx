@@ -1,0 +1,66 @@
+---
+title: "Agency profile and company data"
+description: "Find settings, maintain company data and contacts, manage public visibility."
+---
+
+# Agency Profile and Company Data
+
+## Open the correct settings page
+
+Open **Settings** in the sidebar. You can recognize the agency profile page by the agency name and logo, as well as **Company Data**, **Edit templates**, and **Credits**. Before making changes, check the active agency name in the sidebar.
+
+There is a second, separate entry with the same label **Settings**: the [system settings dashboard](06f_system_settings.mdx) with **Invite members**, **Invite customers**, and **Security**. A missing entry there does not mean the agency profile is missing too. The two navigation entries are granted separately.
+
+Most profile sections require **View settings** and, in addition, the respective edit permission, for example for company data, templates, email, or the customer portal. **Manage member roles** has its own access. A greyed-out section is not proof that the same permission applies to all other sections. If access is denied, ask the administrator to check the specific function; do not switch to another agency.
+
+There is no shared save action for the whole page. Text fields can already save when you leave them, switches save immediately when toggled, and other sections only via **Save**. The button for contact persons does not also save the email account or office hours.
+
+The logo and registration link at the top belong to the agency profile, not to a new user role. The [registration guide](05_employees_dashboard.mdx#invite-employees-to-register) describes this entry point.
+
+## Company data and address
+
+Under **Company Data**, you edit:
+
+| Field group | Input and saving |
+| --- | --- |
+| Agency name | Display name of the agency. Certain special characters are removed as you type and are flagged with an error message. Check the cleaned name. |
+| Legal name of the agency | Enter the legal company name independently of the display name. |
+| Agency website | Enter the website in the URL field. |
+| Address | Enter street, house number, additional address line, postal code, and city separately. |
+| Country | Choose an entry from the country selection; this is not a free-text field. |
+
+The text fields save **when leaving the field**, and the country **when the selection changes**. The button under the contact persons is not responsible for this. After you finish making changes, reopen the page and check the values: simply still seeing an entry does not confirm it has been saved. Neither a general default country nor a company name is predefined for all agencies.
+
+Do not use internal tenant or integration fields as a replacement for this master data. Technical interface approvals are not tax or payroll confirmation.
+
+## Add and save contact persons
+
+In the same section, **Contact person** shows first name, last name, email, recovery email, landline, mobile phone, and recovery mobile phone for each person. **Add new contact person** first adds an empty row. Enter the required contact details and click **Save** below the list. Only this step sends the contact list; simply leaving a contact field does not.
+
+The remove icon on a person opens a confirmation. **Yes** removes this contact person, **No** leaves them in place. After saving, check the success message and the list after reopening it. When deleting, the row disappears locally right away; if an error occurs, reload and do not rely on the vanished row alone.
+
+A contact person is not automatically a user account. Access and role are handled by the [user management](06c_agency_users.mdx).
+
+## Public visibility and description
+
+Under **Public visibility**, you need the permission to edit public visibility. The main switch saves turning it on immediately. When turning it off, a confirmation appears: the agency should no longer appear in the public directory; the existing employee pool remains intact. **No** resets the switch, **Yes** saves the deactivation.
+
+The description has language tabs **English**, **Deutsch**, **Français**, and **Italiano**. Edit the desired tab; a description that has actually been changed is saved when you leave the editor. The interface limits the description text to 2000 characters and supports links. Simply opening a tab is not a change.
+
+The Translate button appears when another language contains content and public visibility is turned on. It uses the first filled text from another language in the order English, German, French, Italian. The result replaces the text in the selected target language and is saved directly. Therefore, check the source text and target before translating; there is no additional approval step after translation.
+
+If the main switch is off, the description and selection areas remain visible but are locked. After an error message, the visible state is not a reliable saved state. Reopen the page and check the switch, language texts, and selection.
+
+## Select sectors and assignment types
+
+Below the public description, you can tick multiple **Sectors** and **Assignment types**. Each add or remove action saves immediately; this selection is not an employee filter list and not a project type template.
+
+**Sectors:** Production and industry; retail and trade; healthcare; hospitality, tourism, and events; logistics and transport; facility management and cleaning services; staffing and recruitment; security; marketing, media, and communications; public sector and education; agriculture; real estate and construction; financial and professional services.
+
+**Assignment types:** promotion, merchandising, mystery shopping, logistics, reception, service, bar, kitchen, security, care, and cleaning. The labels may differ because of the translation shown; choose the professionally appropriate entries. If public visibility is turned off, the boxes cannot be changed. After reopening, check which entries remained ticked.
+
+## Logo and registration link in the profile header
+
+The profile header shows the agency name, logo, and registration link. With permission to edit the agency profile image, you can replace the logo via the upload area; the upload is its own save path, not part of **Save company data**. Wait for the upload to finish and check the image after reopening. If there is an error message, do not infer a saved logo from the locally selected file.
+
+The copy action on the registration link copies the existing link; it does not create a new invitation and does not send a message. Before sharing, check the agency name and intended recipient group. The company data panel is opened via **Company Data**, and template management via **Edit templates**. Both are separate from the general information in the profile header.
